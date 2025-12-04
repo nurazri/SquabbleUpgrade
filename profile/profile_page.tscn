@@ -1,0 +1,980 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://Animation/Assets_Result/Word_Bg.png" type="Texture2D" id=1]
+[ext_resource path="res://home/textures/home_background.png" type="Texture2D" id=2]
+[ext_resource path="res://fonts/Gretaros-Regular.ttf" type="FontFile" id=4]
+[ext_resource path="res://achievement/textures/UI_panel_achievement.png" type="Texture2D" id=6]
+[ext_resource path="res://avatar/unlocked_avatar/Chr_wombat.png" type="Texture2D" id=7]
+[ext_resource path="res://home/textures/UI_icon_coin.png" type="Texture2D" id=8]
+[ext_resource path="res://home/textures/UI_icon_diamond.png" type="Texture2D" id=9]
+[ext_resource path="res://profile/textures/UI_icon_edit.png" type="Texture2D" id=10]
+[ext_resource path="res://universal_texture/UI_button_blue.png" type="Texture2D" id=11]
+[ext_resource path="res://profile/textures/UI_popup_bg_1.png" type="Texture2D" id=12]
+[ext_resource path="res://tutorial/textures/tutorial_profile_background_border.png" type="Texture2D" id=13]
+[ext_resource path="res://profile/textures/UI_panel_yellow.png" type="Texture2D" id=14]
+[ext_resource path="res://profile/textures/UI_ratiobar_lose_curve.png" type="Texture2D" id=15]
+[ext_resource path="res://profile/textures/UI_ratiobar_win_curve.png" type="Texture2D" id=16]
+[ext_resource path="res://profile/textures/UI_whitedot.png" type="Texture2D" id=17]
+[ext_resource path="res://profile/profile_page.gd" type="Script" id=18]
+[ext_resource path="res://profile/profile_letter.tscn" type="PackedScene" id=21]
+
+[sub_resource type="FontFile" id=1]
+size = 35
+font_data = ExtResource( 4 )
+
+[sub_resource type="FontFile" id=2]
+size = 25
+font_data = ExtResource( 4 )
+
+[sub_resource type="FontFile" id=3]
+size = 40
+font_data = ExtResource( 4 )
+
+[sub_resource type="FontFile" id=4]
+size = 40
+font_data = ExtResource( 4 )
+
+[sub_resource type="FontFile" id=5]
+size = 48
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="FontFile" id=6]
+size = 25
+font_data = ExtResource( 4 )
+
+[sub_resource type="FontFile" id=7]
+size = 48
+font_data = ExtResource( 4 )
+
+[sub_resource type="FontFile" id=8]
+size = 48
+font_data = ExtResource( 4 )
+
+[sub_resource type="FontFile" id=9]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="FontFile" id=10]
+size = 24
+font_data = ExtResource( 4 )
+
+[sub_resource type="FontFile" id=11]
+size = 100
+font_data = ExtResource( 4 )
+
+[sub_resource type="FontFile" id=12]
+size = 24
+font_data = ExtResource( 4 )
+
+[sub_resource type="FontFile" id=13]
+size = 64
+font_data = ExtResource( 4 )
+
+[sub_resource type="FontFile" id=14]
+size = 64
+font_data = ExtResource( 4 )
+
+[sub_resource type="FontFile" id=15]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxTexture" id=16]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 633, 93 )
+offset_left = 25.0
+offset_right = 25.0
+offset_top = 25.0
+offset_bottom = 25.0
+
+[sub_resource type="FontFile" id=17]
+size = 40
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 4 )
+
+[node name="Profile_Page" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_minimum_size = Vector2( 946, 2048 )
+script = ExtResource( 18 )
+_ScnProfileLetter = ExtResource( 21 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UI_Profile" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_minimum_size = Vector2( 946, 2048 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AvatarInfo" type="TextureRect" parent="UI_Profile"]
+offset_left = 50.0
+offset_top = 162.0
+offset_right = 337.0
+offset_bottom = 449.0
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Avatar" type="TextureRect" parent="UI_Profile/AvatarInfo"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -130.5
+offset_right = 130.0
+offset_bottom = 107.5
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="BtnEditAvatar" type="TextureButton" parent="UI_Profile/AvatarInfo"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -91.0
+offset_top = -99.0
+offset_right = -15.0
+offset_bottom = -23.0
+texture_normal = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="EditSymbol" type="TextureRect" parent="UI_Profile/AvatarInfo/BtnEditAvatar"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -26.5
+offset_right = 26.5
+offset_bottom = 26.5
+texture = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="UserInfo" type="NinePatchRect" parent="UI_Profile"]
+offset_left = 335.0
+offset_top = 162.0
+offset_right = 910.0
+offset_bottom = 449.0
+texture = ExtResource( 6 )
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 60
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="UI_Profile/UserInfo"]
+visible = false
+offset_left = 40.0
+offset_top = 30.0
+offset_right = 528.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 1 )
+text = "???"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Arena" type="Label" parent="UI_Profile/UserInfo"]
+visible = false
+offset_left = 40.0
+offset_top = 72.0
+offset_right = 528.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 2 )
+text = "Beginner arena"
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Coin" type="TextureRect" parent="UI_Profile/UserInfo"]
+offset_left = 33.0
+offset_top = 43.0
+offset_right = 117.0
+offset_bottom = 127.0
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Amount" type="Label" parent="UI_Profile/UserInfo/Coin"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 14.0
+offset_top = -25.0
+offset_right = 280.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 3 )
+text = "0"
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Diamond" type="TextureRect" parent="UI_Profile/UserInfo"]
+offset_left = 33.0
+offset_top = 142.0
+offset_right = 117.0
+offset_bottom = 226.0
+texture = ExtResource( 9 )
+expand = true
+
+[node name="Amount" type="Label" parent="UI_Profile/UserInfo/Diamond"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 14.0
+offset_top = -25.0
+offset_right = 280.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 4 )
+text = "0"
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="GameInfo" type="NinePatchRect" parent="UI_Profile"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = 440.0
+offset_right = -20.0
+offset_bottom = -138.0
+texture = ExtResource( 12 )
+patch_margin_left = 50
+patch_margin_top = 50
+patch_margin_right = 50
+patch_margin_bottom = 75
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelGameInfo" type="Label" parent="UI_Profile/GameInfo"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 23.0
+offset_right = 200.0
+offset_bottom = 113.0
+theme_override_fonts/font = SubResource( 5 )
+text = "BEST WORDS"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="NinePatchRect" parent="UI_Profile/GameInfo"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 116.33
+offset_right = -50.0
+offset_bottom = -66.6698
+texture = ExtResource( 13 )
+patch_margin_left = 30
+patch_margin_top = 30
+patch_margin_right = 30
+patch_margin_bottom = 30
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="LabelWins" type="Label" parent="UI_Profile/GameInfo/Panel"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -362.716
+offset_top = 47.0
+offset_right = -276.716
+offset_bottom = 85.0
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 6 )
+text = "WINS"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="LabelLosses" type="Label" parent="UI_Profile/GameInfo/Panel"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 254.5
+offset_top = 47.0
+offset_right = 359.5
+offset_bottom = 85.0
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 6 )
+text = "LOSSES"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgressWin" type="TextureProgressBar" parent="UI_Profile/GameInfo/Panel"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -370.5
+offset_top = 85.0
+offset_right = 370.5
+offset_bottom = 278.0
+value = 50.0
+texture_under = ExtResource( 16 )
+texture_progress = ExtResource( 16 )
+tint_under = Color( 0, 0, 0, 1 )
+nine_patch_stretch = true
+stretch_margin_left = 25
+stretch_margin_top = 25
+stretch_margin_right = 25
+stretch_margin_bottom = 25
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgressLose" type="TextureProgressBar" parent="UI_Profile/GameInfo/Panel/TextureProgressWin"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+value = 50.0
+texture_progress = ExtResource( 15 )
+fill_mode = 1
+tint_under = Color( 0, 0, 0, 1 )
+nine_patch_stretch = true
+stretch_margin_left = 25
+stretch_margin_top = 25
+stretch_margin_right = 25
+stretch_margin_bottom = 25
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureShine" type="TextureRect" parent="UI_Profile/GameInfo/Panel/TextureProgressWin/TextureProgressLose"]
+offset_left = 13.3484
+offset_top = 13.3484
+offset_right = 53.3484
+offset_bottom = 53.3484
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LabelWinAmount" type="Label" parent="UI_Profile/GameInfo/Panel/TextureProgressWin"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -36.5
+offset_right = 92.0
+offset_bottom = 20.5
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 7 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelLoseAmount" type="Label" parent="UI_Profile/GameInfo/Panel/TextureProgressWin"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -36.5
+offset_right = -31.0
+offset_bottom = 20.5
+grow_horizontal = 0
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 8 )
+text = "0"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelRecord" type="Label" parent="UI_Profile/GameInfo/Panel"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -332.5
+offset_right = 124.0
+offset_bottom = -294.5
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 9 )
+text = "RECORD"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BestScore" type="NinePatchRect" parent="UI_Profile/GameInfo/Panel"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -370.5
+offset_top = -285.5
+offset_right = -3.5
+offset_bottom = -84.5
+texture = ExtResource( 14 )
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI_Profile/GameInfo/Panel/BestScore"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -124.0
+offset_top = 20.0
+offset_right = 124.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color( 0.403922, 0.0862745, 0.0862745, 1 )
+theme_override_fonts/font = SubResource( 10 )
+text = "BEST GAME SCORE"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="UI_Profile/GameInfo/Panel/BestScore"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -124.0
+offset_top = 55.0
+offset_right = 124.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color( 0.403922, 0.0862745, 0.0862745, 1 )
+theme_override_fonts/font = SubResource( 11 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="AverageScore" type="NinePatchRect" parent="UI_Profile/GameInfo/Panel"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 4.50003
+offset_top = -285.5
+offset_right = 371.5
+offset_bottom = -84.5
+texture = ExtResource( 14 )
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI_Profile/GameInfo/Panel/AverageScore"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -155.5
+offset_top = 20.0
+offset_right = 155.5
+offset_bottom = 49.0
+theme_override_colors/font_color = Color( 0.403922, 0.0862745, 0.0862745, 1 )
+theme_override_fonts/font = SubResource( 12 )
+text = "average game score"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="UI_Profile/GameInfo/Panel/AverageScore"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -124.0
+offset_top = 55.0
+offset_right = 124.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color( 0.403922, 0.0862745, 0.0862745, 1 )
+theme_override_fonts/font = SubResource( 11 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="WinStreak" type="NinePatchRect" parent="UI_Profile/GameInfo/Panel"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -370.5
+offset_top = -76.5
+offset_right = -3.5
+offset_bottom = 124.5
+texture = ExtResource( 14 )
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI_Profile/GameInfo/Panel/WinStreak"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -124.0
+offset_top = 20.0
+offset_right = 124.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color( 0.403922, 0.0862745, 0.0862745, 1 )
+theme_override_fonts/font = SubResource( 10 )
+text = "WIN STREAK"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="UI_Profile/GameInfo/Panel/WinStreak"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -124.0
+offset_top = 55.0
+offset_right = 124.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color( 0.403922, 0.0862745, 0.0862745, 1 )
+theme_override_fonts/font = SubResource( 11 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="MostTiles" type="NinePatchRect" parent="UI_Profile/GameInfo/Panel"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 4.50003
+offset_top = -76.5
+offset_right = 371.5
+offset_bottom = 124.5
+texture = ExtResource( 14 )
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI_Profile/GameInfo/Panel/MostTiles"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -155.5
+offset_top = 20.0
+offset_right = 155.5
+offset_bottom = 49.0
+theme_override_colors/font_color = Color( 0.403922, 0.0862745, 0.0862745, 1 )
+theme_override_fonts/font = SubResource( 12 )
+text = "MOST TILES PLAYED"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="UI_Profile/GameInfo/Panel/MostTiles"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -124.0
+offset_top = 55.0
+offset_right = 124.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color( 0.403922, 0.0862745, 0.0862745, 1 )
+theme_override_fonts/font = SubResource( 11 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AvatarOwned" type="NinePatchRect" parent="UI_Profile/GameInfo/Panel"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -370.5
+offset_top = 132.5
+offset_right = -3.5
+offset_bottom = 333.5
+texture = ExtResource( 14 )
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI_Profile/GameInfo/Panel/AvatarOwned"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -145.0
+offset_top = 20.0
+offset_right = 145.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color( 0.403922, 0.0862745, 0.0862745, 1 )
+theme_override_fonts/font = SubResource( 10 )
+text = "CHARACTER COLLECT"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="UI_Profile/GameInfo/Panel/AvatarOwned"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -124.0
+offset_top = 55.0
+offset_right = 124.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color( 0.403922, 0.0862745, 0.0862745, 1 )
+theme_override_fonts/font = SubResource( 13 )
+text = "0/0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AchievementDone" type="NinePatchRect" parent="UI_Profile/GameInfo/Panel"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 4.50003
+offset_top = 132.5
+offset_right = 371.5
+offset_bottom = 333.5
+texture = ExtResource( 14 )
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI_Profile/GameInfo/Panel/AchievementDone"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -155.5
+offset_top = 20.0
+offset_right = 155.5
+offset_bottom = 49.0
+theme_override_colors/font_color = Color( 0.403922, 0.0862745, 0.0862745, 1 )
+theme_override_fonts/font = SubResource( 12 )
+text = "achievement"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="UI_Profile/GameInfo/Panel/AchievementDone"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -124.0
+offset_top = 55.0
+offset_right = 124.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color( 0.403922, 0.0862745, 0.0862745, 1 )
+theme_override_fonts/font = SubResource( 14 )
+text = "0/0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="LabelBestWord" type="Label" parent="UI_Profile/GameInfo/Panel"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -219.5
+offset_top = 1043.0
+offset_right = 219.5
+offset_bottom = 1081.0
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 15 )
+text = "BEST WORD (??? POINTS)"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LetterContainer" type="HBoxContainer" parent="UI_Profile/GameInfo/Panel"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -382.5
+offset_top = 1085.0
+offset_right = 384.5
+offset_bottom = 1231.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -13
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Best_Word_List" type="VBoxContainer" parent="UI_Profile/GameInfo"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 77.0
+offset_top = -586.0
+offset_right = -78.0
+offset_bottom = 640.0
+theme_override_constants/separation = 25
+
+[node name="Best_Word_1" type="Panel" parent="UI_Profile/GameInfo/Best_Word_List"]
+offset_right = 736.0
+offset_bottom = 100.0
+custom_minimum_size = Vector2( 0, 100 )
+theme_override_styles/panel = SubResource( 16 )
+
+[node name="Label" type="Label" parent="UI_Profile/GameInfo/Best_Word_List/Best_Word_1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 17 )
+text = "??? (??? pts)"
+align = 1
+valign = 1
+
+[node name="Best_Word_2" type="Panel" parent="UI_Profile/GameInfo/Best_Word_List"]
+offset_top = 125.0
+offset_right = 736.0
+offset_bottom = 225.0
+custom_minimum_size = Vector2( 0, 100 )
+theme_override_styles/panel = SubResource( 16 )
+
+[node name="Label" type="Label" parent="UI_Profile/GameInfo/Best_Word_List/Best_Word_2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 17 )
+text = "??? (??? pts)"
+align = 1
+valign = 1
+
+[node name="Best_Word_3" type="Panel" parent="UI_Profile/GameInfo/Best_Word_List"]
+offset_top = 250.0
+offset_right = 736.0
+offset_bottom = 350.0
+custom_minimum_size = Vector2( 0, 100 )
+theme_override_styles/panel = SubResource( 16 )
+
+[node name="Label" type="Label" parent="UI_Profile/GameInfo/Best_Word_List/Best_Word_3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 17 )
+text = "??? (??? pts)"
+align = 1
+valign = 1
+
+[node name="Best_Word_4" type="Panel" parent="UI_Profile/GameInfo/Best_Word_List"]
+offset_top = 375.0
+offset_right = 736.0
+offset_bottom = 475.0
+custom_minimum_size = Vector2( 0, 100 )
+theme_override_styles/panel = SubResource( 16 )
+
+[node name="Label" type="Label" parent="UI_Profile/GameInfo/Best_Word_List/Best_Word_4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 17 )
+text = "??? (??? pts)"
+align = 1
+valign = 1
+
+[node name="Best_Word_5" type="Panel" parent="UI_Profile/GameInfo/Best_Word_List"]
+offset_top = 500.0
+offset_right = 736.0
+offset_bottom = 600.0
+custom_minimum_size = Vector2( 0, 100 )
+theme_override_styles/panel = SubResource( 16 )
+
+[node name="Label" type="Label" parent="UI_Profile/GameInfo/Best_Word_List/Best_Word_5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 17 )
+text = "??? (??? pts)"
+align = 1
+valign = 1
+
+[node name="Best_Word_6" type="Panel" parent="UI_Profile/GameInfo/Best_Word_List"]
+offset_top = 625.0
+offset_right = 736.0
+offset_bottom = 725.0
+custom_minimum_size = Vector2( 0, 100 )
+theme_override_styles/panel = SubResource( 16 )
+
+[node name="Label" type="Label" parent="UI_Profile/GameInfo/Best_Word_List/Best_Word_6"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 17 )
+text = "??? (??? pts)"
+align = 1
+valign = 1
+
+[node name="Best_Word_7" type="Panel" parent="UI_Profile/GameInfo/Best_Word_List"]
+offset_top = 750.0
+offset_right = 736.0
+offset_bottom = 850.0
+custom_minimum_size = Vector2( 0, 100 )
+theme_override_styles/panel = SubResource( 16 )
+
+[node name="Label" type="Label" parent="UI_Profile/GameInfo/Best_Word_List/Best_Word_7"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 17 )
+text = "??? (??? pts)"
+align = 1
+valign = 1
+
+[node name="Best_Word_8" type="Panel" parent="UI_Profile/GameInfo/Best_Word_List"]
+offset_top = 875.0
+offset_right = 736.0
+offset_bottom = 975.0
+custom_minimum_size = Vector2( 0, 100 )
+theme_override_styles/panel = SubResource( 16 )
+
+[node name="Label" type="Label" parent="UI_Profile/GameInfo/Best_Word_List/Best_Word_8"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 17 )
+text = "??? (??? pts)"
+align = 1
+valign = 1
+
+[node name="Best_Word_9" type="Panel" parent="UI_Profile/GameInfo/Best_Word_List"]
+offset_top = 1000.0
+offset_right = 736.0
+offset_bottom = 1100.0
+custom_minimum_size = Vector2( 0, 100 )
+theme_override_styles/panel = SubResource( 16 )
+
+[node name="Label" type="Label" parent="UI_Profile/GameInfo/Best_Word_List/Best_Word_9"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 17 )
+text = "??? (??? pts)"
+align = 1
+valign = 1
+
+[node name="Best_Word_10" type="Panel" parent="UI_Profile/GameInfo/Best_Word_List"]
+offset_top = 1125.0
+offset_right = 736.0
+offset_bottom = 1225.0
+custom_minimum_size = Vector2( 0, 100 )
+theme_override_styles/panel = SubResource( 16 )
+
+[node name="Label" type="Label" parent="UI_Profile/GameInfo/Best_Word_List/Best_Word_10"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 17 )
+text = "??? (??? pts)"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="UI_Profile/AvatarInfo/BtnEditAvatar" to="." method="_on_BtnEditAvatar_pressed"]

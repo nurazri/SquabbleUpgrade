@@ -1,0 +1,33 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://audio/audio.gd" type="Script" id=1]
+[ext_resource path="res://audio/music_home.tscn" type="PackedScene" id=2]
+[ext_resource path="res://audio/sfx_tap.tscn" type="PackedScene" id=3]
+[ext_resource path="res://audio/sfx_letter.tscn" type="PackedScene" id=4]
+[ext_resource path="res://audio/music_play.tscn" type="PackedScene" id=5]
+[ext_resource path="res://audio/sfx_word.tscn" type="PackedScene" id=6]
+[ext_resource path="res://audio/sfx_fail.tscn" type="PackedScene" id=7]
+[ext_resource path="res://audio/music_play_2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://audio/music_lose.tscn" type="PackedScene" id=9]
+[ext_resource path="res://audio/music_win.tscn" type="PackedScene" id=10]
+
+[node name="Audio" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="MusicHome" parent="." instance=ExtResource( 2 )]
+
+[node name="SfxTap" parent="." instance=ExtResource( 3 )]
+
+[node name="MusicPlay" parent="." instance=ExtResource( 5 )]
+
+[node name="MusicPlay2" parent="." instance=ExtResource( 8 )]
+
+[node name="MusicWin" parent="." instance=ExtResource( 10 )]
+
+[node name="MusicLose" parent="." instance=ExtResource( 9 )]
+
+[node name="SfxLetter" parent="." instance=ExtResource( 4 )]
+
+[node name="SfxWord" parent="." instance=ExtResource( 6 )]
+
+[node name="SfxWordFail" parent="." instance=ExtResource( 7 )]

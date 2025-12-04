@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://pool/spawner.gd" type="Script" id=1]
+[ext_resource path="res://letter/letter.tscn" type="PackedScene" id=2]
+
+[node name="Spawner" type="Node2D"]
+z_index = 5
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+_ScnLetter = ExtResource( 2 )
+
+[node name="TopLeft" type="Marker2D" parent="."]
+
+[node name="BottomRight" type="Marker2D" parent="."]
+position = Vector2( 953.181, 342.24 )

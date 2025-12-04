@@ -1,0 +1,1203 @@
+[gd_scene load_steps=62 format=2]
+
+[ext_resource path="res://pool/spelled_border_1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://pool/countdown.tscn" type="PackedScene" id=2]
+[ext_resource path="res://pool/pool.gd" type="Script" id=3]
+[ext_resource path="res://pool/snatched_border_0.tscn" type="PackedScene" id=4]
+[ext_resource path="res://pool/textures/background.png" type="Texture2D" id=5]
+[ext_resource path="res://pool/snatched_border_1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://pool/spelled_border_0.tscn" type="PackedScene" id=7]
+[ext_resource path="res://board/board.tscn" type="PackedScene" id=8]
+[ext_resource path="res://universal_texture/UI_button_green.png" type="Texture2D" id=9]
+[ext_resource path="res://pool/spawner.tscn" type="PackedScene" id=10]
+[ext_resource path="res://pool/picker.tscn" type="PackedScene" id=11]
+[ext_resource path="res://pool/win_lose/win_lose.tscn" type="PackedScene" id=12]
+[ext_resource path="res://pool/tiles_counter.tscn" type="PackedScene" id=13]
+[ext_resource path="res://pool/game_over_timer.gd" type="Script" id=14]
+[ext_resource path="res://pool/textures/UI_levelgoal_bg_alt.png" type="Texture2D" id=15]
+[ext_resource path="res://Animation/Assets_Result/Star.png" type="Texture2D" id=16]
+[ext_resource path="res://pool/level_review.gd" type="Script" id=17]
+[ext_resource path="res://fonts/Gretaros-Regular.ttf" type="FontFile" id=18]
+[ext_resource path="res://booster/booster_manager.tscn" type="PackedScene" id=19]
+[ext_resource path="res://pool/event_manager.tscn" type="PackedScene" id=20]
+[ext_resource path="res://board/board_opponent.tscn" type="PackedScene" id=21]
+[ext_resource path="res://pool/textures/UI_button_dropdown.png" type="Texture2D" id=22]
+[ext_resource path="res://Animation/Assets_ScoringAnimation/tx_shine2.png" type="Texture2D" id=23]
+[ext_resource path="res://universal_texture/UI_icon_dropdown_down.png" type="Texture2D" id=24]
+[ext_resource path="res://pool/textures/UI_panel_exit.png" type="Texture2D" id=25]
+[ext_resource path="res://universal_texture/UI_button_blue.png" type="Texture2D" id=26]
+[ext_resource path="res://universal_texture/UI_button_red.png" type="Texture2D" id=27]
+[ext_resource path="res://universal_texture/UI_icon_exit.png" type="Texture2D" id=28]
+[ext_resource path="res://universal_texture/UI_icon_sfx_on.png" type="Texture2D" id=29]
+[ext_resource path="res://universal_texture/UI_icon_music_on.png" type="Texture2D" id=30]
+[ext_resource path="res://universal_texture/UI_icon_music_off.png" type="Texture2D" id=31]
+[ext_resource path="res://universal_texture/UI_icon_sfx_off.png" type="Texture2D" id=32]
+[ext_resource path="res://universal_texture/UI_icon_dropdown_up.png" type="Texture2D" id=33]
+[ext_resource path="res://Animation/Assets_ScoringAnimation/Tx_AvaterFrame.png" type="Texture2D" id=37]
+[ext_resource path="res://Animation/Assets_ScoringAnimation/Tx_AvaterScoreFrame.png" type="Texture2D" id=38]
+[ext_resource path="res://Animation/Assets_Result/particle (113).png" type="Texture2D" id=40]
+
+[sub_resource type="FontFile" id=1]
+size = 32
+font_data = ExtResource( 18 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+draw_center = false
+border_width_left = 4
+border_width_top = 10
+border_width_right = 4
+border_width_bottom = 10
+border_color = Color( 1, 1, 1, 1 )
+border_blend = true
+anti_aliasing_size = 3.0
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 203.465, 1 )
+
+[sub_resource type="StyleBoxFlat" id=71]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="FontFile" id=72]
+size = 46
+use_filter = true
+font_data = ExtResource( 18 )
+
+[sub_resource type="FontFile" id=73]
+size = 40
+use_filter = true
+font_data = ExtResource( 18 )
+
+[sub_resource type="StyleBoxTexture" id=74]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 128, 128 )
+offset_left = 29.0798
+offset_right = 25.2338
+offset_top = 35.0238
+offset_bottom = 31.7657
+
+[sub_resource type="FontFile" id=75]
+size = 46
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+spacing_bottom = 5
+font_data = ExtResource( 18 )
+
+[sub_resource type="FontFile" id=19]
+size = 36
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 18 )
+
+[sub_resource type="StyleBoxTexture" id=76]
+texture = ExtResource( 22 )
+region_rect = Rect2( 0, 0, 77, 32 )
+offset_left = 10.0
+offset_right = 10.0
+offset_top = 10.0
+offset_bottom = 5.0
+
+[sub_resource type="FontFile" id=80]
+size = 18
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 18 )
+
+[sub_resource type="Animation" id=52]
+resource_name = "Scoring"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Scoring_Me/Score:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0.2, 0.3, 0.4, 0.6, 0.8 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 2, 2 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ), Vector2( 0.75, 0.75 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Scoring_Me/Score:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array( 0, 0.2, 0.8 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Scoring_Me/Score:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PackedFloat32Array( 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 101, 1547 ), Vector2( 101, 1547 ), Vector2( 147, 1450 ), Vector2( 220, 100 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Scoring_Me/Frame_Scoreboard:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PackedFloat32Array( 0, 0.8, 1.3 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Scoring_Me/Frame_Scoreboard:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PackedFloat32Array( 0.8, 1.3 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.53022, 1 ), Vector2( 3.31593, 2.37895 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Scoring_Me/Frame_Scoreboard:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PackedFloat32Array( 0.8, 1.3 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Scoring_Me/Frame_Avatar:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PackedFloat32Array( 0, 0.8, 1.3 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Scoring_Me/Frame_Avatar:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PackedFloat32Array( 0.8, 1.3 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Scoring_Me/Flash_Scoreboard:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PackedFloat32Array( 0.8 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Scoring_Me/Flash_Scoreboard:emitting")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PackedFloat32Array( 0.8, 1.3 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Scoring_Me/Sparkles_BurstWordsForm3:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PackedFloat32Array( 0.8 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Scoring_Me/Sparkles_BurstWordsForm3:emitting")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PackedFloat32Array( 0.8, 1.3 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=59]
+resource_name = "Scoring"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Scoring_Opponent/Score:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0.2, 0.3, 0.5, 0.6, 0.7 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 2, 2 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ), Vector2( 0.75, 0.75 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Scoring_Opponent/Score:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array( 0, 0.2, 0.7 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Scoring_Opponent/Score:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PackedFloat32Array( 0.2, 0.5, 0.7 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 101, 500 ), Vector2( 101, 500 ), Vector2( 700, 100 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Scoring_Opponent/Frame_Scoreboard:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PackedFloat32Array( 0, 0.7, 1.2 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Scoring_Opponent/Frame_Scoreboard:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PackedFloat32Array( 0.7, 1.2 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.53022, 1 ), Vector2( 3.31593, 2.37895 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Scoring_Opponent/Frame_Scoreboard:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PackedFloat32Array( 0.7, 1.2 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Scoring_Opponent/Frame_Avatar:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PackedFloat32Array( 0, 0.7, 1.2 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Scoring_Opponent/Frame_Avatar:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PackedFloat32Array( 0.7, 1.2 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Scoring_Opponent/Flash_Scoreboard:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PackedFloat32Array( 0.7 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Scoring_Opponent/Flash_Scoreboard:emitting")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PackedFloat32Array( 0.7, 1.2 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Scoring_Opponent/Sparkles_BurstWordsForm3:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PackedFloat32Array( 0.7 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Scoring_Opponent/Sparkles_BurstWordsForm3:emitting")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PackedFloat32Array( 0.7, 1.2 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="FontFile" id=53]
+size = 58
+use_filter = true
+font_data = ExtResource( 18 )
+
+[sub_resource type="CanvasItemMaterial" id=54]
+blend_mode = 1
+
+[sub_resource type="Gradient" id=55]
+offsets = PackedFloat32Array( 0, 0.651934, 1 )
+colors = PackedColorArray( 1, 1, 1, 0.0392157, 1, 1, 1, 0.529412, 1, 1, 1, 0.0392157 )
+
+[sub_resource type="CanvasItemMaterial" id=56]
+blend_mode = 1
+
+[sub_resource type="Curve" id=57]
+max_value = 200.0
+_data = [ Vector2( 0, 200 ), 0.0, 0.0, 0, 0, Vector2( 0.911765, 176.364 ), -69.5454, -69.5454, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=58]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.813726, 0.606364 ), -0.714343, -0.714343, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="FontFile" id=60]
+size = 58
+use_filter = true
+font_data = ExtResource( 18 )
+
+[sub_resource type="CanvasItemMaterial" id=61]
+blend_mode = 1
+
+[sub_resource type="Gradient" id=62]
+offsets = PackedFloat32Array( 0, 0.651934, 1 )
+colors = PackedColorArray( 1, 1, 1, 0.0392157, 1, 1, 1, 0.529412, 1, 1, 1, 0.0392157 )
+
+[sub_resource type="CanvasItemMaterial" id=63]
+blend_mode = 1
+
+[sub_resource type="Curve" id=64]
+max_value = 200.0
+_data = [ Vector2( 0, 200 ), 0.0, 0.0, 0, 0, Vector2( 0.911765, 176.364 ), -69.5454, -69.5454, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=65]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.813726, 0.606364 ), -0.714343, -0.714343, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[node name="Pool" type="Node2D"]
+position = Vector2( -1, 0 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+_disabled_toggle_panel = ExtResource( 27 )
+_enabled_toggle_panel = ExtResource( 9 )
+_disabled_bgm_icon = ExtResource( 31 )
+_enabled_bgm_icon = ExtResource( 30 )
+_disabled_sfx_icon = ExtResource( 32 )
+_enabled_sfx_icon = ExtResource( 29 )
+_dropdown_expanded = ExtResource( 24 )
+_dropdown_collapse = ExtResource( 33 )
+
+[node name="Borders" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SnatchedBorder0" parent="Borders" instance=ExtResource( 4 )]
+position = Vector2( 470.041, 1294 )
+
+[node name="SnatchedBorder1" parent="Borders" instance=ExtResource( 6 )]
+visible = true
+position = Vector2( 466, 630 )
+
+[node name="SpelledBorder0" parent="Borders" instance=ExtResource( 7 )]
+visible = true
+
+[node name="SpelledBorder1" parent="Borders" instance=ExtResource( 1 )]
+visible = true
+
+[node name="Spawner" parent="." instance=ExtResource( 10 )]
+position = Vector2( 0, -63 )
+
+[node name="TopLeft" parent="Spawner" index="0"]
+position = Vector2( 0, 850 )
+
+[node name="BottomRight" parent="Spawner" index="1"]
+position = Vector2( 950, 1200 )
+
+[node name="EventManager" parent="." instance=ExtResource( 20 )]
+
+[node name="BoosterManager" parent="." instance=ExtResource( 19 )]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="BoosterManager"]
+
+[node name="Control" type="Control" parent="BoosterManager/CanvasLayer"]
+visible = false
+anchor_top = 0.29541
+anchor_right = 1.0
+anchor_bottom = 0.574219
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Panel" type="Panel" parent="BoosterManager/CanvasLayer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="BoosterManager/CanvasLayer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -490.0
+theme_override_fonts/font = SubResource( 1 )
+text = "Booster Selection"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="BoosterManager/CanvasLayer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 102.0
+offset_bottom = -38.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Picker" parent="." instance=ExtResource( 11 )]
+
+[node name="BoardOpponent" parent="." instance=ExtResource( 21 )]
+who_am_i = 2
+
+[node name="BoardMe" parent="." instance=ExtResource( 8 )]
+position = Vector2( 0, 1206 )
+who_am_i = 1
+
+[node name="Center" type="PanelContainer" parent="."]
+self_modulate = Color( 0, 0, 0, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = 751.0
+offset_right = 984.0
+offset_bottom = 1175.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2( 518, 183 )
+clip_contents = true
+size_flags_horizontal = 15
+size_flags_vertical = 15
+theme_override_styles/panel = SubResource( 14 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="Center"]
+offset_left = 4.0
+offset_top = 10.0
+offset_right = 1020.0
+offset_bottom = 414.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2( 512, 187 )
+size_flags_horizontal = 15
+size_flags_vertical = 15
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Collision_Border_Left" type="StaticBody2D" parent="Center"]
+position = Vector2( 40.275, 212.4 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Center/Collision_Border_Left"]
+rotation = 1.57079
+shape = SubResource( 18 )
+one_way_collision = true
+
+[node name="Collision_Border_Right" type="StaticBody2D" parent="Center"]
+position = Vector2( 987.502, 212.4 )
+rotation = -3.14159
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Center/Collision_Border_Right"]
+rotation = 1.57079
+shape = SubResource( 18 )
+one_way_collision = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Countdown" parent="UI" instance=ExtResource( 2 )]
+visible = false
+
+[node name="DebugButton" type="Control" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Btn_SkipLevel" type="Button" parent="UI/DebugButton"]
+modulate = Color( 1, 1, 1, 0 )
+offset_left = 5.0
+offset_top = 8.0
+offset_right = 145.0
+offset_bottom = 143.0
+
+[node name="Btn_SkipStage" type="Button" parent="UI/DebugButton"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -144.0
+offset_top = 8.0
+offset_right = -4.0
+offset_bottom = 143.0
+
+[node name="WinLose" parent="UI" instance=ExtResource( 12 )]
+visible = false
+position = Vector2( -1, 0 )
+
+[node name="LevelReview" type="Control" parent="UI"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 17 )
+
+[node name="Backdrop" type="Panel" parent="UI/LevelReview"]
+self_modulate = Color( 1, 1, 1, 0.607843 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_styles/panel = SubResource( 71 )
+
+[node name="Panel" type="NinePatchRect" parent="UI/LevelReview"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -388.0
+offset_right = 600.0
+offset_bottom = 312.0
+texture = ExtResource( 15 )
+patch_margin_top = 145
+patch_margin_bottom = 59
+
+[node name="Header_Level" type="Label" parent="UI/LevelReview/Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -223.0
+offset_right = 232.0
+offset_bottom = 105.0
+theme_override_fonts/font = SubResource( 72 )
+text = "LEVEL ??"
+align = 1
+valign = 1
+
+[node name="Requirement_1_Star" type="Label" parent="UI/LevelReview/Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.0
+offset_top = 172.0
+offset_right = 409.0
+offset_bottom = 269.0
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 73 )
+text = "Score more than x  points"
+valign = 1
+autowrap = true
+
+[node name="Requirement_2_Star" type="Label" parent="UI/LevelReview/Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.0
+offset_top = 297.0
+offset_right = 409.0
+offset_bottom = 394.0
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 73 )
+text = "Form a 5-letter word"
+valign = 1
+autowrap = true
+
+[node name="Requirement_3_Star" type="Label" parent="UI/LevelReview/Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.0
+offset_top = 425.0
+offset_right = 446.0
+offset_bottom = 522.0
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 73 )
+text = "Steal an opponents word"
+valign = 1
+autowrap = true
+
+[node name="1_Star_Indicator" type="HBoxContainer" parent="UI/LevelReview/Panel"]
+offset_left = 186.257
+offset_top = 155.159
+offset_right = 306.257
+offset_bottom = 275.159
+theme_override_constants/separation = -20
+
+[node name="1Star" type="TextureRect" parent="UI/LevelReview/Panel/1_Star_Indicator"]
+offset_right = 115.0
+offset_bottom = 120.0
+custom_minimum_size = Vector2( 115, 115 )
+texture = ExtResource( 16 )
+expand = true
+stretch_mode = 6
+
+[node name="2Star" type="TextureRect" parent="UI/LevelReview/Panel/1_Star_Indicator"]
+visible = false
+offset_left = 95.0
+offset_right = 210.0
+offset_bottom = 120.0
+custom_minimum_size = Vector2( 115, 115 )
+texture = ExtResource( 16 )
+expand = true
+stretch_mode = 6
+
+[node name="3Star" type="TextureRect" parent="UI/LevelReview/Panel/1_Star_Indicator"]
+visible = false
+offset_left = 95.0
+offset_right = 210.0
+offset_bottom = 120.0
+custom_minimum_size = Vector2( 115, 115 )
+texture = ExtResource( 16 )
+expand = true
+stretch_mode = 6
+
+[node name="2_Star_Indicator" type="HBoxContainer" parent="UI/LevelReview/Panel"]
+offset_left = 186.257
+offset_top = 286.159
+offset_right = 306.257
+offset_bottom = 406.159
+theme_override_constants/separation = -20
+
+[node name="1Star" type="TextureRect" parent="UI/LevelReview/Panel/2_Star_Indicator"]
+offset_right = 115.0
+offset_bottom = 120.0
+custom_minimum_size = Vector2( 115, 115 )
+texture = ExtResource( 16 )
+expand = true
+stretch_mode = 6
+
+[node name="2Star" type="TextureRect" parent="UI/LevelReview/Panel/2_Star_Indicator"]
+offset_left = 95.0
+offset_right = 210.0
+offset_bottom = 120.0
+custom_minimum_size = Vector2( 115, 115 )
+texture = ExtResource( 16 )
+expand = true
+stretch_mode = 6
+
+[node name="3Star" type="TextureRect" parent="UI/LevelReview/Panel/2_Star_Indicator"]
+visible = false
+offset_left = 95.0
+offset_right = 210.0
+offset_bottom = 120.0
+custom_minimum_size = Vector2( 115, 115 )
+texture = ExtResource( 16 )
+expand = true
+stretch_mode = 6
+
+[node name="3_Star_Indicator" type="HBoxContainer" parent="UI/LevelReview/Panel"]
+offset_left = 186.257
+offset_top = 413.159
+offset_right = 396.257
+offset_bottom = 533.159
+theme_override_constants/separation = -20
+
+[node name="1Star" type="TextureRect" parent="UI/LevelReview/Panel/3_Star_Indicator"]
+offset_right = 115.0
+offset_bottom = 120.0
+custom_minimum_size = Vector2( 115, 115 )
+texture = ExtResource( 16 )
+expand = true
+stretch_mode = 6
+
+[node name="2Star" type="TextureRect" parent="UI/LevelReview/Panel/3_Star_Indicator"]
+offset_left = 95.0
+offset_right = 210.0
+offset_bottom = 120.0
+custom_minimum_size = Vector2( 115, 115 )
+texture = ExtResource( 16 )
+expand = true
+stretch_mode = 6
+
+[node name="3Star" type="TextureRect" parent="UI/LevelReview/Panel/3_Star_Indicator"]
+offset_left = 190.0
+offset_right = 305.0
+offset_bottom = 120.0
+custom_minimum_size = Vector2( 115, 115 )
+texture = ExtResource( 16 )
+expand = true
+stretch_mode = 6
+
+[node name="Btn_Start_Level" type="Button" parent="UI/LevelReview/Panel"]
+offset_left = 423.0
+offset_top = 577.0
+offset_right = 758.0
+offset_bottom = 685.0
+theme_override_styles/hover = SubResource( 74 )
+theme_override_styles/pressed = SubResource( 74 )
+theme_override_styles/focus = SubResource( 74 )
+theme_override_styles/disabled = SubResource( 74 )
+theme_override_styles/normal = SubResource( 74 )
+
+[node name="Label" type="Label" parent="UI/LevelReview/Panel/Btn_Start_Level"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_fonts/font = SubResource( 75 )
+text = "START"
+align = 1
+valign = 1
+
+[node name="Level" type="Label" parent="."]
+offset_left = 379.0
+offset_top = 6.0
+offset_right = 558.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_minimum_size = Vector2( 0, 54 )
+size_flags_horizontal = 7
+size_flags_vertical = 7
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 19 )
+text = "LEVEL ??"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="TilesCounter" parent="." instance=ExtResource( 13 )]
+modulate = Color( 1, 1, 1, 1 )
+offset_left = 375.0
+offset_top = 63.0
+offset_right = 561.0
+offset_bottom = 98.0
+pivot_offset = Vector2( 93, 17 )
+
+[node name="Btn_DropdownMenu" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 418.0
+offset_top = 103.0
+offset_right = 519.0
+offset_bottom = 136.0
+theme_override_styles/hover = SubResource( 76 )
+theme_override_styles/pressed = SubResource( 76 )
+theme_override_styles/focus = SubResource( 76 )
+theme_override_styles/disabled = SubResource( 76 )
+theme_override_styles/normal = SubResource( 76 )
+
+[node name="TextureRect" type="TextureRect" parent="Btn_DropdownMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.5
+offset_top = -10.0
+offset_right = 50.5
+offset_bottom = 6.0
+texture = ExtResource( 24 )
+stretch_mode = 6
+
+[node name="Panel_Dropdown" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 334.0
+offset_top = 162.0
+offset_right = 604.0
+offset_bottom = 264.0
+clip_contents = true
+mouse_filter = 2
+
+[node name="Backdrop" type="TextureRect" parent="Panel_Dropdown"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -141.0
+offset_top = -120.0
+offset_right = 141.0
+texture = ExtResource( 25 )
+expand = true
+
+[node name="Btn_Toggle_BGM" type="Button" parent="Panel_Dropdown/Backdrop"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = -46.841
+offset_right = -48.0
+offset_bottom = 28.159
+
+[node name="Panel" type="NinePatchRect" parent="Panel_Dropdown/Backdrop/Btn_Toggle_BGM"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 9 )
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+
+[node name="Icon" type="TextureRect" parent="Panel_Dropdown/Backdrop/Btn_Toggle_BGM"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -33.5
+offset_right = 36.0
+offset_bottom = 8.5
+mouse_filter = 2
+texture = ExtResource( 30 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Panel_Dropdown/Backdrop/Btn_Toggle_BGM"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = 4.5
+offset_right = 39.0
+offset_bottom = 28.5
+theme_override_fonts/font = SubResource( 80 )
+text = "BGM"
+align = 1
+valign = 1
+
+[node name="Btn_Toggle_SFX" type="Button" parent="Panel_Dropdown/Backdrop"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -47.0
+offset_right = 39.0
+offset_bottom = 28.0
+
+[node name="Panel" type="NinePatchRect" parent="Panel_Dropdown/Backdrop/Btn_Toggle_SFX"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 9 )
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+
+[node name="Icon" type="TextureRect" parent="Panel_Dropdown/Backdrop/Btn_Toggle_SFX"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -33.5
+offset_right = 36.0
+offset_bottom = 8.5
+mouse_filter = 2
+texture = ExtResource( 29 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Panel_Dropdown/Backdrop/Btn_Toggle_SFX"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = 4.5
+offset_right = 39.0
+offset_bottom = 28.5
+theme_override_fonts/font = SubResource( 80 )
+text = "SFX"
+align = 1
+valign = 1
+
+[node name="Btn_Return_Home" type="Button" parent="Panel_Dropdown/Backdrop"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 48.0
+offset_top = -46.0
+offset_right = 126.0
+offset_bottom = 29.0
+
+[node name="Panel" type="NinePatchRect" parent="Panel_Dropdown/Backdrop/Btn_Return_Home"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 26 )
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+
+[node name="Icon" type="TextureRect" parent="Panel_Dropdown/Backdrop/Btn_Return_Home"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -33.5
+offset_right = 36.0
+offset_bottom = 25.5
+mouse_filter = 2
+texture = ExtResource( 28 )
+expand = true
+stretch_mode = 6
+
+[node name="GameOverTimer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+script = ExtResource( 14 )
+
+[node name="ShowTicksGameOverTimer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Scoring = SubResource( 52 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+anims/Scoring = SubResource( 59 )
+
+[node name="Scoring_Me" type="Sprite2D" parent="."]
+
+[node name="Score" type="Label" parent="Scoring_Me"]
+visible = false
+offset_left = 101.0
+offset_top = 1547.0
+offset_right = 139.001
+offset_bottom = 1616.0
+scale = Vector2( 1e-05, 1e-05 )
+pivot_offset = Vector2( 5, 20 )
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_colors/font_outline_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 53 )
+text = "5"
+align = 1
+valign = 1
+
+[node name="Frame_Avatar" type="Sprite2D" parent="Scoring_Me"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 74, 80.5 )
+scale = Vector2( 1.7037, 1.59231 )
+texture = ExtResource( 37 )
+
+[node name="Frame_Scoreboard" type="Sprite2D" parent="Scoring_Me"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 238.25, 105 )
+scale = Vector2( 3.31593, 2.37895 )
+texture = ExtResource( 38 )
+
+[node name="Flash_Scoreboard" type="CPUParticles2D" parent="Scoring_Me"]
+material = SubResource( 54 )
+position = Vector2( 239, 96 )
+emitting = false
+amount = 1
+lifetime = 0.5
+one_shot = true
+texture = ExtResource( 40 )
+gravity = Vector2( 0, 0 )
+angular_velocity = 30.97
+angular_velocity_random = 1.0
+scale_amount = 3.0
+color_ramp = SubResource( 55 )
+
+[node name="Sparkles_BurstWordsForm3" type="CPUParticles2D" parent="Scoring_Me"]
+material = SubResource( 56 )
+position = Vector2( 235, 104 )
+emitting = false
+amount = 20
+one_shot = true
+speed_scale = 2.5
+explosiveness = 0.5
+randomness = 1.0
+texture = ExtResource( 23 )
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2( 0, 0 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 400.0
+damping = 100.0
+damping_random = 0.21
+damping_curve = SubResource( 57 )
+scale_amount = 0.5
+scale_amount_curve = SubResource( 58 )
+
+[node name="Scoring_Opponent" type="Sprite2D" parent="."]
+
+[node name="Score" type="Label" parent="Scoring_Opponent"]
+visible = false
+offset_left = 700.0
+offset_top = 100.0
+offset_right = 738.001
+offset_bottom = 169.0
+scale = Vector2( 0.75, 0.75 )
+pivot_offset = Vector2( 5, 20 )
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_colors/font_outline_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 60 )
+text = "5"
+align = 1
+valign = 1
+
+[node name="Frame_Avatar" type="Sprite2D" parent="Scoring_Opponent"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 873, 81.5 )
+scale = Vector2( 1.7037, 1.59231 )
+texture = ExtResource( 37 )
+
+[node name="Frame_Scoreboard" type="Sprite2D" parent="Scoring_Opponent"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 713.25, 108 )
+scale = Vector2( 3.31593, 2.37895 )
+texture = ExtResource( 38 )
+
+[node name="Flash_Scoreboard" type="CPUParticles2D" parent="Scoring_Opponent"]
+material = SubResource( 61 )
+position = Vector2( 714, 99 )
+emitting = false
+amount = 1
+lifetime = 0.5
+one_shot = true
+texture = ExtResource( 40 )
+gravity = Vector2( 0, 0 )
+angular_velocity = 30.97
+angular_velocity_random = 1.0
+scale_amount = 3.0
+color_ramp = SubResource( 62 )
+
+[node name="Sparkles_BurstWordsForm3" type="CPUParticles2D" parent="Scoring_Opponent"]
+material = SubResource( 63 )
+position = Vector2( 710, 107 )
+emitting = false
+amount = 20
+one_shot = true
+speed_scale = 2.5
+explosiveness = 0.5
+randomness = 1.0
+texture = ExtResource( 23 )
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2( 0, 0 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 400.0
+damping = 100.0
+damping_random = 0.21
+damping_curve = SubResource( 64 )
+scale_amount = 0.5
+scale_amount_curve = SubResource( 65 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="letter_spawned" from="." to="TilesCounter" method="_on_Pool_letter_spawned"]
+[connection signal="result_announced" from="." to="UI/WinLose" method="_on_Pool_result_announced"]
+[connection signal="commands_finished" from="Spawner" to="." method="_on_Spawner_commands_finished"]
+[connection signal="letter_spawned" from="Spawner" to="." method="_on_Spawner_letter_spawned"]
+[connection signal="start_stage" from="EventManager" to="." method="_start_stage"]
+[connection signal="command_succeeded" from="Picker" to="." method="_on_Picker_command_succeeded"]
+[connection signal="letters_snatched" from="BoardOpponent" to="." method="_on_letters_snatched"]
+[connection signal="points_updated" from="BoardOpponent" to="." method="_on_points_updated"]
+[connection signal="booster_used" from="BoardMe" to="BoosterManager" method="_on_BoardMe_booster_used"]
+[connection signal="letters_snatched" from="BoardMe" to="." method="_on_letters_snatched"]
+[connection signal="points_updated" from="BoardMe" to="." method="_on_points_updated"]
+[connection signal="pressed" from="UI/DebugButton/Btn_SkipLevel" to="." method="_on_Btn_SkipLevel_pressed"]
+[connection signal="pressed" from="UI/DebugButton/Btn_SkipStage" to="." method="_on_Btn_SkipStage_pressed"]
+[connection signal="pressed" from="UI/LevelReview/Panel/Btn_Start_Level" to="." method="_on_Btn_Start_Level_pressed"]
+[connection signal="pressed" from="Btn_DropdownMenu" to="." method="_on_Btn_DropdownMenu_pressed"]
+[connection signal="pressed" from="Panel_Dropdown/Backdrop/Btn_Toggle_BGM" to="." method="_on_Btn_Toggle_BGM_pressed"]
+[connection signal="pressed" from="Panel_Dropdown/Backdrop/Btn_Toggle_SFX" to="." method="_on_Btn_Toggle_SFX_pressed"]
+[connection signal="pressed" from="Panel_Dropdown/Backdrop/Btn_Return_Home" to="." method="_on_Btn_Return_Home_pressed"]
+[connection signal="game_over" from="GameOverTimer" to="." method="_on_GameOverTimer_game_over"]
+[connection signal="result_announced" from="GameOverTimer" to="." method="_on_GameOverTimer_result_announced"]
+[connection signal="timeout" from="GameOverTimer" to="GameOverTimer" method="_on_GameOverTimer_timeout"]
+[connection signal="timeout" from="ShowTicksGameOverTimer" to="." method="_on_ShowTicksGameOverTimer_timeout"]
+
+[editable path="Spawner"]
+[editable path="UI/WinLose"]

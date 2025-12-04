@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://mobile/bytebrew.gd" type="Script" id=1]
+
+[node name="ByteBrew" type="Node"]
+script = ExtResource( 1 )

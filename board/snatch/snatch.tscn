@@ -1,0 +1,169 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://board/snatch/snatch.gd" type="Script" id=2]
+[ext_resource path="res://board/snatch/textures/redresetbuttonpressed.png" type="Texture2D" id=4]
+[ext_resource path="res://board/snatch/textures/redresetbutton.png" type="Texture2D" id=5]
+[ext_resource path="res://fonts/Gretaros-Regular.ttf" type="FontFile" id=6]
+[ext_resource path="res://universal_texture/UI_button_grey.png" type="Texture2D" id=7]
+[ext_resource path="res://universal_texture/UI_button_green.png" type="Texture2D" id=8]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 384, 122 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 384, 122 )
+
+[sub_resource type="FontFile" id=3]
+size = 40
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="FontFile" id=5]
+size = 24
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="Animation" id=4]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0, 0.1 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array( 0, 0.1, 0.2, 0.3 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1.05, 1.05 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PackedFloat32Array( 0, 0.3 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+
+[node name="Snatch" type="Button"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -161.0
+offset_top = -122.0
+offset_right = 201.0
+offset_bottom = -25.0
+custom_minimum_size = Vector2( 362, 89 )
+pivot_offset = Vector2( 184.954, 38.9501 )
+theme_override_styles/hover = SubResource( 1 )
+theme_override_styles/pressed = SubResource( 2 )
+theme_override_styles/disabled = SubResource( 1 )
+theme_override_styles/normal = SubResource( 1 )
+expand_icon = true
+script = ExtResource( 2 )
+
+[node name="Invalid" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = -3.0
+offset_right = -7.0
+offset_bottom = -4.0
+texture = ExtResource( 7 )
+patch_margin_left = 33
+patch_margin_top = 28
+patch_margin_right = 27
+patch_margin_bottom = 35
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Invalid"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -11.0
+theme_override_fonts/font = SubResource( 3 )
+text = "INVALID"
+align = 1
+valign = 1
+
+[node name="Snatch" type="NinePatchRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = -9.0
+offset_right = -7.0
+offset_bottom = -10.0
+texture = ExtResource( 8 )
+patch_margin_left = 33
+patch_margin_top = 28
+patch_margin_right = 27
+patch_margin_bottom = 35
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Snatch"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -73.0
+offset_bottom = -11.0
+theme_override_fonts/font = SubResource( 3 )
+text = "snatch"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Points" type="NinePatchRect" parent="Snatch"]
+self_modulate = Color( 0, 0, 0, 0.588235 )
+offset_left = 239.0
+offset_top = 29.0
+offset_right = 322.0
+offset_bottom = 68.0
+texture = ExtResource( 8 )
+patch_margin_left = 24
+patch_margin_top = 34
+patch_margin_right = 24
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Snatch/Points"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_fonts/font = SubResource( 5 )
+text = "+??"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimSnatch" type="AnimationPlayer" parent="."]
+anims/show = SubResource( 4 )

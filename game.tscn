@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://game.gd" type="Script" id=2]
+[ext_resource path="res://pool/pool.tscn" type="PackedScene" id=3]
+[ext_resource path="res://commander/commander.tscn" type="PackedScene" id=4]
+[ext_resource path="res://login/login.tscn" type="PackedScene" id=5]
+[ext_resource path="res://tutorial/tutorial.tscn" type="PackedScene" id=6]
+[ext_resource path="res://home/home_new.tscn" type="PackedScene" id=9]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Home_New" parent="." instance=ExtResource( 9 )]
+visible = false
+
+[node name="Pool" parent="." instance=ExtResource( 3 )]
+visible = false
+
+[node name="Commander" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[node name="Tutorial" parent="." instance=ExtResource( 6 )]
+
+[node name="Login" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[connection signal="custom_game_started" from="Home_New" to="." method="_on_Home_custom_game_started"]
+[connection signal="game_started" from="Home_New" to="." method="_on_Home_game_started"]
+[connection signal="visibility_changed" from="Home_New" to="." method="_on_Home_visibility_changed"]
+[connection signal="letter_spawned" from="Pool" to="." method="_on_Pool_letter_spawned"]
+[connection signal="letters_snatched" from="Pool" to="." method="_on_Pool_letters_snatched"]
+[connection signal="picker_command_succeeded" from="Pool" to="." method="_on_Pool_picker_command_succeeded"]
+[connection signal="pool_finished" from="Pool" to="." method="_on_Pool_pool_finished"]
+[connection signal="pool_started" from="Pool" to="." method="_on_Pool_pool_started"]
+[connection signal="result_announced" from="Pool" to="." method="_on_Pool_result_announced"]
+[connection signal="ai_level_set" from="Commander" to="." method="_on_Commander_ai_level_set"]
+[connection signal="command_issued" from="Commander" to="." method="_on_Commander_command_issued"]
+[connection signal="spawn_command" from="Commander" to="." method="_on_Commander_spawn_command"]
+[connection signal="login_checked" from="Login" to="." method="_on_Login_login_checked"]

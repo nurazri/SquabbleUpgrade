@@ -1,0 +1,1439 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://fonts/Gretaros-Regular.ttf" type="FontFile" id=1]
+[ext_resource path="res://tutorial/textures/tutorial_profile_drinktea_annoy.png" type="Texture2D" id=2]
+[ext_resource path="res://tutorial/textures/tutorial_chatbox.png" type="Texture2D" id=3]
+[ext_resource path="res://tutorial/textures/tutorial_profile_drinktea.png" type="Texture2D" id=4]
+[ext_resource path="res://tutorial/textures/tutorial_icon_stun.png" type="Texture2D" id=5]
+[ext_resource path="res://tutorial/textures/tutorial_profile_drinktea_stun.png" type="Texture2D" id=6]
+[ext_resource path="res://tutorial/textures/tutorial_profile_background.png" type="Texture2D" id=7]
+[ext_resource path="res://tutorial/textures/tutorial_profile_background_border.png" type="Texture2D" id=8]
+[ext_resource path="res://tutorial/textures/tutorial_profile_drinktea_lookatyou.png" type="Texture2D" id=9]
+[ext_resource path="res://tutorial/tutorial.gd" type="Script" id=10]
+[ext_resource path="res://tutorial/textures/tutorial_normal.png" type="Texture2D" id=11]
+[ext_resource path="res://tutorial/textures/arrow.png" type="Texture2D" id=12]
+[ext_resource path="res://tutorial/textures/tutorial_icon_annoy.png" type="Texture2D" id=13]
+[ext_resource path="res://tutorial/textures/tutorial_normal_small.png" type="Texture2D" id=14]
+[ext_resource path="res://tutorial/textures/tutorial_panel.png" type="Texture2D" id=15]
+[ext_resource path="res://tutorial/textures/tutorial_yousee.png" type="Texture2D" id=16]
+[ext_resource path="res://tutorial/intro_layer.gd" type="Script" id=17]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.588235 )
+
+[sub_resource type="FontFile" id=2]
+size = 48
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="FontFile" id=3]
+size = 24
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="FontFile" id=4]
+size = 48
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="FontFile" id=5]
+size = 48
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=6]
+length = 14.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AvatarBackground/Avatar:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0, 3.8, 4.5, 7.1, 10.3, 10.5 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 14 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AvatarBackground/Avatar:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array( 0, 2.1, 2.3, 3.3, 3.8, 4, 4.1, 4.2, 4.5, 4.6, 4.7, 4.8, 6.9, 7, 7.1, 7.2, 7.3, 10.3, 10.5, 10.6, 11, 11.1, 11.4, 11.7, 11.9, 12.2, 12.4, 13, 14 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 20, 40 ), Vector2( 22, 40 ), Vector2( 24, 40 ), Vector2( 24, 40 ), Vector2( 26, 40 ), Vector2( 22, 41 ), Vector2( 26, 40 ), Vector2( 24, 40 ), Vector2( 28, 40 ), Vector2( 30, 41 ), Vector2( 21, 40 ), Vector2( 20, 41 ), Vector2( 24, 41 ), Vector2( 20, 41 ), Vector2( 20, 41 ), Vector2( 23, 40 ), Vector2( 26, 41 ), Vector2( 23, 40 ), Vector2( 22, 31 ), Vector2( 20, 30 ), Vector2( 7, 33 ), Vector2( 3.99999, 33.9748 ), Vector2( -12, 35 ), Vector2( -40, 33 ), Vector2( -55, 31 ), Vector2( -126, 36 ), Vector2( -167, 35 ), Vector2( -367, 40 ), Vector2( -669, 36 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AvatarBackground/Avatar:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PackedFloat32Array( 0, 2.1, 2.3, 3.3, 3.8, 4, 4.2, 4.5, 4.6, 4.7, 4.8, 6.9, 7, 7.1, 7.2, 7.3 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1.05 ), Vector2( 1, 1 ), Vector2( 1, 1.05 ), Vector2( 1, 1 ), Vector2( 1, 1.05 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1.1 ), Vector2( 1, 0.9 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ), Vector2( 0.9, 0.9 ), Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Speech:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PackedFloat32Array( 0, 4.5, 6.9, 7.5 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Speech:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PackedFloat32Array( 0, 4.5, 4.6, 4.8, 6.2, 7.1, 7.2, 7.3, 7.5 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.9, 0.9 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Speech/WHAT:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PackedFloat32Array( 0, 4.5, 6.9 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Speech/ANOTHER:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PackedFloat32Array( 0, 4.5, 4.8, 6.9 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Speech/ANOTHER:percent_visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PackedFloat32Array( 0, 4.8, 5.9 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Exclamation:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PackedFloat32Array( 0, 4.5, 6.8 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Exclamation:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PackedFloat32Array( 0, 4.5, 4.6, 4.8, 5, 5.3, 5.8, 6, 6.3 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Exclamation:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PackedFloat32Array( 0, 4.5, 4.6, 4.8, 5, 5.3, 5.8, 6, 6.3 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 2.0, -2.0, 2.0, 1.0, -2.0, 2.0, 1.0 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Speech:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PackedFloat32Array( 0, 10.4 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Speech/HOWMANYTIMES:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PackedFloat32Array( 0, 7.5, 10.4 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Speech/HOWMANYTIMES:percent_visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PackedFloat32Array( 7.5, 9.1 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Grrrr:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PackedFloat32Array( 0, 7.3, 7.9, 8.3, 8.9, 10.4 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, true, true, false ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Grrrr:rotation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PackedFloat32Array( 0, 7.3, 7.4, 7.5, 7.6, 7.7, 7.9, 8, 8.2, 8.3, 8.5, 8.6, 8.7, 8.8, 8.9, 9, 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 10, 10.1, 10.3, 10.4 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 5.0, 9.0, -5.0, -9.0, 0.0, 9.0, -5.0, -9.0, 9.0, 5.0, -9.0, -9.0, 0.0, 5.0, 9.0, -5.0, -5.0, 0.0, 5.0, 9.0, -5.0, -9.0, 5.0, -9.0, 0.0, 5.0 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Grrrr:scale")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PackedFloat32Array( 0, 7.3 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("BigAvatar:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PackedFloat32Array( 0, 13.2 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("BigAvatar:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PackedFloat32Array( 0, 13.2, 14 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1520, 1185 ), Vector2( 1520, 1185 ), Vector2( 406, 800 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Dialog:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PackedFloat32Array( 0, 13.2 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Dialog:scale")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PackedFloat32Array( 0, 13.2, 13.7 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1e-05, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Dialog/DialogText:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PackedFloat32Array( 0, 4.5, 14 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Dialog/DialogText:percent_visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PackedFloat32Array( 14 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Dialog/DialogText:text")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PackedFloat32Array( 0, 14 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 1,
+"values": [ "OK NEWBIE, WELCOME TO SQUABBLE.", "OK NEWBIE, WELCOME TO SQUABBLE." ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("BigAvatar:texture")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PackedFloat32Array( 13.2 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ) ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("Dialog/Yes:visible")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = false
+tracks/25/keys = {
+"times": PackedFloat32Array( 0, 14 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Dialog/Arrow:visible")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PackedFloat32Array( 0, 14 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("Dialog/Arrow:modulate")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PackedFloat32Array( 0, 14 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("AvatarBackground/Avatar:flip_h")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PackedFloat32Array( 0, 14 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("BigAvatar:flip_h")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("Speech/ANOTHER:text")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"times": PackedFloat32Array( 4.5 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ "ANOTHER NEW PLAYER?" ]
+}
+tracks/31/type = "value"
+tracks/31/path = NodePath("AvatarBackgroundBorder:visible")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/32/type = "value"
+tracks/32/path = NodePath("AvatarBackground:visible")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dialog/DialogText:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0, 0.5 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dialog/DialogText:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ "OK NEWBIE, WELCOME TO SQUABBLE." ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BigAvatar:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Dialog:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Dialog:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("BigAvatar:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ Vector2( 406, 800 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Dialog:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ Vector2( -59, 1400 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("BigAvatar:texture")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("BigAvatar:flip_h")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Dialog/Arrow:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PackedFloat32Array( 0, 0.5 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Dialog/Arrow:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PackedFloat32Array( 0, 0.5 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Dialog/DialogText:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("AvatarBackground/Avatar:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PackedFloat32Array( 0, 0.5 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -669, 36 ), Vector2( -669, 36 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dialog/DialogText:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0, 0.5 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dialog/DialogText:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ "A WORD GAME LIKE NO OTHER." ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BigAvatar:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Dialog:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Dialog:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("BigAvatar:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ Vector2( 406, 800 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Dialog:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ Vector2( -59, 1400 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("BigAvatar:texture")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ ExtResource( 16 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("BigAvatar:flip_h")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Dialog/Arrow:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PackedFloat32Array( 0, 0.5 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Dialog/Arrow:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PackedFloat32Array( 0, 0.5 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Dialog/DialogText:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("AvatarBackground/Avatar:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PackedFloat32Array( 0, 0.5 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -669, 36 ), Vector2( -669, 36 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dialog/DialogText:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0, 0.5 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dialog/DialogText:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ "I'LL GUIDE YOU THROUGH IT, SO PAY ATTENTION" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BigAvatar:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Dialog:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Dialog:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("BigAvatar:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ Vector2( 406, 800 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Dialog:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ Vector2( -59, 1400 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("BigAvatar:texture")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("BigAvatar:flip_h")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Dialog/Arrow:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PackedFloat32Array( 0, 0.5 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Dialog/Arrow:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PackedFloat32Array( 0, 0.5 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Dialog/DialogText:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("AvatarBackground/Avatar:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PackedFloat32Array( 0, 0.5 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -669, 36 ), Vector2( -669, 36 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dialog/DialogText:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0, 0.3, 0.7 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Dialog/DialogText:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ "" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BigAvatar:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Dialog:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Dialog:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PackedFloat32Array( 0, 0.3, 0.7 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1e-05, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("BigAvatar:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PackedFloat32Array( 0, 0.7 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 406, 800 ), Vector2( 1240, 811 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Dialog:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PackedFloat32Array( 0, 0.3 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -59, 1400 ), Vector2( -59, 1400 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("BigAvatar:texture")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Dialog/Yes:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PackedFloat32Array( 0, 0.7 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Dialog/Yes:percent_visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PackedFloat32Array( 0, 0.3, 0.7 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Dialog/Yes:text")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 1,
+"values": [ "" ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("BigAvatar:flip_h")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PackedFloat32Array( 0, 0.1 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Dialog/DialogText:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PackedFloat32Array( 0, 3 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 1,
+"values": [ false, false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Dialog/Arrow:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PackedFloat32Array( 0, 0.7 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Dialog/Arrow:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PackedFloat32Array( 0, 0.4 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("AvatarBackground/Avatar:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PackedFloat32Array( 0, 1.9, 3 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 760, 28 ), Vector2( 201, 30 ), Vector2( 37, 31 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("../../CanvasModulate:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PackedFloat32Array( 0, 3 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[node name="Tutorial" type="Node2D"]
+visible = false
+script = ExtResource( 10 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.662745, 0.356863, 0.356863, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="IntroLayer" type="CanvasLayer" parent="."]
+layer = 2
+follow_viewport_enabled = true
+script = ExtResource( 17 )
+
+[node name="IntroUI" type="Control" parent="IntroLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 15
+size_flags_vertical = 15
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="IntroLayer/IntroUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_styles/panel = SubResource( 1 )
+
+[node name="AvatarBackgroundBorder" type="TextureRect" parent="IntroLayer/IntroUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 290.881
+offset_top = 918.962
+offset_right = -297.119
+offset_bottom = -771.04
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2( 182.699, 169.069 )
+clip_contents = true
+texture = ExtResource( 8 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AvatarBackground" type="TextureRect" parent="IntroLayer/IntroUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 290.881
+offset_top = 918.962
+offset_right = -297.119
+offset_bottom = -771.04
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2( 182.699, 169.069 )
+clip_contents = true
+texture = ExtResource( 7 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Avatar" type="TextureRect" parent="IntroLayer/IntroUI/AvatarBackground"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 40.0
+offset_right = -39.9988
+offset_bottom = -19.998
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2( 162.811, 292.353 )
+clip_contents = true
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exclamation" type="TextureRect" parent="IntroLayer/IntroUI"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 281.061
+offset_top = 918.959
+offset_right = -536.939
+offset_bottom = -1001.04
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2( 92, 96 )
+texture = ExtResource( 5 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Grrrr" type="TextureRect" parent="IntroLayer/IntroUI"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 281.061
+offset_top = 925.959
+offset_right = -536.939
+offset_bottom = -994.04
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2( 92, 96 )
+texture = ExtResource( 13 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speech" type="TextureRect" parent="IntroLayer/IntroUI"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 534.308
+offset_top = 815.005
+offset_right = -29.6923
+offset_bottom = -975.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2( 100, 210 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="WHAT" type="Label" parent="IntroLayer/IntroUI/Speech"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 89.5867
+offset_top = 60.3559
+offset_right = -88.4133
+offset_bottom = -133.644
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 15
+size_flags_vertical = 15
+theme_override_colors/font_color = Color( 0.501213, 0.0281677, 0.554688, 1 )
+theme_override_fonts/font = SubResource( 2 )
+text = "WHAT?!"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ANOTHER" type="RichTextLabel" parent="IntroLayer/IntroUI/Speech"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 36.0
+offset_top = 121.0
+offset_right = -23.0
+offset_bottom = -92.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 15
+size_flags_vertical = 15
+theme_override_colors/default_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/normal_font = SubResource( 3 )
+visible_characters = 0
+percent_visible = 0.0
+text = "ANOTHER NEW PLAYER?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HOWMANYTIMES" type="RichTextLabel" parent="IntroLayer/IntroUI/Speech"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 23.1189
+offset_top = 85.0
+offset_right = -22.8811
+offset_bottom = -97.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 15
+size_flags_vertical = 15
+theme_override_colors/default_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+text = "[center] HOW MANY TIMES DO I HAVE TO DO THIS? [/center]"
+text = " HOW MANY TIMES DO I HAVE TO DO THIS? "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BigAvatar" type="TextureRect" parent="IntroLayer/IntroUI"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1520.0
+offset_top = 1185.0
+offset_right = 1153.0
+offset_bottom = -149.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2( 182.699, 169.069 )
+clip_contents = true
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dialog" type="TextureRect" parent="IntroLayer/IntroUI"]
+visible = false
+offset_left = -59.0
+offset_top = 1400.0
+offset_right = 996.0
+offset_bottom = 1839.0
+pivot_offset = Vector2( 537.666, 234.937 )
+texture = ExtResource( 15 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Arrow" type="TextureRect" parent="IntroLayer/IntroUI/Dialog"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 926.401
+offset_top = 276.556
+offset_right = -78.5991
+offset_bottom = -104.444
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2( 20.9899, 27.3916 )
+clip_contents = true
+texture = ExtResource( 12 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogText" type="RichTextLabel" parent="IntroLayer/IntroUI/Dialog"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.357
+offset_top = 108.762
+offset_right = -80.6432
+offset_bottom = -214.238
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 15
+size_flags_vertical = 15
+theme_override_colors/default_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/normal_font = SubResource( 4 )
+bbcode_enabled = true
+text = "OK NEWBIE, I HOPE YOU LIKE TO SQUABBLE."
+visible_characters = 0
+percent_visible = 0.0
+text = "OK NEWBIE, WELCOME TO SQUABBLE."
+fit_content_height = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Yes" type="RichTextLabel" parent="IntroLayer/IntroUI/Dialog"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 288.5
+offset_top = 57.5
+offset_right = 516.5
+offset_bottom = 115.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2( 57.9976, 30.0438 )
+size_flags_horizontal = 15
+size_flags_vertical = 15
+theme_override_colors/default_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/normal_font = SubResource( 5 )
+bbcode_enabled = true
+visible_characters = 0
+percent_visible = 0.0
+text = "YES"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimTutorialUI" type="AnimationPlayer" parent="IntroLayer/IntroUI"]
+anims/intro = SubResource( 6 )
+anims/intro_2 = SubResource( 7 )
+anims/intro_3 = SubResource( 8 )
+anims/intro_4 = SubResource( 9 )
+anims/intro_5 = SubResource( 10 )
+
+[connection signal="name_changed" from="IntroLayer" to="." method="_on_IntroLayer_name_changed"]
+[connection signal="pool_started" from="IntroLayer" to="." method="_on_IntroLayer_pool_started"]
+[connection signal="animation_finished" from="IntroLayer/IntroUI/AnimTutorialUI" to="IntroLayer" method="_on_AnimTutorialUI_animation_finished"]

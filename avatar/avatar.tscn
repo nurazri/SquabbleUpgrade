@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://avatar/unlocked_avatar/Chr_wombat.png" type="Texture2D" id=1]
+[ext_resource path="res://avatar/avatar_base_blue.png" type="Texture2D" id=2]
+[ext_resource path="res://avatar/avatar.gd" type="Script" id=3]
+[ext_resource path="res://tutorial/textures/tutorial_profile_background.png" type="Texture2D" id=4]
+
+
+[node name="Avatar" type="TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -489.482
+offset_top = -1040.04
+offset_right = -329.482
+offset_bottom = -884.04
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2( 0.8, 0.8 )
+pivot_offset = Vector2( 83.7821, 81.8074 )
+texture = ExtResource( 2 )
+expand = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Tutorial_Backdrop" type="NinePatchRect" parent="."]
+visible = false
+anchor_left = 0.0875
+anchor_top = 0.076923
+anchor_right = 0.9125
+anchor_bottom = 0.884615
+offset_top = -9.53674e-07
+texture = ExtResource( 4 )
+region_rect = Rect2( 14, 25, 301, 278 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Picture" type="TextureRect" parent="."]
+anchor_left = 0.090625
+anchor_top = 0.0801284
+anchor_right = 0.909375
+anchor_bottom = 0.88782
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}

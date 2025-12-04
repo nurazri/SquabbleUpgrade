@@ -1,0 +1,10 @@
+[config]
+
+name="Tenjin"
+binary_type="local"
+binary="Tenjin.release.aar"
+
+[dependencies]
+
+local=[]
+remote=[]

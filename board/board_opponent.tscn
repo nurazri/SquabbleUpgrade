@@ -1,0 +1,400 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://board/board_grid.gd" type="Script" id=1]
+[ext_resource path="res://board/board.gd" type="Script" id=2]
+[ext_resource path="res://board/textures/board_header_panel_opponent.png" type="Texture2D" id=4]
+[ext_resource path="res://avatar/avatar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://board/textures/board_footer_panel_opponent.png" type="Texture2D" id=6]
+[ext_resource path="res://booster/textures/freeze_effect_placeholder.png" type="Texture2D" id=7]
+[ext_resource path="res://board/styles/panel_blue.tres" type="StyleBox" id=8]
+[ext_resource path="res://board/snatch/snatch.tscn" type="PackedScene" id=9]
+[ext_resource path="res://fonts/Gretaros-Regular.ttf" type="FontFile" id=11]
+[ext_resource path="res://board/textures/UI_board_red.png" type="Texture2D" id=12]
+[ext_resource path="res://board/styles/panel_red.tres" type="StyleBox" id=13]
+[ext_resource path="res://icon.png" type="Texture2D" id=14]
+[ext_resource path="res://booster/textures/UI_panel_booster_blast.png" type="Texture2D" id=15]
+[ext_resource path="res://board/holding_bar.gd" type="Script" id=16]
+[ext_resource path="res://booster/textures/Booster_Blast_T1.png" type="Texture2D" id=17]
+[ext_resource path="res://booster/textures/UI_booster_slot.png" type="Texture2D" id=18]
+
+[sub_resource type="FontFile" id=1]
+size = 26
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 11 )
+
+[sub_resource type="FontFile" id=2]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 11 )
+
+[node name="Board" type="Node2D" groups=["boards"]]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+_BoardRed = ExtResource( 12 )
+_StylePanelRed = ExtResource( 13 )
+
+[node name="Background" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 948.0
+offset_bottom = 761.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="TxtrctBoard" type="TextureRect" parent="Background"]
+offset_top = 139.0
+offset_right = 948.0
+offset_bottom = 749.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 12 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TxtrctHeader" type="TextureRect" parent="Background"]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 950.0
+offset_bottom = 162.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TxtRctFooter" type="TextureRect" parent="Background"]
+offset_top = 723.0
+offset_right = 946.0
+offset_bottom = 765.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Freeze_Effect" type="TextureRect" parent="Background"]
+modulate = Color( 1, 1, 1, 0 )
+offset_top = 162.0
+offset_right = 948.0
+offset_bottom = 724.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BoardGrid" type="TileMap" parent="." groups=["boardgrids"]]
+position = Vector2( 17, 165 )
+cell_size = Vector2( 92, 108 )
+cell_y_sort = true
+format = 1
+script = ExtResource( 1 )
+_EmptyCellIndicatorTexture = ExtResource( 14 )
+
+[node name="HoldingBar" type="Control" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UI" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="OpponentName" type="Label" parent="UI"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 392.0
+offset_top = 7.0
+offset_right = 767.0
+offset_bottom = 61.0
+custom_minimum_size = Vector2( 375, 54 )
+size_flags_horizontal = 7
+size_flags_vertical = 7
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 1 )
+text = "You"
+align = 2
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Snatch" parent="UI" instance=ExtResource( 9 )]
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 275.0
+offset_top = 689.0
+offset_right = 637.0
+offset_bottom = 802.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2( 181.167, 44.0543 )
+keep_pressed_outside = true
+
+[node name="ScorePanel" type="Panel" parent="UI"]
+offset_left = 614.44
+offset_top = 75.8108
+offset_right = 832.44
+offset_bottom = 140.811
+custom_minimum_size = Vector2( 195, 65 )
+theme_override_styles/panel = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="UI"]
+offset_left = 614.44
+offset_top = 75.8108
+offset_right = 832.44
+offset_bottom = 140.811
+custom_minimum_size = Vector2( 0, 54 )
+size_flags_horizontal = 7
+size_flags_vertical = 7
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 2 )
+text = "0"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Booster_Slot1" type="NinePatchRect" parent="UI"]
+visible = false
+offset_left = 20.0
+offset_top = 705.0
+offset_right = 140.0
+offset_bottom = 825.0
+texture = ExtResource( 18 )
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="TextureRect" parent="UI/Booster_Slot1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -55.0
+offset_right = 55.0
+offset_bottom = 55.0
+texture = ExtResource( 15 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="UI/Booster_Slot1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -70.0
+offset_right = 70.0
+offset_bottom = 70.0
+texture = ExtResource( 17 )
+expand = true
+
+[node name="Booster1" type="Button" parent="UI/Booster_Slot1"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Booster_Slot2" type="NinePatchRect" parent="UI"]
+visible = false
+offset_left = 155.0
+offset_top = 705.0
+offset_right = 275.0
+offset_bottom = 825.0
+texture = ExtResource( 18 )
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="TextureRect" parent="UI/Booster_Slot2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -55.0
+offset_right = 55.0
+offset_bottom = 55.0
+texture = ExtResource( 15 )
+expand = true
+
+[node name="Icon" type="TextureRect" parent="UI/Booster_Slot2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -70.0
+offset_right = 70.0
+offset_bottom = 70.0
+texture = ExtResource( 17 )
+expand = true
+
+[node name="Booster2" type="Button" parent="UI/Booster_Slot2"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Booster_Slot3" type="NinePatchRect" parent="UI"]
+visible = false
+offset_left = 675.0
+offset_top = 705.0
+offset_right = 795.0
+offset_bottom = 825.0
+texture = ExtResource( 18 )
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="TextureRect" parent="UI/Booster_Slot3"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -55.0
+offset_right = 55.0
+offset_bottom = 55.0
+texture = ExtResource( 15 )
+expand = true
+
+[node name="Icon" type="TextureRect" parent="UI/Booster_Slot3"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -70.0
+offset_right = 70.0
+offset_bottom = 70.0
+texture = ExtResource( 17 )
+expand = true
+
+[node name="Booster3" type="Button" parent="UI/Booster_Slot3"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Booster_Slot4" type="NinePatchRect" parent="UI"]
+visible = false
+offset_left = 810.0
+offset_top = 705.0
+offset_right = 930.0
+offset_bottom = 825.0
+texture = ExtResource( 18 )
+patch_margin_left = 25
+patch_margin_top = 25
+patch_margin_right = 25
+patch_margin_bottom = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="TextureRect" parent="UI/Booster_Slot4"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -55.0
+offset_right = 55.0
+offset_bottom = 55.0
+texture = ExtResource( 15 )
+expand = true
+
+[node name="Icon" type="TextureRect" parent="UI/Booster_Slot4"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -70.0
+offset_right = 70.0
+offset_bottom = 70.0
+texture = ExtResource( 17 )
+expand = true
+
+[node name="Booster4" type="Button" parent="UI/Booster_Slot4"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Avatar" parent="." instance=ExtResource( 5 )]
+offset_left = 783.0
+offset_top = -10.0
+offset_right = 966.0
+offset_bottom = 168.0
+
+[node name="PointsUpdateTimer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="points_updated" from="BoardGrid" to="." method="_on_BoardGrid_points_updated"]
+[connection signal="pressed" from="UI/Snatch" to="." method="_on_Snatch_pressed"]
+[connection signal="pressed" from="UI/Booster_Slot1/Booster1" to="." method="_on_Booster_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="UI/Booster_Slot2/Booster2" to="." method="_on_Booster_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="UI/Booster_Slot3/Booster3" to="." method="_on_Booster_pressed" binds= [ 3 ]]
+[connection signal="pressed" from="UI/Booster_Slot4/Booster4" to="." method="_on_Booster_pressed" binds= [ 4 ]]
+[connection signal="timeout" from="PointsUpdateTimer" to="." method="_on_PointsUpdateTimer_timeout"]

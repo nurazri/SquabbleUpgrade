@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=2]
+
+[ext_resource path="res://universal_texture/UI_button_darkblue.png" type="Texture2D" id=1]
+
+
+[resource]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 128, 128 )
+margin_left = 40.0
+margin_right = 40.0

@@ -1,0 +1,10 @@
+[config]
+
+name="FirebaseAnalytics"
+binary_type="local"
+binary="FirebaseAnalytics.release.aar"
+
+[dependencies]
+
+local=[]
+remote=["com.google.firebase:firebase-bom:29.3.0", "com.google.firebase:firebase-analytics"]

@@ -1,0 +1,90 @@
+name: "Make Builds"
+on: 
+  push:
+    branches:
+      - main
+
+env:
+  GODOT_VERSION: 3.4.4
+  EXPORT_NAME: Squabble
+
+jobs:
+  export-android:
+    name: Android Export
+    runs-on: ubuntu-20.04
+    container:
+      image: barichello/godot-ci:3.4.4
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+      - name: Setup
+        run: |
+          mkdir -v -p ~/.local/share/godot/templates
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
+      - name: Android Build
+        run: |
+          mkdir -v -p builds/android    
+          sed 's|export/android/android_sdk_path = ".*"|export/android/android_sdk_path = "'/usr/lib/android-sdk'"|g' -i /root/.config/godot/editor_settings-3.tres
+          mkdir -v -p ~/.config/godot
+          cp -v /root/.config/godot/editor_settings-3.tres ~/.config/godot/
+          version_code=$(cat .version_code)
+          sed "s|version/code=.*|version/code=$version_code|g" -i ./export_presets.cfg
+          version_name=$(cat .version_name)
+          sed "s|var build_version_code: int = 0|var build_version_code: int = $version_code|g" -i ./mobile/google_play_version_checker.gd
+          sed "s|version/name=.*|version/name=\"$version_name\"|g" -i ./export_presets.cfg
+          sed "s|var versionForByteBrew = .*|var versionForByteBrew = \"$version_name\"|g" -i ./mobile/bytebrew.gd
+          echo ${{ secrets.SECRET_RELEASE_KEYSTORE_BASE64 }} | base64 --decode > ./release.keystore
+          sed 's|keystore/debug=".*"|keystore/debug="'./release.keystore'"|g' -i ./export_presets.cfg
+          sed 's|keystore/debug_user=".*"|keystore/debug_user="'${{ secrets.SECRET_RELEASE_KEYSTORE_USER }}'"|g' -i ./export_presets.cfg
+          sed 's|keystore/debug_password=".*"|keystore/debug_password="'${{ secrets.SECRET_RELEASE_KEYSTORE_PASSWORD }}'"|g' -i ./export_presets.cfg
+          sed 's|keystore/release=".*"|keystore/release="'./release.keystore'"|g' -i ./export_presets.cfg
+          sed 's|keystore/release_user=".*"|keystore/release_user="'${{ secrets.SECRET_RELEASE_KEYSTORE_USER }}'"|g' -i ./export_presets.cfg
+          sed 's|keystore/release_password=".*"|keystore/release_password="'${{ secrets.SECRET_RELEASE_KEYSTORE_PASSWORD }}'"|g' -i ./export_presets.cfg
+          godot -v --export "Android Release APK" ./builds/android/Squabble_$(cat .version_name)_release_$(date -I)-$(date +'%H%M%Z').apk
+          godot -v --export "Android Release" ./builds/android/Squabble_$(cat .version_name)_release_$(date -I)-$(date +'%H%M%Z').aab
+      - name: Upload Artifact
+        if: always()
+        uses: actions/upload-artifact@v1
+        with:
+          name: android
+          path: builds/android
+      - name: Remove old artifacts
+        uses: c-hive/gha-remove-artifacts@v1
+        with:
+          age: '1 minute'
+          skip-tags: true
+          skip-recent: 2
+
+  # export-web:
+  #   name: Web Export
+  #   runs-on: ubuntu-20.04
+  #   container:
+  #     image: barichello/godot-ci:3.4.4
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
+  #       with:
+  #         lfs: true
+  #     - name: Setup
+  #       run: |
+  #         mkdir -v -p ~/.local/share/godot/templates
+  #         mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
+  #     - name: Web Build
+  #       run: |
+  #         mkdir -v -p builds/web
+  #         godot -v --export "HTML5" ./builds/web/index.html
+  #     - name: Upload Artifact
+  #       uses: actions/upload-artifact@v1
+  #       with:
+  #         name: web
+  #         path: builds/web
+  #     - name: Install rsync 📚
+  #       run: |
+  #         apt-get update && apt-get install -y rsync
+  #     - name: Deploy to GitHub Pages 🚀
+  #       uses: JamesIves/github-pages-deploy-action@releases/v4
+  #       with:
+  #         branch: builds/web # The branch the action should deploy to.
+  #         folder: builds/web # The folder the action should deploy.

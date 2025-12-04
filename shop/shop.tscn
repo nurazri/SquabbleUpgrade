@@ -1,0 +1,973 @@
+[gd_scene load_steps=48 format=2]
+
+[ext_resource path="res://fonts/Gretaros-Regular.ttf" type="FontFile" id=1]
+[ext_resource path="res://home/textures/bottom_homepage_bg.png" type="Texture2D" id=2]
+[ext_resource path="res://home/textures/UI_icon_diamond.png" type="Texture2D" id=3]
+[ext_resource path="res://home/textures/home_top_piece.png" type="Texture2D" id=4]
+[ext_resource path="res://home/textures/home_profile_base.png" type="Texture2D" id=5]
+[ext_resource path="res://shop/shop.gd" type="Script" id=6]
+[ext_resource path="res://shop/textures/coins/UI_coin_4.png" type="Texture2D" id=7]
+[ext_resource path="res://shop/textures/coins/UI_coin_2.png" type="Texture2D" id=8]
+[ext_resource path="res://shop/textures/coins/UI_coin_6.png" type="Texture2D" id=9]
+[ext_resource path="res://shop/textures/coins/UI_coin_5.png" type="Texture2D" id=10]
+[ext_resource path="res://shop/textures/diamonds/UI_gem_5.png" type="Texture2D" id=11]
+[ext_resource path="res://shop/textures/diamonds/UI_gem_6.png" type="Texture2D" id=12]
+[ext_resource path="res://shop/textures/diamonds/UI_gem_2.png" type="Texture2D" id=13]
+[ext_resource path="res://shop/textures/diamonds/UI_gem_3.png" type="Texture2D" id=14]
+[ext_resource path="res://shop/textures/shop_buy_button.tres" type="StyleBox" id=15]
+[ext_resource path="res://tutorial/textures/tutorial_profile_drinktea_lookatyou.png" type="Texture2D" id=16]
+[ext_resource path="res://avatar/expression/Quabble5.png" type="Texture2D" id=17]
+[ext_resource path="res://universal_texture/UI_button_green.png" type="Texture2D" id=18]
+[ext_resource path="res://universal_texture/UI_button_grey.png" type="Texture2D" id=19]
+[ext_resource path="res://shop/booster_listing.tscn" type="PackedScene" id=20]
+
+
+[sub_resource type="FontFile" id=8]
+font_data = ExtResource( 1 )
+
+[sub_resource type="FontFile" id=10]
+size = 24
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+spacing_top = -5
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 18 )
+region_rect = Rect2( 0, 0, 128, 128 )
+offset_left = 30.0
+offset_right = 30.0
+offset_top = 15.0
+offset_bottom = 15.0
+
+[sub_resource type="FontFile" id=6]
+size = 44
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="FontFile" id=7]
+size = 54
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="FontFile" id=5]
+size = 30
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=27]
+
+[sub_resource type="StyleBoxEmpty" id=28]
+
+[sub_resource type="StyleBoxEmpty" id=29]
+
+[sub_resource type="StyleBoxEmpty" id=30]
+
+[sub_resource type="StyleBoxEmpty" id=31]
+
+[sub_resource type="FontFile" id=16]
+size = 30
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=22]
+
+[sub_resource type="StyleBoxEmpty" id=23]
+
+[sub_resource type="StyleBoxEmpty" id=24]
+
+[sub_resource type="StyleBoxEmpty" id=25]
+
+[sub_resource type="StyleBoxEmpty" id=26]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[sub_resource type="StyleBoxEmpty" id=17]
+
+[sub_resource type="StyleBoxEmpty" id=18]
+
+[sub_resource type="StyleBoxEmpty" id=19]
+
+[sub_resource type="StyleBoxEmpty" id=20]
+
+[sub_resource type="StyleBoxEmpty" id=21]
+
+[node name="Shop_Page" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_minimum_size = Vector2( 946, 2048 )
+script = ExtResource( 6 )
+enabled_toggle = ExtResource( 18 )
+disabled_toggle = ExtResource( 19 )
+_ScnBoosterListing = ExtResource( 20 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_minimum_size = Vector2( 946, 1960 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 134.0
+offset_bottom = -124.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+offset_right = 926.0
+offset_bottom = 1004.0
+grow_horizontal = 2
+grow_vertical = 2
+clip_contents = true
+
+[node name="AdContainer" type="Control" parent="ScrollContainer/VBoxContainer"]
+visible = false
+offset_right = 926.0
+offset_bottom = 400.0
+custom_minimum_size = Vector2( 0, 400 )
+
+[node name="PanelRemoveAdMonthly" type="Panel" parent="ScrollContainer/VBoxContainer/AdContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = 15.0
+offset_right = -501.0
+offset_bottom = -35.0
+
+[node name="AvatarSet" type="TextureRect" parent="ScrollContainer/VBoxContainer/AdContainer/PanelRemoveAdMonthly"]
+offset_left = -5.0
+offset_top = 23.1225
+offset_right = 300.0
+offset_bottom = 297.122
+texture = ExtResource( 16 )
+expand = true
+flip_h = true
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/AdContainer/PanelRemoveAdMonthly"]
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -138.0
+offset_top = 25.0
+offset_right = -17.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 8 )
+text = "Remove ads 
+for a 
+month"
+align = 2
+
+[node name="Btn_RemoveAdMonthly" type="Button" parent="ScrollContainer/VBoxContainer/AdContainer/PanelRemoveAdMonthly"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -162.0
+offset_top = -70.0
+offset_right = 162.0
+offset_bottom = -11.0
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 10 )
+theme_override_styles/hover = SubResource( 9 )
+theme_override_styles/pressed = SubResource( 9 )
+theme_override_styles/focus = SubResource( 9 )
+theme_override_styles/disabled = SubResource( 9 )
+theme_override_styles/normal = SubResource( 9 )
+text = "RM20/MONTH"
+
+[node name="PanelRemoveAdYearly" type="Panel" parent="ScrollContainer/VBoxContainer/AdContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 500.0
+offset_top = 15.0
+offset_right = -76.0
+offset_bottom = -35.0
+
+[node name="AvatarSet" type="TextureRect" parent="ScrollContainer/VBoxContainer/AdContainer/PanelRemoveAdYearly"]
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -284.0
+offset_top = 45.0
+offset_right = -6.0
+offset_bottom = 294.0
+texture = ExtResource( 17 )
+expand = true
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/AdContainer/PanelRemoveAdYearly"]
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 146.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 8 )
+text = "Remove ads 
+for a 
+YEAR"
+
+[node name="Btn_RemoveAdYearly" type="Button" parent="ScrollContainer/VBoxContainer/AdContainer/PanelRemoveAdYearly"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -162.0
+offset_top = -70.0
+offset_right = 162.0
+offset_bottom = -11.0
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 10 )
+theme_override_styles/hover = SubResource( 9 )
+theme_override_styles/pressed = SubResource( 9 )
+theme_override_styles/focus = SubResource( 9 )
+theme_override_styles/disabled = SubResource( 9 )
+theme_override_styles/normal = SubResource( 9 )
+text = "RM200/YEAR"
+
+[node name="TitleBar_(Coins)" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+offset_right = 926.0
+offset_bottom = 88.0
+texture = ExtResource( 4 )
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/TitleBar_(Coins)"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_fonts/font = SubResource( 6 )
+text = "COINS"
+align = 1
+valign = 1
+
+[node name="GoldContainer" type="GridContainer" parent="ScrollContainer/VBoxContainer"]
+offset_top = 92.0
+offset_right = 926.0
+offset_bottom = 816.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="CoinsItem1" type="TextureRect" parent="ScrollContainer/VBoxContainer/GoldContainer"]
+offset_right = 300.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_minimum_size = Vector2( 300, 360 )
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 1
+
+[node name="Image" type="TextureRect" parent="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -140.0
+offset_right = 125.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem1"]
+anchor_right = 1.0
+anchor_bottom = 0.25
+offset_bottom = 7.62939e-06
+grow_horizontal = 2
+grow_vertical = 2
+clip_contents = true
+mouse_filter = 0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 7 )
+text = "500"
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="BuyButton" type="Button" parent="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem1"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -108.0
+offset_right = 100.0
+offset_bottom = -35.891
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 5 )
+theme_override_styles/hover = SubResource( 27 )
+theme_override_styles/pressed = SubResource( 28 )
+theme_override_styles/focus = SubResource( 29 )
+theme_override_styles/disabled = SubResource( 30 )
+theme_override_styles/normal = SubResource( 31 )
+expand_icon = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem1/BuyButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 19 )
+patch_margin_left = 15
+patch_margin_top = 25
+patch_margin_right = 15
+patch_margin_bottom = 25
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem1/BuyButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 81.0
+offset_top = 17.0
+offset_right = -113.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource( 16 )
+text = "30"
+align = 1
+valign = 1
+
+[node name="Currency" type="TextureRect" parent="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem1/BuyButton/Label"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 50.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="CoinsItem2" type="TextureRect" parent="ScrollContainer/VBoxContainer/GoldContainer"]
+offset_left = 304.0
+offset_right = 604.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_minimum_size = Vector2( 300, 360 )
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 1
+
+[node name="Image" type="TextureRect" parent="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -140.0
+offset_right = 125.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem2"]
+anchor_right = 1.0
+anchor_bottom = 0.25
+offset_bottom = 7.62939e-06
+grow_horizontal = 2
+grow_vertical = 2
+clip_contents = true
+mouse_filter = 0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 7 )
+text = "1000"
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="BuyButton" type="Button" parent="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem2"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -108.0
+offset_right = 100.0
+offset_bottom = -35.891
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 5 )
+theme_override_styles/hover = SubResource( 22 )
+theme_override_styles/pressed = SubResource( 23 )
+theme_override_styles/focus = SubResource( 24 )
+theme_override_styles/disabled = SubResource( 25 )
+theme_override_styles/normal = SubResource( 26 )
+expand_icon = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem2/BuyButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 19 )
+patch_margin_left = 15
+patch_margin_top = 25
+patch_margin_right = 15
+patch_margin_bottom = 25
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem2/BuyButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 81.0
+offset_top = 17.0
+offset_right = -113.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource( 16 )
+text = "50"
+align = 1
+valign = 1
+
+[node name="Currency" type="TextureRect" parent="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem2/BuyButton/Label"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 50.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="CoinsItem3" type="TextureRect" parent="ScrollContainer/VBoxContainer/GoldContainer"]
+offset_left = 608.0
+offset_right = 908.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_minimum_size = Vector2( 300, 360 )
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 1
+
+[node name="Image" type="TextureRect" parent="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem3"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -140.0
+offset_right = 125.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem3"]
+anchor_right = 1.0
+anchor_bottom = 0.25
+offset_bottom = 7.62939e-06
+grow_horizontal = 2
+grow_vertical = 2
+clip_contents = true
+mouse_filter = 0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 7 )
+text = "5000"
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="BuyButton" type="Button" parent="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem3"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -108.0
+offset_right = 100.0
+offset_bottom = -35.891
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 5 )
+theme_override_styles/hover = SubResource( 11 )
+theme_override_styles/pressed = SubResource( 12 )
+theme_override_styles/focus = SubResource( 13 )
+theme_override_styles/disabled = SubResource( 14 )
+theme_override_styles/normal = SubResource( 15 )
+expand_icon = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem3/BuyButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 19 )
+patch_margin_left = 15
+patch_margin_top = 25
+patch_margin_right = 15
+patch_margin_bottom = 25
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem3/BuyButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 81.0
+offset_top = 17.0
+offset_right = -113.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource( 16 )
+text = "230"
+align = 1
+valign = 1
+
+[node name="Currency" type="TextureRect" parent="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem3/BuyButton/Label"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 50.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="CoinsItem4" type="TextureRect" parent="ScrollContainer/VBoxContainer/GoldContainer"]
+offset_top = 364.0
+offset_right = 300.0
+offset_bottom = 724.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_minimum_size = Vector2( 300, 360 )
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 1
+
+[node name="Image" type="TextureRect" parent="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem4"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -140.0
+offset_right = 125.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource( 9 )
+expand = true
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem4"]
+anchor_right = 1.0
+anchor_bottom = 0.25
+grow_horizontal = 2
+grow_vertical = 2
+clip_contents = true
+mouse_filter = 0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 7 )
+text = "10000"
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="BuyButton" type="Button" parent="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem4"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -108.0
+offset_right = 100.0
+offset_bottom = -35.891
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 5 )
+theme_override_styles/hover = SubResource( 17 )
+theme_override_styles/pressed = SubResource( 18 )
+theme_override_styles/focus = SubResource( 19 )
+theme_override_styles/disabled = SubResource( 20 )
+theme_override_styles/normal = SubResource( 21 )
+expand_icon = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem4/BuyButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 19 )
+patch_margin_left = 15
+patch_margin_top = 25
+patch_margin_right = 15
+patch_margin_bottom = 25
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem4/BuyButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 81.0
+offset_top = 17.0
+offset_right = -113.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource( 16 )
+text = "400"
+align = 1
+valign = 1
+
+[node name="Currency" type="TextureRect" parent="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem4/BuyButton/Label"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 50.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="TitleBar_(Diamond)" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+visible = false
+offset_top = 820.0
+offset_right = 926.0
+offset_bottom = 908.0
+texture = ExtResource( 4 )
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/TitleBar_(Diamond)"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_fonts/font = SubResource( 6 )
+text = "DIAMONDS"
+align = 1
+valign = 1
+
+[node name="DiamondContainer" type="GridContainer" parent="ScrollContainer/VBoxContainer"]
+visible = false
+offset_top = 820.0
+offset_right = 926.0
+offset_bottom = 1544.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="DiamondsItem1" type="TextureRect" parent="ScrollContainer/VBoxContainer/DiamondContainer"]
+offset_right = 300.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_minimum_size = Vector2( 300, 360 )
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 1
+
+[node name="Image" type="TextureRect" parent="ScrollContainer/VBoxContainer/DiamondContainer/DiamondsItem1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -140.0
+offset_right = 125.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource( 13 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/DiamondContainer/DiamondsItem1"]
+anchor_right = 1.0
+anchor_bottom = 0.25
+offset_bottom = 7.62939e-06
+grow_horizontal = 2
+grow_vertical = 2
+clip_contents = true
+mouse_filter = 0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 7 )
+text = "50"
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="BuyButton" type="Button" parent="ScrollContainer/VBoxContainer/DiamondContainer/DiamondsItem1"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -108.0
+offset_right = 100.0
+offset_bottom = -35.891
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 5 )
+theme_override_styles/hover = ExtResource( 15 )
+theme_override_styles/pressed = ExtResource( 15 )
+theme_override_styles/focus = ExtResource( 15 )
+theme_override_styles/disabled = ExtResource( 15 )
+theme_override_styles/normal = ExtResource( 15 )
+text = "USD 0.59"
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DiamondsItem2" type="TextureRect" parent="ScrollContainer/VBoxContainer/DiamondContainer"]
+offset_left = 304.0
+offset_right = 604.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_minimum_size = Vector2( 300, 360 )
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 1
+
+[node name="Image" type="TextureRect" parent="ScrollContainer/VBoxContainer/DiamondContainer/DiamondsItem2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -140.0
+offset_right = 125.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource( 14 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/DiamondContainer/DiamondsItem2"]
+anchor_right = 1.0
+anchor_bottom = 0.25
+offset_bottom = 7.62939e-06
+grow_horizontal = 2
+grow_vertical = 2
+clip_contents = true
+mouse_filter = 0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 7 )
+text = "200"
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="BuyButton" type="Button" parent="ScrollContainer/VBoxContainer/DiamondContainer/DiamondsItem2"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -108.0
+offset_right = 100.0
+offset_bottom = -35.891
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 5 )
+theme_override_styles/hover = ExtResource( 15 )
+theme_override_styles/pressed = ExtResource( 15 )
+theme_override_styles/focus = ExtResource( 15 )
+theme_override_styles/disabled = ExtResource( 15 )
+theme_override_styles/normal = ExtResource( 15 )
+text = "USD 2.99"
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DiamondsItem3" type="TextureRect" parent="ScrollContainer/VBoxContainer/DiamondContainer"]
+offset_left = 608.0
+offset_right = 908.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_minimum_size = Vector2( 300, 360 )
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 1
+
+[node name="Image" type="TextureRect" parent="ScrollContainer/VBoxContainer/DiamondContainer/DiamondsItem3"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -125.0
+offset_right = 125.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/DiamondContainer/DiamondsItem3"]
+anchor_right = 1.0
+anchor_bottom = 0.25
+offset_bottom = 7.62939e-06
+grow_horizontal = 2
+grow_vertical = 2
+clip_contents = true
+mouse_filter = 0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 7 )
+text = "600"
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="BuyButton" type="Button" parent="ScrollContainer/VBoxContainer/DiamondContainer/DiamondsItem3"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -108.0
+offset_right = 100.0
+offset_bottom = -35.891
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 5 )
+theme_override_styles/hover = ExtResource( 15 )
+theme_override_styles/pressed = ExtResource( 15 )
+theme_override_styles/focus = ExtResource( 15 )
+theme_override_styles/disabled = ExtResource( 15 )
+theme_override_styles/normal = ExtResource( 15 )
+text = "USD 9.99"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DiamondsItem4" type="TextureRect" parent="ScrollContainer/VBoxContainer/DiamondContainer"]
+offset_top = 364.0
+offset_right = 300.0
+offset_bottom = 724.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_minimum_size = Vector2( 300, 360 )
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 1
+
+[node name="Image" type="TextureRect" parent="ScrollContainer/VBoxContainer/DiamondContainer/DiamondsItem4"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -125.0
+offset_right = 125.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/DiamondContainer/DiamondsItem4"]
+anchor_right = 1.0
+anchor_bottom = 0.25
+offset_bottom = 7.62939e-06
+grow_horizontal = 2
+grow_vertical = 2
+clip_contents = true
+mouse_filter = 0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 7 )
+text = "1200"
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="BuyButton" type="Button" parent="ScrollContainer/VBoxContainer/DiamondContainer/DiamondsItem4"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -108.0
+offset_right = 106.21
+offset_bottom = -35.891
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 5 )
+theme_override_styles/hover = ExtResource( 15 )
+theme_override_styles/pressed = ExtResource( 15 )
+theme_override_styles/focus = ExtResource( 15 )
+theme_override_styles/disabled = ExtResource( 15 )
+theme_override_styles/normal = ExtResource( 15 )
+text = "USD 15.99"
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleBar_(Booster)" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+offset_top = 820.0
+offset_right = 926.0
+offset_bottom = 908.0
+texture = ExtResource( 4 )
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/TitleBar_(Booster)"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_fonts/font = SubResource( 6 )
+text = "BOOSTERS"
+align = 1
+valign = 1
+
+[node name="BoosterContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+offset_top = 912.0
+offset_right = 926.0
+offset_bottom = 912.0
+theme_override_constants/separation = 10
+
+[node name="Spacing" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+self_modulate = Color( 1, 1, 1, 0 )
+offset_top = 916.0
+offset_right = 926.0
+offset_bottom = 1004.0
+texture = ExtResource( 4 )
+stretch_mode = 1
+
+[connection signal="draw" from="." to="." method="_on_Shop_Page_draw"]
+[connection signal="visibility_changed" from="." to="." method="_on_Shop_Page_visibility_changed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/AdContainer/PanelRemoveAdMonthly/Btn_RemoveAdMonthly" to="." method="_on_Btn_RemoveAdMonthly_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/AdContainer/PanelRemoveAdYearly/Btn_RemoveAdYearly" to="." method="_on_Btn_RemoveAdYearly_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem1/BuyButton" to="." method="on_btn_buycoin" binds= [ 1 ]]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem2/BuyButton" to="." method="on_btn_buycoin" binds= [ 2 ]]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem3/BuyButton" to="." method="on_btn_buycoin" binds= [ 3 ]]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/GoldContainer/CoinsItem4/BuyButton" to="." method="on_btn_buycoin" binds= [ 4 ]]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/DiamondContainer/DiamondsItem1/BuyButton" to="." method="on_btn_buydiamond" binds= [ 1 ]]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/DiamondContainer/DiamondsItem2/BuyButton" to="." method="on_btn_buydiamond" binds= [ 2 ]]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/DiamondContainer/DiamondsItem3/BuyButton" to="." method="on_btn_buydiamond" binds= [ 3 ]]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/DiamondContainer/DiamondsItem4/BuyButton" to="." method="on_btn_buydiamond" binds= [ 4 ]]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://audio/music/play_1_brouhaha_by_crusade_chong_and_cyrus_kwok.ogg" type="AudioStream" id=1]
+[ext_resource path="res://audio/music_play.gd" type="Script" id=2]
+
+[node name="MusicPlay" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+script = ExtResource( 2 )
+[connection signal="finished" from="." to="." method="finished"]

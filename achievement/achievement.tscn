@@ -1,0 +1,537 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://avatar/locked_avatar/Chr_dog_greyscale.png" type="Texture2D" id=1]
+[ext_resource path="res://home/textures/UI_icon_diamond.png" type="Texture2D" id=2]
+[ext_resource path="res://home/textures/UI_icon_coin.png" type="Texture2D" id=3]
+[ext_resource path="res://achievement/achievement.gd" type="Script" id=4]
+[ext_resource path="res://universal_texture/UI_button_grey.png" type="Texture2D" id=5]
+[ext_resource path="res://universal_texture/UI_button_green.png" type="Texture2D" id=6]
+[ext_resource path="res://fonts/Gretaros-Regular.ttf" type="FontFile" id=7]
+[ext_resource path="res://achievement/textures/UI_panel_achievement.png" type="Texture2D" id=8]
+[ext_resource path="res://achievement/textures/UI_icon_star_achievement_greyout.png" type="Texture2D" id=10]
+[ext_resource path="res://achievement/textures/UI_icon_star_achievement.png" type="Texture2D" id=11]
+[ext_resource path="res://achievement/textures/UI_bar_bg.png" type="Texture2D" id=13]
+[ext_resource path="res://achievement/textures/UI_bar_fill.png" type="Texture2D" id=14]
+[ext_resource path="res://achievement/textures/UI_icon_stick.png" type="Texture2D" id=15]
+[ext_resource path="res://achievement/textures/UI_icon_tick.png" type="Texture2D" id=16]
+[ext_resource path="res://achievement/textures/UI_icon_tick_small.png" type="Texture2D" id=17]
+
+[sub_resource type="FontFile" id=1]
+size = 30
+font_data = ExtResource( 7 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 64, 64 )
+offset_left = 10.0
+offset_right = 10.0
+offset_top = 10.0
+offset_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 64, 64 )
+offset_left = 10.0
+offset_right = 10.0
+offset_top = 10.0
+offset_bottom = 10.0
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="FontFile" id=4]
+use_filter = true
+spacing_top = 2
+font_data = ExtResource( 7 )
+
+[sub_resource type="FontFile" id=5]
+size = 24
+font_data = ExtResource( 7 )
+
+[sub_resource type="FontFile" id=9]
+size = 40
+font_data = ExtResource( 7 )
+
+[sub_resource type="FontFile" id=7]
+size = 34
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="FontFile" id=8]
+size = 23
+font_data = ExtResource( 7 )
+
+[node name="Achievement" type="Control"]
+offset_right = 946.0
+offset_bottom = 330.0
+custom_minimum_size = Vector2( 945, 330 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 4 )
+_GreyedOutStar = ExtResource( 10 )
+_LightupStar = ExtResource( 11 )
+_GreyedOutBox = ExtResource( 5 )
+_ReadyClaimBox = ExtResource( 6 )
+
+[node name="Panel" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_minimum_size = Vector2( 945, 330 )
+texture = ExtResource( 8 )
+region_rect = Rect2( -15, 0, 285, 260 )
+patch_margin_left = 60
+patch_margin_top = 60
+patch_margin_right = 60
+patch_margin_bottom = 60
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AvatarUnlock" type="TextureRect" parent="Panel"]
+offset_left = 47.0
+offset_top = 41.0
+offset_right = 237.0
+offset_bottom = 219.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Rating" type="HBoxContainer" parent="Panel"]
+offset_left = 75.0
+offset_top = 230.0
+offset_right = 211.0
+offset_bottom = 266.0
+theme_override_constants/separation = 14
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="1Star" type="TextureRect" parent="Panel/Rating"]
+offset_right = 36.0
+offset_bottom = 36.0
+custom_minimum_size = Vector2( 36, 36 )
+texture = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="2Star" type="TextureRect" parent="Panel/Rating"]
+offset_left = 50.0
+offset_right = 86.0
+offset_bottom = 36.0
+custom_minimum_size = Vector2( 36, 36 )
+texture = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="3Star" type="TextureRect" parent="Panel/Rating"]
+offset_left = 100.0
+offset_right = 136.0
+offset_bottom = 36.0
+custom_minimum_size = Vector2( 36, 36 )
+texture = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Description" type="Label" parent="Panel"]
+offset_left = 291.0
+offset_top = 51.0
+offset_right = 794.0
+offset_bottom = 140.0
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 1 )
+text = "[DESCRIPTION HERE]
+text message"
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel"]
+offset_left = 293.056
+offset_top = 167.159
+offset_right = 655.056
+offset_bottom = 201.159
+mouse_filter = 1
+theme_override_styles/fg = SubResource( 2 )
+theme_override_styles/bg = SubResource( 3 )
+percent_visible = false
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Step_1" type="TextureRect" parent="Panel/ProgressBar"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 99.167
+offset_top = -19.2397
+offset_right = 155.167
+offset_bottom = 36.7603
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Star" type="TextureRect" parent="Panel/ProgressBar/Step_1"]
+anchor_left = 0.518
+anchor_top = 0.214
+anchor_right = 0.518
+anchor_bottom = 0.214
+offset_left = -40.008
+offset_top = -39.984
+offset_right = 39.992
+offset_bottom = 40.016
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2( 40, 40 )
+texture = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Condition" type="Label" parent="Panel/ProgressBar/Step_1/Star"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 6.0
+offset_bottom = -1.0
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 4 )
+text = "?"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rewardtype" type="TextureRect" parent="Panel/ProgressBar/Step_1"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = 9.0
+offset_right = -15.0
+offset_bottom = 39.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Amount" type="Label" parent="Panel/ProgressBar/Step_1/Rewardtype"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_right = 30.0
+offset_bottom = 17.0
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 5 )
+text = "??"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Checked" type="TextureRect" parent="Panel/ProgressBar/Step_1/Rewardtype/Amount"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_right = 30.0
+offset_bottom = 15.0
+texture = ExtResource( 17 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Step_2" type="TextureRect" parent="Panel/ProgressBar"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 215.0
+offset_top = -19.0
+offset_right = 271.0
+offset_bottom = 37.0
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Star" type="TextureRect" parent="Panel/ProgressBar/Step_2"]
+anchor_left = 0.518
+anchor_top = 0.214
+anchor_right = 0.518
+anchor_bottom = 0.214
+offset_left = -40.008
+offset_top = -39.984
+offset_right = 39.992
+offset_bottom = 40.016
+pivot_offset = Vector2( 40, 40 )
+texture = ExtResource( 10 )
+expand = true
+
+[node name="Condition" type="Label" parent="Panel/ProgressBar/Step_2/Star"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.76031
+offset_bottom = -1.23969
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 4 )
+text = "?"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rewardtype" type="TextureRect" parent="Panel/ProgressBar/Step_2"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -43.0
+offset_top = 9.0
+offset_right = -13.0
+offset_bottom = 39.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Amount" type="Label" parent="Panel/ProgressBar/Step_2/Rewardtype"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_right = 30.0
+offset_bottom = 17.0
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 5 )
+text = "??"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Checked" type="TextureRect" parent="Panel/ProgressBar/Step_2/Rewardtype/Amount"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_right = 30.0
+offset_bottom = 15.0
+texture = ExtResource( 17 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Step_3" type="TextureRect" parent="Panel/ProgressBar"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 333.0
+offset_top = -19.0
+offset_right = 389.0
+offset_bottom = 37.0
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Star" type="TextureRect" parent="Panel/ProgressBar/Step_3"]
+anchor_left = 0.518
+anchor_top = 0.214
+anchor_right = 0.518
+anchor_bottom = 0.214
+offset_left = -40.008
+offset_top = -39.984
+offset_right = 39.992
+offset_bottom = 40.016
+pivot_offset = Vector2( 40, 40 )
+texture = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Condition" type="Label" parent="Panel/ProgressBar/Step_3/Star"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.76031
+offset_bottom = -1.23969
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 4 )
+text = "?"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rewardtype" type="TextureRect" parent="Panel/ProgressBar/Step_3"]
+modulate = Color( 1, 1, 1, 0.4 )
+self_modulate = Color( 1, 1, 1, 0.988235 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = 4.0
+offset_right = 26.0
+offset_bottom = 54.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Amount" type="Label" parent="Panel/ProgressBar/Step_3/Rewardtype"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -16.0
+offset_right = 15.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 5 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Checked" type="TextureRect" parent="Panel/ProgressBar/Step_3/Rewardtype/Amount"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+texture = ExtResource( 17 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressTracker" type="Label" parent="Panel"]
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -233.0
+offset_top = 19.0
+offset_right = -38.0
+offset_bottom = 66.0
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 9 )
+text = "?/?"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnParent" type="NinePatchRect" parent="Panel"]
+offset_left = 709.825
+offset_top = 146.0
+offset_right = 899.825
+offset_bottom = 235.0
+texture = ExtResource( 5 )
+patch_margin_left = 40
+patch_margin_top = 40
+patch_margin_right = 40
+patch_margin_bottom = 40
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="BtnClaimed" type="Button" parent="Panel/BtnParent"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+disabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/BtnParent"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.05945
+offset_bottom = -1.05945
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_fonts/font = SubResource( 7 )
+text = "CLAIM"
+align = 1
+valign = 1
+
+[node name="Claimed" type="TextureRect" parent="Panel"]
+visible = false
+offset_left = 745.581
+offset_top = 98.9866
+offset_right = 873.581
+offset_bottom = 226.987
+texture = ExtResource( 16 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/Claimed"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -85.0
+offset_top = 1.0
+offset_right = 80.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color( 0.215686, 0.52549, 0.235294, 1 )
+theme_override_fonts/font = SubResource( 8 )
+text = "COMPLETE"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="Panel/BtnParent/BtnClaimed" to="." method="_on_BtnClaimed_pressed"]

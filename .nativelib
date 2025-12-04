@@ -1,0 +1,64 @@
+{
+    "id": "50b430e9-f683-4174-bf85-61961a864677",
+    "platforms": [
+        "all"
+    ],
+    "packages": {
+        "nativelib-export": {
+            "version": "0.2.0",
+            "platforms": [
+                "all"
+            ],
+            "dependencies": []
+        },
+        "firebase-core": {
+            "version": "0.1.0",
+            "platforms": [],
+            "dependencies": []
+        },
+        "firebase-analytics": {
+            "version": "0.1.1",
+            "platforms": [
+                "all"
+            ],
+            "dependencies": [
+                "firebase-core@0.1.0"
+            ],
+            "autoload": {
+                "fba": "*res://scripts/fba.gd"
+            }
+        },
+        "facebook": {
+            "version": "9.3.0.1",
+            "platforms": [
+                "all"
+            ],
+            "dependencies": [
+                "nativelib-export@0.2.0"
+            ],
+            "variables": {
+                "Facebook/FB_APP_ID": {
+                    "info": "Set your Facebook App ID here"
+                }
+            },
+            "autoload": {
+                "facebook": "*res://scripts/facebook.gd"
+            }
+        },
+        "tenjin": {
+            "version": "0.1.1",
+            "platforms": [
+                "all"
+            ],
+            "dependencies": [],
+            "variables": {
+                "Tenjin/ApiKey": {
+                    "info": "Set your API key here"
+                }
+            },
+            "autoload": {
+                "tenjin": "*res://mobile/tenjin.tscn"
+            }
+        }
+    }
+}

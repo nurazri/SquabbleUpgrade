@@ -1,0 +1,191 @@
+[gd_scene load_steps=16 format=3 uid="uid://cvnmcauywdd25"]
+
+[ext_resource type="Script" uid="uid://cjc3spql84c2g" path="res://init.gd" id="1"]
+[ext_resource type="PackedScene" path="res://game.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://btohijdadwy4b" path="res://gameka_splash_dark.png" id="3"]
+[ext_resource type="FontFile" uid="uid://drreivkewy5io" path="res://fonts/Gretaros-Regular.ttf" id="4"]
+[ext_resource type="PackedScene" path="res://mobile/google_play_version_checker.tscn" id="5"]
+
+[sub_resource type="Animation" id="2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gameka:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="1"]
+resource_name = "chiiing"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gameka:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1, 2, 3.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oqg4r"]
+_data = {
+&"RESET": SubResource("2"),
+&"chiiing": SubResource("1")
+}
+
+[sub_resource type="StyleBoxEmpty" id="7"]
+
+[sub_resource type="StyleBoxEmpty" id="4"]
+
+[sub_resource type="StyleBoxEmpty" id="3"]
+
+[sub_resource type="StyleBoxEmpty" id="6"]
+
+[sub_resource type="StyleBoxEmpty" id="5"]
+
+[sub_resource type="FontFile" id="8"]
+fallbacks = Array[Font]([ExtResource("4")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="FontFile" id="9"]
+fallbacks = Array[Font]([ExtResource("4")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[node name="Init" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 15
+size_flags_vertical = 15
+script = ExtResource("1")
+__meta__ = {
+"_edit_lock_": true
+}
+_ScnGame = ExtResource("2")
+
+[node name="Gameka" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3")
+expand_mode = 1
+stretch_mode = 7
+
+[node name="AnimateGameka" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_oqg4r")
+}
+autoplay = "chiiing"
+
+[node name="DebugToolsToggle" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.453
+anchor_top = 0.424
+anchor_right = 0.581
+anchor_bottom = 0.488
+offset_left = -4.53799
+offset_top = -0.352051
+offset_right = 0.373962
+offset_bottom = 0.575928
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 15
+size_flags_vertical = 15
+theme_override_styles/normal = SubResource("7")
+theme_override_styles/pressed = SubResource("4")
+theme_override_styles/hover = SubResource("3")
+theme_override_styles/disabled = SubResource("6")
+theme_override_styles/focus = SubResource("5")
+
+[node name="DebugToolsToggleConfirm" type="Window" parent="."]
+process_mode = 3
+oversampling_override = 1.0
+position = Vector2i(0, 36)
+exclusive = true
+
+[node name="Password" type="TextEdit" parent="DebugToolsToggleConfirm"]
+anchors_preset = -1
+anchor_left = 0.073
+anchor_top = 0.343
+anchor_right = 0.927
+anchor_bottom = 0.657
+offset_left = 0.190994
+offset_top = -53.8942
+offset_right = -0.19104
+offset_bottom = -53.8622
+size_flags_horizontal = 15
+size_flags_vertical = 15
+theme_override_fonts/font = SubResource("8")
+
+[node name="Confirm" type="Button" parent="DebugToolsToggleConfirm"]
+anchors_preset = -1
+anchor_left = 0.528
+anchor_top = 0.699
+anchor_right = 0.92
+anchor_bottom = 0.958
+offset_left = -375.849
+offset_top = -53.9662
+offset_right = -376.385
+offset_bottom = -53.7742
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 15
+size_flags_vertical = 15
+theme_override_fonts/font = SubResource("9")
+text = "Confirm"
+
+[node name="Cancel" type="Button" parent="DebugToolsToggleConfirm"]
+anchors_preset = -1
+anchor_left = 0.528
+anchor_top = 0.699
+anchor_right = 0.92
+anchor_bottom = 0.958
+offset_left = 0.175995
+offset_top = -53.9662
+offset_right = -0.359985
+offset_bottom = -53.7742
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 15
+size_flags_vertical = 15
+theme_override_fonts/font = SubResource("9")
+text = "Cancel"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 127
+
+[node name="GooglePlayVersionChecker" parent="CanvasLayer" instance=ExtResource("5")]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+
+[connection signal="animation_finished" from="AnimateGameka" to="." method="_on_AnimateGameka_animation_finished"]
+[connection signal="pressed" from="DebugToolsToggle" to="." method="_on_DebugToolsToggle_pressed"]
+[connection signal="about_to_popup" from="DebugToolsToggleConfirm" to="." method="_on_DebugToolsToggleConfirm_about_to_show"]
+[connection signal="pressed" from="DebugToolsToggleConfirm/Confirm" to="." method="_on_Confirm_pressed"]
+[connection signal="pressed" from="DebugToolsToggleConfirm/Cancel" to="." method="_on_Cancel_pressed"]
+[connection signal="visibility_changed" from="CanvasLayer/GooglePlayVersionChecker" to="." method="_on_GooglePlayVersionChecker_visibility_changed"]

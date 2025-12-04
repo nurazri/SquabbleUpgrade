@@ -1,0 +1,184 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://home/level_node.gd" type="Script" id=1]
+[ext_resource path="res://fonts/Gretaros-Regular.ttf" type="FontFile" id=2]
+[ext_resource path="res://home/new_textures/UI_leveltile_grey.png" type="Texture2D" id=3]
+[ext_resource path="res://home/new_textures/UI_leveltile_orange_light.png" type="Texture2D" id=4]
+[ext_resource path="res://home/new_textures/UI_leveltile_purple.png" type="Texture2D" id=5]
+[ext_resource path="res://home/new_textures/UI_leveltile_orange.png" type="Texture2D" id=6]
+[ext_resource path="res://home/new_textures/UI_leveltile_ring.png" type="Texture2D" id=7]
+[ext_resource path="res://home/new_textures/UI_leveltile_star_fill.png" type="Texture2D" id=8]
+[ext_resource path="res://home/new_textures/UI_leveltile_star_empty.png" type="Texture2D" id=9]
+
+[sub_resource type="FontFile" id=1]
+size = 66
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="Level_Node" type="Control"]
+offset_right = 239.0
+offset_bottom = 133.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+level_base_uncleared = ExtResource( 3 )
+level_base_current = ExtResource( 6 )
+level_base_cleared = ExtResource( 5 )
+
+[node name="Level_Highlight" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -119.5
+offset_top = -50.0
+offset_right = 119.5
+offset_bottom = 56.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 5
+
+[node name="Level_Base" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.5
+offset_top = -45.5
+offset_right = 80.5
+offset_bottom = 46.5
+focus_mode = 2
+mouse_filter = 0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Level_Glow" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.5
+offset_top = -74.0463
+offset_right = 75.5
+offset_bottom = 29.9537
+texture = ExtResource( 4 )
+
+[node name="Stage" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.5
+offset_top = -67.0
+offset_right = 25.5
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Clear_Rating" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.0
+offset_top = -127.5
+offset_right = 87.0
+offset_bottom = -48.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1_Star" type="TextureRect" parent="Clear_Rating"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -17.5
+offset_right = -27.0
+offset_bottom = 38.5
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fill" type="TextureRect" parent="Clear_Rating/1_Star"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 8 )
+
+[node name="2_Star" type="TextureRect" parent="Clear_Rating"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.9345
+offset_top = -37.854
+offset_right = 31.0655
+offset_bottom = 18.146
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fill" type="TextureRect" parent="Clear_Rating/2_Star"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 8 )
+
+[node name="3_Star" type="TextureRect" parent="Clear_Rating"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 27.6274
+offset_top = -18.2109
+offset_right = 86.6274
+offset_bottom = 37.7891
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fill" type="TextureRect" parent="Clear_Rating/3_Star"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 8 )
+
+[node name="Play" type="Button" parent="."]
+modulate = Color( 0, 0, 0, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.0
+offset_top = -46.0
+offset_right = 87.0
+offset_bottom = 46.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://mobile/tenjin.gd" type="Script" id=1]
+
+[node name="Tenjin" type="Node"]
+script = ExtResource( 1 )

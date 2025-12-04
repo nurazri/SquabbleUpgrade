@@ -1,0 +1,181 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://debug_tools/debug_tools.gd" type="Script" id=1]
+[ext_resource path="res://fonts/Gretaros-Regular.ttf" type="FontFile" id=2]
+[ext_resource path="res://debug_tools/skip_intro.gd" type="Script" id=3]
+[ext_resource path="res://debug_tools/skip_tutorial_intro.gd" type="Script" id=4]
+[ext_resource path="res://debug_tools/level_indicator.gd" type="Script" id=5]
+[ext_resource path="res://debug_tools/debug_tools_indicator.gd" type="Script" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="FontFile" id=4]
+size = 64
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="FontFile" id=2]
+size = 32
+font_data = ExtResource( 2 )
+
+[node name="DebugTools" type="CanvasLayer"]
+layer = 128
+follow_viewport_enabled = true
+script = ExtResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+size_flags_horizontal = 15
+size_flags_vertical = 15
+
+[node name="PanelTop" type="Panel" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 0.096
+offset_bottom = 0.391998
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+size_flags_horizontal = 15
+size_flags_vertical = 15
+theme_override_styles/panel = SubResource( 3 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/PanelTop"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+size_flags_horizontal = 15
+size_flags_vertical = 15
+follow_focus = true
+scroll_horizontal_enabled = false
+
+[node name="GridContainer" type="GridContainer" parent="Control/PanelTop/ScrollContainer"]
+offset_right = 946.0
+offset_bottom = 197.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+size_flags_horizontal = 15
+size_flags_vertical = 15
+theme_override_constants/v_separation = 10
+theme_override_constants/h_separation = 10
+columns = 3
+
+[node name="DebugToolsIndicator" type="Label" parent="Control/PanelTop/ScrollContainer/GridContainer"]
+offset_right = 308.0
+offset_bottom = 155.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 15
+size_flags_vertical = 13
+theme_override_fonts/font = SubResource( 4 )
+text = "Debug
+"
+align = 1
+valign = 1
+script = ExtResource( 6 )
+
+[node name="Blank" type="Label" parent="Control/PanelTop/ScrollContainer/GridContainer"]
+offset_left = 318.0
+offset_right = 626.0
+offset_bottom = 155.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 15
+size_flags_vertical = 13
+theme_override_fonts/font = SubResource( 4 )
+text = "
+"
+align = 1
+valign = 1
+
+[node name="LevelIndicator" type="Label" parent="Control/PanelTop/ScrollContainer/GridContainer"]
+offset_left = 636.0
+offset_right = 944.0
+offset_bottom = 155.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 15
+size_flags_vertical = 13
+theme_override_fonts/font = SubResource( 4 )
+text = "Level
+"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+
+[node name="PanelBottom" type="Panel" parent="Control"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -288.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+size_flags_horizontal = 15
+size_flags_vertical = 15
+theme_override_styles/panel = SubResource( 3 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/PanelBottom"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+size_flags_horizontal = 15
+size_flags_vertical = 15
+follow_focus = true
+scroll_horizontal_enabled = false
+
+[node name="GridContainer" type="GridContainer" parent="Control/PanelBottom/ScrollContainer"]
+offset_right = 946.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+size_flags_horizontal = 15
+size_flags_vertical = 15
+theme_override_constants/v_separation = 10
+theme_override_constants/h_separation = 10
+columns = 3
+
+[node name="SkipIntro" type="Button" parent="Control/PanelBottom/ScrollContainer/GridContainer"]
+offset_right = 212.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_minimum_size = Vector2( 100, 100 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = SubResource( 2 )
+text = "skip intro"
+script = ExtResource( 3 )
+
+[node name="SkipTutorialIntro" type="Button" parent="Control/PanelBottom/ScrollContainer/GridContainer"]
+offset_left = 222.0
+offset_right = 617.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_minimum_size = Vector2( 100, 100 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = SubResource( 2 )
+text = "skip tutorial intro"
+script = ExtResource( 4 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="Control/PanelTop/ScrollContainer/GridContainer/DebugToolsIndicator" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="Control/PanelTop/ScrollContainer/GridContainer/LevelIndicator" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="Control/PanelBottom/ScrollContainer/GridContainer/SkipIntro" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="Control/PanelBottom/ScrollContainer/GridContainer/SkipTutorialIntro" method="_on_Timer_timeout"]
+[connection signal="pressed" from="Control/PanelBottom/ScrollContainer/GridContainer/SkipIntro" to="Control/PanelBottom/ScrollContainer/GridContainer/SkipIntro" method="_on_SkipIntro_pressed"]
+[connection signal="pressed" from="Control/PanelBottom/ScrollContainer/GridContainer/SkipTutorialIntro" to="Control/PanelBottom/ScrollContainer/GridContainer/SkipTutorialIntro" method="_on_SkipTutorialIntro_pressed"]

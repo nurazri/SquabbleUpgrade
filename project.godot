@@ -1,0 +1,173 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[AppLovin]
+
+SdkKey="CgG1BtqwUb8gNyhBVM-6AoTTU-yyGD9UyFS4QZzB7qdKR94hTICWTvRbNbGfmkw9VEQ8cUSDZFXLFELip15EZB"
+
+[Appodeal]
+
+AppKey="a22f10384563bb5e40ddf06ebc363597abdb9fe7a7cce146"
+
+[ByteBrew]
+
+GameId="wTOMkbZvg"
+SdkKey="C61EyZUvx1lVi1CxTlkKzd9uaMrHMV+d4+Xd9acxTDhMjXeNsVokun61wgHZ0FcX"
+
+[LionStudios]
+
+AdjustAppToken="9w2hansma58g"
+
+[Tenjin]
+
+ApiKey="USAZEUAG1YYBVRWWY4NP1HZAVYGPDHRY"
+
+[admob]
+
+config={
+"banner": {
+"position": 0,
+"show_instantly": false,
+"size": "MEDIUM_RECTANGLE",
+"unit_ids": {
+"Android": {
+"standard": "ca-app-pub-3940256099942544/6300978111"
+},
+"iOS": {
+"standard": "ca-app-pub-3940256099942544/2934735716"
+}
+}
+},
+"debug": {
+"is_test_europe_user_consent": false
+},
+"general": {
+"is_enabled": false,
+"is_for_child_directed_treatment": false,
+"max_ad_content_rating": "PG"
+},
+"interstitial": {
+"unit_ids": {
+"Android": {
+"standard": "ca-app-pub-1455537996122010/3018625367"
+},
+"iOS": {
+"standard": "ca-app-pub-1455537996122010/3018625367"
+}
+}
+},
+"rewarded": {
+"unit_ids": {
+"Android": {
+"standard": "ca-app-pub-3940256099942544/5224354917"
+},
+"iOS": {
+"standard": "ca-app-pub-3940256099942544/1712485313"
+}
+}
+},
+"rewarded_interstitial": {
+"unit_ids": {
+"Android": {
+"standard": "ca-app-pub-3940256099942544/5354046379"
+},
+"iOS": {
+"standard": "ca-app-pub-3940256099942544/6978759866"
+}
+}
+}
+}
+
+[application]
+
+config/name="Squabble"
+run/main_scene="res://init.tscn"
+config/auto_accept_quit=false
+config/quit_on_go_back=false
+config/features=PackedStringArray("4.5")
+boot_splash/bg_color=Color(0.0196078, 0.027451, 0.0313726, 1)
+boot_splash/image="res://blank_splash_dark.png"
+config/icon="res://app_icon.png"
+config/macos_native_icon="res://app_icon.png"
+config/windows_native_icon="res://app_icon.png"
+
+[autoload]
+
+Globals="*res://globals.tscn"
+JSONLoader="*res://utils/json_loader.tscn"
+Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
+FirebaseFirestoreDocument="*res://mobile/firebase_firestore_document.tscn"
+GameLoader="*res://game_loader/game_loader.tscn"
+GooglePlayGames="*res://mobile/google_play_games.tscn"
+GoogleIapModule="*res://mobile/google_iap_module.tscn"
+FirebaseAnalytics="*res://mobile/firebase_analytics.tscn"
+Tenjin="*res://mobile/tenjin.tscn"
+WordList="*res://word_list/word_list.tscn"
+Audio="*res://audio/audio.tscn"
+Loading="*res://loading/loading.tscn"
+Appodeal="*res://mobile/appodeal.tscn"
+ByteBrew="*res://mobile/bytebrew.tscn"
+facebook="*res://mobile/facebook.gd"
+Analytics="*res://mobile/analytics.tscn"
+DebugTools="*res://debug_tools/debug_tools.tscn"
+ApplovinMax="*res://scripts/applovin_max.gd"
+
+[compression]
+
+formats/zstd/long_distance_matching=true
+formats/zstd/compression_level=20
+formats/zlib/compression_level=5
+formats/gzip/compression_level=5
+
+[display]
+
+window/size/viewport_width=946
+window/size/viewport_height=2048
+window/size/window_width_override=425
+window/size/window_height_override=921
+window/stretch/mode="2d"
+window/handheld/orientation="portrait"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-firebase/plugin.cfg")
+
+[firebase]
+
+environment_variables/apiKey="AIzaSyA2r20IJoBSJ5cj0yiJcTsR0zxLEza-1QQ"
+environment_variables/authDomain="squabble-5848595.firebaseapp.com"
+environment_variables/databaseURL="https://squabble-5848595-default-rtdb.firebaseio.com"
+environment_variables/projectId="squabble-5848595"
+environment_variables/storageBucket="squabble-5848595.appspot.com"
+environment_variables/messagingSenderId="520978323500"
+environment_variables/appId="1:520978323500:web:de85db37e4b759fc1f5989"
+environment_variables/measurementId="G-2QLMDJ39SK"
+environment_variables/clientId="520978323500-eoacpftb1hnetm2rjn4gntn97f61ocqe.apps.googleusercontent.com"
+environment_variables/clientSecret="QCBBNOKcvDQbaTfQjOJsDXTg"
+environment_variables/domainUriPrefix=""
+
+[gdnative]
+
+singletons=[]
+singletons_disabled=[]
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+quality/driver/driver_name="GLES2"
+quality/driver/fallback_to_gles2=true
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=0
+vram_compression/import_etc=true
+vram_compression/import_pvrtc=true
