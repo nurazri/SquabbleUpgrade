@@ -1,5 +1,0 @@
-res://init.tscn
-res://globals.gd
-res://utils/json_loader.gd
-res://addons/godot-firebase/database/reference.gd
-res://addons/godot-firebase/firestore/firestore.gd
