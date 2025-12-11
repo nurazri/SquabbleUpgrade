@@ -150,69 +150,88 @@ func _set_offline_runtime(value: bool) -> void:
 	if not persistence_enabled:
 		return
 
-	var file = File.new()
-	var event_record_path = _config["cacheLocation"].plus_file(_CACHE_RECORD_FILE)
+	var event_record_path = _config["cacheLocation"].path_join(_CACHE_RECORD_FILE)
 
 	if not value:
 		var offline_time = 2147483647
-		if file.open_encrypted_with_pass(event_record_path, File.READ, _encrypt_key) == OK:
-			offline_time = int(file.get_buffer(file.get_length()).get_string_from_utf8()) - 2
-		file.close()
 
-		var cache_dir = DirAccess.new()
-		var cache_files = []
-		if cache_dir.open(_cache_loc) == OK:
+		# --- READ encrypted event record file ---
+		var file := FileAccess.open_encrypted_with_pass(event_record_path, FileAccess.READ, _encrypt_key)
+		if file != null:
+			var raw := file.get_buffer(file.get_length())
+			offline_time = int(raw.get_string_from_utf8()) - 2
+			file.close()
+
+		# --- Scan cache directory ---
+		var cache_dir := DirAccess.open(_cache_loc)
+		var cache_files: Array = []
+
+		if cache_dir:
 			cache_dir.list_dir_begin()
 			var file_name = cache_dir.get_next()
 			while file_name != "":
 				if not cache_dir.current_is_dir() and file_name.ends_with(_CACHE_EXTENSION):
-					if file.get_modified_time(_cache_loc.plus_file(file_name)) >= offline_time:
-						cache_files.append(_cache_loc.plus_file(file_name))
+					var fullpath = _cache_loc.path_join(file_name)
+					if FileAccess.get_modified_time(fullpath) >= offline_time:
+						cache_files.append(fullpath)
 				file_name = cache_dir.get_next()
 			cache_dir.list_dir_end()
 
+		# Skip event record file
 		cache_files.erase(event_record_path)
 
+		# --- Read and process cached docs ---
 		for cache in cache_files:
-			var deleted = false
-			if file.open_encrypted_with_pass(cache, File.READ, _encrypt_key) == OK:
-				var name = file.get_line()
-				var content = file.get_line()
-				var collection_id = name.left(name.rfind("/"))
-				var document_id = name.right(name.rfind("/") + 1)
+			var deleted := false
+			var f := FileAccess.open_encrypted_with_pass(cache, FileAccess.READ, _encrypt_key)
+
+			if f != null:
+				var name := f.get_line()
+				var content := f.get_line()
+
+				var collection_id := name.left(name.rfind("/"))
+				var document_id := name.substr(name.rfind("/") + 1)
 
 				var coll = collection(collection_id)
+
 				if content == "--deleted--":
 					coll.delete(document_id)
 					deleted = true
 				else:
-					var test_json_conv = JSON.new()
-					var parse_error = test_json_conv.parse(content)
+					var json_conv := JSON.new()
+					var parse_error := json_conv.parse(content)
+
 					if parse_error == OK:
-						var data = test_json_conv.get_data()
+						var data = json_conv.data
 						coll.update(document_id, FirestoreDocument.fields2dict(data))
 					else:
 						printerr("JSON Parse Error for cached document %s: %s (line %d)" % [
 							document_id,
-							test_json_conv.get_error_message(),
-							test_json_conv.get_error_line()
+							json_conv.get_error_message(),
+							json_conv.get_error_line()
 						])
+				f.close()
 			else:
-				printerr("Failed to retrieve cache %s! Error code: %d" % [cache, file.get_error()])
-			file.close()
+				printerr("Failed to retrieve cache %s! Error code: %d" % [cache, FileAccess.get_open_error()])
+
 			if deleted:
-				cache_dir.remove(cache)
+				DirAccess.remove_absolute(cache)
+
 	else:
-		if file.open_encrypted_with_pass(event_record_path, File.WRITE, _encrypt_key) == OK:
-			file.store_buffer(str(Time.get_unix_time_from_system()).to_utf8_buffer())
-		file.close()
+		var f := FileAccess.open_encrypted_with_pass(event_record_path, FileAccess.WRITE, _encrypt_key)
+		if f != null:
+			f.store_buffer(str(Time.get_unix_time_from_system()).to_utf8_buffer())
+			f.close()
+
 
 func _set_config(config_json) -> void:
 	_config = config_json
 	_cache_loc = _config["cacheLocation"]
 	_extended_url = _extended_url.replace("[PROJECT_ID]", _config.projectId)
+
 	if not Engine.is_editor_hint():
-		_offline = File.new().file_exists(_cache_loc.plus_file(_CACHE_RECORD_FILE))
+		var record_path = _cache_loc.path_join(_CACHE_RECORD_FILE)
+		_offline = FileAccess.file_exists(record_path)
 
 func _pooled_request(task) -> void:
 	if _offline:

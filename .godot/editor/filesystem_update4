@@ -1,0 +1,6 @@
+res://init.tscn
+res://addons/godot-firebase/firestore/firestore.gd
+res://addons/godot-firebase/firestore/firestore_collection.gd
+res://addons/godot-firebase/storage/storage.gd
+res://addons/godot-firebase/storage/storage_reference.gd
+res://addons/godot-firebase/dynamiclinks/dynamiclinks.gd

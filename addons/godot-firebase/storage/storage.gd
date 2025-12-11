@@ -57,7 +57,8 @@ func _internal_process(_delta : float) -> void:
 	
 	match _http_client.get_status():
 		HTTPClient.STATUS_DISCONNECTED:
-			_http_client.connect_to_host(_base_url, 443, true)
+			var tls := TLSOptions.client()
+			_http_client.connect_to_host(_base_url, 443, tls)
 		
 		HTTPClient.STATUS_RESOLVING, \
 		HTTPClient.STATUS_REQUESTING, \
@@ -105,8 +106,6 @@ func _internal_process(_delta : float) -> void:
 			_finish_request(HTTPRequest.RESULT_CANT_RESOLVE)
 		HTTPClient.STATUS_CONNECTION_ERROR:
 			_finish_request(HTTPRequest.RESULT_CONNECTION_ERROR)
-		HTTPClient.STATUS_SSL_HANDSHAKE_ERROR:
-			_finish_request(HTTPRequest.RESULT_SSL_HANDSHAKE_ERROR)
 
 ## @args path
 ## @arg-defaults ""
@@ -129,7 +128,7 @@ func ref(path := "") -> StorageReference:
 		ref.bucket = bucket
 		ref.full_path = path
 		ref.name = path.get_file()
-		ref.parent = ref(path.plus_file(".."))
+		ref.parent = ref(path.path_join(".."))
 		ref.root = _root_ref
 		ref.storage = self
 		return ref
@@ -175,6 +174,18 @@ func _download(ref : StorageReference, meta_only : bool, url_only : bool) -> Sto
 	_pending_tasks.append(task)
 	
 	await info_task.task_finished
+	if info_task.data is Dictionary and not info_task.data.has("error"):
+		task._url += info_task.data.downloadTokens
+	else:
+		task.data = info_task.data
+		task.response_headers = info_task.response_headers
+		task.response_code = info_task.response_code
+		task.result = info_task.result
+		task.finished = true
+		task.emit_signal("task_finished")
+		emit_signal("task_failed", task.result, task.response_code, task.data)
+		_pending_tasks.erase(task)
+	
 	if info_task.data and not info_task.data.has("error"):
 		task._url += info_task.data.downloadTokens
 	else:
@@ -251,44 +262,74 @@ func _finish_request(result : int) -> void:
 				task.data = null
 		
 		StorageTask.Task.TASK_DOWNLOAD_URL:
-			var test_json_conv = JSON.new()
-			test_json_conv.parse(_response_data.get_string_from_utf8()).result
-			var json : Dictionary = test_json_conv.get_data()
-			if json and json.has("downloadTokens"):
-				task.data = _base_url + _get_file_url(task.ref) + "?alt=media&token=" + json.downloadTokens
+			var data = JSON.parse_string(_response_data.get_string_from_utf8())
+			if data is Dictionary and data.has("downloadTokens"):
+				task.data = _base_url + _get_file_url(task.ref) + "?alt=media&token=" + data["downloadTokens"]
 			else:
 				task.data = ""
 		
-		StorageTask.Task.TASK_LIST, StorageTask.Task.TASK_LIST_ALL:
-			var test_json_conv = JSON.new()
-			test_json_conv.parse(_response_data.get_string_from_utf8()).result
-			var json : Dictionary = test_json_conv.get_data()
-			var items := []
-			if json and json.has("items"):
-				for item in json.items:
-					var item_name : String = item.name
-					if item.bucket != bucket:
-						continue
-					if not item_name.begins_with(task.ref.full_path):
-						continue
-					if task.action == StorageTask.Task.TASK_LIST:
-						var dir_path : Array = item_name.split("/")
-						var slash_count : int = task.ref.full_path.count("/")
-						item_name = ""
-						for i in slash_count + 1:
-							item_name += dir_path[i]
-							if i != slash_count and slash_count != 0:
-								item_name += "/"
-						if item_name in items:
-							continue
+			if task.action == StorageTask.Task.TASK_LIST or task.action == StorageTask.Task.TASK_LIST_ALL:
+				var json = JSON.new()
+				var parse_error = json.parse(_response_data.get_string_from_utf8())
+				if parse_error != OK:
+					push_error("JSON Parse Error: " + json.get_error_message() + " at line " + str(json.get_error_line()))
+					task.error = parse_error
+					task.finished = true
+					return
 					
-					items.append(item_name)
-			task.data = items
+				var json_dict: Dictionary = json.data
+				var items: Array = []
+				if json_dict.has("items"):
+					for item in json_dict["items"]:
+						# Firebase returns item as Dictionary with "name", "bucket", etc.
+						var item_name: String = item["name"]
+						if item["bucket"] != bucket:
+							continue
+						if not item_name.begins_with(task.ref.full_path):
+							continue
+							
+						if task.action == StorageTask.Task.TASK_LIST:
+							# Only return direct children (one level deep) + add trailing slash for folders
+							var parts: PackedStringArray = item_name.split("/")
+							var slash_count: int = task.ref.full_path.count("/")
+							var relative_name: String = ""
+							
+							 # Build the name of the direct child
+							for i in range(slash_count + 1, parts.size()):
+								relative_name += parts[i]
+								if i < parts.size() - 1:
+									relative_name += "/"
+								break  # We only want the first level after the prefix
+							
+							 # If it's a "folder" (has more path segments), add trailing slash
+							if parts.size() > slash_count + 1:
+								if not relative_name.ends_with("/"):
+									relative_name += "/"
+							
+							if relative_name.is_empty():
+								continue
+							if relative_name in items:
+								continue
+							items.append(relative_name)
+						else:
+							# TASK_LIST_ALL → return full relative path (no trimming)
+							var relative_path: String = item_name.substr(task.ref.full_path.length())
+							if relative_path.is_empty():
+								continue
+							items.append(relative_path)
+				task.data = items
+				task.finished = true
 		
 		_:
-			var test_json_conv = JSON.new()
-			test_json_conv.parse(_response_data.get_string_from_utf8()).result
-			task.data = test_json_conv.get_data()
+			var json = JSON.new()
+			var parse_error = json.parse(_response_data.get_string_from_utf8())
+
+			if parse_error != OK:
+				push_error("JSON Parse Error: " + json.get_error_message() + " at line " + str(json.get_error_line()))
+				# Handle error (e.g., task.error = parse_error; task.finished.emit())
+				return  # Or continue as needed
+
+			task.data = json.data
 	
 	var next_task : StorageTask
 	if not _pending_tasks.is_empty():
