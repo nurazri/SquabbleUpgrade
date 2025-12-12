@@ -8,28 +8,30 @@ var _debug_tools_toggle_button_press_count: int = 0
 
 
 func _ready() -> void:
-	if ProjectSettings.has_setting('LionStudios/AdjustAppToken'):
-		var adjust_app_token = ProjectSettings.get_setting('LionStudios/AdjustAppToken')
-		var adjust
+	# Initialize Adjust SDK if token exists
+	if ProjectSettings.has_setting("LionStudios/AdjustAppToken"):
+		var adjust_app_token: String = ProjectSettings.get_setting("LionStudios/AdjustAppToken")
 		if Engine.has_singleton("GodotAdjust"):
-			adjust = Engine.get_singleton("GodotAdjust")
+			var adjust = Engine.get_singleton("GodotAdjust")
 			adjust.init(adjust_app_token, not OS.is_debug_build())
 
+	# Load Appodeal ads
 	Appodeal.load_ad(Appodeal.AdType.INTERSTITIAL)
 	await Appodeal.interstitial_loaded
 	Appodeal.load_ad(Appodeal.AdType.REWARDED_VIDEO)
 	await Appodeal.rewarded_ad_loaded
 
 
-func _on_AnimateGameka_animation_finished(_anim_name) -> void:
-	Loading.load_next(_ScnGame.instantiate(), null, get_tree().root, 0.5, true)
+func _on_AnimateGameka_animation_finished(_anim_name: String) -> void:
+	# Pass an empty Callable instead of null
+	Loading.load_next(_ScnGame.instantiate(), Callable(), get_tree().root, 0.5, true)
 	queue_free()
 
 
 func _on_DebugToolsToggle_pressed() -> void:
 	_debug_tools_toggle_button_press_count += 1
 	if _debug_tools_toggle_button_press_count >= 3:
-		# DebugTools.start()
+		# Show debug tools confirmation window
 		_ToggleConfirm.popup()
 
 
@@ -42,7 +44,7 @@ func _on_DebugToolsToggleConfirm_popup_hide() -> void:
 
 
 func _on_Confirm_pressed() -> void:
-	var text = $DebugToolsToggleConfirm/Password.text
+	var text: String = $DebugToolsToggleConfirm/Password.text
 	text = text.to_lower()
 	if text == "arguel town party":
 		DebugTools.start()
@@ -55,7 +57,6 @@ func _on_Cancel_pressed() -> void:
 
 func _on_GooglePlayVersionChecker_visibility_changed() -> void:
 	if $CanvasLayer/GooglePlayVersionChecker.visible:
-		get_tree().paused = true	
+		get_tree().paused = true
 	else:
 		get_tree().paused = false
-

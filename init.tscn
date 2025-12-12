@@ -79,9 +79,6 @@ grow_vertical = 2
 size_flags_horizontal = 15
 size_flags_vertical = 15
 script = ExtResource("1")
-__meta__ = {
-"_edit_lock_": true
-}
 _ScnGame = ExtResource("2")
 
 [node name="Gameka" type="TextureRect" parent="."]

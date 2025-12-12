@@ -1,40 +1,41 @@
 @tool
 ## @meta-authors TODO
-## @meta-authors TODO
 ## @meta-version 1.1
-## The dynamic links API for Firebase
-## Documentation TODO.
+## Firebase Dynamic Links for Godot 4
+
 class_name FirebaseDynamicLinks
 extends Node
 
 signal dynamic_link_generated(link_result)
 
-const _AUTHORIZATION_HEADER : String = "Authorization: Bearer "
+const _AUTHORIZATION_HEADER: String = "Authorization: Bearer "
 
-var request : int = -1
+var request: int = -1
 
-var _dynamic_link_request_url : String = "https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=%s"
+var _dynamic_link_request_url: String = "https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=%s"
 
-var _config : Dictionary = {}
+var _config: Dictionary = {}
+var _auth: Dictionary = {}
 
-var _auth : Dictionary
-var _request_list_node : HTTPRequest
-
+var _request_list_node: HTTPRequest
 var _headers: PackedStringArray = ["Content-Type: application/json"]
 
 enum Requests {
 	NONE = -1,
 	GENERATE
-   }
+}
 
-func _set_config(config_json : Dictionary) -> void:
+func _set_config(config_json: Dictionary) -> void:
 	_config = config_json
-	_dynamic_link_request_url %= _config.apiKey
+	_dynamic_link_request_url = _dynamic_link_request_url % _config.apiKey
+
 	_request_list_node = HTTPRequest.new()
-	_request_list_node.connect("request_completed", Callable(self, "_on_request_completed"))
 	add_child(_request_list_node)
 
-var _link_request_body : Dictionary = {
+	_request_list_node.request_completed.connect(_on_request_completed)
+
+
+var _link_request_body: Dictionary = {
 	"dynamicLinkInfo": {
 		"domainUriPrefix": "",
 		"link": "",
@@ -44,40 +45,58 @@ var _link_request_body : Dictionary = {
 		"iosInfo": {
 			"iosBundleId": ""
 		}
-		},
+	},
 	"suffix": {
 		"option": ""
 	}
-	}
+}
 
-## @args log_link, APN, IBI, is_unguessable
-## This function is used to generate a dynamic link using the Firebase REST API
-## It will return a JSON with the shortened link
-func generate_dynamic_link(long_link : String, APN : String, IBI : String, is_unguessable : bool) -> void:
+
+## @args long_link, APN, IBI, is_unguessable
+## Generate Firebase Dynamic Link (REST API)
+func generate_dynamic_link(long_link: String, APN: String, IBI: String, is_unguessable: bool) -> void:
 	request = Requests.GENERATE
-	_link_request_body.dynamicLinkInfo.domainUriPrefix = _config.domainUriPrefix
-	_link_request_body.dynamicLinkInfo.link = long_link
-	_link_request_body.dynamicLinkInfo.androidInfo.androidPackageName = APN
-	_link_request_body.dynamicLinkInfo.iosInfo.iosBundleId = IBI
-	if is_unguessable:
-		_link_request_body.suffix.option = "UNGUESSABLE"
-	else:
-		_link_request_body.suffix.option = "SHORT"
-	var body := JSON.stringify(_link_request_body).to_utf8_buffer()
-	_request_list_node.set_body(body)
-	_request_list_node.request(_dynamic_link_request_url, _headers, HTTPClient.METHOD_POST)
 
-func _on_request_completed(result : int, response_code : int, headers : PackedStringArray, body : PackedByteArray) -> void:
-	var test_json_conv = JSON.new()
-	test_json_conv.parse(body.get_string_from_utf8()).result
-	var result_body : Dictionary = test_json_conv.get_data()
-	emit_signal("dynamic_link_generated", result_body.shortLink)
+	_link_request_body["dynamicLinkInfo"]["domainUriPrefix"] = _config.domainUriPrefix
+	_link_request_body["dynamicLinkInfo"]["link"] = long_link
+	_link_request_body["dynamicLinkInfo"]["androidInfo"]["androidPackageName"] = APN
+	_link_request_body["dynamicLinkInfo"]["iosInfo"]["iosBundleId"] = IBI
+
+	# Correct ternary operator for Godot
+	_link_request_body["suffix"]["option"] = "UNGUESSABLE" if is_unguessable else "SHORT"
+
+	var json_body = JSON.stringify(_link_request_body).to_utf8_buffer()
+
+	_request_list_node.request(
+		_dynamic_link_request_url,
+		_headers,
+		HTTPClient.METHOD_POST,
+		json_body
+	)
+
+
+func _on_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
+	var json := JSON.new()
+	var parse_result := json.parse(body.get_string_from_utf8())
+
+	if parse_result != OK:
+		push_error("Firebase Dynamic Links: JSON parse failed: %s" % json.get_error_message())
+		return
+
+	var result_body: Dictionary = json.get_data()
+
+	if result_body.has("shortLink"):
+		emit_signal("dynamic_link_generated", result_body["shortLink"])
+	else:
+		push_error("Firebase Dynamic Links: Missing 'shortLink' in response: %s" % str(result_body))
+
 	request = Requests.NONE
 
-func _on_FirebaseAuth_login_succeeded(auth_result : Dictionary) -> void:
+
+func _on_FirebaseAuth_login_succeeded(auth_result: Dictionary) -> void:
 	_auth = auth_result
 
-func _on_FirebaseAuth_token_refresh_succeeded(auth_result : Dictionary) -> void:
+func _on_FirebaseAuth_token_refresh_succeeded(auth_result: Dictionary) -> void:
 	_auth = auth_result
 
 func _on_FirebaseAuth_logout() -> void:
