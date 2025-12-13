@@ -323,7 +323,7 @@ func initiate_event(level, step, init = false) -> void:
 				11: _dialog_manager.start_dialog_text("Go on newbie and show her whose boss", 7, "Squab", "left")
 				12: 
 					_dialog_manager.enable_dialog_text(false)
-					_Commander.start(Callable(Globals.GameMode.TUTORIAL, 1))
+					_Commander.start(Globals.GameMode.TUTORIAL, 1)
 					set_snatch_function(true)
 					_BoardMe.enable_reset(false)
 					get_tree().call_group("lettertiles", "disable", false)
@@ -337,7 +337,7 @@ func initiate_event(level, step, init = false) -> void:
 				1: _static_dialog_manager.start_static_text("I'm playing for real now. Try not to lose")
 				2: 
 					_static_dialog_manager.enable_static_text(false)
-					_Commander.start(Callable(Globals.GameMode.TUTORIAL, 1))
+					_Commander.start(Globals.GameMode.TUTORIAL, 1)
 					set_snatch_function(true)
 				3: manual_transition_result_screen(true)
 				4:
@@ -1136,15 +1136,19 @@ func manual_setter(letterlist: Array, wordlist: Array) -> void:
 		spacing += 1
 	
 	for i in _this_word.size():
-		var Letter: Letter = _ScnLetter.instantiate()
-		Letter.get_node("Col").disabled = true
-		Letter.init(_spawned_letter_index, _this_word[i], WordList.get_letter_points(_this_word[i]), Globals.LetterOwnership.POOL)
+		var letter: Letter = _ScnLetter.instantiate()
+		letter.init(
+		_spawned_letter_index,
+		_this_word[i],
+		WordList.get_letter_points(_this_word[i]),
+		Globals.LetterOwnership.POOL
+	)
 		Letter.position = Vector2(generate_positions[i][0], generate_positions[i][1])
-		Letter.mode = RigidBody2D.FREEZE_MODE_STATIC
-		Letter._skip_interpolate = true
+		letter.rigid_mode = Letter.MODE_STATIC
+		letter._skip_interpolate = true
 		_spawned_letter_index += 1
 		get_parent().get_node("Spawner")._spawned_letter_index += 1
-		get_parent().add_child(Letter)
+		get_parent().add_child(letter)
 		get_parent()._on_Spawner_letter_spawned(Letter)
 	
 	await get_tree().create_timer(0.01).timeout

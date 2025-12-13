@@ -1,4 +1,4 @@
-extends Page
+extends Control
 
 signal ResetSelectedAvatar
 

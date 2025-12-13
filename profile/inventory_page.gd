@@ -1,4 +1,4 @@
-extends Page
+extends Control
 
 signal ResetSelectedAvatar
 signal UpdateAllBooster
@@ -6,13 +6,17 @@ signal UpdateAllBooster
 @export var _ScnAvatarSelect: PackedScene
 @export var _ScnBoosterInfo: PackedScene
 
+var extra_params: String = ""
+
 func on_Load() -> void:
 	_load_inventory_info()
 
 
 func _load_inventory_info() -> void:
-	for child in get_node("GameInfo/ScrollContainerAvatar/GridContainer").get_children():
+	var avatar_container = get_node("GameInfo/ScrollContainerAvatar/GridContainer")
+	for child in avatar_container.get_children():
 		child.queue_free()
+	
 	for a in Globals.CurrentUnlockableAvatar:
 		var isEquipped: bool = a == GameLoader.player_data["avatar"]
 		var avatar_object = _ScnAvatarSelect.instantiate()
@@ -23,22 +27,22 @@ func _load_inventory_info() -> void:
 		
 		avatar_object.connect("OnSelectAvatar", Callable(self, "_on_Avatar_selection_set"))
 		self.connect("ResetSelectedAvatar", Callable(avatar_object, "_unselect_avatar"))
-		get_node("GameInfo/ScrollContainerAvatar/GridContainer").add_child(avatar_object)
+		avatar_container.add_child(avatar_object)
 		
 	# For Boosters
-	for child in get_node("GameInfo/ScrollContainerBooster/VBoxContainer").get_children():
+	var booster_container = get_node("GameInfo/ScrollContainerBooster/VBoxContainer")
+	for child in booster_container.get_children():
 		child.queue_free()
+	
 	for b in Globals.BoosterAttributes:
 		var get_ref_id: String = str(Globals.BoosterAttributes[b]["Info"]["Ref_ID"])
 		var discovered: bool = GameLoader.player_data["booster_parameters"][get_ref_id]["Discovered"]
 		if discovered:
 			var booster_object = _ScnBoosterInfo.instantiate()
-			get_node("GameInfo/ScrollContainerBooster/VBoxContainer").add_child(booster_object)
+			booster_container.add_child(booster_object)
 			booster_object.init(Globals.BoosterAttributes[b])
 			booster_object.connect("call_booster_update_signal", Callable(self, "_forward_booster_signal"))
 			self.connect("UpdateAllBooster", Callable(booster_object, "update_all_boosters"))
-		else:	
-			pass
 
 
 func _on_Avatar_selection_set() -> void:
@@ -49,9 +53,9 @@ func _forward_booster_signal() -> void:
 	emit_signal("UpdateAllBooster")
 
 
-func set_inventory_state(show, navigate) -> void:
+func set_inventory_state(show: bool, navigate: String) -> void:
 	var return_page = ("Booster" if navigate == "Avatar" else
-						"Avatar" if navigate == "Booster" else null)
+						"Avatar" if navigate == "Booster" else "")
 	
 	get_node("GameInfo/ScrollContainerAvatar").set_v_scroll(0)
 	get_node("GameInfo/ScrollContainerBooster").set_v_scroll(0)
@@ -62,15 +66,15 @@ func set_inventory_state(show, navigate) -> void:
 	get_node(return_page + "Selection").modulate.a = 0.5
 
 
-func _on_BtnAvatarSelect_pressed():
+func _on_BtnAvatarSelect_pressed() -> void:
 	set_inventory_state(true, "Avatar")
 
 
-func _on_BtnBoosterSelect_pressed():
+func _on_BtnBoosterSelect_pressed() -> void:
 	set_inventory_state(true, "Booster")
 
 
-func _on_Inventory_Page_visibility_changed():
+func _on_Inventory_Page_visibility_changed() -> void:
 	if extra_params != "":
 		set_inventory_state(true, extra_params)
 		extra_params = ""

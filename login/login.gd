@@ -2,20 +2,22 @@ extends Control
 
 signal login_checked(is_login_checked)
 
-
 func _ready() -> void:
 	show()
 	GameLoader.current_slot = 1
+	
 	var _game_data: Dictionary = GameLoader._load_game()
 	var _currency_data: Dictionary = GameLoader._load_currency()
+	
 	await get_tree().create_timer(0.01).timeout
+	
 	if _game_data.is_empty():
 		create_profile(1)
 	else:
 		select_profile(1)
 
 
-func create_profile(slot, is_expert: bool = false) -> void:
+func create_profile(slot: int, is_expert: bool = false) -> void:
 	GameLoader.current_slot = slot
 	GameLoader.save_game()
 	GameLoader.save_achievement()
@@ -25,7 +27,7 @@ func create_profile(slot, is_expert: bool = false) -> void:
 	select_profile(slot)
 
 
-func select_profile(slot) -> void:
+func select_profile(slot: int) -> void:
 	GameLoader.current_slot = slot
 	GameLoader.load_game()
 	GameLoader.check_keys_parity()
@@ -33,8 +35,22 @@ func select_profile(slot) -> void:
 	GameLoader.check_achievement_parity()
 	GameLoader.load_currency("coins")
 	GameLoader.load_currency("diamonds")
-	Loading.load_next(null, null, null)
+	
+	# Correct usage: Node, Callable, Node
+	Loading.load_next(
+		self,                                 # arg1: Node
+		Callable(self, "_on_load_next_done"), # arg2: Callable
+		self                                  # arg3: Node
+	)
+	
 	await Loading.screen_loaded
-	emit_signal("login_checked")
+	
+	emit_signal("login_checked", true)
 	hide()
+	
 	Analytics.log_event(Globals.Analytics.ALL, Analytics.EVENT_LOGIN, Analytics.login_params)
+
+
+# Success callback
+func _on_load_next_done() -> void:
+	pass
