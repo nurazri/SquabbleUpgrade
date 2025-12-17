@@ -1,274 +1,269 @@
 extends Control
 
-signal game_started(mode)
-signal custom_game_started(mode)
-signal page_changed(page_type)
+signal game_started(mode: int, level: int)
+signal custom_game_started(
+	mode: int,
+	opponent: int,
+	word_mix: String,
+	dictionary: String,
+	reaction: int,
+	point_condition: int
+)
+signal page_changed(page_type: int)
 
-@onready var header_UI: Control = $Header_UI/New_Header
-@onready var footer_UI: Control = $Header_UI/New_Footer
+# --------------------------------------------------
+# NODES
+# --------------------------------------------------
+@onready var header_UI: Control = get_node_or_null("Header_UI/New_Header")
+@onready var footer_UI: Control = get_node_or_null("Header_UI/New_Footer")
+@onready var scroll_container: ScrollContainer = $ScrollContainer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-var max_scroll_distance: int = 0
-var custom_scroll_dist = [0, 1135, 1135, 1190, 1260, 1260]
-
-var current_page: int = Globals.PageType.HOME
-var last_check_in: Dictionary = {}
-
-var limit_scroll: int = 0
-
-# Dummy nodes for load_next Node arguments
+# Dummy nodes for Loading.load_next(Node, Callable, Node)
 @onready var dummy_node1: Node = Node.new()
 @onready var dummy_node3: Node = Node.new()
 
+# --------------------------------------------------
+# VARIABLES
+# --------------------------------------------------
+var max_scroll_distance: int = 0
+var custom_scroll_dist: Array[int] = [0, 1135, 1135, 1190, 1260, 1260]
+var current_page: int = Globals.PageType.HOME
+var last_check_in: Dictionary = {}
+var limit_scroll: int = 0
 
-# -----------------------------
-# READY & PROCESS
-# -----------------------------
+# Prevent recursion in visibility changes
+var _updating_visibility: bool = false
+
+# --------------------------------------------------
+# READY / PROCESS
+# --------------------------------------------------
 func _ready() -> void:
-	GameLoader.connect("game_saved", Callable(self, "_on_GameLoader_game_saved"))
-	GameLoader.connect("achievement_saved", Callable(self, "_on_GameLoader_achievement_saved"))
-	GameLoader.connect("currency_saved", Callable(self, "on_currency_changed"))
+	if Engine.has_singleton("GameLoader"):
+		var loader = Engine.get_singleton("GameLoader") as GameLoaderManager
+		loader.game_saved.connect(_on_GameLoader_game_saved)
+		loader.achievement_saved.connect(_on_GameLoader_achievement_saved)
+		loader.currency_updated.connect(on_currency_changed)
 	start()
 
 
-func _process(delta: float) -> void:
-	if $ScrollContainer.get_v_scroll() <= max_scroll_distance:
-		$ScrollContainer.set_v_scroll(max_scroll_distance + 1)
+func _process(_delta: float) -> void:
+	if scroll_container != null and scroll_container.get_v_scroll() <= max_scroll_distance:
+		scroll_container.set_v_scroll(max_scroll_distance + 1)
 
-
-# -----------------------------
+# --------------------------------------------------
 # STARTUP
-# -----------------------------
+# --------------------------------------------------
 func start() -> void:
-	set_avatar(GameLoader.get_save_data("avatar"))
+	var avatar: int = GameLoader.get_save_data("avatar") if GameLoader.has_method("get_save_data") else 0
+	set_avatar(avatar)
 	on_currency_changed()
 	on_stage_updated()
-	#Audio.play_music(Audio.Music.MUSIC_HOME)
 
-
-# -----------------------------
+# --------------------------------------------------
 # AVATAR
-# -----------------------------
+# --------------------------------------------------
 func set_avatar(which: int) -> void:
+	if header_UI == null:
+		return
 	header_UI.get_node("Header/Avatar/Character").texture = Globals.AvatarTextures[which]
 	header_UI.get_node("Header/Avatar/Label").text = Globals.AvatarNames[which]
 
-
-# -----------------------------
+# --------------------------------------------------
 # PAGE CHANGE
-# -----------------------------
+# --------------------------------------------------
 func _on_redirect_page(this_page: int, extra_params: String) -> void:
 	change_page(this_page, extra_params)
 
-
 func change_page(page: int, extra_parameters: String = "") -> void:
-	var previous_page = footer_UI.get_node("HBoxContainer/" + Globals.PageButtons[current_page])
-	var new_page = footer_UI.get_node("HBoxContainer/" + Globals.PageButtons[page])
-	
-	if Globals.PageButtons[current_page] != "":
-		if Globals.PageButtons[current_page] == "Adventure":
+	if footer_UI == null:
+		return
+
+	var prev_btn: String = String(Globals.PageButtons[current_page])
+	var new_btn: String = String(Globals.PageButtons[page])
+
+	var tween := create_tween()
+
+	if prev_btn != "":
+		var previous_page: Control = footer_UI.get_node("HBoxContainer/" + prev_btn)
+		if prev_btn == "Adventure" and header_UI != null:
 			header_UI.get_node("Location").hide()
-		$TweenButton.interpolate_property(previous_page, "custom_minimum_size", previous_page.custom_minimum_size, Vector2(166, 136), 0.15, Tween.TRANS_LINEAR)
-		$TweenButton.interpolate_property(previous_page.get_node("TextureRect"), "modulate", previous_page.modulate, Color(1, 1, 1, 1), 0.15, Tween.TRANS_LINEAR)
-		$TweenButton.interpolate_property(previous_page.get_node("Label"), "position:y", 135, 195, 0.15, Tween.TRANS_LINEAR)
-		$TweenButton.interpolate_property(previous_page.get_node("Icon"), "position", Vector2(34, -31), Vector2(32, 24), 0.15, Tween.TRANS_LINEAR)
-		$TweenButton.interpolate_property(previous_page.get_node("Icon"), "size", Vector2(198, 164), Vector2(108, 88), 0.15, Tween.TRANS_LINEAR)
-	
-	if Globals.PageButtons[page] != "":
-		if Globals.PageButtons[page] == "Adventure":
+		tween.tween_property(previous_page, "custom_minimum_size", Vector2(166, 136), 0.15)
+
+	if new_btn != "":
+		var new_page: Control = footer_UI.get_node("HBoxContainer/" + new_btn)
+		if new_btn == "Adventure" and header_UI != null:
 			header_UI.get_node("Location").show()
-		$TweenButton.interpolate_property(new_page, "custom_minimum_size", new_page.custom_minimum_size, Vector2(260, 190), 0.15, Tween.TRANS_LINEAR)
-		$TweenButton.interpolate_property(new_page.get_node("TextureRect"), "modulate", previous_page.modulate, Color(0.92, 0.39, 1, 1), 0.15, Tween.TRANS_LINEAR)
-		$TweenButton.interpolate_property(new_page.get_node("Label"), "position:y", 195, 135, 0.15, Tween.TRANS_LINEAR)
-		$TweenButton.interpolate_property(new_page.get_node("Icon"), "position", Vector2(32, 24), Vector2(34, -31), 0.15, Tween.TRANS_LINEAR)
-		$TweenButton.interpolate_property(new_page.get_node("Icon"), "size", Vector2(108, 88), Vector2(198, 164), 0.15, Tween.TRANS_LINEAR)
-	
-	$TweenButton.start()
-	
+		tween.tween_property(new_page, "custom_minimum_size", Vector2(260, 190), 0.15)
+
 	if Globals.PageName[current_page] != "":
 		get_node(Globals.PageName[current_page]).hide()
+
 	if Globals.PageName[page] != "":
-		get_node(Globals.PageName[page]).extra_params = extra_parameters
-		get_node(Globals.PageName[page]).show()
-		
+		var page_node: Node = get_node(Globals.PageName[page])
+		if page_node.has_method("set_extra_params"):
+			page_node.set_extra_params(extra_parameters)
+		page_node.show()
+
 	current_page = page
 
-
-# -----------------------------
+# --------------------------------------------------
 # PLAY LEVEL
-# -----------------------------
-func play_level(this_level: int = 0, play_sfx: bool = true, play_animation: bool = false) -> void:
+# --------------------------------------------------
+func play_level(this_level: int = 0, play_sfx: bool = true) -> void:
 	if GameLoader.player_data["current_level"] < this_level:
 		return
 
 	if play_sfx:
 		Audio.play_sfx(Audio.Sfx.BUTTON_TAP)
-	
+
 	hide()
-	var this_game_mode: int = 0
+
+	var game_mode: int = Globals.GameMode.VS_AI
 	if this_level <= 7:
-		this_game_mode = Globals.GameMode.TUTORIAL
-		if this_level == 1:
-			Analytics.log_event(Globals.Analytics.ALL, Analytics.EVENT_TUTORIAL_BEGIN, Analytics.level_params(this_level))
-			ByteBrew.new_progression_event(ByteBrew.ProgressionType.Started, "Tutorial", "Level " + str(this_level))
-	else:
-		this_game_mode = Globals.GameMode.VS_AI
-	
-	# Correct: Node, Callable, Node
+		game_mode = Globals.GameMode.TUTORIAL
+
 	Loading.load_next(dummy_node1, Callable(), dummy_node3)
 	await Loading.screen_loaded
-	emit_signal("game_started", this_game_mode, this_level)
-	Analytics.log_event(Globals.Analytics.ALL, Analytics.EVENT_LEVEL_PLAYED, Analytics.level_params(this_level))
-	ByteBrew.new_progression_event(ByteBrew.ProgressionType.Started, "Level", "Level " + str(this_level))
 
+	game_started.emit(game_mode, this_level)
 
-# -----------------------------
+# --------------------------------------------------
 # PLAY CUSTOM GAME
-# -----------------------------
-func play_custom_game(this_opponent: int, word_mix_level: String, ai_dictionary_level: String, ai_reaction_level: int, custom_point_condition: int) -> void:
+# --------------------------------------------------
+func play_custom_game(
+	opponent: int,
+	word_mix: String,
+	dictionary: String,
+	reaction: int,
+	point_condition: int
+) -> void:
 	Audio.play_sfx(Audio.Sfx.BUTTON_TAP)
 	change_page(Globals.PageType.HOME)
-	modulate = Color(0, 0, 0, 0)
-	$Header_UI/New_Header.modulate = Color(0, 0, 0, 0)
-	$Header_UI/New_Footer.modulate = Color(0, 0, 0, 0)
+
+	modulate = Color.TRANSPARENT
+	if header_UI != null: header_UI.modulate = Color.TRANSPARENT
+	if footer_UI != null: footer_UI.modulate = Color.TRANSPARENT
 	$Header_UI/Blocker.show()
-	
-	# Correct: Node, Callable, Node
-	Loading.load_next(dummy_node1, Callable(), dummy_node3)
-	await $TweenButton.tween_all_completed
-	hide()
-	modulate = Color(1, 1, 1, 1)
-	$Header_UI/New_Header.modulate = Color(1, 1, 1, 1)
-	$Header_UI/New_Footer.modulate = Color(1, 1, 1, 1)
-	$Header_UI/Blocker.hide()
+
 	await Loading.screen_loaded
-	emit_signal("custom_game_started", Globals.GameMode.VS_AI, this_opponent, word_mix_level, ai_dictionary_level, ai_reaction_level, custom_point_condition)
+	hide()
 
+	modulate = Color.WHITE
+	if header_UI != null: header_UI.modulate = Color.WHITE
+	if footer_UI != null: footer_UI.modulate = Color.WHITE
+	$Header_UI/Blocker.hide()
 
-# -----------------------------
+	custom_game_started.emit(
+		Globals.GameMode.VS_AI,
+		opponent,
+		word_mix,
+		dictionary,
+		reaction,
+		point_condition
+	)
+
+# --------------------------------------------------
 # GAMELOADER CALLBACKS
-# -----------------------------
+# --------------------------------------------------
 func _on_GameLoader_game_saved() -> void:
-	set_avatar(GameLoader.get_save_data("avatar"))
+	var avatar: int = GameLoader.get_save_data("avatar") if GameLoader.has_method("get_save_data") else 0
+	set_avatar(avatar)
 	on_currency_changed()
 	on_stage_updated()
-	$Profile_Page.on_Load()
-	$Inventory_Page.on_Load()
-
+	if has_node("$Profile_Page"): $Profile_Page.on_Load()
+	if has_node("$Inventory_Page"): $Inventory_Page.on_Load()
 
 func _on_GameLoader_achievement_saved() -> void:
-	$Achievement_Page.reload()
-	$Profile_Page.on_Load()
-	$Inventory_Page.on_Load()
+	if has_node("$Achievement_Page"): $Achievement_Page.reload()
+	if has_node("$Profile_Page"): $Profile_Page.on_Load()
+	if has_node("$Inventory_Page"): $Inventory_Page.on_Load()
 
-
-# -----------------------------
-# CURRENCY & STAGE
-# -----------------------------
+# --------------------------------------------------
+# CURRENCY
+# --------------------------------------------------
 func on_currency_changed() -> void:
 	_set_player_coins(GameLoader.load_currency("coins"))
 	_set_player_diamonds(GameLoader.load_currency("diamonds"))
 
+func _set_player_coins(value: int) -> void:
+	if header_UI != null:
+		header_UI.get_node("Header/Coin/UserCoin").text = str(value)
 
+func _set_player_diamonds(value: int) -> void:
+	if header_UI != null:
+		header_UI.get_node("Header/Diamond/UserDiamond").text = str(value)
+
+# --------------------------------------------------
+# STAGE UPDATE
+# --------------------------------------------------
 func on_stage_updated() -> void:
-	var this_level = 1
+	var this_level: int = 1
+
 	for i in range(1, 10):
-		for levels in get_node("ScrollContainer/VBoxContainer/Background"+ str(i) +"/Level_List").get_children():
+		var level_list_path := "ScrollContainer/VBoxContainer/Background%d/Level_List" % i
+		if not has_node(level_list_path):
+			continue
+
+		for level_button in get_node(level_list_path).get_children():
+			var progress: Dictionary = {}
+			if this_level <= Globals.currentLevelLimit and GameLoader.player_data["level_progression"].has(str(this_level)):
+				progress = GameLoader.player_data["level_progression"][str(this_level)] as Dictionary
+
 			if this_level > Globals.currentLevelLimit:
-				levels.init(this_level, 0, 0)
+				level_button.init(this_level, 0, 0)
 			else:
-				levels.init(this_level, GameLoader.player_data["level_progression"][str(this_level)]["completion"], GameLoader.player_data["level_progression"][str(this_level)]["rating"])
-				if !levels.is_connected("start_level", Callable(self, "play_level")):
-					levels.connect("start_level", Callable(self, "play_level"))
+				level_button.init(this_level, progress.get("completion", 0), progress.get("rating", 0))
+				if not level_button.is_connected("start_level", Callable(self, "play_level")):
+					level_button.connect("start_level", Callable(self, "play_level"))
+
 			this_level += 1
-	
+
 	var current_stage: int = get_current_stage()
-	for clouds in $ScrollContainer/Cloud_List.get_children():
-		clouds.hide()
+
+	for cloud in $ScrollContainer/Cloud_List.get_children():
+		cloud.hide()
+
 	get_node("ScrollContainer/Cloud_List/Cloud_Overlay" + str(current_stage)).show()
 	max_scroll_distance = 13323 - (custom_scroll_dist[current_stage] * current_stage)
 
-
-func _set_player_coins(coin: int) -> void:
-	header_UI.get_node("Header/Coin/UserCoin").text = str(coin)
-
-
-func _set_player_diamonds(diamond: int) -> void:
-	header_UI.get_node("Header/Diamond/UserDiamond").text = str(diamond)
-
-
-func update_header(coin, diamond) -> void:
-	on_currency_changed()
-
-
-# -----------------------------
-# DAILY LOGIN FEATURE
-# -----------------------------
-func _attempt_daily_login_feature() -> void:
-	var get_datetime: Dictionary = Time.get_datetime_dict_from_system()
-	var fetch_datetime: Dictionary = GameLoader.player_data["last_logged_in"]
-	if get_datetime["day"] > fetch_datetime["day"]:
-		var get_day_difference = get_datetime["day"] - fetch_datetime["day"]
-		if get_day_difference > 1:
-			_popup_daily_reward()
-		else:
-			if get_datetime["hour"] > 12:
-				_popup_daily_reward()
-	elif get_datetime["month"] > fetch_datetime["month"]:
-		_popup_daily_reward()
-	elif get_datetime["year"] > fetch_datetime["year"]:
-		_popup_daily_reward()
-	last_check_in = get_datetime
-
-
-func _popup_daily_reward() -> void:
-	$DailyReward_UI/Daily_Reward.show()
-
-
-func on_daily_reward_claimed() -> void:
-	var last = last_check_in
-	var player_last = GameLoader.player_data["last_logged_in"]
-	player_last["day"] = last["day"]
-	player_last["month"] = last["month"]
-	player_last["year"] = last["year"]
-	player_last["hour"] = last["hour"]
-	player_last["minute"] = last["minute"]
-	
-	GameLoader.save_currency("diamonds", 1)
-	GameLoader.save_game()
-	$DailyReward_UI/Daily_Reward.hide()
-
-
-# -----------------------------
-# VISIBILITY CHANGES
-# -----------------------------
+# --------------------------------------------------
+# VISIBILITY
+# --------------------------------------------------
 func _on_Home_visibility_changed() -> void:
-	if visible:
-		$AnimationPlayer.play("Homescreen_Entrance")
-	header_UI.show() if visible else header_UI.hide()
-	footer_UI.show() if visible else footer_UI.hide()
-	
-	var current_stage: int = get_current_stage()
-	for clouds in $ScrollContainer/Cloud_List.get_children():
-		clouds.hide()
-	
-	await get_tree().create_timer(0.01).timeout
-	max_scroll_distance = 13323 - (custom_scroll_dist[current_stage] * current_stage)
-	$ScrollContainer.set_v_scroll(max_scroll_distance)
-	get_node("ScrollContainer/Cloud_List/Cloud_Overlay" + str(current_stage)).show()
-	await get_tree().create_timer(0.25).timeout
-	if GameLoader.player_data["completed_tutorial"] == true:
-		_attempt_daily_login_feature()
+	if _updating_visibility:
+		return
+	_updating_visibility = true
 
+	if not is_inside_tree():
+		_updating_visibility = false
+		return
 
-# -----------------------------
-# STAGE HELPERS
-# -----------------------------
+	await get_tree().process_frame
+
+	if header_UI == null or footer_UI == null:
+		_updating_visibility = false
+		return
+
+	if visible and animation_player != null:
+		animation_player.play("Homescreen_Entrance")
+
+	header_UI.visible = visible
+	footer_UI.visible = visible
+
+	_updating_visibility = false
+
+# --------------------------------------------------
+# STAGE HELPER
+# --------------------------------------------------
 func get_current_stage() -> int:
 	var get_stage: int = GameLoader.player_data["current_level"] - 7
 	var set_stage: int = 0
+
 	for i in range(0, 5):
 		if get_stage <= (i * 10):
 			set_stage = i
 			break
 		set_stage = i
+
 	return set_stage

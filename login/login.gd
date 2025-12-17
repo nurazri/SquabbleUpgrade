@@ -7,7 +7,8 @@ func _ready() -> void:
 	GameLoader.current_slot = 1
 	
 	var _game_data: Dictionary = GameLoader._load_game()
-	var _currency_data: Dictionary = GameLoader._load_currency()
+	var coins: int = GameLoader.load_currency("coins")
+	var diamonds: int = GameLoader.load_currency("diamonds")
 	
 	await get_tree().create_timer(0.01).timeout
 	
@@ -33,8 +34,10 @@ func select_profile(slot: int) -> void:
 	GameLoader.check_keys_parity()
 	GameLoader.load_achievement()
 	GameLoader.check_achievement_parity()
-	GameLoader.load_currency("coins")
-	GameLoader.load_currency("diamonds")
+	
+	# Load currencies safely using public methods
+	var coins: int = GameLoader.load_currency("coins")
+	var diamonds: int = GameLoader.load_currency("diamonds")
 	
 	# Correct usage: Node, Callable, Node
 	Loading.load_next(
@@ -48,7 +51,11 @@ func select_profile(slot: int) -> void:
 	emit_signal("login_checked", true)
 	hide()
 	
-	Analytics.log_event(Globals.Analytics.ALL, Analytics.EVENT_LOGIN, Analytics.login_params)
+	Analytics.log_event(
+		Globals.Analytics.ALL,
+		Analytics.EVENT_LOGIN,
+		Analytics.login_params
+	)
 
 
 # Success callback

@@ -90,7 +90,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3")
 expand_mode = 1
-stretch_mode = 7
+stretch_mode = 5
 
 [node name="AnimateGameka" type="AnimationPlayer" parent="."]
 libraries = {
