@@ -45,7 +45,16 @@ func load_next(scene: Node, fRef: Callable, where: Node = get_tree().root, durat
 		else:
 			where.add_child(scene)
 		
-		scene.hide()  # Hide initially
+		print("Loaded scene: ", scene.name)  # prints the scene's name
+		print("Root class: ", scene.get_class())  # prints "Node", "Node2D", etc.
+		
+		print("Scene file: ", scene.scene_file_path)
+		if scene.has_method("hide"):
+			scene.hide()
+		elif "visible" in scene:
+			scene.visible = false # Hide initially
+		else:
+			print("scene didnt get hidden"); #adhwa rasanya loading screen x hilang sebb kita masuk sini
 
 	# Call the function reference if provided
 	if fRef:
@@ -53,6 +62,11 @@ func load_next(scene: Node, fRef: Callable, where: Node = get_tree().root, durat
 
 	# Show the scene after loading
 	if scene:
-		scene.show()
+		if scene.has_method("show"):
+			scene.show()
+		elif "visible" in scene:
+			scene.visible = true
+		else:
+			print("scene didnt get shown");
 	
 	_load_done()

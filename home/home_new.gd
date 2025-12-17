@@ -110,7 +110,7 @@ func change_page(page: int, extra_parameters: String = "") -> void:
 # --------------------------------------------------
 # PLAY LEVEL
 # --------------------------------------------------
-func play_level(this_level: int = 0, play_sfx: bool = true) -> void:
+func play_level(this_level: int = 0, play_sfx: bool = true, play_animation: bool = false) -> void:
 	if GameLoader.player_data["current_level"] < this_level:
 		return
 
