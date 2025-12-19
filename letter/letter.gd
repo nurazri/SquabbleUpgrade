@@ -34,6 +34,10 @@ var _initial_global_position_y: float = 0.0
 
 var _boost_protected: bool = false
 
+var tween := create_tween()
+var tween_move
+var tween_move2
+
 
 func _process(delta: float) -> void:
 	if $Tap.disabled:
@@ -101,11 +105,14 @@ func update_letter_positional_data() -> void:
 
 
 func move_to(target_position: Vector2, target_rotation: float, moved_to_whom: int, cell_index: int, holding_bar_condition: bool = false, skip_interpolate: bool = false, in_holding_bar: bool = false) -> void:
-	if _is_moving:
-		$TweenMove.stop_all()
-		$TweenMove2.stop_all()
-		$TweenMove.remove_all()
-		$TweenMove2.remove_all()
+	if tween_move:
+		tween_move.kill()
+		tween_move = null
+
+	if tween_move2:
+		tween_move2.kill()
+		tween_move2 = null
+
 	
 	_in_holding_bar = in_holding_bar
 	_is_moving = true
@@ -137,13 +144,43 @@ func move_to(target_position: Vector2, target_rotation: float, moved_to_whom: in
 	
 	_target_position = target_position
 	
-	if _skip_interpolate || skip_interpolate:
-		$TweenMove.interpolate_property(self, "global_position", global_position, global_position, 0.2, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+	if not is_inside_tree():
+		await ready
+
+	#var tween := get_tree().create_tween()
+
+	var pos_tween
+	if _skip_interpolate or skip_interpolate:
+		pos_tween = tween.tween_property(
+			self,
+			"global_position",
+			global_position,
+			0.2
+		)
 	else:
-		$TweenMove.interpolate_property(self, "global_position", global_position, global_position - Vector2.DOWN * 150, 0.2, Tween.TRANS_LINEAR, Tween.EASE_OUT)
-	$TweenMove.interpolate_property(self, "global_rotation_degrees", global_rotation_degrees, target_rotation, 1.0, Tween.TRANS_BACK)
-	$TweenMove.start()
+		pos_tween = tween.tween_property(
+			self,
+			"global_position",
+			global_position - Vector2.DOWN * 150,
+			0.2
+		)
+
+	if pos_tween:
+		pos_tween.set_trans(Tween.TRANS_LINEAR)
+		pos_tween.set_ease(Tween.EASE_OUT)
+
+	var rot_tween = tween.tween_property(
+		self,
+		"global_rotation_degrees",
+		target_rotation,
+		1.0
+	)
+
+	if rot_tween:
+		rot_tween.set_trans(Tween.TRANS_BACK)
+
 	$Tap.disabled = true
+
 
 
 func select(is_picked: bool = true, is_auto: bool = true) -> void:

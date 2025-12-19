@@ -1,5 +1,5 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1766101485
+::res://::1766141087
 app_icon.png::CompressedTexture2D::3098592042842950946::1766028282::1766028414::1::::<><><>0<>0<>8b83d799298aaaa3c5828ecba2b1ab59<>res://.godot/imported/app_icon.png-f349b850a0f29361cfbcb17623f8bdde.ctex::
 blank_splash_dark.png::CompressedTexture2D::7900230236818140346::1766028282::1766028413::1::::<><><>0<>0<>7d6f9495c9be29933a54c3467b66966d<>res://.godot/imported/blank_splash_dark.png-4989032da97075acab9e14b690591df8.ctex::
 default_env.tres::::-1::1766028282::0::1::::<><><>0<>0<><>::
@@ -11,7 +11,7 @@ globals.gd::GDScript::3715348249349613729::1766028282::0::1::::<>Node<><>0<>0<><
 globals.tscn::PackedScene::-1::1766028282::0::1::::<><><>0<>0<><>::res://globals.gd
 icon.png::CompressedTexture2D::3394101397511129432::1766028282::1766028413::1::::<><><>0<>0<>a8e0c89d91f298f9525b7c97db307a64<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 init.gd::GDScript::5410402748836516860::1766028322::0::1::::<>Control<><>0<>0<><>::
-init.tscn::PackedScene::6274376202104726840::1766057991::0::1::::<><><>0<>0<><>::uid://cjc3spql84c2g::::res://init.gd<>res://game.tscn<>uid://btohijdadwy4b::::res://gameka_splash_dark.png<>uid://drreivkewy5io::::res://fonts/Gretaros-Regular.ttf<>res://mobile/google_play_version_checker.tscn
+init.tscn::PackedScene::6274376202104726840::1766103919::0::1::::<><><>0<>0<><>::uid://cjc3spql84c2g::::res://init.gd<>res://game.tscn<>uid://btohijdadwy4b::::res://gameka_splash_dark.png<>uid://drreivkewy5io::::res://fonts/Gretaros-Regular.ttf<>res://mobile/google_play_version_checker.tscn
 MACAPPSTORE.md::TextFile::-1::1766028281::0::1::::<><><>0<>0<><>::
 mdec_logo.png::CompressedTexture2D::4214181703772528805::1766028282::1766028413::1::::<><><>0<>0<>3c52d6e3b76493fb8a002a7d417ead35<>res://.godot/imported/mdec_logo.png-6fc5863ccc137e89535d40c0b7ad7758.ctex::
 override.cfg::TextFile::-1::1766028282::0::1::::<><><>0<>0<><>::
@@ -557,8 +557,8 @@ squabbleicon.png::CompressedTexture2D::7993132666104757153::1766028282::17660284
 squabbleicon_76x76.png::CompressedTexture2D::8475854684022199386::1766028282::1766028415::1::::<><><>0<>0<>d093528f249bcce71c20b65436df01ad<>res://.godot/imported/squabbleicon_76x76.png-434fb54633285f272ebbf8e9ff4ca909.ctex::
 squabbleicon_120x120.png::CompressedTexture2D::4340882520813662270::1766028282::1766028415::1::::<><><>0<>0<>f5b033d6ea6082d87a66c6d3602f321c<>res://.godot/imported/squabbleicon_120x120.png-68991b7d35636e1a48767792baf2f48d.ctex::
 squabbleicon_1024x1024.png::CompressedTexture2D::4049146294900992681::1766028282::1766028415::1::::<><><>0<>0<>0db43ccd2c7323f08edbf1b2e1e00f40<>res://.godot/imported/squabbleicon_1024x1024.png-c499eee66220614de7a79e1ad5830964.ctex::
-::res://letter/::1766057936
-letter.gd::GDScript::4698030372728239751::1766057936::0::1::::Letter<>RigidBody2D<><>0<>0<><>::
+::res://letter/::1766103528
+letter.gd::GDScript::4698030372728239751::1766103528::0::1::::Letter<>RigidBody2D<><>0<>0<><>::
 letter.tscn::PackedScene::-1::1766028282::0::1::::<><><>0<>0<><>::res://letter/letter_outline.tres<>res://letter/textures/letter.png<>res://fonts/Gretaros-Regular.ttf<>res://letter/letter.gd<>res://audio/sfx_letter.tscn<>res://shaders/outline.gdshader<>res://Animation/Assets_ScoringAnimation/flare (101).png<>res://Animation/Assets_ScoringAnimation/Tx_LetterFrame.png<>res://Animation/Assets_ScoringAnimation/Tx_GlowOverlay.png<>res://Animation/Assets_ScoringAnimation/tx_shine2.png
 letter_outline.tres::ShaderMaterial::-1::1766028282::0::1::::<><><>0<>0<><>::
 letter_styleboxtexture.tres::StyleBoxTexture::-1::1766028282::0::1::::<><><>0<>0<><>::res://letter/textures/letter.png
@@ -613,11 +613,11 @@ f_logo_RGB-Grey_512.png::CompressedTexture2D::8447283406034441378::1766028282::1
 games_controller.png::CompressedTexture2D::7510841643689754241::1766028282::1766028414::1::::<><><>0<>0<>c108483723ea434ac48e6a7fdaba07fa<>res://.godot/imported/games_controller.png-8378934e99e595caa66f01584c2fc05f.ctex::
 games_controller_signed_out.png::CompressedTexture2D::4578843615013494144::1766028282::1766028414::1::::<><><>0<>0<>2cba7f41e1c598aa1c648a824e8c7032<>res://.godot/imported/games_controller_signed_out.png-487a5026433a374127f6d49ffe661ad1.ctex::
 icon_google.png::CompressedTexture2D::7524472642522210894::1766028282::1766028414::1::::<><><>0<>0<>455de9c16c7591bcfcc0a064de428631<>res://.godot/imported/icon_google.png-e803fb7671820577a54d916b47873e37.ctex::
-::res://pool/::1766052466
+::res://pool/::1766103871
 countdown.gd::GDScript::8721176710277908167::1766028282::0::1::::<>Label<><>0<>0<><>::
 countdown.tscn::PackedScene::-1::1766028282::0::1::::<><><>0<>0<><>::res://fonts/Gretaros-Regular.ttf<>res://pool/countdown.gd
 dialog_manager.gd::GDScript::3682137712161576904::1766028282::0::1::::<>Control<><>0<>0<><>::
-event_manager.gd::GDScript::8606269747442593584::1766028322::0::1::::<>Node2D<><>0<>0<><>::
+event_manager.gd::GDScript::8606269747442593584::1766103871::0::1::::<>Node2D<><>0<>0<><>::
 event_manager.tscn::PackedScene::-1::1766028282::0::1::::<><><>0<>0<><>::res://mobile/buttons/btn_google_play_in_app_review.gd<>res://pool/static_dialog_manager.gd<>res://mdec_logo.png<>res://universal_texture/UI_button_purple.png<>res://login/textures/UI_offline_popuppanel.png<>res://tutorial/textures/tutorial_normal.png<>res://tutorial/textures/arrow.png<>res://tutorial/textures/tutorial_cursor.png<>res://tutorial/textures/tutorial_focus_center.png<>res://tutorial/textures/tutorial_focus_points.png<>res://tutorial/textures/tutorial_panel.png<>res://tutorial/textures/tutorial_provoke.png<>res://tutorial/textures/tutorial_chatbox_square_corner.png<>res://tutorial/textures/tutorial_focus_snatch_button.png<>res://tutorial/textures/tutorial_focus_tile_left.png<>res://fonts/Gretaros-Regular.ttf<>res://board/booster_slot.tscn<>res://letter/letter.tscn<>res://universal_texture/UI_button_green.png<>res://pool/dialog_manager.gd<>res://pool/event_manager.gd
 game_over_timer.gd::GDScript::4676745514154546888::1766028282::0::1::::<>Timer<><>0<>0<><>::
 level_review.gd::GDScript::760148673692450840::1766028282::0::1::::<>Control<><>0<>0<><>::
