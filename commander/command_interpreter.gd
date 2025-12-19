@@ -61,7 +61,7 @@ func _on_Timer_timeout() -> void:
 		else:
 			emit_signal("command_failed", current_command)
 			
-		_command.remove(0)
+		_command.remove_at(0)
 		
 		if not _command.is_empty():
 			current_command = _command[0]

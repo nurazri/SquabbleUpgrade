@@ -14,20 +14,23 @@ func enable_static_text(is_visible) -> void:
 
 
 func start_static_text(dialog: String, disable_button: bool = false) -> void:
-	if !disable_button:
+	if not disable_button:
 		progress_button.disabled = true
 		
 	show()
-	dialog_text.percent_visible = 0
-	next_indicator.percent_visible = 0
-	dialog_text.text = dialog
-	
+	dialog_text.text = ""
 	arrow_indicator.visible = false
 	arrow_indicator.modulate = Color(1,1,1,0)
-	next_indicator.visible = !disable_button
-	progress_button.visible = !disable_button
-	anim_player.play("static_text")
-	await anim_player.animation_finished
-	arrow_indicator.visible = !disable_button
+	next_indicator.visible = not disable_button
+	progress_button.visible = not disable_button
+	
+	var char_index := 0
+	while char_index < dialog.length():
+		dialog_text.text = dialog.substr(0, char_index + 1)
+		char_index += 1
+		await get_tree().process_frame   # wait one frame per character
+		# you can replace with `await get_tree().create_timer(0.02).timeout` for speed control
+	
+	arrow_indicator.visible = not disable_button
 	arrow_indicator.modulate = Color(1,1,1,1)
 	progress_button.disabled = false

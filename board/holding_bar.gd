@@ -78,16 +78,21 @@ func rearrange_letter(interrupt_flow: bool = true) -> void:
 
 
 func highlight_snatch(current_tiles: int, can_snatch: bool = false) -> void:
+	var tween := create_tween()
+	tween.set_trans(Tween.TRANS_LINEAR)
+	tween.set_ease(Tween.EASE_OUT)
+
 	for i in range(1, current_tiles + 1):
-		var highlight = get_node("HBoxContainer/Word_Validation_" + str(i))
-		if can_snatch:
-			highlight.get("theme_override_styles/panel/StyleBoxFlat").bg_color = Color(0.14, 1, 0, 1)
-		else:
-			highlight.get("theme_override_styles/panel/StyleBoxFlat").bg_color = Color(1, 0, 0, 1)
-		$Tween.interpolate_property(highlight, "modulate", Color(1,1,1,highlight.modulate.a), Color(1,1,1,1), 0.2, Tween.TRANS_LINEAR, Tween.EASE_OUT)
-		
+		var highlight := get_node("HBoxContainer/Word_Validation_" + str(i)) as Control
+
+		var style := highlight.get_theme_stylebox("panel") as StyleBoxFlat
+		if style:
+			style = style.duplicate()
+			style.bg_color = Color(0.14, 1, 0, 1) if can_snatch else Color(1, 0, 0, 1)
+			highlight.add_theme_stylebox_override("panel", style)
+
+		tween.tween_property(highlight, "modulate:a", 1.0, 0.2)
+
 	for i in range(current_tiles + 1, 8):
-		var highlight = get_node("HBoxContainer/Word_Validation_" + str(i))
-		$Tween.interpolate_property(highlight, "modulate", Color(1,1,1,highlight.modulate.a), Color(1,1,1,0), 0.2, Tween.TRANS_LINEAR, Tween.EASE_OUT)
-	
-	$Tween.start()
+		var highlight := get_node("HBoxContainer/Word_Validation_" + str(i)) as Control
+		tween.tween_property(highlight, "modulate:a", 0.0, 0.2)

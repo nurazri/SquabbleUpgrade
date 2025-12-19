@@ -10,18 +10,13 @@ signal letter_tweened
 const _PUSH_IN_MARGIN: float = 100.0
 const _PUSH_IN_FORCE: float = 700.0
 
-# RigidBody2D mode constants for Godot 4
-const MODE_RIGID = 0
-const MODE_STATIC = 1
-const MODE_KINEMATIC = 2
-const MODE_CHARACTER = 3
-
 var id: int = -1
 var letter: String = ""
 
 var _original_shake_position: Vector2 = Vector2.ZERO
 var _target_position: Vector2 = Vector2.ZERO
-var _prev_rigidbody_mode: int = MODE_CHARACTER
+var _prev_freeze_enabled: bool = false
+var _prev_freeze_mode: int = RigidBody2D.FREEZE_MODE_STATIC
 
 var _skip_interpolate: bool = false
 var _in_holding_bar: bool = false
@@ -105,7 +100,7 @@ func update_letter_positional_data() -> void:
 	WordList.spawned_letters[id]["rotation_degrees"] = global_rotation_degrees
 
 
-func move_to(target_position: Vector2, target_rotation: float, moved_to_whom: int, cell_index: int, holding_bar_condition: bool=false, skip_interpolate: bool=false, in_holding_bar: bool=false) -> void:
+func move_to(target_position: Vector2, target_rotation: float, moved_to_whom: int, cell_index: int, holding_bar_condition: bool = false, skip_interpolate: bool = false, in_holding_bar: bool = false) -> void:
 	if _is_moving:
 		$TweenMove.stop_all()
 		$TweenMove2.stop_all()
@@ -114,16 +109,24 @@ func move_to(target_position: Vector2, target_rotation: float, moved_to_whom: in
 	
 	_in_holding_bar = in_holding_bar
 	_is_moving = true
-	$Tap.button_pressed = holding_bar_condition
+	$Tap.disabled = holding_bar_condition
 	get_parent().call_deferred("move_child", self, get_parent().get_child_count() - 1)
 	$PushInTimer.stop()
 		
 	if WordList.spawned_letters[id]["owned_by"] != moved_to_whom:
 		$AnimParticle.play("Scoring")
-		
-	self.mode = MODE_STATIC
-	if not holding_bar_condition:
-		_prev_rigidbody_mode = self.mode
+
+	# Save previous state
+	_prev_freeze_enabled = freeze
+	_prev_freeze_mode = freeze_mode
+
+	# Freeze the letter like MODE_STATIC
+	freeze_mode = RigidBody2D.FREEZE_MODE_STATIC
+	set_freeze_enabled(true)
+
+	if !holding_bar_condition:
+		_prev_freeze_enabled = freeze
+		_prev_freeze_mode = freeze_mode
 	
 	$Col.disabled = true
 	
@@ -134,7 +137,7 @@ func move_to(target_position: Vector2, target_rotation: float, moved_to_whom: in
 	
 	_target_position = target_position
 	
-	if _skip_interpolate or skip_interpolate:
+	if _skip_interpolate || skip_interpolate:
 		$TweenMove.interpolate_property(self, "global_position", global_position, global_position, 0.2, Tween.TRANS_LINEAR, Tween.EASE_OUT)
 	else:
 		$TweenMove.interpolate_property(self, "global_position", global_position, global_position - Vector2.DOWN * 150, 0.2, Tween.TRANS_LINEAR, Tween.EASE_OUT)
@@ -143,19 +146,42 @@ func move_to(target_position: Vector2, target_rotation: float, moved_to_whom: in
 	$Tap.disabled = true
 
 
-func select(is_picked: bool=true, is_auto: bool=true) -> void:
-	self.mode = MODE_STATIC if is_picked else _prev_rigidbody_mode
+func select(is_picked: bool = true, is_auto: bool = true) -> void:
+	# Freeze/unfreeze instead of changing mode
+	if is_picked:
+		# Save previous state
+		_prev_freeze_enabled = freeze
+		_prev_freeze_mode = freeze_mode
+		
+		freeze_mode = RigidBody2D.FREEZE_MODE_STATIC
+		set_freeze_enabled(true)
+	else:
+		# Restore previous state
+		freeze_mode = _prev_freeze_mode
+		set_freeze_enabled(_prev_freeze_enabled)
+
+	# Emit appropriate signal
 	emit_signal("letter_autopicked" if is_auto else "letter_picked", id, is_picked)
+
+	# Animation and held state
 	if is_picked:
 		$AnimTap.play("tap")
 		_is_held = true
 		if _is_expiring:
 			_is_expiring = false
-			
-		get_parent().call_deferred("move_child", self, get_parent().get_child_count() - 1)
+
+		# Move letter to top of parent
+		get_parent().call_deferred(
+			"move_child",
+			self,
+			get_parent().get_child_count() - 1
+		)
 	else:
 		$AnimTap.play_backwards("tap")
 		_is_held = false
+
+
+
 
 
 func deselect(is_auto: bool=true) -> void:
@@ -217,12 +243,22 @@ func tween_win_lose_fade(duration: float, delay: float) -> void:
 
 
 func _on_Tap_pressed() -> void:
-	if get_tree().root.get_node("Game/Pool/BoardMe")._picked_letters.size() >= 7 and $Tap.button_pressed:
-		$Tap.button_pressed = false
+	var board = get_tree().root.get_node("Game/Pool/BoardMe")
+	
+	# Check if the board already has 7 picked letters
+	if board._picked_letters.size() >= 7:
+		$Tap.release()  # Release the button properly
 		return
 	
+	# Play the letter selection sound
 	Audio.play_sfx(Audio.Sfx.LETTER_SELECTED)
-	select($Tap.pressed, false)
+	
+	# Call select() on this letter
+	# - is_picked: true because the button was pressed
+	# - is_auto: false because this is a manual pick
+	select(true, false)
+
+
 
 
 func _on_PushInTimer_timeout() -> void:

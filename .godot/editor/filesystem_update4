@@ -1,4 +1,3 @@
 res://init.tscn
-res://loading/loading.tscn
-res://home/home_new.gd
-res://loading/loading.gd
+res://letter/letter.gd
+res://pool/event_manager.gd

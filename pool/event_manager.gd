@@ -1144,7 +1144,8 @@ func manual_setter(letterlist: Array, wordlist: Array) -> void:
 		Globals.LetterOwnership.POOL
 	)
 		Letter.position = Vector2(generate_positions[i][0], generate_positions[i][1])
-		letter.rigid_mode = Letter.MODE_STATIC
+		letter.freeze_mode = RigidBody2D.FREEZE_MODE_STATIC
+		letter.set_freeze_enabled(true)
 		letter._skip_interpolate = true
 		_spawned_letter_index += 1
 		get_parent().get_node("Spawner")._spawned_letter_index += 1

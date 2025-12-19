@@ -1,4 +1,4 @@
-extends Node2D  # Change to Node or Node2D depending on your scene
+extends CommandInterpreter
 
 signal letter_spawned
 

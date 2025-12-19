@@ -1,7 +1,7 @@
 # If CommandInterpreter exists and is a global class, use:
 # extends CommandInterpreter
 # Otherwise, extend Node for now
-extends Node
+extends CommandInterpreter
 
 var _BoardMe: Board
 var _BoardOpponent: Board

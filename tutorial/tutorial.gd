@@ -22,7 +22,8 @@ func _ready() -> void:
 func start_gameplay_layer(pool: Node2D, commander: Node2D, board_me: Board, board_opponent: Board) -> void:
 	show()
 	$CanvasModulate.hide()
-	if get_node("IntroLayer") != null:
+	
+	if has_node("IntroLayer"):
 		$IntroLayer.follow_viewport_scale = 0
 		$IntroLayer/IntroUI/AnimTutorialUI.stop(true)
 		$IntroLayer.queue_free()
@@ -34,40 +35,56 @@ func start_gameplay_layer(pool: Node2D, commander: Node2D, board_me: Board, boar
 	
 	board_me._score_target = score_requirement[tutorial_part]
 	board_me.enable_reset(false)
-	board_me.show_score_panel(true) if tutorial_part > 1 else board_me.show_score_panel(false)
+	
+	# Replace ternary with normal if/else
+	if tutorial_part > 1:
+		board_me.show_score_panel(true)
+	else:
+		board_me.show_score_panel(false)
+	
 	board_me.enable_snatch_button(false)
 	board_me.enable_snatch_swipe(false)
 	
 	_BoardMe.set_avatar(Globals.AvatarTextures[Globals.AvatarCharacter.DEFAULT], Globals.AvatarBackgroundTextures[Globals.LetterOwnership.BOARD_ME])
+	
 	if tutorial_part < 6:
 		Audio.play_music(Audio.Music.MUSIC_HOME)
-		board_opponent.set_name("Squab")
+		board_opponent.set_opponent_name("Squab")  # renamed from set_name to avoid GD4 conflict
 		board_opponent.set_avatar(Globals.AvatarTextures[Globals.AvatarCharacter.DOG], Globals.AvatarBackgroundTextures[Globals.LetterOwnership.BOARD_ME])
 		board_opponent.get_node("Avatar/Tutorial_Backdrop").show()
 		board_opponent.show_score_panel(false)
 	else:
 		Audio.play_music(Audio.Music.MUSIC_PLAY_2)
-		board_opponent.set_name("Quabble")
+		board_opponent.set_opponent_name("Quabble")  # renamed method
 		board_opponent.set_avatar(Globals.AvatarTextures[Globals.AvatarCharacter.CAT], Globals.AvatarBackgroundTextures[Globals.LetterOwnership.BOARD_OPPONENT])
 		board_opponent.get_node("Avatar/Tutorial_Backdrop").hide()
 		board_opponent.show_score_panel(true)
 	
-	pool.get_node("Level").hide() if tutorial_part < 6 else pool.get_node("Level").show()
-	pool.get_node("TilesCounter").hide() if tutorial_part < 4 else pool.get_node("TilesCounter").show()
+	# Replace ternary hide/show
+	if tutorial_part < 6:
+		pool.get_node("Level").hide()
+	else:
+		pool.get_node("Level").show()
+	
+	if tutorial_part < 4:
+		pool.get_node("TilesCounter").hide()
+	else:
+		pool.get_node("TilesCounter").show()
+	
 	if score_requirement[tutorial_part] != 0:
 		board_me.enable_reset(true)
 	
 	match tutorial_part:
 		5: 
-			pool.get_node("EventManager/DialogLayer/DialogManager").avatar1.position = Vector2(-1240, 880)
-			pool.get_node("EventManager/DialogLayer/DialogManager").avatar2.position = Vector2(1240, 880)
-		6:
+			var dialog_manager = pool.get_node("EventManager/DialogLayer/DialogManager")
+			dialog_manager.avatar1.rect_position = Vector2(-1240, 880)
+			dialog_manager.avatar2.rect_position = Vector2(1240, 880)
+		6, 7:
 			board_opponent.show_info()
 			board_opponent._score_target = score_requirement[tutorial_part]
-			board_me.enable_reset(false)
-		7:
-			board_opponent.show_info()
-			board_opponent._score_target = score_requirement[tutorial_part]
+			if tutorial_part == 6:
+				board_me.enable_reset(false)
+
 
 
 func stop() -> void:
@@ -90,6 +107,7 @@ func letters_snatched(from_who: int, longest_word: String, picked_letters: Array
 			_BoardMe.enable_snatch_button(false)
 			_BoardMe.enable_snatch_swipe(false)
 			_Pool.get_node("EventManager")._progress_event()
+
 
 
 func start_intro(force_start: bool = false) -> void:
