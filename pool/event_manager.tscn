@@ -1,1589 +1,1702 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=56 format=3 uid="uid://deuhuivhbnwom"]
 
-[ext_resource path="res://mobile/buttons/btn_google_play_in_app_review.gd" type="Script" id=1]
-[ext_resource path="res://pool/static_dialog_manager.gd" type="Script" id=3]
-[ext_resource path="res://mdec_logo.png" type="Texture2D" id=4]
-[ext_resource path="res://universal_texture/UI_button_purple.png" type="Texture2D" id=5]
-[ext_resource path="res://login/textures/UI_offline_popuppanel.png" type="Texture2D" id=6]
-[ext_resource path="res://tutorial/textures/tutorial_normal.png" type="Texture2D" id=7]
-[ext_resource path="res://tutorial/textures/arrow.png" type="Texture2D" id=8]
-[ext_resource path="res://tutorial/textures/tutorial_cursor.png" type="Texture2D" id=9]
-[ext_resource path="res://tutorial/textures/tutorial_focus_center.png" type="Texture2D" id=10]
-[ext_resource path="res://tutorial/textures/tutorial_focus_points.png" type="Texture2D" id=11]
-[ext_resource path="res://tutorial/textures/tutorial_panel.png" type="Texture2D" id=12]
-[ext_resource path="res://tutorial/textures/tutorial_provoke.png" type="Texture2D" id=13]
-[ext_resource path="res://tutorial/textures/tutorial_chatbox_square_corner.png" type="Texture2D" id=14]
-[ext_resource path="res://tutorial/textures/tutorial_focus_snatch_button.png" type="Texture2D" id=15]
-[ext_resource path="res://tutorial/textures/tutorial_focus_tile_left.png" type="Texture2D" id=16]
-[ext_resource path="res://fonts/Gretaros-Regular.ttf" type="FontFile" id=17]
-[ext_resource path="res://board/booster_slot.tscn" type="PackedScene" id=18]
-[ext_resource path="res://letter/letter.tscn" type="PackedScene" id=19]
-[ext_resource path="res://universal_texture/UI_button_green.png" type="Texture2D" id=21]
-[ext_resource path="res://pool/dialog_manager.gd" type="Script" id=22]
-[ext_resource path="res://pool/event_manager.gd" type="Script" id=23]
+[ext_resource type="Script" uid="uid://ds3kkunyiut4a" path="res://mobile/buttons/btn_google_play_in_app_review.gd" id="1"]
+[ext_resource type="Script" uid="uid://ceip6ex8tma1n" path="res://pool/static_dialog_manager.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://b1bm7siocwapx" path="res://mdec_logo.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://38wpt1ogqedq" path="res://universal_texture/UI_button_purple.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://cyc4ju1e5w68q" path="res://login/textures/UI_offline_popuppanel.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://d4dif4updj4gr" path="res://tutorial/textures/tutorial_normal.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://w474088ggomu" path="res://tutorial/textures/arrow.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://dgi2n64evvmvr" path="res://tutorial/textures/tutorial_cursor.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://c3tsq11hufjd2" path="res://tutorial/textures/tutorial_focus_center.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://cedjm3dvutaop" path="res://tutorial/textures/tutorial_focus_points.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://g1ah1nd8abih" path="res://tutorial/textures/tutorial_panel.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://8dyono884pyd" path="res://tutorial/textures/tutorial_provoke.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://b0neqoq0j8x7o" path="res://tutorial/textures/tutorial_chatbox_square_corner.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://bpxygdgtyrqy5" path="res://tutorial/textures/tutorial_focus_snatch_button.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://wwho8sscv7qs" path="res://tutorial/textures/tutorial_focus_tile_left.png" id="16"]
+[ext_resource type="FontFile" uid="uid://drreivkewy5io" path="res://fonts/Gretaros-Regular.ttf" id="17"]
+[ext_resource type="PackedScene" path="res://board/booster_slot.tscn" id="18"]
+[ext_resource type="PackedScene" path="res://letter/letter.tscn" id="19"]
+[ext_resource type="Texture2D" uid="uid://bc6f5g2pi4nke" path="res://universal_texture/UI_button_green.png" id="21"]
+[ext_resource type="Script" uid="uid://bspwjgkcf75b5" path="res://pool/dialog_manager.gd" id="22"]
+[ext_resource type="Script" uid="uid://duu7agghtod2o" path="res://pool/event_manager.gd" id="23"]
 
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0, 0, 0, 0.588235 )
+[sub_resource type="StyleBoxFlat" id="2"]
+bg_color = Color(0, 0, 0, 0.588235)
 
-[sub_resource type="FontFile" id=3]
-size = 40
-outline_size = 5
-outline_color = Color( 0, 0, 0, 1 )
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 17 )
+[sub_resource type="FontFile" id="3"]
+fallbacks = Array[Font]([ExtResource("17"), ExtResource("17")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=4]
-size = 48
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 17 )
+[sub_resource type="FontFile" id="4"]
+fallbacks = Array[Font]([ExtResource("17"), ExtResource("17")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=5]
-size = 48
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 17 )
+[sub_resource type="FontFile" id="5"]
+fallbacks = Array[Font]([ExtResource("17"), ExtResource("17")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="Animation" id=34]
+[sub_resource type="Animation" id="34"]
 resource_name = "alt_entrance_1"
 length = 1.5
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Dialog/DialogText:percent_visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 1, 1.5 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ 0.0, 0.0, 1.0 ]
+"values": [0.0, 0.0, 1.0]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Dialog/Yes:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ false, true ]
+"values": [false, true]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Dialog/Yes:percent_visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0, 1, 1.5 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ 0.0, 0.0, 1.0 ]
+"values": [0.0, 0.0, 1.0]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("Dialog/DialogText:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 0, 1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ false, true ]
+"values": [false, true]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("Dialog/Arrow:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PackedFloat32Array( 0, 0.5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ false, true ]
+"values": [false, true]
 }
 tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("Dialog/Arrow:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"times": PackedFloat32Array( 1, 1.5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath("Dialog/DialogText:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/path = NodePath("Dialog/Yes:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"times": PackedFloat32Array( 0, 1.5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
 }
 tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/path = NodePath("Dialog/Name:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
 tracks/8/keys = {
-"times": PackedFloat32Array( 0, 1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ true, true ]
+"values": [true, true]
 }
 tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/path = NodePath("BigAvatar1:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
 tracks/9/keys = {
-"times": PackedFloat32Array( 0, 0.5, 1 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Vector2( -1240, 880 ), Vector2( -1240, 880 ), Vector2( -125, 880 ) ]
+"values": [Vector2(-1240, 880), Vector2(-1240, 880), Vector2(-125, 880)]
 }
 tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = false
 tracks/10/path = NodePath("Dialog:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = false
 tracks/10/keys = {
-"times": PackedFloat32Array( 1.5 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = false
 tracks/11/path = NodePath("Dialog:scale")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = false
 tracks/11/keys = {
-"times": PackedFloat32Array( 0, 0.5, 1.5 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Vector2( 0, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+"values": [Vector2(0, 1), Vector2(1, 1), Vector2(1, 1)]
 }
 tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = false
 tracks/12/path = NodePath("Dialog:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = false
 tracks/12/keys = {
-"times": PackedFloat32Array( 0.5, 1.5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( -59, 1400 ), Vector2( -59, 1400 ) ]
+"values": [Vector2(-59, 1400), Vector2(-59, 1400)]
 }
 tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/path = NodePath("BigAvatar1:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
 tracks/13/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 
-[sub_resource type="Animation" id=35]
+[sub_resource type="Animation" id="35"]
 resource_name = "alt_entrance_2"
 length = 1.5
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Dialog/DialogText:percent_visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 1, 1.5 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ 0.0, 0.0, 1.0 ]
+"values": [0.0, 0.0, 1.0]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
 tracks/1/path = NodePath("Dialog:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = false
 tracks/1/keys = {
-"times": PackedFloat32Array( 1.5 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
 tracks/2/path = NodePath("Dialog:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = false
 tracks/2/keys = {
-"times": PackedFloat32Array( 0, 0.5, 1.5 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Vector2( 1e-05, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+"values": [Vector2(1e-05, 1), Vector2(1, 1), Vector2(1, 1)]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("BigAvatar2:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 0, 0.5, 1 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Vector2( 1240, 880 ), Vector2( 1240, 880 ), Vector2( 505, 880 ) ]
+"values": [Vector2(1240, 880), Vector2(1240, 880), Vector2(505, 880)]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = false
 tracks/4/path = NodePath("Dialog:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = false
 tracks/4/keys = {
-"times": PackedFloat32Array( 0.5, 1.5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( -59, 1400 ), Vector2( -59, 1400 ) ]
+"values": [Vector2(-59, 1400), Vector2(-59, 1400)]
 }
 tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("Dialog/Yes:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"times": PackedFloat32Array( 0, 1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ false, true ]
+"values": [false, true]
 }
 tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath("Dialog/Yes:percent_visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"times": PackedFloat32Array( 0, 1, 1.5 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ 0.0, 0.0, 1.0 ]
+"values": [0.0, 0.0, 1.0]
 }
 tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/path = NodePath("Dialog/DialogText:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"times": PackedFloat32Array( 0, 1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ false, true ]
+"values": [false, true]
 }
 tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/path = NodePath("Dialog/Arrow:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
 tracks/8/keys = {
-"times": PackedFloat32Array( 0, 0.5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ false, true ]
+"values": [false, true]
 }
 tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/path = NodePath("Dialog/Arrow:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
 tracks/9/keys = {
-"times": PackedFloat32Array( 1, 1.5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/path = NodePath("Dialog/DialogText:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
 tracks/10/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/path = NodePath("Dialog/Yes:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
 tracks/11/keys = {
-"times": PackedFloat32Array( 0, 1.5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
 }
 tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/path = NodePath("Dialog/Name:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
 tracks/12/keys = {
-"times": PackedFloat32Array( 0, 1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ false, true ]
+"values": [false, true]
 }
 tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/path = NodePath("BigAvatar2:flip_h")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
 tracks/13/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ false ]
+"values": [false]
 }
 tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/path = NodePath("BigAvatar2:visible")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
 tracks/14/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 
-[sub_resource type="Animation" id=36]
+[sub_resource type="Animation" id="36"]
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Dialog/DialogText:percent_visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ 0.0, 1.0 ]
+"values": [0.0, 1.0]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Dialog/Yes:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Dialog/Yes:percent_visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0, 0.5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ 0.0, 1.0 ]
+"values": [0.0, 1.0]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("Dialog/DialogText:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("Dialog/Arrow:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("Dialog/Arrow:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"times": PackedFloat32Array( 0, 1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath("Dialog/DialogText:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"times": PackedFloat32Array(  ),
-"transitions": PackedFloat32Array(  ),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [  ]
+"values": []
 }
 tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/path = NodePath("Dialog/Yes:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"times": PackedFloat32Array( 0.5 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id=37]
+[sub_resource type="Animation" id="37"]
 length = 0.7
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Dialog/DialogText:percent_visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.7 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ 0.0, 1.0, 1.0 ]
+"values": [0.0, 1.0, 1.0]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Dialog/DialogText:text")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ "" ]
+"values": [""]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("BigAvatar2:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("Dialog:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("Dialog:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.7 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1e-05, 1 ) ]
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1e-05, 1)]
 }
 tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("BigAvatar2:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"times": PackedFloat32Array( 0, 0.7 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 406, 800 ), Vector2( 1240, 811 ) ]
+"values": [Vector2(406, 800), Vector2(1240, 811)]
 }
 tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath("Dialog:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"times": PackedFloat32Array( 0, 0.3 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( -59, 1400 ), Vector2( -59, 1400 ) ]
+"values": [Vector2(-59, 1400), Vector2(-59, 1400)]
 }
 tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/path = NodePath("BigAvatar2:texture")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ExtResource("7")]
 }
 tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/path = NodePath("Dialog/Yes:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
 tracks/8/keys = {
-"times": PackedFloat32Array( 0, 0.7 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ true, true ]
+"values": [true, true]
 }
 tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/path = NodePath("Dialog/Yes:percent_visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
 tracks/9/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.7 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ 0.0, 0.0, 1.0 ]
+"values": [0.0, 0.0, 1.0]
 }
 tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/path = NodePath("Dialog/Yes:text")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
 tracks/10/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ "" ]
+"values": [""]
 }
 tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/path = NodePath("BigAvatar2:flip_h")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
 tracks/11/keys = {
-"times": PackedFloat32Array( 0, 0.1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ false, true ]
+"values": [false, true]
 }
 tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/path = NodePath("Dialog/DialogText:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
 tracks/12/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ false ]
+"values": [false]
 }
 tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/path = NodePath("Dialog/Arrow:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
 tracks/13/keys = {
-"times": PackedFloat32Array( 0, 0.7 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ true, true ]
+"values": [true, true]
 }
 tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/path = NodePath("Dialog/Arrow:modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
 tracks/14/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id=38]
+[sub_resource type="Animation" id="38"]
 resource_name = "exit_2"
 length = 0.7
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Dialog/DialogText:percent_visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.7 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ 0.0, 1.0, 1.0 ]
+"values": [0.0, 1.0, 1.0]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Dialog/DialogText:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = false
-tracks/1/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
-"update": 1,
-"values": [ "" ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("BigAvatar2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Dialog:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = false
-tracks/3/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Dialog:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = false
-tracks/4/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.7 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1e-05, 1 ) ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("BigAvatar2:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PackedFloat32Array( 0, 0.5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 406, 800 ), Vector2( 1240, 811 ) ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("Dialog:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = false
-tracks/6/keys = {
-"times": PackedFloat32Array( 0, 0.3 ),
-"transitions": PackedFloat32Array( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -59, 1400 ), Vector2( -59, 1400 ) ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("BigAvatar2:texture")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = false
-tracks/7/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
-"update": 1,
-"values": [ ExtResource( 7 ) ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("Dialog/Yes:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PackedFloat32Array( 0, 0.7 ),
-"transitions": PackedFloat32Array( 1, 1 ),
-"update": 1,
-"values": [ true, true ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("Dialog/Yes:percent_visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.7 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0, 1.0 ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("Dialog/Yes:text")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
-"update": 1,
-"values": [ "" ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("BigAvatar2:flip_h")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PackedFloat32Array( 0, 0.1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/12/type = "value"
-tracks/12/path = NodePath("Dialog/DialogText:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/13/type = "value"
-tracks/13/path = NodePath("Dialog/Arrow:visible")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/keys = {
-"times": PackedFloat32Array( 0, 0.7 ),
-"transitions": PackedFloat32Array( 1, 1 ),
-"update": 1,
-"values": [ true, true ]
-}
-tracks/14/type = "value"
-tracks/14/path = NodePath("Dialog/Arrow:modulate")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/keys = {
-"times": PackedFloat32Array( 0, 0.4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=39]
-length = 4.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("Dialog/DialogText:percent_visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PackedFloat32Array( 0, 2, 3 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0, 1.0 ]
-}
-tracks/1/type = "value"
 tracks/1/path = NodePath("Dialog/DialogText:text")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ "NOT THAT SMART AFTER ALL!", "NOT THAT SMART AFTER ALL!" ]
+"values": [""]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("BigAvatar2:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 2 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = false
 tracks/3/path = NodePath("Dialog:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 2 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = false
 tracks/4/path = NodePath("Dialog:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PackedFloat32Array( 0, 0.9, 2 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Vector2( 1e-05, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1e-05, 1)]
 }
 tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("BigAvatar2:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"times": PackedFloat32Array( 0, 1.5, 2 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 1240, 811 ), Vector2( 1240, 811 ), Vector2( 406, 800 ) ]
+"values": [Vector2(406, 800), Vector2(1240, 811)]
 }
 tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = false
 tracks/6/path = NodePath("Dialog:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"times": PackedFloat32Array( 0.9, 2 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( -59, 1400 ), Vector2( -59, 1400 ) ]
+"values": [Vector2(-59, 1400), Vector2(-59, 1400)]
 }
 tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = false
 tracks/7/path = NodePath("BigAvatar2:texture")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"times": PackedFloat32Array( 0, 2 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ ExtResource( 7 ), ExtResource( 13 ) ]
+"values": [ExtResource("7")]
 }
 tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/path = NodePath("Dialog/Yes:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
 tracks/8/keys = {
-"times": PackedFloat32Array( 0, 3 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ false, true ]
+"values": [true, true]
 }
 tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/path = NodePath("Dialog/Yes:percent_visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
 tracks/9/keys = {
-"times": PackedFloat32Array( 0, 3, 4 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ 0.0, 0.0, 1.0 ]
+"values": [0.0, 0.0, 1.0]
 }
 tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/path = NodePath("Dialog/Yes:text")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
 tracks/10/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ "..." ]
+"values": [""]
 }
 tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/path = NodePath("BigAvatar2:flip_h")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
 tracks/11/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ false ]
+"values": [false, true]
 }
 tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/path = NodePath("Dialog/DialogText:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
 tracks/12/keys = {
-"times": PackedFloat32Array( 2 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/path = NodePath("Dialog/Arrow:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
 tracks/13/keys = {
-"times": PackedFloat32Array( 0, 2.1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ false, true ]
+"values": [true, true]
 }
 tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/path = NodePath("Dialog/Arrow:modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="39"]
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dialog/DialogText:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dialog/DialogText:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["NOT THAT SMART AFTER ALL!", "NOT THAT SMART AFTER ALL!"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BigAvatar2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Dialog:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Dialog:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BigAvatar2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1240, 811), Vector2(1240, 811), Vector2(406, 800)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Dialog:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.9, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-59, 1400), Vector2(-59, 1400)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("BigAvatar2:texture")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("7"), ExtResource("13")]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Dialog/Yes:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Dialog/Yes:percent_visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Dialog/Yes:text")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["..."]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("BigAvatar2:flip_h")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Dialog/DialogText:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Dialog/Arrow:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 2.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
+tracks/14/path = NodePath("Dialog/Arrow:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array( 2.4, 4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(2.4, 4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/path = NodePath("Dialog/DialogText:modulate")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
-tracks/15/imported = false
-tracks/15/enabled = true
 tracks/15/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/path = NodePath("Dialog/Yes:modulate")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
-tracks/16/imported = false
-tracks/16/enabled = true
 tracks/16/keys = {
-"times": PackedFloat32Array( 0, 4 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id=40]
+[sub_resource type="Animation" id="40"]
 length = 1.5
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Dialog/DialogText:percent_visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 1, 1.5 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ 0.0, 0.0, 1.0 ]
+"values": [0.0, 0.0, 1.0]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Dialog/Yes:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ false, true ]
+"values": [false, true]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Dialog/Yes:percent_visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0, 1, 1.5 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ 0.0, 0.0, 1.0 ]
+"values": [0.0, 0.0, 1.0]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("Dialog/DialogText:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 1 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("Dialog/Arrow:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PackedFloat32Array( 0, 0.6 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ false, true ]
+"values": [false, true]
 }
 tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("Dialog/Arrow:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"times": PackedFloat32Array( 1, 1.5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath("Dialog/DialogText:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/path = NodePath("Dialog/Yes:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"times": PackedFloat32Array( 0, 1.5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
 }
 tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/path = NodePath("Dialog/Name:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
 tracks/8/keys = {
-"times": PackedFloat32Array( 0, 1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ true, true ]
+"values": [true, true]
 }
 tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/path = NodePath("BigAvatar1:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
 tracks/9/keys = {
-"times": PackedFloat32Array( 0, 0.5, 1 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Vector2( -1240, 880 ), Vector2( -1240, 880 ), Vector2( -125, 880 ) ]
+"values": [Vector2(-1240, 880), Vector2(-1240, 880), Vector2(-125, 880)]
 }
 tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/path = NodePath("Dialog:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
 tracks/10/keys = {
-"times": PackedFloat32Array( 1.5 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/path = NodePath("Dialog:scale")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
 tracks/11/keys = {
-"times": PackedFloat32Array( 0, 0.5, 1.5 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Vector2( 0, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+"values": [Vector2(0, 1), Vector2(1, 1), Vector2(1, 1)]
 }
 tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/path = NodePath("Dialog:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
 tracks/12/keys = {
-"times": PackedFloat32Array( 0.5, 1.5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( -59, 1400 ), Vector2( -59, 1400 ) ]
+"values": [Vector2(-59, 1400), Vector2(-59, 1400)]
 }
 
-[sub_resource type="Animation" id=41]
+[sub_resource type="Animation" id="41"]
 length = 1.5
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Dialog/DialogText:percent_visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 1, 1.5 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ 0.0, 0.0, 1.0 ]
+"values": [0.0, 0.0, 1.0]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Dialog:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 1.5 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Dialog:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0, 0.5, 1.5 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Vector2( 1e-05, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+"values": [Vector2(1e-05, 1), Vector2(1, 1), Vector2(1, 1)]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("BigAvatar2:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 0, 0.5, 1 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Vector2( 1240, 880 ), Vector2( 1240, 880 ), Vector2( 505, 880 ) ]
+"values": [Vector2(1240, 880), Vector2(1240, 880), Vector2(505, 880)]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("Dialog:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PackedFloat32Array( 0.5, 1.5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( -59, 1400 ), Vector2( -59, 1400 ) ]
+"values": [Vector2(-59, 1400), Vector2(-59, 1400)]
 }
 tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("Dialog/Yes:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"times": PackedFloat32Array( 0, 1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ false, true ]
+"values": [false, true]
 }
 tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath("Dialog/Yes:percent_visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"times": PackedFloat32Array( 0, 1, 1.5 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ 0.0, 0.0, 1.0 ]
+"values": [0.0, 0.0, 1.0]
 }
 tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/path = NodePath("Dialog/DialogText:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"times": PackedFloat32Array( 1 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ true ]
+"values": [true]
 }
 tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/path = NodePath("Dialog/Arrow:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
 tracks/8/keys = {
-"times": PackedFloat32Array( 0, 0.5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ false, true ]
+"values": [false, true]
 }
 tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/path = NodePath("Dialog/Arrow:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
 tracks/9/keys = {
-"times": PackedFloat32Array( 1, 1.5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/path = NodePath("Dialog/DialogText:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
 tracks/10/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/path = NodePath("Dialog/Yes:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
 tracks/11/keys = {
-"times": PackedFloat32Array( 0, 1.5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
 }
 tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/path = NodePath("Dialog/Name:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
 tracks/12/keys = {
-"times": PackedFloat32Array( 0, 1 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ false, true ]
+"values": [false, true]
 }
 tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/path = NodePath("BigAvatar2:flip_h")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
 tracks/13/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ false ]
+"values": [false]
 }
 
-[sub_resource type="Animation" id=42]
+[sub_resource type="Animation" id="42"]
 resource_name = "static_text"
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("../../StaticDialogLayer/StaticDialogManager/Panel/Next:percent_visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.7, 1 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ 0.0, 0.0, 1.0 ]
+"values": [0.0, 0.0, 1.0]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("../../StaticDialogLayer/StaticDialogManager/Panel/DialogText:percent_visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 0.3 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ 0.0, 1.0 ]
+"values": [0.0, 1.0]
 }
 
-[sub_resource type="StyleBoxFlat" id=20]
-bg_color = Color( 1, 1, 1, 1 )
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x82sb"]
+_data = {
+&"alt_entrance_1": SubResource("34"),
+&"alt_entrance_2": SubResource("35"),
+&"dynamic_text": SubResource("36"),
+&"end": SubResource("37"),
+&"exit_2": SubResource("38"),
+&"lose_1": SubResource("39"),
+&"new_entrance_1": SubResource("40"),
+&"new_entrance_2": SubResource("41"),
+&"static_text": SubResource("42")
+}
+
+[sub_resource type="StyleBoxFlat" id="20"]
+bg_color = Color(1, 1, 1, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
-border_color = Color( 0, 0, 0, 1 )
+border_color = Color(0, 0, 0, 1)
 border_blend = true
 corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 shadow_size = 10
-shadow_offset = Vector2( 0, 5 )
+shadow_offset = Vector2(0, 5)
 
-[sub_resource type="FontFile" id=21]
-size = 64
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 17 )
+[sub_resource type="FontFile" id="21"]
+fallbacks = Array[Font]([ExtResource("17"), ExtResource("17")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=23]
-size = 28
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 17 )
+[sub_resource type="FontFile" id="23"]
+fallbacks = Array[Font]([ExtResource("17"), ExtResource("17")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="Animation" id=51]
+[sub_resource type="Animation" id="51"]
 resource_name = "static_text"
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
 tracks/0/path = NodePath("Panel/Next:percent_visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.7, 1 ),
-"transitions": PackedFloat32Array( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ 0.0, 0.0, 1.0 ]
+"values": [0.0, 0.0, 1.0]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
 tracks/1/path = NodePath("Panel/DialogText:percent_visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 0.3 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ 0.0, 1.0 ]
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/Next:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/DialogText:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
 }
 
-[sub_resource type="StyleBoxFlat" id=66]
-bg_color = Color( 1, 1, 1, 1 )
+[sub_resource type="Animation" id="Animation_3764w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/Next:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/DialogText:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
 
-[sub_resource type="FontFile" id=67]
-size = 84
-use_filter = true
-font_data = ExtResource( 17 )
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rrv1h"]
+_data = {
+&"RESET": SubResource("Animation_3764w"),
+&"static_text": SubResource("51")
+}
 
-[sub_resource type="FontFile" id=68]
-size = 54
-use_filter = true
-font_data = ExtResource( 17 )
+[sub_resource type="StyleBoxFlat" id="66"]
+bg_color = Color(1, 1, 1, 1)
 
-[sub_resource type="FontFile" id=69]
-size = 72
-use_filter = true
-font_data = ExtResource( 17 )
+[sub_resource type="FontFile" id="67"]
+fallbacks = Array[Font]([ExtResource("17"), ExtResource("17")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=70]
-size = 40
-use_filter = true
-font_data = ExtResource( 17 )
+[sub_resource type="FontFile" id="68"]
+fallbacks = Array[Font]([ExtResource("17"), ExtResource("17")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="StyleBoxFlat" id=76]
-bg_color = Color( 0, 0, 0, 0.686275 )
+[sub_resource type="FontFile" id="69"]
+fallbacks = Array[Font]([ExtResource("17"), ExtResource("17")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="StyleBoxTexture" id=77]
-texture = ExtResource( 6 )
-region_rect = Rect2( 0, 0, 345, 354 )
-offset_left = 68.0
-offset_right = 66.0
-offset_top = 44.0
-offset_bottom = 67.0
+[sub_resource type="FontFile" id="70"]
+fallbacks = Array[Font]([ExtResource("17"), ExtResource("17")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=78]
-size = 60
-use_filter = true
-font_data = ExtResource( 17 )
+[sub_resource type="StyleBoxFlat" id="76"]
+bg_color = Color(0, 0, 0, 0.686275)
 
-[sub_resource type="StyleBoxTexture" id=79]
-texture = ExtResource( 21 )
-region_rect = Rect2( 0, 0, 128, 128 )
-offset_left = 32.0
-offset_right = 24.0
-offset_top = 34.0
-offset_bottom = 41.0
+[sub_resource type="StyleBoxTexture" id="77"]
+texture = ExtResource("6")
+region_rect = Rect2(0, 0, 345, 354)
 
-[sub_resource type="StyleBoxTexture" id=80]
-texture = ExtResource( 21 )
-region_rect = Rect2( 0, 0, 128, 128 )
-offset_left = 32.0
-offset_right = 24.0
-offset_top = 34.0
-offset_bottom = 41.0
-modulate_color = Color( 0.588235, 0.588235, 0.588235, 1 )
+[sub_resource type="FontFile" id="78"]
+fallbacks = Array[Font]([ExtResource("17"), ExtResource("17")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=81]
-size = 64
-outline_size = 4
-outline_color = Color( 0, 0, 0, 1 )
-use_filter = true
-font_data = ExtResource( 17 )
+[sub_resource type="StyleBoxTexture" id="79"]
+texture = ExtResource("21")
+region_rect = Rect2(0, 0, 128, 128)
 
-[sub_resource type="StyleBoxTexture" id=82]
-texture = ExtResource( 5 )
-region_rect = Rect2( 0, 0, 128, 128 )
-offset_left = 36.0
-offset_right = 26.0
-offset_top = 40.0
-offset_bottom = 42.0
+[sub_resource type="StyleBoxTexture" id="80"]
+texture = ExtResource("21")
+region_rect = Rect2(0, 0, 128, 128)
+modulate_color = Color(0.588235, 0.588235, 0.588235, 1)
 
-[sub_resource type="StyleBoxTexture" id=83]
-texture = ExtResource( 5 )
-region_rect = Rect2( 0, 0, 128, 128 )
-offset_left = 36.0
-offset_right = 26.0
-offset_top = 40.0
-offset_bottom = 42.0
-modulate_color = Color( 0.588235, 0.588235, 0.588235, 1 )
+[sub_resource type="FontFile" id="81"]
+fallbacks = Array[Font]([ExtResource("17"), ExtResource("17")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=84]
-size = 50
-outline_size = 4
-outline_color = Color( 0, 0, 0, 1 )
-use_filter = true
-font_data = ExtResource( 17 )
+[sub_resource type="StyleBoxTexture" id="82"]
+texture = ExtResource("5")
+region_rect = Rect2(0, 0, 128, 128)
+
+[sub_resource type="StyleBoxTexture" id="83"]
+texture = ExtResource("5")
+region_rect = Rect2(0, 0, 128, 128)
+modulate_color = Color(0.588235, 0.588235, 0.588235, 1)
+
+[sub_resource type="FontFile" id="84"]
+fallbacks = Array[Font]([ExtResource("17"), ExtResource("17")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
 [node name="EventManager" type="Node2D"]
-script = ExtResource( 23 )
-_ScnLetter = ExtResource( 19 )
-_OVERLAY_CENTER = ExtResource( 10 )
-_OVERLAY_SNATCH = ExtResource( 15 )
-_OVERLAY_TILES = ExtResource( 16 )
-_OVERLAY_POINTS = ExtResource( 11 )
+script = ExtResource("23")
+_ScnLetter = ExtResource("19")
+_OVERLAY_CENTER = ExtResource("10")
+_OVERLAY_SNATCH = ExtResource("15")
+_OVERLAY_TILES = ExtResource("16")
+_OVERLAY_POINTS = ExtResource("11")
 
 [node name="DialogLayer" type="CanvasLayer" parent="."]
 layer = 2
 
 [node name="DialogManager" type="Control" parent="DialogLayer"]
 visible = false
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1.0
@@ -1592,79 +1705,71 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 15
 size_flags_vertical = 15
-script = ExtResource( 22 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("22")
 
 [node name="Darken" type="Panel" parent="DialogLayer/DialogManager"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1.0
 offset_right = 1.0
-theme_override_styles/panel = SubResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+theme_override_styles/panel = SubResource("2")
 
 [node name="BigAvatar1" type="TextureRect" parent="DialogLayer/DialogManager"]
+clip_contents = true
+layout_mode = 0
 offset_left = -1240.0
 offset_top = 880.0
 offset_right = -613.988
 offset_bottom = 1413.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2( 182.699, 169.069 )
-clip_contents = true
-texture = ExtResource( 7 )
-expand = true
+pivot_offset = Vector2(182.699, 169.069)
+texture = ExtResource("7")
+expand_mode = 1
 stretch_mode = 6
 flip_h = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="BigAvatar2" type="TextureRect" parent="DialogLayer/DialogManager"]
+clip_contents = true
+layout_mode = 0
 offset_left = 406.0
 offset_top = 880.0
 offset_right = 1032.01
 offset_bottom = 1413.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2( 182.699, 169.069 )
-clip_contents = true
-texture = ExtResource( 7 )
-expand = true
+pivot_offset = Vector2(182.699, 169.069)
+texture = ExtResource("7")
+expand_mode = 1
 stretch_mode = 6
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Dialog" type="TextureRect" parent="DialogLayer/DialogManager"]
+layout_mode = 0
 offset_left = -59.0
 offset_top = 1400.0
 offset_right = 996.0
 offset_bottom = 1839.0
-scale = Vector2( 1e-05, 1 )
-pivot_offset = Vector2( 537.666, 234.937 )
-texture = ExtResource( 12 )
-expand = true
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
+scale = Vector2(1e-05, 1)
+pivot_offset = Vector2(537.666, 234.937)
+texture = ExtResource("12")
+expand_mode = 1
 
 [node name="Name" type="Label" parent="DialogLayer/DialogManager/Dialog"]
+layout_mode = 0
 offset_left = 99.7637
 offset_top = 56.6727
 offset_right = 171.764
 offset_bottom = 103.673
-theme_override_colors/font_color = Color( 1, 1, 1, 1 )
-theme_override_fonts/font = SubResource( 3 )
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("3")
 text = "Squab"
 
 [node name="Arrow" type="TextureRect" parent="DialogLayer/DialogManager/Dialog"]
-modulate = Color( 1, 1, 1, 0 )
+visible = false
+modulate = Color(1, 1, 1, 0)
+clip_contents = true
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 926.401
@@ -1673,17 +1778,14 @@ offset_right = -78.5991
 offset_bottom = -104.444
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2( 20.9899, 27.3916 )
-clip_contents = true
-texture = ExtResource( 8 )
-expand = true
+pivot_offset = Vector2(20.9899, 27.3916)
+texture = ExtResource("8")
+expand_mode = 1
 stretch_mode = 6
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
 
 [node name="DialogText" type="RichTextLabel" parent="DialogLayer/DialogManager/Dialog"]
+visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 100.0
@@ -1694,19 +1796,16 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 15
 size_flags_vertical = 15
-theme_override_colors/default_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/normal_font = SubResource( 4 )
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("4")
 bbcode_enabled = true
 text = "OK NEWBIE, I HOPE YOU LIKE TO SQUABBLE."
 visible_characters = 0
-percent_visible = 0.0
-text = "OK NEWBIE, I HOPE YOU LIKE TO SQUABBLE."
-fit_content_height = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+visible_ratio = 0.0
 
 [node name="Yes" type="RichTextLabel" parent="DialogLayer/DialogManager/Dialog"]
+visible = false
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -1717,56 +1816,46 @@ offset_right = 401.5
 offset_bottom = 115.5
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2( 57.9976, 30.0438 )
+pivot_offset = Vector2(57.9976, 30.0438)
 size_flags_horizontal = 15
 size_flags_vertical = 15
-theme_override_colors/default_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/normal_font = SubResource( 5 )
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("5")
 bbcode_enabled = true
 text = "NEXT"
 visible_characters = 0
-percent_visible = 0.0
-text = "NEXT"
-fit_content_height = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+visible_ratio = 0.0
 
 [node name="DialogUI" type="AnimationPlayer" parent="DialogLayer/DialogManager"]
-anims/alt_entrance_1 = SubResource( 34 )
-anims/alt_entrance_2 = SubResource( 35 )
-anims/dynamic_text = SubResource( 36 )
-anims/end = SubResource( 37 )
-anims/exit_2 = SubResource( 38 )
-anims/lose_1 = SubResource( 39 )
-anims/new_entrance_1 = SubResource( 40 )
-anims/new_entrance_2 = SubResource( 41 )
-anims/static_text = SubResource( 42 )
+libraries = {
+&"": SubResource("AnimationLibrary_x82sb")
+}
 
 [node name="Progress_Dialog" type="Button" parent="DialogLayer/DialogManager"]
 visible = false
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1.0
 offset_right = -1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="StaticDialogLayer" type="CanvasLayer" parent="."]
 layer = 2
 
 [node name="StaticDialogManager" type="Control" parent="StaticDialogLayer"]
 visible = false
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource( 3 )
+script = ExtResource("3")
 
 [node name="Panel" type="Panel" parent="StaticDialogLayer/StaticDialogManager"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -1779,13 +1868,12 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 15
 size_flags_vertical = 15
-theme_override_styles/panel = SubResource( 20 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+theme_override_styles/panel = SubResource("20")
 
 [node name="Arrow" type="TextureRect" parent="StaticDialogLayer/StaticDialogManager/Panel"]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color(1, 1, 1, 0)
+clip_contents = true
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -1796,17 +1884,13 @@ offset_right = -34.0
 offset_bottom = -23.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2( 72.1237, 69.8619 )
-clip_contents = true
-texture = ExtResource( 8 )
-expand = true
+pivot_offset = Vector2(72.1237, 69.8619)
+texture = ExtResource("8")
+expand_mode = 1
 stretch_mode = 6
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
 
 [node name="DialogText" type="RichTextLabel" parent="StaticDialogLayer/StaticDialogManager/Panel"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 34.0453
@@ -1817,19 +1901,14 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 15
 size_flags_vertical = 15
-theme_override_colors/default_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/normal_font = SubResource( 21 )
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("21")
 bbcode_enabled = true
-visible_characters = 0
-percent_visible = 0.0
 text = "TO WIN, YOU NEED POINTS"
 scroll_active = false
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
 
 [node name="Next" type="RichTextLabel" parent="StaticDialogLayer/StaticDialogManager/Panel"]
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -1840,56 +1919,58 @@ offset_right = -70.0
 offset_bottom = -28.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2( 42.4581, 14.0288 )
+pivot_offset = Vector2(42.4581, 14.0288)
 size_flags_horizontal = 15
 size_flags_vertical = 15
-theme_override_colors/default_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/normal_font = SubResource( 23 )
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("23")
 bbcode_enabled = true
 text = "NEXT"
 visible_characters = 0
-percent_visible = 0.0
-text = "NEXT"
-fit_content_height = true
+visible_ratio = 0.0
 
 [node name="Point" type="TextureRect" parent="StaticDialogLayer/StaticDialogManager"]
+layout_mode = 0
 offset_left = 801.586
 offset_top = 152.757
 offset_right = 858.586
 offset_bottom = 208.757
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource( 14 )
-expand = true
+texture = ExtResource("14")
+expand_mode = 1
 flip_h = true
 
 [node name="StaticDialogUI" type="AnimationPlayer" parent="StaticDialogLayer/StaticDialogManager"]
-anims/static_text = SubResource( 51 )
+libraries = {
+&"": SubResource("AnimationLibrary_rrv1h")
+}
 
 [node name="Progress_Dialog" type="Button" parent="StaticDialogLayer/StaticDialogManager"]
 visible = false
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -1.0
 offset_right = -1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Overlay" type="TextureRect" parent="CanvasLayer"]
 visible = false
-modulate = Color( 1, 1, 1, 0.784314 )
+modulate = Color(1, 1, 1, 0.784314)
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-texture = ExtResource( 10 )
-expand = true
+texture = ExtResource("10")
+expand_mode = 1
 
 [node name="UI" type="Control" parent="CanvasLayer"]
 visible = false
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 1201.0
@@ -1897,21 +1978,22 @@ grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 2
 mouse_filter = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Fake_Booster_Slot1" parent="CanvasLayer/UI" instance=ExtResource( 18 )]
+[node name="Fake_Booster_Slot1" parent="CanvasLayer/UI" instance=ExtResource("18")]
+layout_mode = 0
 
-[node name="Fake_Booster_Slot2" parent="CanvasLayer/UI" instance=ExtResource( 18 )]
+[node name="Fake_Booster_Slot2" parent="CanvasLayer/UI" instance=ExtResource("18")]
+layout_mode = 0
 offset_left = 155.0
 offset_right = 275.0
 
-[node name="Fake_Booster_Slot3" parent="CanvasLayer/UI" instance=ExtResource( 18 )]
+[node name="Fake_Booster_Slot3" parent="CanvasLayer/UI" instance=ExtResource("18")]
+layout_mode = 0
 offset_left = 675.0
 offset_right = 795.0
 
-[node name="Fake_Booster_Slot4" parent="CanvasLayer/UI" instance=ExtResource( 18 )]
+[node name="Fake_Booster_Slot4" parent="CanvasLayer/UI" instance=ExtResource("18")]
+layout_mode = 0
 offset_left = 810.0
 offset_right = 930.0
 
@@ -1923,21 +2005,23 @@ offset_right = 474.0
 offset_bottom = 1018.0
 rotation = 24.1579
 mouse_filter = 2
-texture = ExtResource( 9 )
-expand = true
+texture = ExtResource("9")
+expand_mode = 1
 
 [node name="CreditLayer" type="CanvasLayer" parent="."]
 layer = 99
 
 [node name="Panel" type="Panel" parent="CreditLayer"]
 visible = false
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_styles/panel = SubResource( 66 )
+theme_override_styles/panel = SubResource("66")
 
 [node name="Label" type="Label" parent="CreditLayer/Panel"]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -1946,14 +2030,15 @@ offset_left = -308.5
 offset_top = -624.0
 offset_right = 308.5
 offset_bottom = -525.0
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/font = SubResource( 67 )
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("67")
 text = "END CREDITS"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CreditLayer/Panel"]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -1962,23 +2047,13 @@ offset_left = -424.0
 offset_top = -536.0
 offset_right = 424.0
 offset_bottom = 243.0
-theme_override_colors/default_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/mono_font = SubResource( 68 )
-theme_override_fonts/bold_italics_font = SubResource( 68 )
-theme_override_fonts/italics_font = SubResource( 68 )
-theme_override_fonts/bold_font = SubResource( 69 )
-theme_override_fonts/normal_font = SubResource( 68 )
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("68")
+theme_override_fonts/bold_font = SubResource("69")
+theme_override_fonts/bold_italics_font = SubResource("68")
+theme_override_fonts/italics_font = SubResource("68")
+theme_override_fonts/mono_font = SubResource("68")
 bbcode_enabled = true
-text = "[center]
-[b]Designer[/b]
-Kenny Lum
-
-[b]Artist[/b]
-Aw Ting Yu
-
-[b]Programmer[/b]
-Randy Tan
-Greg Chong[/center]"
 text = "
 Designer
 Kenny Lum
@@ -1991,7 +2066,9 @@ Randy Tan
 Greg Chong"
 
 [node name="TextureRect" type="TextureRect" parent="CreditLayer/Panel"]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(301, 167)
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -2000,11 +2077,11 @@ offset_left = -450.0
 offset_top = -657.0
 offset_right = 450.0
 offset_bottom = -157.0
-custom_minimum_size = Vector2( 301, 167 )
-texture = ExtResource( 4 )
+texture = ExtResource("4")
 
 [node name="Label2" type="Label" parent="CreditLayer/Panel"]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -2013,43 +2090,45 @@ offset_left = -422.0
 offset_top = 253.0
 offset_right = 423.0
 offset_bottom = 470.0
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/font = SubResource( 70 )
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("70")
 text = "Special appreciation to Malaysian Digital Economy Corporation for their support to make this game a reality."
-align = 1
-autowrap = true
+horizontal_alignment = 1
 
 [node name="RatingLayer" type="CanvasLayer" parent="."]
 layer = 99
 
 [node name="Backdrop" type="Panel" parent="RatingLayer"]
 visible = false
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_styles/panel = SubResource( 76 )
+theme_override_styles/panel = SubResource("76")
 
 [node name="Panel" type="Panel" parent="RatingLayer/Backdrop"]
+layout_mode = 0
 offset_left = 56.0
 offset_top = 713.0
 offset_right = 864.0
 offset_bottom = 1214.0
-theme_override_styles/panel = SubResource( 77 )
+theme_override_styles/panel = SubResource("77")
 
 [node name="Label" type="Label" parent="RatingLayer/Backdrop/Panel"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 73.0
 offset_top = 55.0
 offset_right = -73.0
 offset_bottom = -53.0
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/font = SubResource( 78 )
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("78")
 text = "Like Squabble? Rate us on the 
 app store!"
-align = 1
-autowrap = true
+horizontal_alignment = 1
 
 [node name="Btn_OpenRate" type="Button" parent="RatingLayer/Backdrop/Panel"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -2058,22 +2137,24 @@ offset_left = -344.0
 offset_top = 74.5
 offset_right = -11.0
 offset_bottom = 192.5
-theme_override_styles/hover = SubResource( 79 )
-theme_override_styles/pressed = SubResource( 80 )
-theme_override_styles/focus = SubResource( 79 )
-theme_override_styles/disabled = SubResource( 79 )
-theme_override_styles/normal = SubResource( 79 )
-script = ExtResource( 1 )
+theme_override_styles/normal = SubResource("79")
+theme_override_styles/pressed = SubResource("80")
+theme_override_styles/hover = SubResource("79")
+theme_override_styles/disabled = SubResource("79")
+theme_override_styles/focus = SubResource("79")
+script = ExtResource("1")
 
 [node name="Label" type="Label" parent="RatingLayer/Backdrop/Panel/Btn_OpenRate"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_fonts/font = SubResource( 81 )
+theme_override_fonts/font = SubResource("81")
 text = "Rate!"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Btn_CloseRate" type="Button" parent="RatingLayer/Backdrop/Panel"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -2082,21 +2163,32 @@ offset_left = 9.0
 offset_top = 74.5
 offset_right = 342.0
 offset_bottom = 192.5
-theme_override_styles/hover = SubResource( 82 )
-theme_override_styles/pressed = SubResource( 83 )
-theme_override_styles/focus = SubResource( 82 )
-theme_override_styles/disabled = SubResource( 82 )
-theme_override_styles/normal = SubResource( 82 )
+theme_override_styles/normal = SubResource("82")
+theme_override_styles/pressed = SubResource("83")
+theme_override_styles/hover = SubResource("82")
+theme_override_styles/disabled = SubResource("82")
+theme_override_styles/focus = SubResource("82")
 
 [node name="Label" type="Label" parent="RatingLayer/Backdrop/Panel/Btn_CloseRate"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_fonts/font = SubResource( 84 )
+theme_override_fonts/font = SubResource("84")
 text = "Not now"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Tween" type="Tween" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = null
 
 [connection signal="pressed" from="DialogLayer/DialogManager/Progress_Dialog" to="." method="_progress_event"]
 [connection signal="pressed" from="StaticDialogLayer/StaticDialogManager/Progress_Dialog" to="." method="_progress_event"]

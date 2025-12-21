@@ -1,2 +1,11 @@
 res://init.tscn
+res://game_loader/player_data.gd
+res://tutorial/tutorial.tscn
+res://pool/event_manager.tscn
+res://pool/event_manager.gd
+res://board/board.gd
+res://pool/win_lose/win_lose.gd
+res://tutorial/tutorial.gd
+res://letter/letter.tscn
+res://letter/letter_outline.tres
 res://letter/letter.gd

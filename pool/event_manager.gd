@@ -56,6 +56,8 @@ func initiate_event(level, step, init = false) -> void:
 		1: #Starting level, guide to picking letters
 			if init:
 				pass
+				
+			print("after pass at step: " + str(step))
 			match step:
 				1: 
 					set_custom_avatar_expression("Squab", "yousee3")
@@ -1091,6 +1093,7 @@ func check_condition_to_pick(current_word, target_word, progress = false, snatch
 		get_tree().call_group("lettertiles", "force_disable")
 		
 		if progress:
+			print("azri progress 1")
 			_progress_event()
 		
 		set_snatch_function(false)

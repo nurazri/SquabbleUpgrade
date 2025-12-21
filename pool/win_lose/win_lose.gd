@@ -176,6 +176,7 @@ func _set_win_screen_animation_new(who_won: int) -> void:
 	animation_result_new.play("ResultScreen_" + str(current))
 	await animation_result_new.animation_finished
 	if not get_tree().root.get_node("Game/Pool/EventManager").has_ended:
+		print("azri progress event 2")
 		get_tree().root.get_node("Game/Pool/EventManager")._progress_event()
 
 # =====================

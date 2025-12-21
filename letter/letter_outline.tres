@@ -1,7 +1,8 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bjxieynvb1ekk"]
 
-[sub_resource type="Shader" id=11]
+[sub_resource type="Shader" id="34"]
 
 [resource]
 resource_local_to_scene = true
-shader = SubResource( 11 )
+render_priority = 0
+shader = SubResource("34")

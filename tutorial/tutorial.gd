@@ -102,10 +102,12 @@ func letters_snatched(from_who: int, longest_word: String, picked_letters: Array
 			if _BoardMe._score_next >= score_requirement[tutorial_part]:
 				_BoardMe.enable_snatch_button(false)
 				_BoardMe.enable_snatch_swipe(false)
+				print("azri progress event 3")
 				_Pool.get_node("EventManager")._progress_event()
 		else:
 			_BoardMe.enable_snatch_button(false)
 			_BoardMe.enable_snatch_swipe(false)
+			print("azri prgress event 4")
 			_Pool.get_node("EventManager")._progress_event()
 
 
