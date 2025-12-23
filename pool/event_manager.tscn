@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://wwho8sscv7qs" path="res://tutorial/textures/tutorial_focus_tile_left.png" id="16"]
 [ext_resource type="FontFile" uid="uid://drreivkewy5io" path="res://fonts/Gretaros-Regular.ttf" id="17"]
 [ext_resource type="PackedScene" path="res://board/booster_slot.tscn" id="18"]
-[ext_resource type="PackedScene" path="res://letter/letter.tscn" id="19"]
+[ext_resource type="PackedScene" uid="uid://c8ccj34iy5lo3" path="res://letter/letter.tscn" id="19"]
 [ext_resource type="Texture2D" uid="uid://bc6f5g2pi4nke" path="res://universal_texture/UI_button_green.png" id="21"]
 [ext_resource type="Script" uid="uid://bspwjgkcf75b5" path="res://pool/dialog_manager.gd" id="22"]
 [ext_resource type="Script" uid="uid://duu7agghtod2o" path="res://pool/event_manager.gd" id="23"]
@@ -1493,6 +1493,33 @@ cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 
+[sub_resource type="Animation" id="Animation_3764w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/Next:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/DialogText:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
 [sub_resource type="Animation" id="51"]
 resource_name = "static_text"
 tracks/0/type = "value"
@@ -1542,33 +1569,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_3764w"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel/Next:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Panel/DialogText:visible_ratio")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rrv1h"]
@@ -1981,21 +1981,31 @@ mouse_filter = 2
 
 [node name="Fake_Booster_Slot1" parent="CanvasLayer/UI" instance=ExtResource("18")]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 120.0
+offset_bottom = 120.0
 
 [node name="Fake_Booster_Slot2" parent="CanvasLayer/UI" instance=ExtResource("18")]
 layout_mode = 0
 offset_left = 155.0
+offset_top = 0.0
 offset_right = 275.0
+offset_bottom = 120.0
 
 [node name="Fake_Booster_Slot3" parent="CanvasLayer/UI" instance=ExtResource("18")]
 layout_mode = 0
 offset_left = 675.0
+offset_top = 0.0
 offset_right = 795.0
+offset_bottom = 120.0
 
 [node name="Fake_Booster_Slot4" parent="CanvasLayer/UI" instance=ExtResource("18")]
 layout_mode = 0
 offset_left = 810.0
+offset_top = 0.0
 offset_right = 930.0
+offset_bottom = 120.0
 
 [node name="Cursor" type="TextureRect" parent="CanvasLayer"]
 visible = false

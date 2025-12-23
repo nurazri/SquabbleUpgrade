@@ -1,4 +1,4 @@
-extends TileMap
+extends TileMapLayer
 
 signal points_updated
 
@@ -208,10 +208,16 @@ func _tile_size() -> Vector2:
 		return tile_set.tile_size
 	return Vector2(64, 64)
 
-
+#func _grid_to_world(cell_position: Vector2) -> Vector2:
+	#return map_to_local(cell_position) + _tile_size() / 2
+	
 func _grid_to_world(cell_position: Vector2) -> Vector2:
-	return map_to_local(cell_position) + _tile_size() / 2
-
+	var tile_size := _tile_size()
+	var local_pos := Vector2(
+		cell_position.x * tile_size.x + tile_size.x / 2,
+		cell_position.y * tile_size.y + tile_size.y / 2
+	)
+	return to_global(local_pos)
 
 func _show_empty_cells() -> void:
 	if not show_empty_cells:
@@ -228,7 +234,6 @@ func _show_empty_cells() -> void:
 			s.z_index = 400
 			s.add_to_group("iconpng")
 			get_parent().get_parent().add_child(s)
-
 
 func _reset_cells() -> void:
 	_cells.clear()
@@ -283,21 +288,29 @@ func _next_insert_index(letters: Array) -> bool:
 	return false
 
 
-func _insert_letters(letters: Array, who_am_i: int = _who_am_i) -> void:
+func _insert_letters(letters: Array, who_am_i: int = _who_am_i, max_index: int = 50) -> void:
+	var _get_middle_length: int = letters.size() / 2
+	var _current_length: int = 0
 	for letter in letters:
-		var data: Dictionary = WordList.spawned_letters[letter.id]
-		(data["word"] as Array).clear()
-
+		_current_length += 1
+		if _current_length == _get_middle_length:
+			_last_known_insert = _grid_to_world(_cells[_current_insert_index]["cell_position"])
+		
+		WordList.spawned_letters[letter.id]["word"].clear() # clear all letters in the same word
 		for l in letters:
-			(data["word"] as Array).append(l.id)
+			WordList.spawned_letters[letter.id]["word"].append(l.id) # assign all letters in the same word
+		if _current_insert_index < max_index:
+			var prev_cell_index: int = WordList.spawned_letters[letter.id]["cell_index"]
+			if prev_cell_index < 0 or _cells[_current_insert_index]["empty"]:
+				_move_letter(letter, _current_insert_index, who_am_i)
+				_current_insert_index += 1
 
-		_move_letter(letter, _current_insert_index, who_am_i)
-		_current_insert_index += 1
 
-
-func _move_letter(letter: Letter, target_index: int, who_am_i: int) -> void:
-	var pos: Vector2 = _grid_to_world(_cells[target_index]["cell_position"] as Vector2)
-	var rot: float = _cells[target_index]["cell_rotation"] as float
+func _move_letter(letter: Letter, target_index: int, who_am_i: int = _who_am_i) -> void:
+	#var pos: Vector2 = _grid_to_world(_cells[target_index]["cell_position"] as Vector2)
+	#var rot: float = _cells[target_index]["cell_rotation"] as float
+	var pos: Vector2 = _grid_to_world(_cells[target_index]["cell_position"])
+	var rot: float = _cells[target_index]["cell_rotation"]
 	letter.move_to(pos, rot, who_am_i, target_index)
 
 

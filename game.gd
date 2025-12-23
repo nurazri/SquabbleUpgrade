@@ -183,7 +183,31 @@ func _on_Login_login_checked(is_logged_in: bool = true) -> void:
 		$Tutorial.show()
 	else:
 		$Tutorial.hide()
-
+		
+func _on_Pool_letters_snatched(from_who: int, longest_word: String, picked_letters: Array, steal: Array) -> void:
+	print("from game.gd tutorial.letters_snatched")
+	$Tutorial.letters_snatched(from_who, longest_word, picked_letters)
+	$Commander.letters_snatched(from_who, longest_word, picked_letters)
+	if from_who == 1:
+		match len(picked_letters):
+			3: GameLoader.update_achievement_value("achievement_form_3","points",1)
+			4: GameLoader.update_achievement_value("achievement_form_4","points",1)
+			5: GameLoader.update_achievement_value("achievement_form_5","points",1)
+			6: GameLoader.update_achievement_value("achievement_form_6","points",1)
+			7: GameLoader.update_achievement_value("achievement_form_7","points",1)
+			
+		for a in picked_letters:
+			match a.letter:
+				"j": GameLoader.update_achievement_value("achievement_form_with_j","points",1)
+				"x": GameLoader.update_achievement_value("achievement_form_with_x","points",1)
+				"q": GameLoader.update_achievement_value("achievement_form_with_q","points",1)
+				"z": GameLoader.update_achievement_value("achievement_form_with_z","points",1)
+		
+		if steal[0] != false:
+			match steal[1]:
+				3: GameLoader.update_achievement_value("achievement_steal_3","points",1)
+				4: GameLoader.update_achievement_value("achievement_steal_4","points",1)
+				5: GameLoader.update_achievement_value("achievement_steal_5","points",1)
 
 # --------------------------------------------------
 # CUSTOM SORTER

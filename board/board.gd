@@ -112,7 +112,7 @@ func reset(mode: int, type: int, scorelimit: int, continue_from_tutorial: bool =
 		show_score_panel(true)
 	
 	set_interactivity(true)
-	$BoardGrid.reset(who_am_i)
+	$BoardGrid/TileMapLayer.reset(who_am_i)
 	
 	if who_am_i == Globals.LetterOwnership.BOARD_ME:
 		$Background/EffectLayer.hide()
@@ -249,7 +249,7 @@ func pick_letter(id: int, is_picked: bool = true) -> void:
 			if who_am_i == Globals.LetterOwnership.BOARD_ME:
 				$HoldingBar.remove_letter(found)
 	
-	_spelled_word = form_word_from_letters(_picked_letters, $BoardGrid.check_letters(_picked_letters))
+	_spelled_word = form_word_from_letters(_picked_letters, $BoardGrid/TileMapLayer.check_letters(_picked_letters))
 	
 	var exist_pool_letter: bool = false
 	var points_total: int = 0
@@ -326,7 +326,7 @@ func snatch() -> bool:
 			for p in _picked_letters:
 				WordList.spawned_letters[p.id]["node"]._boost_protected = true
 				
-		return $BoardGrid.add_letters(_picked_letters, who_am_i)
+		return $BoardGrid/TileMapLayer.add_letters(_picked_letters, who_am_i)
 	return false
 
 
@@ -340,6 +340,7 @@ func snatch_and_clear(has_fail_sfx: bool = true, skip_sfx: bool = false) -> bool
 			if !skip_sfx:
 				Audio.play_sfx(Audio.Sfx.WORD_SUCCESS)
 			emit_signal("letters_snatched", who_am_i, _spelled_word, _longest_word, _best_word, picked, steal)
+			print('emit signal letters_snatched')
 			if !has_stolen:
 				has_stolen = steal[0]
 			
@@ -437,13 +438,6 @@ func _on_letter_tweened() -> void:
 		get_tree().call_group("boardgrids", "update_points")
 
 
-func _on_BoardGrid_points_updated(points: int, insert_point: Vector2):
-	_score_next = points
-	emit_signal("points_updated", points, who_am_i, insert_point)
-	$PointsUpdateTimer.stop()
-	$PointsUpdateTimer.start()
-
-
 func _on_PointsUpdateTimer_timeout():
 	if _score != _score_next:
 		if _score < _score_next:
@@ -461,3 +455,16 @@ func _on_PointsUpdateTimer_timeout():
 func _on_Reset_pressed():
 	reset_snatch()
 	end_touch()
+
+
+func _on_tile_map_layer_points_updated(points: int, insert_point: Vector2) -> void:
+	_score_next = points
+	emit_signal("points_updated", points, who_am_i, insert_point)
+	$PointsUpdateTimer.stop()
+	$PointsUpdateTimer.start()
+	
+#func _on_BoardGrid_points_updated(points: int, insert_point: Vector2):
+	#_score_next = points
+	#emit_signal("points_updated", points, who_am_i, insert_point)
+	#$PointsUpdateTimer.stop()
+	#$PointsUpdateTimer.start()

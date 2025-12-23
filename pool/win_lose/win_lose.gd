@@ -176,7 +176,6 @@ func _set_win_screen_animation_new(who_won: int) -> void:
 	animation_result_new.play("ResultScreen_" + str(current))
 	await animation_result_new.animation_finished
 	if not get_tree().root.get_node("Game/Pool/EventManager").has_ended:
-		print("azri progress event 2")
 		get_tree().root.get_node("Game/Pool/EventManager")._progress_event()
 
 # =====================
@@ -208,3 +207,116 @@ func _set_buttons(type: String) -> void:
 		"Tutorial": $Result_Win/InterfaceType/Tutorial.visible = true
 		"Custom": $Result_Win/InterfaceType/Custom.visible = true
 		"Custom-Ads": $Result_Win/InterfaceType/CustomAds.visible = true
+		
+func _on_Btn_NextTutorial_pressed() -> void:
+	_btn_is_pressed(true, get_tree().root.get_node("Game/Tutorial").replay_level)
+
+func _on_Btn_ReturnHome_pressed() -> void:
+	_btn_is_pressed(false, true)
+
+func _on_Btn_NextLevel_pressed() -> void:
+	_btn_is_pressed(true)
+	
+func _btn_is_pressed(next_level: bool = false, return_home: bool = false) -> void:
+	Audio.play_sfx(Audio.Sfx.BUTTON_TAP)
+	reset_results()
+	_show_ads_if_condition()
+	await animation_result_new.animation_finished
+	if return_home:
+		return_home()
+		return
+	else:
+		play_level(next_level)
+		
+func return_home() -> void:
+	hide()
+	get_tree().root.get_node("Game/Pool").hide()
+	Loading.load_next(null, null, null)
+	#yield(Loading, "screen_loaded")
+	await Loading.screen_loaded
+	get_tree().root.get_node("Game/Home_New").show()
+	
+func play_level(next: bool) -> void:
+	var level = get_tree().root.get_node("Game/Pool")._ai_level
+	if next:
+		get_tree().root.get_node("Game/Home_New").play_level(level + 1, false)
+	else:
+		get_tree().root.get_node("Game/Home_New").play_level(level, false)
+		
+func reset_results() -> void:
+	$Result_Win/InterfaceType/Tutorial/NextTutorial/NinePatchRect/Btn_NextTutorial.disabled = true
+	$Result_Win/InterfaceType/NoAds/ReturnHome/NinePatchRect/Btn_ReturnHome.disabled = true
+	$Result_Win/InterfaceType/NoAds/NextLevel/NinePatchRect/Btn_NextLevel.disabled = true
+	$Result_Win/InterfaceType/Ads/ReturnHome/NinePatchRect/Btn_ReturnHome.disabled = true
+	$Result_Win/InterfaceType/Ads/NextLevel/NinePatchRect/Btn_NextLevel.disabled = true
+	$Result_Win/InterfaceType/Ads/WatchAds/NinePatchRect/Btn_DoubleReward.disabled = true
+	$Result_Win/InterfaceType/Custom/ReturnHome/NinePatchRect/Btn_ReturnHome.disabled = true
+	$Result_Win/InterfaceType/CustomAds/ReturnHome/NinePatchRect/Btn_ReturnHome.disabled = true
+	$Result_Win/InterfaceType/CustomAds/WatchAds/NinePatchRect/Btn_DoubleReward.disabled = true
+	
+	$Result_Lose/ReplayLevel/NinePatchRect/Btn_ReplayLevel.disabled = true
+	$Result_Lose/ReturnHome/NinePatchRect/Btn_ReturnHome.disabled = true
+	
+	
+	animation_result_new.play("ResultScreen_" + current + "_End")
+	#yield(animation_result_new, "animation_finished")
+	await animation_result_new.animation_finished
+	
+	$Result_Win/InterfaceType/Tutorial/NextTutorial/NinePatchRect/Btn_NextTutorial.disabled = false
+	$Result_Win/InterfaceType/NoAds/NextLevel/NinePatchRect/Btn_NextLevel.disabled = false
+	$Result_Win/InterfaceType/NoAds/ReturnHome/NinePatchRect/Btn_ReturnHome.disabled = false
+	$Result_Win/InterfaceType/Ads/ReturnHome/NinePatchRect/Btn_ReturnHome.disabled = false
+	$Result_Win/InterfaceType/Ads/NextLevel/NinePatchRect/Btn_NextLevel.disabled = false
+	$Result_Win/InterfaceType/Ads/WatchAds/NinePatchRect/Btn_DoubleReward.disabled = false
+	$Result_Win/InterfaceType/Custom/ReturnHome/NinePatchRect/Btn_ReturnHome.disabled = false
+	$Result_Win/InterfaceType/CustomAds/ReturnHome/NinePatchRect/Btn_ReturnHome.disabled = false
+	$Result_Win/InterfaceType/CustomAds/WatchAds/NinePatchRect/Btn_DoubleReward.disabled = false
+	
+	$Result_Lose/ReplayLevel/NinePatchRect/Btn_ReplayLevel.disabled = false
+	$Result_Lose/ReturnHome/NinePatchRect/Btn_ReturnHome.disabled = false
+	$Result_Win/InterfaceType/Ads/WatchAds/NinePatchRect.modulate = Color(1,1,1,1)
+	$Result_Win/InterfaceType/CustomAds/WatchAds/NinePatchRect.modulate = Color(1,1,1,1)
+	
+	for best_words in range(1,5):
+		get_node("Result_Win/WordBg" + str(best_words) + "/Word").text = ""
+		get_node("Result_Lose/WordBg" + str(best_words) + "/Word").text = ""
+	
+	get_tree().root.get_node("Game/Pool/EventManager").reset_fake_boosters()
+	hide()
+	#animation_result_new.play("RESET")
+	
+	for i in range(1,4) :
+		get_node("Result_Win/Star0" + str(i)).hide()
+	for child in get_node("Result_Win/RewardsBg/Holder/RewardContainer").get_children():
+		child.queue_free()
+		
+func _show_ads_if_condition() -> void:
+	
+	var level = get_tree().root.get_node("Game/Pool")._ai_level
+	if level == 7:
+		print(GameLoader.player_data["current_level"])
+		_show_ads_now()
+		_admob_counter += 1
+		print("[AdMob] AdMob counter: " + str(_admob_counter))
+		return
+	if !GameLoader.player_data["completed_tutorial"]:
+		return
+	
+	if visible:
+		_admob_counter += 1
+		print("[AdMob] AdMob counter: " + str(_admob_counter))
+		if _admob_counter >= _SHOW_ADS_EVERY:
+			_show_ads_now()
+			_admob_counter %= _SHOW_ADS_EVERY
+			print("[AdMob] Showing ads every " + str(_SHOW_ADS_EVERY) + " time(s)")
+			
+func _show_ads_now(ad_type: int = Appodeal.AdType.INTERSTITIAL) -> void:
+	if not Appodeal.is_ad_loaded(ad_type):
+		Appodeal.load_ad(ad_type)
+		var wait_for: String = "interstitial_loaded"
+		match ad_type:
+			Appodeal.AdType.INTERSTITIAL:
+				wait_for = "interstitial_loaded"
+			Appodeal.AdType.REWARDED_VIDEO:
+				wait_for = "rewarded_ad_loaded"
+		await Appodeal.wait_for

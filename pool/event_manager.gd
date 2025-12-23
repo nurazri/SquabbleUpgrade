@@ -44,7 +44,7 @@ func check_event(level) -> bool:
 		has_event = true
 		has_ended = false
 		extra_params = "none"
-		
+
 		initiate_event(this_level, step, true)
 	
 	return has_event
@@ -56,8 +56,6 @@ func initiate_event(level, step, init = false) -> void:
 		1: #Starting level, guide to picking letters
 			if init:
 				pass
-				
-			print("after pass at step: " + str(step))
 			match step:
 				1: 
 					set_custom_avatar_expression("Squab", "yousee3")
@@ -978,14 +976,25 @@ func initiate_event(level, step, init = false) -> void:
 					_dialog_manager.enable_dialog_text(false)
 
 
+#func roll_credits_temp() -> void:
+	#$CreditLayer/Panel.show()
+	#$Tween.interpolate_property($CreditLayer/Panel, "modulate", Color(1,1,1,0), Color(1,1,1,1), 0.5, Tween.TRANS_LINEAR)
+	#$Tween.interpolate_property($CreditLayer/Panel/Label, "modulate", Color(1,1,1,0), Color(1,1,1,1), 0.25, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, 0.5)
+	#$Tween.interpolate_property($CreditLayer/Panel/RichTextLabel, "modulate", Color(1,1,1,0), Color(1,1,1,1), 0.25, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, 0.75)
+	#$Tween.interpolate_property($CreditLayer/Panel/Label2, "modulate", Color(1,1,1,0), Color(1,1,1,1), 0.25, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, 1.0)
+	#$Tween.interpolate_property($CreditLayer/Panel/TextureRect, "modulate", Color(1,1,1,0), Color(1,1,1,1), 0.25, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, 1.25)
+	#$Tween.start()
+	
 func roll_credits_temp() -> void:
 	$CreditLayer/Panel.show()
-	$Tween.interpolate_property($CreditLayer/Panel, "modulate", Color(1,1,1,0), Color(1,1,1,1), 0.5, Tween.TRANS_LINEAR)
-	$Tween.interpolate_property($CreditLayer/Panel/Label, "modulate", Color(1,1,1,0), Color(1,1,1,1), 0.25, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, 0.5)
-	$Tween.interpolate_property($CreditLayer/Panel/RichTextLabel, "modulate", Color(1,1,1,0), Color(1,1,1,1), 0.25, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, 0.75)
-	$Tween.interpolate_property($CreditLayer/Panel/Label2, "modulate", Color(1,1,1,0), Color(1,1,1,1), 0.25, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, 1.0)
-	$Tween.interpolate_property($CreditLayer/Panel/TextureRect, "modulate", Color(1,1,1,0), Color(1,1,1,1), 0.25, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, 1.25)
-	$Tween.start()
+
+	var tween = create_tween()
+	tween.tween_property($CreditLayer/Panel, "modulate", Color(1, 1, 1, 1), 0.5).from(Color(1, 1, 1, 0))
+	tween.tween_property($CreditLayer/Panel/Label, "modulate", Color(1, 1, 1, 1), 0.25).from(Color(1, 1, 1, 0)).set_delay(0.5)
+	tween.tween_property($CreditLayer/Panel/RichTextLabel, "modulate", Color(1, 1, 1, 1), 0.25).from(Color(1, 1, 1, 0)).set_delay(0.75)
+	tween.tween_property($CreditLayer/Panel/Label2, "modulate", Color(1, 1, 1, 1), 0.25).from(Color(1, 1, 1, 0)).set_delay(1.0)
+	tween.tween_property($CreditLayer/Panel/TextureRect, "modulate", Color(1, 1, 1, 1), 0.25).from(Color(1, 1, 1, 0)).set_delay(1.25)
+
 
 
 func _progress_event() -> void:
@@ -1093,7 +1102,6 @@ func check_condition_to_pick(current_word, target_word, progress = false, snatch
 		get_tree().call_group("lettertiles", "force_disable")
 		
 		if progress:
-			print("azri progress 1")
 			_progress_event()
 		
 		set_snatch_function(false)
@@ -1197,15 +1205,37 @@ func set_custom_avatar_expression(character: String,expression: String) -> void:
 	pass
 
 
+#func set_cursor(show: bool) -> void:
+	#var cursor = $CanvasLayer/Cursor
+	#if show:
+		#cursor.show()
+		#$Tween.interpolate_property(cursor, "position", cursor.position, cursor.position + (Vector2.DOWN * 600), 2.5, Tween.TRANS_EXPO, Tween.EASE_OUT)
+		#$Tween.start()
+	#else:
+		#cursor.hide()
+		#$Tween.stop_all()
+		
+var _cursor_tween: Tween = null  # store the current tween
+
 func set_cursor(show: bool) -> void:
 	var cursor = $CanvasLayer/Cursor
+
+	# Stop any previous tween
+	if _cursor_tween and _cursor_tween.is_valid():
+		_cursor_tween.kill()
+
 	if show:
 		cursor.show()
-		$Tween.interpolate_property(cursor, "position", cursor.position, cursor.position + (Vector2.DOWN * 600), 2.5, Tween.TRANS_EXPO, Tween.EASE_OUT)
-		$Tween.start()
+		# Create a new Tween and store it
+		_cursor_tween = create_tween()
+		_cursor_tween.tween_property(
+			cursor, 
+			"position", 
+			cursor.position + Vector2.DOWN * 600, 
+			2.5
+		).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 	else:
 		cursor.hide()
-		$Tween.stop_all()
 
 
 func set_overlay(overlay_type) -> void:

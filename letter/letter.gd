@@ -465,9 +465,8 @@ func move_to(target_position: Vector2, target_rotation: float, moved_to_whom: in
 	if not is_inside_tree():
 		await ready
 
-	# Create a new tween for the move animation
 	var move_tween = create_tween()
-	move_tween.set_parallel(true)  # position and rotation run in parallel
+	move_tween.set_parallel(true) 
 
 	var start_pos = global_position if (_skip_interpolate or skip_interpolate) else (global_position - Vector2.DOWN * 150)
 
@@ -477,7 +476,6 @@ func move_to(target_position: Vector2, target_rotation: float, moved_to_whom: in
 	var rot_tweener = move_tween.tween_property(self, "global_rotation_degrees", target_rotation, 1.0)
 	rot_tweener.set_trans(Tween.TRANS_BACK)
 
-	# Chain the second position tween (to target) after the first one finishes
 	move_tween.tween_callback(func():
 		var final_tween = create_tween()
 		final_tween.tween_property(self, "global_position", _target_position, 1.0) \

@@ -24,12 +24,36 @@ func _reset() -> void:
 
 
 func _load_done() -> void:    
-	# Move this screen back to the bottom of the parent stack
 	get_parent().call_deferred("move_child", self, 0)
 	emit_signal("screen_loaded")
+	
+#func load_next(scene: Node, fRef: Callable, where: Node = get_tree().root, duration: float = 0.5, deferred: bool = false) -> void:
+	#_reset()
+	#_Default.show()
+#
+	#var tween = create_tween()
+	#tween.tween_property(_LoadingBar, "value", 100, duration).from(_LoadingBar.value).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+#
+	#if scene:
+		#if deferred:
+			#where.call_deferred("add_child", scene)
+		#else:
+			#where.add_child(scene)
+				#
+		#print("Loaded scene: ", scene.name)
+		#scene.hide()
+#
+	#await tween.finished
+#
+	#if fRef:
+		#fRef.call_func()
+#
+	#if scene:
+		#scene.show()
+	#
+	#_load_done()
 
-
-func load_next(scene: Node, fRef: Callable, where: Node = get_tree().root, duration: float = 0.5, deferred: bool = false) -> void:
+func load_next(scene: Node, fRef = null, where: Node = get_tree().root, duration: float = 0.5, deferred: bool = false) -> void:
 	_reset()
 	_Default.show()
 

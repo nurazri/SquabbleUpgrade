@@ -1,75 +1,88 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=27 format=3 uid="uid://dieqd1qxrig7j"]
 
-[ext_resource path="res://board/board_grid.gd" type="Script" id=1]
-[ext_resource path="res://board/board.gd" type="Script" id=2]
-[ext_resource path="res://booster/textures/protect_effect_frame.png" type="Texture2D" id=3]
-[ext_resource path="res://board/textures/board_base.png" type="Texture2D" id=4]
-[ext_resource path="res://avatar/avatar.tscn" type="PackedScene" id=5]
-[ext_resource path="res://board/textures/board_accent_0.png" type="Texture2D" id=6]
-[ext_resource path="res://board/textures/UI_board_blue.png" type="Texture2D" id=7]
-[ext_resource path="res://board/styles/panel_blue.tres" type="StyleBox" id=8]
-[ext_resource path="res://board/snatch/snatch.tscn" type="PackedScene" id=9]
-[ext_resource path="res://booster/textures/Booster_Protect_T1.png" type="Texture2D" id=10]
-[ext_resource path="res://fonts/Gretaros-Regular.ttf" type="FontFile" id=11]
-[ext_resource path="res://board/textures/UI_board_red.png" type="Texture2D" id=12]
-[ext_resource path="res://board/styles/panel_red.tres" type="StyleBox" id=13]
-[ext_resource path="res://icon.png" type="Texture2D" id=14]
-[ext_resource path="res://board/holding_bar.gd" type="Script" id=16]
-[ext_resource path="res://board/textures/board_header_panel_player.png" type="Texture2D" id=19]
-[ext_resource path="res://board/textures/UI_game_blue_panel_slot.png" type="Texture2D" id=20]
-[ext_resource path="res://board/textures/UI_button_reset.png" type="Texture2D" id=21]
-[ext_resource path="res://board/booster_slot.tscn" type="PackedScene" id=22]
+[ext_resource type="Script" uid="uid://wll5wwsj4gtl" path="res://board/board_grid.gd" id="1"]
+[ext_resource type="Script" uid="uid://yvwp0b8y1two" path="res://board/board.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://7xo6wujik67e" path="res://booster/textures/protect_effect_frame.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cyn2pmpxe74ti" path="res://board/textures/board_base.png" id="4"]
+[ext_resource type="PackedScene" path="res://avatar/avatar.tscn" id="5"]
+[ext_resource type="Texture2D" uid="uid://25bao0uh70jl" path="res://board/textures/board_accent_0.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://ch44j244xplv3" path="res://board/textures/UI_board_blue.png" id="7"]
+[ext_resource type="StyleBox" path="res://board/styles/panel_blue.tres" id="8"]
+[ext_resource type="PackedScene" path="res://board/snatch/snatch.tscn" id="9"]
+[ext_resource type="Texture2D" uid="uid://bf7p8mj72px56" path="res://booster/textures/Booster_Protect_T1.png" id="10"]
+[ext_resource type="FontFile" uid="uid://drreivkewy5io" path="res://fonts/Gretaros-Regular.ttf" id="11"]
+[ext_resource type="Texture2D" uid="uid://dvmkss6yryrbo" path="res://board/textures/UI_board_red.png" id="12"]
+[ext_resource type="StyleBox" path="res://board/styles/panel_red.tres" id="13"]
+[ext_resource type="Texture2D" uid="uid://bomembm3ej8y3" path="res://icon.png" id="14"]
+[ext_resource type="Script" uid="uid://cj2ehaep5wx0b" path="res://board/holding_bar.gd" id="16"]
+[ext_resource type="Texture2D" uid="uid://dj2whfq4wljls" path="res://board/textures/board_header_panel_player.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://ln7y3kcpj5ax" path="res://board/textures/UI_game_blue_panel_slot.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://bkek6l6ybt8w4" path="res://board/textures/UI_button_reset.png" id="21"]
+[ext_resource type="PackedScene" path="res://board/booster_slot.tscn" id="22"]
 
-[sub_resource type="FontFile" id=8]
+[sub_resource type="FontFile" id="8"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 1, 1, 1, 1 )
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(1, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id=10]
-bg_color = Color( 0, 0, 0, 0 )
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("11"), ExtResource("11")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 1, 0, 0, 1 )
+[sub_resource type="StyleBoxTexture" id="3"]
+texture = ExtResource("21")
+region_rect = Rect2(0, 0, 91, 136)
 
-[sub_resource type="FontFile" id=2]
-size = 26
-outline_size = 4
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 11 )
+[sub_resource type="StyleBoxTexture" id="4"]
+texture = ExtResource("21")
+region_rect = Rect2(0, 0, 91, 136)
+modulate_color = Color(0.784314, 0.784314, 0.784314, 1)
 
-[sub_resource type="StyleBoxTexture" id=3]
-texture = ExtResource( 21 )
-region_rect = Rect2( 0, 0, 91, 136 )
+[sub_resource type="FontFile" id="5"]
+fallbacks = Array[Font]([ExtResource("11"), ExtResource("11")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="StyleBoxTexture" id=4]
-texture = ExtResource( 21 )
-region_rect = Rect2( 0, 0, 91, 136 )
-modulate_color = Color( 0.784314, 0.784314, 0.784314, 1 )
-
-[sub_resource type="FontFile" id=5]
-size = 19
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-use_mipmaps = true
-use_filter = true
-extra_spacing_char = 1
-font_data = ExtResource( 11 )
-
-[sub_resource type="FontFile" id=6]
-size = 32
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 11 )
+[sub_resource type="FontFile" id="6"]
+fallbacks = Array[Font]([ExtResource("11"), ExtResource("11")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
 [node name="Board" type="Node2D" groups=["boards"]]
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
-_BoardRed = ExtResource( 12 )
-_StylePanelRed = ExtResource( 13 )
+script = ExtResource("2")
+_BoardRed = ExtResource("12")
+_StylePanelRed = ExtResource("13")
 
 [node name="Background" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 948.0
@@ -79,6 +92,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 
 [node name="TxtrctBoardBackground" type="TextureRect" parent="Background"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -91,15 +105,12 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 4 )
-expand = true
+texture = ExtResource("4")
+expand_mode = 1
 stretch_mode = 6
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
 
 [node name="TxtrctBoardAccent0" type="TextureRect" parent="Background"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -112,44 +123,35 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 6 )
-expand = true
+texture = ExtResource("6")
+expand_mode = 1
 stretch_mode = 6
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
 
 [node name="Clipped" type="Control" parent="Background"]
+clip_contents = true
+custom_minimum_size = Vector2(946, 100)
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 908.0
 offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_minimum_size = Vector2( 946, 100 )
-clip_contents = true
 size_flags_horizontal = 3
 size_flags_vertical = 3
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
 
 [node name="TxtrctBoardAccent1" type="TextureRect" parent="Background/Clipped"]
+layout_mode = 0
 offset_left = 1.68182
 offset_top = -198.053
 offset_right = 947.682
 offset_bottom = 68.9465
-texture = ExtResource( 6 )
-expand = true
+texture = ExtResource("6")
+expand_mode = 1
 stretch_mode = 6
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
 
 [node name="TxtrctBoard" type="TextureRect" parent="Background"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 100.0
@@ -158,58 +160,52 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource( 7 )
-expand = true
+texture = ExtResource("7")
+expand_mode = 1
 stretch_mode = 6
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Background"]
+layout_mode = 0
 offset_top = -41.0
 offset_right = 948.0
 offset_bottom = 132.0
-texture = ExtResource( 19 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource("19")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Background/NinePatchRect"]
+layout_mode = 0
 offset_left = 31.0
 offset_right = 839.0
 offset_bottom = 142.0
-texture = ExtResource( 20 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource("20")
 
 [node name="EffectLayer" type="Control" parent="Background"]
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="Protect_Effect" type="TextureRect" parent="Background/EffectLayer"]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_top = 131.0
 offset_right = 946.0
 offset_bottom = 690.0
 mouse_filter = 2
-texture = ExtResource( 3 )
-expand = true
+texture = ExtResource("3")
+expand_mode = 1
 
 [node name="Timer_Progress" type="ProgressBar" parent="Background/EffectLayer"]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_top = 131.0
 offset_right = 946.0
 offset_bottom = 142.0
-theme_override_fonts/font = SubResource( 8 )
-theme_override_styles/fg = SubResource( 9 )
-theme_override_styles/bg = SubResource( 10 )
+theme_override_fonts/font = SubResource("8")
 value = 100.0
 
 [node name="Protect_Booster" type="TextureRect" parent="Background/EffectLayer"]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -221,91 +217,90 @@ offset_bottom = 774.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource( 10 )
-expand = true
+texture = ExtResource("10")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="BoardGrid" type="TileMap" parent="." groups=["boardgrids"]]
-position = Vector2( 17, 126 )
-cell_size = Vector2( 92, 108 )
-cell_y_sort = true
-format = 1
-script = ExtResource( 1 )
-_EmptyCellIndicatorTexture = ExtResource( 14 )
+position = Vector2(17, 126)
+format = 2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="BoardGrid" groups=["boardgrids"]]
+script = ExtResource("1")
+_EmptyCellIndicatorTexture = ExtResource("14")
 
 [node name="HoldingBar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 offset_left = 46.0
 offset_top = 101.0
 offset_right = 839.0
 offset_bottom = 115.0
-script = ExtResource( 16 )
+script = ExtResource("16")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HoldingBar"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme_override_constants/separation = 12
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Word_Validation_1" type="Panel" parent="HoldingBar/HBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
-offset_right = 100.0
-offset_bottom = 14.0
-custom_minimum_size = Vector2( 100, 0 )
-theme_override_styles/panel = SubResource( 1 )
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("1")
 
 [node name="Word_Validation_2" type="Panel" parent="HoldingBar/HBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
-offset_left = 112.0
-offset_right = 212.0
-offset_bottom = 14.0
-custom_minimum_size = Vector2( 100, 0 )
-theme_override_styles/panel = SubResource( 1 )
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("1")
 
 [node name="Word_Validation_3" type="Panel" parent="HoldingBar/HBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
-offset_left = 224.0
-offset_right = 324.0
-offset_bottom = 14.0
-custom_minimum_size = Vector2( 100, 0 )
-theme_override_styles/panel = SubResource( 1 )
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("1")
 
 [node name="Word_Validation_4" type="Panel" parent="HoldingBar/HBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
-offset_left = 336.0
-offset_right = 436.0
-offset_bottom = 14.0
-custom_minimum_size = Vector2( 100, 0 )
-theme_override_styles/panel = SubResource( 1 )
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("1")
 
 [node name="Word_Validation_5" type="Panel" parent="HoldingBar/HBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
-offset_left = 448.0
-offset_right = 548.0
-offset_bottom = 14.0
-custom_minimum_size = Vector2( 100, 0 )
-theme_override_styles/panel = SubResource( 1 )
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("1")
 
 [node name="Word_Validation_6" type="Panel" parent="HoldingBar/HBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
-offset_left = 560.0
-offset_right = 660.0
-offset_bottom = 14.0
-custom_minimum_size = Vector2( 100, 0 )
-theme_override_styles/panel = SubResource( 1 )
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("1")
 
 [node name="Word_Validation_7" type="Panel" parent="HoldingBar/HBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
-offset_left = 672.0
-offset_right = 772.0
-offset_bottom = 14.0
-custom_minimum_size = Vector2( 100, 0 )
-theme_override_styles/panel = SubResource( 1 )
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("1")
 
 [node name="Tween" type="Tween" parent="HoldingBar"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = null
 
 [node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -315,13 +310,11 @@ offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 2
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
 
 [node name="OpponentName" type="Label" parent="UI"]
 visible = false
+custom_minimum_size = Vector2(375, 54)
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -330,19 +323,16 @@ offset_left = 138.0
 offset_top = -1202.28
 offset_right = 513.0
 offset_bottom = -1148.28
-custom_minimum_size = Vector2( 375, 54 )
 size_flags_horizontal = 7
 size_flags_vertical = 7
-theme_override_colors/font_color = Color( 1, 1, 1, 1 )
-theme_override_fonts/font = SubResource( 2 )
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("2")
 text = "You"
-valign = 1
+vertical_alignment = 1
 uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Snatch" parent="UI" instance=ExtResource( 9 )]
+[node name="Snatch" parent="UI" instance=ExtResource("9")]
+layout_mode = 0
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 275.0
@@ -351,87 +341,104 @@ offset_right = 637.0
 offset_bottom = 802.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2( 181.167, 44.0543 )
+pivot_offset = Vector2(181.167, 44.0543)
 keep_pressed_outside = true
 
 [node name="Reset" type="Button" parent="UI"]
+layout_mode = 0
 offset_left = 847.0
 offset_top = -35.0
 offset_right = 938.0
 offset_bottom = 103.0
 focus_mode = 0
-theme_override_styles/hover = SubResource( 3 )
-theme_override_styles/pressed = SubResource( 4 )
-theme_override_styles/disabled = SubResource( 3 )
-theme_override_styles/normal = SubResource( 3 )
-focus_mode = 0
+theme_override_styles/normal = SubResource("3")
+theme_override_styles/pressed = SubResource("4")
+theme_override_styles/hover = SubResource("3")
+theme_override_styles/disabled = SubResource("3")
 
 [node name="Label" type="Label" parent="UI/Reset"]
+layout_mode = 0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -46.0
-theme_override_fonts/font = SubResource( 5 )
+theme_override_fonts/font = SubResource("5")
 text = "RESET"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+horizontal_alignment = 1
 
 [node name="ScorePanel" type="Panel" parent="UI"]
+custom_minimum_size = Vector2(195, 65)
+layout_mode = 0
 offset_left = 118.449
 offset_top = -1133.05
 offset_right = 336.449
 offset_bottom = -1068.05
-custom_minimum_size = Vector2( 195, 65 )
-theme_override_styles/panel = ExtResource( 8 )
+theme_override_styles/panel = ExtResource("8")
 
 [node name="Score" type="Label" parent="UI"]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 0
 offset_left = 118.449
 offset_top = -1133.05
 offset_right = 336.449
 offset_bottom = -1068.05
-custom_minimum_size = Vector2( 0, 54 )
 size_flags_horizontal = 7
 size_flags_vertical = 7
-theme_override_colors/font_color = Color( 1, 1, 1, 1 )
-theme_override_fonts/font = SubResource( 6 )
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("6")
 text = "0"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 uppercase = true
 
 [node name="Booster" type="Control" parent="UI"]
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Booster_Slot1" parent="UI/Booster" instance=ExtResource( 22 )]
+[node name="Booster_Slot1" parent="UI/Booster" instance=ExtResource("22")]
+layout_mode = 0
 
-[node name="Booster_Slot2" parent="UI/Booster" instance=ExtResource( 22 )]
+[node name="Booster_Slot2" parent="UI/Booster" instance=ExtResource("22")]
+layout_mode = 0
 offset_left = 155.0
 offset_right = 275.0
 
-[node name="Booster_Slot3" parent="UI/Booster" instance=ExtResource( 22 )]
+[node name="Booster_Slot3" parent="UI/Booster" instance=ExtResource("22")]
+layout_mode = 0
 offset_left = 675.0
 offset_right = 795.0
 
-[node name="Booster_Slot4" parent="UI/Booster" instance=ExtResource( 22 )]
+[node name="Booster_Slot4" parent="UI/Booster" instance=ExtResource("22")]
+layout_mode = 0
 offset_left = 810.0
 offset_right = 930.0
 
-[node name="Avatar" parent="." instance=ExtResource( 5 )]
+[node name="Avatar" parent="." instance=ExtResource("5")]
+anchors_preset = 8
 offset_left = -15.0
 offset_top = -1218.63
 offset_right = 168.0
 offset_bottom = -1040.63
+expand_mode = 1
 
 [node name="PointsUpdateTimer" type="Timer" parent="."]
 wait_time = 0.05
 one_shot = true
 
 [node name="Tween" type="Tween" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = null
 
-[connection signal="points_updated" from="BoardGrid" to="." method="_on_BoardGrid_points_updated"]
+[connection signal="points_updated" from="BoardGrid/TileMapLayer" to="." method="_on_tile_map_layer_points_updated"]
 [connection signal="pressed" from="UI/Snatch" to="." method="_on_Snatch_pressed"]
 [connection signal="pressed" from="UI/Reset" to="." method="_on_Reset_pressed"]
 [connection signal="booster_used" from="UI/Booster/Booster_Slot1" to="." method="_on_Booster_Slot_booster_used"]
