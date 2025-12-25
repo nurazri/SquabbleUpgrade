@@ -1,1 +1,16 @@
 res://game.tscn
+res://home/home_new.gd
+res://home/home_new.tscn
+res://pool/win_lose/win_lose.gd
+res://pool/pool.gd
+res://board/board.gd
+res://game_loader/game_loader.gd
+res://game.gd
+res://login/login.gd
+res://profile/avatar_selection.gd
+res://shop/shop.gd
+res://tutorial/intro_layer.gd
+res://home/level_node.gd
+res://game_loader/game_loader.tscn
+res://home/level_node.tscn
+res://ai/search.gd

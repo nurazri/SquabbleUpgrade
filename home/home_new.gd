@@ -38,12 +38,27 @@ var _updating_visibility: bool = false
 # --------------------------------------------------
 # READY / PROCESS
 # --------------------------------------------------
+#func _ready() -> void:
+	#print("ready")
+	#if Engine.has_singleton("GameLoader"):
+		#print("connecting to gameloader")
+		#var loader = Engine.get_singleton("GameLoader") as GameLoaderManager
+		#loader.game_saved.connect(_on_GameLoader_game_saved)
+		#loader.achievement_saved.connect(_on_GameLoader_achievement_saved)
+		#loader.currency_updated.connect(on_currency_changed)
+	#start()
+	
 func _ready() -> void:
-	if Engine.has_singleton("GameLoader"):
-		var loader = Engine.get_singleton("GameLoader") as GameLoaderManager
-		loader.game_saved.connect(_on_GameLoader_game_saved)
-		loader.achievement_saved.connect(_on_GameLoader_achievement_saved)
-		loader.currency_updated.connect(on_currency_changed)
+	# Direct access – cleanest and most reliable
+	GameLoader.game_saved.connect(_on_GameLoader_game_saved)
+	GameLoader.achievement_saved.connect(_on_GameLoader_achievement_saved)
+	GameLoader.currency_updated.connect(on_currency_changed)
+	
+	if GameLoader:
+		print("Successfully connected to GameLoader signals")
+	else:
+		push_error("GameLoader singleton not found! Check Autoload settings.")
+
 	start()
 
 
@@ -170,6 +185,7 @@ func _on_GameLoader_game_saved() -> void:
 	var avatar: int = GameLoader.get_save_data("avatar") if GameLoader.has_method("get_save_data") else 0
 	set_avatar(avatar)
 	on_currency_changed()
+	print("on stage updated will be called")
 	on_stage_updated()
 	if has_node("$Profile_Page"): $Profile_Page.on_Load()
 	if has_node("$Inventory_Page"): $Inventory_Page.on_Load()
@@ -198,28 +214,38 @@ func _set_player_diamonds(value: int) -> void:
 # STAGE UPDATE
 # --------------------------------------------------
 func on_stage_updated() -> void:
-	var this_level: int = 1
+	var this_level := 1
 
 	for i in range(1, 10):
 		var level_list_path := "ScrollContainer/VBoxContainer/Background%d/Level_List" % i
 		if not has_node(level_list_path):
+			push_error("Missing node: " + level_list_path)
 			continue
 
+		print("global current level limit is: ",Globals.currentLevelLimit)
 		for level_button in get_node(level_list_path).get_children():
-			var progress: Dictionary = {}
-			if this_level <= Globals.currentLevelLimit and GameLoader.player_data["level_progression"].has(str(this_level)):
-				progress = GameLoader.player_data["level_progression"][str(this_level)] as Dictionary
-
 			if this_level > Globals.currentLevelLimit:
 				level_button.init(this_level, 0, 0)
 			else:
-				level_button.init(this_level, progress.get("completion", 0), progress.get("rating", 0))
+				if not GameLoader.player_data.has("level_progression") \
+				or not GameLoader.player_data["level_progression"].has(str(this_level)):
+					push_error("Missing progress for level " + str(this_level))
+					level_button.init(this_level, 0, 0)
+				else:
+					var progress: Dictionary = GameLoader.player_data["level_progression"][str(this_level)]
+					print("progress is: ", progress)
+					level_button.init(
+						this_level,
+						progress["completion"],
+						progress["rating"]
+					)
+
 				if not level_button.is_connected("start_level", Callable(self, "play_level")):
 					level_button.connect("start_level", Callable(self, "play_level"))
 
 			this_level += 1
 
-	var current_stage: int = get_current_stage()
+	var current_stage := get_current_stage()
 
 	for cloud in $ScrollContainer/Cloud_List.get_children():
 		cloud.hide()

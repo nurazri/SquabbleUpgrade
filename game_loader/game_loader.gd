@@ -6,10 +6,10 @@ signal game_saved
 signal achievement_saved
 signal currency_updated
 
-const _PLAYER_DATA_SAVE_PATH: String = "save_"
-const _PLAYER_ACHIEVEMENT_PATH: String = "achievement_"
-const _PLAYER_CURRENCY_PATH: String = "currency_"
-const _CURRENT_LOGINS_SAVE_PATH: String = "logins"
+const _PLAYER_DATA_SAVE_PATH: String = "user://save_"
+const _PLAYER_ACHIEVEMENT_PATH: String = "user://achievement_"
+const _PLAYER_CURRENCY_PATH: String = "user://currency_"
+const _CURRENT_LOGINS_SAVE_PATH: String = "user://logins"
 
 const project_id: String = "squabble-5848595"
 const firestore_url: String = "https://firestore.googleapis.com/v1/projects/%s/databases/(default)/documents/" % project_id
@@ -110,6 +110,9 @@ func delete_game() -> bool:
 
 func save_game() -> void:
 	JSONLoader.save_json(player_data, _PLAYER_DATA_SAVE_PATH + str(current_slot))
+	#print("player data: ", player_data)
+	#print("player data save path: ", _PLAYER_DATA_SAVE_PATH)
+	#print("current_slot: ", current_slot)
 	emit_signal("game_saved")
 
 func save_game_without_signal() -> void:
@@ -145,18 +148,34 @@ func set_level_progression_data(level: int, rating: int, override_next: bool = t
 				player_data["level_progression"][next_key]["completion"] = 1
 	save_game()
 
+#func check_keys_parity(data: Dictionary = player_data, default_data: Dictionary = default_player_data) -> void:
+	## Add missing keys
+	#for k in default_data.keys():
+		#if not data.has(k):
+			#data[k] = default_data[k].duplicate(true)
+		#elif typeof(data[k]) == TYPE_DICTIONARY and typeof(default_data[k]) == TYPE_DICTIONARY:
+			#check_keys_parity(data[k], default_data[k]) # safe recursion
+	## Remove extra keys
+	#for k in data.keys():
+		#if not default_data.has(k):
+			#data.erase(k)
+	#player_data = data
+	#print("[gameloader] save game from 6")
+	#save_game()
+	
 func check_keys_parity(data: Dictionary = player_data, default_data: Dictionary = default_player_data) -> void:
 	# Add missing keys
 	for k in default_data.keys():
 		if not data.has(k):
-			data[k] = default_data[k].duplicate(true)
-		elif typeof(data[k]) == TYPE_DICTIONARY and typeof(default_data[k]) == TYPE_DICTIONARY:
-			check_keys_parity(data[k], default_data[k]) # safe recursion
+			data[k] = default_data[k]
 	# Remove extra keys
 	for k in data.keys():
 		if not default_data.has(k):
 			data.erase(k)
+	
+	merge_dict(data, default_data) # if you still use your original merge logic
 	player_data = data
+	print("[gameloader] save game")
 	save_game()
 
 func _load_game() -> Dictionary:

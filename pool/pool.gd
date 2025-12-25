@@ -299,8 +299,6 @@ func _on_Spawner_letter_spawned(letter: Letter) -> void:
 	get_tree().call_group("boards", "connect_spawned_letter", letter)
 	letter.letter_picked.connect($BoardMe._on_letter_picked)
 	emit_signal("letter_spawned", letter)
-	print("[Pool] Letters remaining: " + str(WordList.get_spawned_letters_quantity_left()))
-
 
 func _on_Spawner_commands_finished() -> void:
 	_is_spawner_commands_finished = true

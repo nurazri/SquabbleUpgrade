@@ -134,6 +134,7 @@ func _on_Pool_result_announced(
 	_longest_word,
 	_best_word
 ) -> void:
+	
 	if not $Pool/BoosterManager.return_event_type($Pool._ai_level) and $Pool._ai_level != 0:
 		$Pool/BoosterManager.check_consumed_booster()
 
