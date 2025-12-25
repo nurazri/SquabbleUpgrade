@@ -189,3 +189,8 @@ static func merge_dict(dest: Dictionary, source: Dictionary) -> void:
 
 func set_slot(slot: int) -> void:
 	current_slot = max(0, slot)
+	
+func get_save_data(key: String):
+	if player_data.has(key):
+		return player_data[key]
+	return null

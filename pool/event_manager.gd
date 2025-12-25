@@ -350,7 +350,7 @@ func initiate_event(level, step, init = false) -> void:
 				5: _dialog_manager.start_dialog_text("I'm glad I could play against you", 5, "Quabble", "right")
 				6: _dialog_manager.start_dialog_text("Now I'm HUNGRY! Could you feed me by watching an Ad... pls pls pls", 2, "Quabble", "right")
 				7: 
-					get_tree().root.get_node("Game/Pool/UI/WinLose").force_play_ad()
+					#get_tree().root.get_node("Game/Pool/UI/WinLose").force_play_ad()
 					_dialog_manager.start_dialog_text("Thank you so much!", 5, "Quabble", "right")
 				8: _dialog_manager.start_dialog_text("You can get rid of Ads through the shop in the future", 4, "Quabble", "right")
 				9: _dialog_manager.start_dialog_text("For now, lets continue our journey", 4, "Quabble", "right")
@@ -1154,14 +1154,14 @@ func manual_setter(letterlist: Array, wordlist: Array) -> void:
 		WordList.get_letter_points(_this_word[i]),
 		Globals.LetterOwnership.POOL
 	)
-		Letter.position = Vector2(generate_positions[i][0], generate_positions[i][1])
+		letter.position = Vector2(generate_positions[i][0], generate_positions[i][1])
 		letter.freeze_mode = RigidBody2D.FREEZE_MODE_STATIC
 		letter.set_freeze_enabled(true)
 		letter._skip_interpolate = true
 		_spawned_letter_index += 1
 		get_parent().get_node("Spawner")._spawned_letter_index += 1
 		get_parent().add_child(letter)
-		get_parent()._on_Spawner_letter_spawned(Letter)
+		get_parent()._on_Spawner_letter_spawned(letter)
 	
 	await get_tree().create_timer(0.01).timeout
 	for i in _init_words.size():

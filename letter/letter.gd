@@ -372,7 +372,7 @@ func _process(delta: float) -> void:
 	if _in_holding_bar and _is_touch_held:
 		if _current_touch_position.y < _initial_touch_position.y - 80:
 			$Tap.button_pressed = false
-			select($Tap.pressed, false)
+			select($Tap.button_pressed, false)
 			end_touch()
 
 
