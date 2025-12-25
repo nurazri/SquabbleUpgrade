@@ -1,10 +1,1 @@
-res://pool/win_lose/win_lose.tscn
-res://pool/pool.tscn
-res://pool/pool.gd
-res://tutorial/tutorial.gd
-res://letter/letter.gd
-res://pool/event_manager.gd
-res://pool/event_manager.tscn
-res://pool/win_lose/win_lose.gd
-res://game_loader/game_loader.gd
-res://game.gd
+res://game.tscn
