@@ -1,14 +1,1 @@
-res://letter/letter.tscn
-res://board/board.gd
-res://board/board.tscn
-res://board/holding_bar.gd
-res://board/board_grid.gd
-res://pool/event_manager.gd
-res://board/snatch/snatch.gd
-res://board/board_opponent.tscn
-res://pool/event_manager.tscn
-res://tutorial/tutorial.gd
-res://game.gd
-res://pool/win_lose/win_lose.tscn
-res://pool/win_lose/win_lose.gd
-res://loading/loading.gd
+res://home/home_new.tscn

@@ -5143,6 +5143,8 @@ offset_left = -378.0
 offset_top = -82.0
 offset_right = -575.0
 offset_bottom = -82.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="RewardContainer" type="HBoxContainer" parent="Result_Win/RewardsBg/Holder"]
 layout_mode = 0

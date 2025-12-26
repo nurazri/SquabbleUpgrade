@@ -1,257 +1,307 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=69 format=3 uid="uid://w1eoax42jkcv"]
 
-[ext_resource path="res://home/new_textures/map/map_1.png" type="Texture2D" id=1]
-[ext_resource path="res://home/new_textures/UI_header_banner.png" type="Texture2D" id=2]
-[ext_resource path="res://home/new_textures/UI_header_info.png" type="Texture2D" id=3]
-[ext_resource path="res://fonts/Gretaros-Regular.ttf" type="FontFile" id=4]
-[ext_resource path="res://home/new_textures/character_indicator/Chrindicator_wombat.png" type="Texture2D" id=5]
-[ext_resource path="res://home/home_new.gd" type="Script" id=6]
-[ext_resource path="res://home/new_textures/UI_Chrindicator.png" type="Texture2D" id=7]
-[ext_resource path="res://home/level_node.tscn" type="PackedScene" id=8]
-[ext_resource path="res://home/new_textures/map/map_3.png" type="Texture2D" id=9]
-[ext_resource path="res://home/new_textures/map/map_2.png" type="Texture2D" id=10]
-[ext_resource path="res://home/new_textures/map/map_4.png" type="Texture2D" id=11]
-[ext_resource path="res://home/new_textures/character_indicator/Chrindicator_cat.png" type="Texture2D" id=12]
-[ext_resource path="res://profile/inventory_page.tscn" type="PackedScene" id=13]
-[ext_resource path="res://home/new_textures/map/cloud_overlay.png" type="Texture2D" id=14]
-[ext_resource path="res://pool/textures/UI_levelgoal_bg_alt.png" type="Texture2D" id=15]
-[ext_resource path="res://shop/textures/diamonds/UI_gem_1.png" type="Texture2D" id=16]
-[ext_resource path="res://Animation/Assets_Result/Reward_Bg.png" type="Texture2D" id=17]
-[ext_resource path="res://home/new_textures/UI_dailyreward_cat.png" type="Texture2D" id=18]
-[ext_resource path="res://home/new_textures/UI_dailyreward_dog.png" type="Texture2D" id=19]
-[ext_resource path="res://home/new_textures/map/map_5.png" type="Texture2D" id=20]
-[ext_resource path="res://universal_texture/UI_button_green.png" type="Texture2D" id=21]
-[ext_resource path="res://home/new_textures/character_indicator/Chrindicator_mouse.png" type="Texture2D" id=22]
-[ext_resource path="res://home/new_textures/character_indicator/Chrindicator_hen.png" type="Texture2D" id=23]
-[ext_resource path="res://home/new_textures/map/map_7.png" type="Texture2D" id=24]
-[ext_resource path="res://custom_game/custom_game.tscn" type="PackedScene" id=25]
-[ext_resource path="res://home/new_textures/character_indicator/Chrindicator_sheep.png" type="Texture2D" id=27]
-[ext_resource path="res://home/new_textures/map/map_6.png" type="Texture2D" id=28]
-[ext_resource path="res://home/new_textures/character_indicator/Chrindicator_fox.png" type="Texture2D" id=29]
-[ext_resource path="res://home/new_textures/character_indicator/Chrindicator_cheetah.png" type="Texture2D" id=30]
-[ext_resource path="res://home/new_textures/map/map_9.png" type="Texture2D" id=31]
-[ext_resource path="res://shop/shop.tscn" type="PackedScene" id=32]
-[ext_resource path="res://home/new_textures/character_indicator/Chrindicator_lioness.png" type="Texture2D" id=33]
-[ext_resource path="res://home/new_textures/map/map_8.png" type="Texture2D" id=34]
-[ext_resource path="res://home/new_textures/character_indicator/Chrindicator_tortiese.png" type="Texture2D" id=35]
-[ext_resource path="res://home/new_textures/character_indicator/Chrindicator_koala.png" type="Texture2D" id=36]
-[ext_resource path="res://home/textures/UI_icon_coin.png" type="Texture2D" id=37]
-[ext_resource path="res://home/textures/UI_icon_diamond.png" type="Texture2D" id=38]
-[ext_resource path="res://avatar/unlocked_avatar/Chr_dog.png" type="Texture2D" id=39]
-[ext_resource path="res://home/new_textures/UI_townbanner_roll.png" type="Texture2D" id=41]
-[ext_resource path="res://home/new_textures/UI_header_profile.png" type="Texture2D" id=42]
-[ext_resource path="res://home/new_textures/UI_townbanner.png" type="Texture2D" id=43]
-[ext_resource path="res://home/new_textures/UI_footer_nonselected.png" type="Texture2D" id=44]
-[ext_resource path="res://achievement/achievement_page.tscn" type="PackedScene" id=45]
-[ext_resource path="res://profile/profile_page.tscn" type="PackedScene" id=46]
-[ext_resource path="res://home/new_textures/UI_footer_singlematch.png" type="Texture2D" id=47]
-[ext_resource path="res://home/new_textures/UI_footer_shop.png" type="Texture2D" id=48]
-[ext_resource path="res://home/new_textures/UI_footer_inventory.png" type="Texture2D" id=49]
-[ext_resource path="res://home/new_textures/UI_footer_adventure.png" type="Texture2D" id=50]
-[ext_resource path="res://home/new_textures/UI_footer_quest.png" type="Texture2D" id=51]
-[ext_resource path="res://home/new_textures/character_indicator/Chrindicator_monkey.png" type="Texture2D" id=52]
+[ext_resource type="Texture2D" uid="uid://oppvxqo3p0d7" path="res://home/new_textures/map/map_1.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://vrxbs1e3ocxn" path="res://home/new_textures/UI_header_banner.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bwt8y7051suvy" path="res://home/new_textures/UI_header_info.png" id="3"]
+[ext_resource type="FontFile" uid="uid://drreivkewy5io" path="res://fonts/Gretaros-Regular.ttf" id="4"]
+[ext_resource type="Texture2D" uid="uid://b2l0uou17pf7h" path="res://home/new_textures/character_indicator/Chrindicator_wombat.png" id="5"]
+[ext_resource type="Script" uid="uid://wqbpuccs6gqv" path="res://home/home_new.gd" id="6"]
+[ext_resource type="Texture2D" uid="uid://xkbgyhbmo2rr" path="res://home/new_textures/UI_Chrindicator.png" id="7"]
+[ext_resource type="PackedScene" path="res://home/level_node.tscn" id="8"]
+[ext_resource type="Texture2D" uid="uid://k0not2ce01fc" path="res://home/new_textures/map/map_3.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://ym8xmqrpl1q1" path="res://home/new_textures/map/map_2.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://dul2spu4fq7gx" path="res://home/new_textures/map/map_4.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://b3mwlqkyytmjl" path="res://home/new_textures/character_indicator/Chrindicator_cat.png" id="12"]
+[ext_resource type="PackedScene" path="res://profile/inventory_page.tscn" id="13"]
+[ext_resource type="Texture2D" uid="uid://cs8k3hf7louir" path="res://home/new_textures/map/cloud_overlay.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://b8d7880my1fic" path="res://pool/textures/UI_levelgoal_bg_alt.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://8bau4h1rfhc8" path="res://shop/textures/diamonds/UI_gem_1.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://76t6w1h25il7" path="res://Animation/Assets_Result/Reward_Bg.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://bgd4syxdrh54h" path="res://home/new_textures/UI_dailyreward_cat.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://dgfi3jtyyn7wd" path="res://home/new_textures/UI_dailyreward_dog.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://b075utsdyls2c" path="res://home/new_textures/map/map_5.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://bc6f5g2pi4nke" path="res://universal_texture/UI_button_green.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://d23uytedau8xy" path="res://home/new_textures/character_indicator/Chrindicator_mouse.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://d1tgsshu3c47q" path="res://home/new_textures/character_indicator/Chrindicator_hen.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://b1fwx6fq4clob" path="res://home/new_textures/map/map_7.png" id="24"]
+[ext_resource type="PackedScene" path="res://custom_game/custom_game.tscn" id="25"]
+[ext_resource type="Texture2D" uid="uid://re50ma85tqah" path="res://home/new_textures/character_indicator/Chrindicator_sheep.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://b74a3apubqvja" path="res://home/new_textures/map/map_6.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://cfxmh8t4ydsan" path="res://home/new_textures/character_indicator/Chrindicator_fox.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://cytubdp1em5gx" path="res://home/new_textures/character_indicator/Chrindicator_cheetah.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://bx5fwkc4um7kl" path="res://home/new_textures/map/map_9.png" id="31"]
+[ext_resource type="PackedScene" path="res://shop/shop.tscn" id="32"]
+[ext_resource type="Texture2D" uid="uid://bcag613oufw1t" path="res://home/new_textures/character_indicator/Chrindicator_lioness.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://cdwqokpvqwjf6" path="res://home/new_textures/map/map_8.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://cfghsjyeirbe4" path="res://home/new_textures/character_indicator/Chrindicator_tortiese.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://c2213sr4w31qf" path="res://home/new_textures/character_indicator/Chrindicator_koala.png" id="36"]
+[ext_resource type="Texture2D" uid="uid://bl2x4k46qc5ph" path="res://home/textures/UI_icon_coin.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://ckanaw5aq8p" path="res://home/textures/UI_icon_diamond.png" id="38"]
+[ext_resource type="Texture2D" uid="uid://d2ork7rhvunt1" path="res://avatar/unlocked_avatar/Chr_dog.png" id="39"]
+[ext_resource type="Texture2D" uid="uid://b1s0pdpndakpe" path="res://home/new_textures/UI_townbanner_roll.png" id="41"]
+[ext_resource type="Texture2D" uid="uid://clgsrxcdlh2ob" path="res://home/new_textures/UI_header_profile.png" id="42"]
+[ext_resource type="Texture2D" uid="uid://db0lfd7iktiup" path="res://home/new_textures/UI_townbanner.png" id="43"]
+[ext_resource type="Texture2D" uid="uid://bpylh46on46xc" path="res://home/new_textures/UI_footer_nonselected.png" id="44"]
+[ext_resource type="PackedScene" path="res://achievement/achievement_page.tscn" id="45"]
+[ext_resource type="PackedScene" path="res://profile/profile_page.tscn" id="46"]
+[ext_resource type="Texture2D" uid="uid://cf818obmfsrgt" path="res://home/new_textures/UI_footer_singlematch.png" id="47"]
+[ext_resource type="Texture2D" uid="uid://bqlm83wad3rrj" path="res://home/new_textures/UI_footer_shop.png" id="48"]
+[ext_resource type="Texture2D" uid="uid://dva52xo2g1wu7" path="res://home/new_textures/UI_footer_inventory.png" id="49"]
+[ext_resource type="Texture2D" uid="uid://1uql8yx1q0ue" path="res://home/new_textures/UI_footer_adventure.png" id="50"]
+[ext_resource type="Texture2D" uid="uid://b11jni37q3b3y" path="res://home/new_textures/UI_footer_quest.png" id="51"]
+[ext_resource type="Texture2D" uid="uid://diua75lakknq4" path="res://home/new_textures/character_indicator/Chrindicator_monkey.png" id="52"]
 
-[sub_resource type="FontFile" id=1]
-size = 24
-use_mipmaps = true
-use_filter = true
-extra_spacing_char = -2
-font_data = ExtResource( 4 )
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=2]
-use_filter = true
-font_data = ExtResource( 4 )
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=3]
-size = 35
-use_filter = true
-spacing_top = -5
-font_data = ExtResource( 4 )
+[sub_resource type="FontFile" id="3"]
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=5]
-size = 24
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-use_filter = true
-font_data = ExtResource( 4 )
+[sub_resource type="FontFile" id="5"]
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=21]
-size = 30
-outline_size = 3
-outline_color = Color( 0, 0, 0, 1 )
-use_filter = true
-extra_spacing_char = -1
-font_data = ExtResource( 4 )
+[sub_resource type="FontFile" id="21"]
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="StyleBoxFlat" id=12]
-bg_color = Color( 0, 0, 0, 1 )
+[sub_resource type="StyleBoxFlat" id="12"]
+bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="FontFile" id=13]
-size = 24
-use_filter = true
-font_data = ExtResource( 4 )
+[sub_resource type="FontFile" id="13"]
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=6]
-size = 32
-outline_size = 3
-outline_color = Color( 0, 0, 0, 1 )
-use_filter = true
-extra_spacing_char = -1
-font_data = ExtResource( 4 )
+[sub_resource type="FontFile" id="6"]
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="StyleBoxFlat" id=11]
-bg_color = Color( 0, 0, 0, 1 )
+[sub_resource type="StyleBoxFlat" id="11"]
+bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id=20]
-bg_color = Color( 0, 0, 0, 0.588235 )
+[sub_resource type="StyleBoxFlat" id="20"]
+bg_color = Color(0, 0, 0, 0.588235)
 
-[sub_resource type="FontFile" id=14]
-size = 40
-use_filter = true
-font_data = ExtResource( 4 )
+[sub_resource type="FontFile" id="14"]
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=15]
-size = 45
-use_filter = true
-font_data = ExtResource( 4 )
+[sub_resource type="FontFile" id="15"]
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=16]
-size = 40
-use_filter = true
-font_data = ExtResource( 4 )
+[sub_resource type="FontFile" id="16"]
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=17]
-size = 32
-outline_size = 3
-outline_color = Color( 0, 0, 0, 1 )
-use_filter = true
-extra_spacing_char = 1
-font_data = ExtResource( 4 )
+[sub_resource type="FontFile" id="17"]
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="StyleBoxTexture" id=18]
-texture = ExtResource( 21 )
-region_rect = Rect2( 0, 0, 128, 128 )
-offset_left = 25.0
-offset_right = 25.0
-offset_top = 25.0
-offset_bottom = 25.0
+[sub_resource type="StyleBoxTexture" id="18"]
+texture = ExtResource("21")
+region_rect = Rect2(0, 0, 128, 128)
 
-[sub_resource type="StyleBoxTexture" id=19]
-texture = ExtResource( 21 )
-region_rect = Rect2( 0, 0, 128, 128 )
-offset_left = 25.0
-offset_right = 25.0
-offset_top = 25.0
-offset_bottom = 25.0
-modulate_color = Color( 0.784314, 0.784314, 0.784314, 1 )
+[sub_resource type="StyleBoxTexture" id="19"]
+texture = ExtResource("21")
+region_rect = Rect2(0, 0, 128, 128)
+modulate_color = Color(0.784314, 0.784314, 0.784314, 1)
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id="10"]
 resource_name = "Homescreen_Entrance"
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Header_UI/New_Footer:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.3 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 0, 2080 ), Vector2( 0, 1852 ) ]
+"values": [Vector2(0, 2080), Vector2(0, 1852)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Header_UI/New_Header/Header:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PackedFloat32Array( 0, 0.3 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 0, -150 ), Vector2( 0, 0 ) ]
+"values": [Vector2(0, -150), Vector2(0, 0)]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("Header_UI/New_Header/Location:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PackedFloat32Array( 0, 0.3, 0.4, 0.5 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ Vector2( 938, 134 ), Vector2( 938, 134 ), Vector2( 640, 134 ), Vector2( 660, 134 ) ]
+"values": [Vector2(938, 134), Vector2(938, 134), Vector2(640, 134), Vector2(660, 134)]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("Header_UI/New_Header/Location/NinePatchRect/Label:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PackedFloat32Array( 0, 0.5 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ false, true ]
+"values": [false, true]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("ScrollContainer:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PackedFloat32Array( 0, 0.3 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 0, 43 ), Vector2( -1, 93 ) ]
+"values": [Vector2(0, 43), Vector2(-1, 93)]
 }
 tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("Header_UI/Blocker:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"times": PackedFloat32Array( 0, 0.3 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath("Header_UI/Blocker:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"times": PackedFloat32Array( 0, 0.3 ),
-"transitions": PackedFloat32Array( 1, 1 ),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ true, false ]
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hmpej"]
+_data = {
+&"Homescreen_Entrance": SubResource("10")
 }
 
 [node name="Home" type="Control"]
+custom_minimum_size = Vector2(946, 2048)
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_minimum_size = Vector2( 946, 2048 )
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_lock_": true
-}
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6")
 
 [node name="UI" type="Control" parent="."]
 visible = false
+custom_minimum_size = Vector2(946, 2048)
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_minimum_size = Vector2( 946, 2048 )
 mouse_filter = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="VersionLabel" type="Label" parent="UI"]
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -263,77 +313,71 @@ offset_bottom = -9.0
 grow_horizontal = 0
 grow_vertical = 2
 rotation = 359.999
-pivot_offset = Vector2( 152.287, 19.5062 )
+pivot_offset = Vector2(152.287, 19.5062)
 size_flags_horizontal = 15
 size_flags_vertical = 15
-theme_override_colors/font_color = Color( 1, 1, 1, 1 )
-theme_override_colors/font_shadow_color = Color( 0.12549, 0.0313726, 0.117647, 1 )
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.12549, 0.0313726, 0.117647, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_constants/shadow_outline_size = 0
-theme_override_fonts/font = SubResource( 1 )
+theme_override_fonts/font = SubResource("1")
 text = "v0.8 tutorial flow"
-align = 2
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
 anchor_left = -0.00105708
 anchor_top = 0.0454102
 anchor_right = 1.01163
 anchor_bottom = 0.999023
-scroll_horizontal_enabled = false
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
-offset_right = 946.0
-offset_bottom = 15138.0
+layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 0
 
 [node name="Background9" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
-offset_right = 946.0
-offset_bottom = 1682.0
-custom_minimum_size = Vector2( 946, 1682 )
+custom_minimum_size = Vector2(946, 1682)
+layout_mode = 2
 mouse_filter = 2
-texture = ExtResource( 31 )
-expand = true
+texture = ExtResource("31")
+expand_mode = 1
 stretch_mode = 5
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Icon_List" type="Control" parent="ScrollContainer/VBoxContainer/Background9"]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Background9/Icon_List"]
+layout_mode = 0
 offset_left = 418.04
 offset_top = 682.597
 offset_right = 529.04
 offset_bottom = 827.597
-texture = ExtResource( 7 )
-expand = true
+texture = ExtResource("7")
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Background9/Icon_List/TextureRect"]
+layout_mode = 0
 offset_left = 7.84186
 offset_top = 5.61737
 offset_right = 102.842
 offset_bottom = 100.617
-texture = ExtResource( 33 )
-expand = true
+texture = ExtResource("33")
+expand_mode = 1
 
 [node name="Level_List" type="Control" parent="ScrollContainer/VBoxContainer/Background9"]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
-[node name="Level_Node103" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node103" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -17.2795
@@ -341,7 +385,8 @@ offset_top = 1560.2
 offset_right = 221.72
 offset_bottom = 1693.2
 
-[node name="Level_Node104" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node104" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -80.6602
@@ -349,7 +394,8 @@ offset_top = 1412.04
 offset_right = 158.34
 offset_bottom = 1545.03
 
-[node name="Level_Node105" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node105" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -120.586
@@ -357,7 +403,8 @@ offset_top = 1262.45
 offset_right = 118.414
 offset_bottom = 1395.45
 
-[node name="Level_Node106" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node106" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -131.987
@@ -365,7 +412,8 @@ offset_top = 1108.94
 offset_right = 107.013
 offset_bottom = 1241.94
 
-[node name="Level_Node107" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node107" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -127.798
@@ -373,7 +421,8 @@ offset_top = 960.995
 offset_right = 111.201
 offset_bottom = 1093.99
 
-[node name="Level_Node108" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node108" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -118.242
@@ -381,7 +430,8 @@ offset_top = 824.951
 offset_right = 120.758
 offset_bottom = 957.948
 
-[node name="Level_Node109" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node109" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 100.118
@@ -389,7 +439,8 @@ offset_top = 784.473
 offset_right = 339.118
 offset_bottom = 917.476
 
-[node name="Level_Node110" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node110" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 258.059
@@ -397,7 +448,8 @@ offset_top = 675.714
 offset_right = 497.059
 offset_bottom = 808.715
 
-[node name="Level_Node111" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node111" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 276.985
@@ -405,7 +457,8 @@ offset_top = 533.152
 offset_right = 515.985
 offset_bottom = 666.153
 
-[node name="Level_Node112" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node112" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 230.987
@@ -413,7 +466,8 @@ offset_top = 407.859
 offset_right = 469.987
 offset_bottom = 540.859
 
-[node name="Level_Node113" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node113" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 120.989
@@ -421,7 +475,8 @@ offset_top = 297.264
 offset_right = 359.989
 offset_bottom = 430.264
 
-[node name="Level_Node114" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node114" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -68.658
@@ -429,7 +484,8 @@ offset_top = 246.179
 offset_right = 170.342
 offset_bottom = 379.179
 
-[node name="Level_Node115" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node115" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -295.556
@@ -437,7 +493,8 @@ offset_top = 233.672
 offset_right = -56.5567
 offset_bottom = 366.672
 
-[node name="Level_Node116" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node116" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -439.855
@@ -445,7 +502,8 @@ offset_top = 365.206
 offset_right = -200.855
 offset_bottom = 498.207
 
-[node name="Level_Node117" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node117" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -498.004
@@ -453,7 +511,8 @@ offset_top = 519.476
 offset_right = -259.004
 offset_bottom = 652.477
 
-[node name="Level_Node118" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node118" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -463.323
@@ -462,24 +521,21 @@ offset_right = -224.323
 offset_bottom = 807.295
 
 [node name="Background8" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
-offset_top = 1682.0
-offset_right = 946.0
-offset_bottom = 3364.0
-custom_minimum_size = Vector2( 946, 1682 )
+custom_minimum_size = Vector2(946, 1682)
+layout_mode = 2
 mouse_filter = 2
-texture = ExtResource( 34 )
-expand = true
+texture = ExtResource("34")
+expand_mode = 1
 stretch_mode = 5
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Level_List" type="Control" parent="ScrollContainer/VBoxContainer/Background8"]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
-[node name="Level_Node89" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node89" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -355.086
@@ -487,7 +543,8 @@ offset_top = 1569.3
 offset_right = -116.086
 offset_bottom = 1702.3
 
-[node name="Level_Node90" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node90" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -330.603
@@ -495,7 +552,8 @@ offset_top = 1429.75
 offset_right = -91.604
 offset_bottom = 1562.75
 
-[node name="Level_Node91" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node91" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -172.062
@@ -503,7 +561,8 @@ offset_top = 1321.89
 offset_right = 66.9382
 offset_bottom = 1454.89
 
-[node name="Level_Node92" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node92" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 4.73123
@@ -511,7 +570,8 @@ offset_top = 1225.43
 offset_right = 243.732
 offset_bottom = 1358.43
 
-[node name="Level_Node93" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node93" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 52.3604
@@ -519,7 +579,8 @@ offset_top = 1081.82
 offset_right = 291.361
 offset_bottom = 1214.82
 
-[node name="Level_Node94" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node94" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -44.9519
@@ -527,7 +588,8 @@ offset_top = 955.609
 offset_right = 194.047
 offset_bottom = 1088.61
 
-[node name="Level_Node95" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node95" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -207.498
@@ -535,7 +597,8 @@ offset_top = 828.68
 offset_right = 31.5022
 offset_bottom = 961.678
 
-[node name="Level_Node96" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node96" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -219.567
@@ -543,7 +606,8 @@ offset_top = 693.201
 offset_right = 19.4331
 offset_bottom = 826.202
 
-[node name="Level_Node97" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node97" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -81.7921
@@ -551,7 +615,8 @@ offset_top = 569.419
 offset_right = 157.208
 offset_bottom = 702.42
 
-[node name="Level_Node98" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node98" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 62.4824
@@ -559,7 +624,8 @@ offset_top = 453.895
 offset_right = 301.482
 offset_bottom = 586.896
 
-[node name="Level_Node99" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node99" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -22.6519
@@ -567,7 +633,8 @@ offset_top = 311.128
 offset_right = 216.348
 offset_bottom = 444.128
 
-[node name="Level_Node100" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node100" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -213.199
@@ -575,7 +642,8 @@ offset_top = 247.106
 offset_right = 25.8016
 offset_bottom = 380.107
 
-[node name="Level_Node101" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node101" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -264.384
@@ -583,7 +651,8 @@ offset_top = 107.059
 offset_right = -25.384
 offset_bottom = 240.059
 
-[node name="Level_Node102" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node102" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -121.411
@@ -592,47 +661,47 @@ offset_right = 117.589
 offset_bottom = 129.306
 
 [node name="Icon_List" type="Control" parent="ScrollContainer/VBoxContainer/Background8"]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Background8/Icon_List"]
+layout_mode = 0
 offset_left = 598.701
 offset_top = 313.967
 offset_right = 709.701
 offset_bottom = 458.967
 mouse_filter = 2
-texture = ExtResource( 7 )
-expand = true
+texture = ExtResource("7")
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Background8/Icon_List/TextureRect"]
+layout_mode = 0
 offset_left = 7.84186
 offset_top = 5.61737
 offset_right = 102.842
 offset_bottom = 100.617
 mouse_filter = 2
-texture = ExtResource( 35 )
-expand = true
+texture = ExtResource("35")
+expand_mode = 1
 
 [node name="Background7" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
-offset_top = 3364.0
-offset_right = 946.0
-offset_bottom = 5046.0
-custom_minimum_size = Vector2( 946, 1682 )
+custom_minimum_size = Vector2(946, 1682)
+layout_mode = 2
 mouse_filter = 2
-texture = ExtResource( 24 )
-expand = true
+texture = ExtResource("24")
+expand_mode = 1
 stretch_mode = 5
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Level_List" type="Control" parent="ScrollContainer/VBoxContainer/Background7"]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
-[node name="Level_Node77" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node77" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -109.017
@@ -640,7 +709,8 @@ offset_top = 1547.73
 offset_right = 129.983
 offset_bottom = 1680.73
 
-[node name="Level_Node78" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node78" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -79.7855
@@ -648,7 +718,8 @@ offset_top = 1402.42
 offset_right = 159.215
 offset_bottom = 1535.41
 
-[node name="Level_Node79" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node79" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -83.4758
@@ -656,7 +727,8 @@ offset_top = 1200.78
 offset_right = 155.525
 offset_bottom = 1333.78
 
-[node name="Level_Node80" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node80" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -144.546
@@ -664,7 +736,8 @@ offset_top = 1070.38
 offset_right = 94.4536
 offset_bottom = 1203.38
 
-[node name="Level_Node81" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node81" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -314.425
@@ -672,7 +745,8 @@ offset_top = 973.713
 offset_right = -75.4257
 offset_bottom = 1106.71
 
-[node name="Level_Node82" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node82" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -458.608
@@ -680,7 +754,8 @@ offset_top = 852.031
 offset_right = -219.608
 offset_bottom = 985.029
 
-[node name="Level_Node83" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node83" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -397.062
@@ -688,7 +763,8 @@ offset_top = 703.039
 offset_right = -158.062
 offset_bottom = 836.039
 
-[node name="Level_Node84" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node84" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -225.833
@@ -696,7 +772,8 @@ offset_top = 608.056
 offset_right = 13.1665
 offset_bottom = 741.056
 
-[node name="Level_Node85" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node85" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -95.3256
@@ -704,7 +781,8 @@ offset_top = 493.289
 offset_right = 143.674
 offset_bottom = 626.289
 
-[node name="Level_Node86" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node86" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -124.176
@@ -712,7 +790,8 @@ offset_top = 346.236
 offset_right = 114.824
 offset_bottom = 479.237
 
-[node name="Level_Node87" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node87" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -202.264
@@ -720,7 +799,8 @@ offset_top = 204.856
 offset_right = 36.736
 offset_bottom = 337.856
 
-[node name="Level_Node88" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node88" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -281.157
@@ -729,65 +809,67 @@ offset_right = -42.157
 offset_bottom = 193.318
 
 [node name="Icon_List" type="Control" parent="ScrollContainer/VBoxContainer/Background7"]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Background7/Icon_List"]
+layout_mode = 0
 offset_left = 456.314
 offset_top = 1263.31
 offset_right = 567.314
 offset_bottom = 1408.31
 mouse_filter = 2
-texture = ExtResource( 7 )
-expand = true
+texture = ExtResource("7")
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Background7/Icon_List/TextureRect"]
+layout_mode = 0
 offset_left = 7.84186
 offset_top = 5.61737
 offset_right = 102.842
 offset_bottom = 100.617
 mouse_filter = 2
-texture = ExtResource( 29 )
-expand = true
+texture = ExtResource("29")
+expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="ScrollContainer/VBoxContainer/Background7/Icon_List"]
+layout_mode = 0
 offset_left = 255.031
 offset_top = -79.1785
 offset_right = 366.031
 offset_bottom = 65.8217
 mouse_filter = 2
-texture = ExtResource( 7 )
-expand = true
+texture = ExtResource("7")
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Background7/Icon_List/TextureRect2"]
+layout_mode = 0
 offset_left = 7.84186
 offset_top = 5.61737
 offset_right = 102.842
 offset_bottom = 100.617
 mouse_filter = 2
-texture = ExtResource( 30 )
-expand = true
+texture = ExtResource("30")
+expand_mode = 1
 
 [node name="Background6" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
-offset_top = 5046.0
-offset_right = 946.0
-offset_bottom = 6728.0
-custom_minimum_size = Vector2( 946, 1682 )
+custom_minimum_size = Vector2(946, 1682)
+layout_mode = 2
 mouse_filter = 2
-texture = ExtResource( 28 )
-expand = true
+texture = ExtResource("28")
+expand_mode = 1
 stretch_mode = 5
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Level_List" type="Control" parent="ScrollContainer/VBoxContainer/Background6"]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
-[node name="Level_Node62" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node62" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -450.07
@@ -795,7 +877,8 @@ offset_top = 1527.84
 offset_right = -211.07
 offset_bottom = 1660.84
 
-[node name="Level_Node63" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node63" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -380.029
@@ -803,7 +886,8 @@ offset_top = 1381.42
 offset_right = -141.03
 offset_bottom = 1514.42
 
-[node name="Level_Node64" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node64" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -216.208
@@ -811,7 +895,8 @@ offset_top = 1277.37
 offset_right = 22.7922
 offset_bottom = 1410.37
 
-[node name="Level_Node65" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node65" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -3.61945
@@ -819,7 +904,8 @@ offset_top = 1251.06
 offset_right = 235.381
 offset_bottom = 1384.06
 
-[node name="Level_Node66" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node66" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 168.65
@@ -827,7 +913,8 @@ offset_top = 1150.4
 offset_right = 407.65
 offset_bottom = 1283.4
 
-[node name="Level_Node67" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node67" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 212.83
@@ -835,7 +922,8 @@ offset_top = 1008.3
 offset_right = 451.829
 offset_bottom = 1141.3
 
-[node name="Level_Node68" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node68" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 210.736
@@ -843,7 +931,8 @@ offset_top = 876.157
 offset_right = 449.736
 offset_bottom = 1009.16
 
-[node name="Level_Node69" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node69" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 197.077
@@ -851,7 +940,8 @@ offset_top = 666.116
 offset_right = 436.078
 offset_bottom = 799.116
 
-[node name="Level_Node70" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node70" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 106.62
@@ -859,7 +949,8 @@ offset_top = 540.365
 offset_right = 345.62
 offset_bottom = 673.365
 
-[node name="Level_Node71" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node71" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -89.4602
@@ -867,7 +958,8 @@ offset_top = 495.372
 offset_right = 149.54
 offset_bottom = 628.372
 
-[node name="Level_Node72" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node72" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -318.807
@@ -875,7 +967,8 @@ offset_top = 485.314
 offset_right = -79.8071
 offset_bottom = 618.314
 
-[node name="Level_Node73" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node73" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -433.059
@@ -883,7 +976,8 @@ offset_top = 375.596
 offset_right = -194.059
 offset_bottom = 508.596
 
-[node name="Level_Node74" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node74" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -446.833
@@ -891,7 +985,8 @@ offset_top = 226.321
 offset_right = -207.832
 offset_bottom = 359.321
 
-[node name="Level_Node75" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node75" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -421.185
@@ -899,7 +994,8 @@ offset_top = 74.9588
 offset_right = -182.185
 offset_bottom = 207.96
 
-[node name="Level_Node76" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node76" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -292.623
@@ -908,84 +1004,89 @@ offset_right = -53.6232
 offset_bottom = 96.8557
 
 [node name="Icon_List" type="Control" parent="ScrollContainer/VBoxContainer/Background6"]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Background6/Icon_List"]
+layout_mode = 0
 offset_left = 746.42
 offset_top = 732.963
 offset_right = 857.42
 offset_bottom = 877.962
 mouse_filter = 2
-texture = ExtResource( 7 )
-expand = true
+texture = ExtResource("7")
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Background6/Icon_List/TextureRect"]
+layout_mode = 0
 offset_left = 7.84186
 offset_top = 5.61737
 offset_right = 102.842
 offset_bottom = 100.617
 mouse_filter = 2
-texture = ExtResource( 27 )
-expand = true
+texture = ExtResource("27")
+expand_mode = 1
 
 [node name="Background5" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
-offset_top = 6728.0
-offset_right = 946.0
-offset_bottom = 8410.0
-custom_minimum_size = Vector2( 946, 1682 )
+custom_minimum_size = Vector2(946, 1682)
+layout_mode = 2
 mouse_filter = 2
-texture = ExtResource( 20 )
-expand = true
+texture = ExtResource("20")
+expand_mode = 1
 stretch_mode = 5
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Icon_List" type="Control" parent="ScrollContainer/VBoxContainer/Background5"]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Background5/Icon_List"]
+layout_mode = 0
 offset_left = 379.282
 offset_top = 1430.53
 offset_right = 490.282
 offset_bottom = 1575.53
-texture = ExtResource( 7 )
-expand = true
+texture = ExtResource("7")
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Background5/Icon_List/TextureRect"]
+layout_mode = 0
 offset_left = 7.84186
 offset_top = 5.61737
 offset_right = 102.842
 offset_bottom = 100.617
-texture = ExtResource( 23 )
-expand = true
+texture = ExtResource("23")
+expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="ScrollContainer/VBoxContainer/Background5/Icon_List"]
+layout_mode = 0
 offset_left = 297.459
 offset_top = 252.044
 offset_right = 408.459
 offset_bottom = 397.044
-texture = ExtResource( 7 )
-expand = true
+texture = ExtResource("7")
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Background5/Icon_List/TextureRect2"]
+layout_mode = 0
 offset_left = 7.84186
 offset_top = 5.61737
 offset_right = 102.842
 offset_bottom = 100.617
-texture = ExtResource( 22 )
-expand = true
+texture = ExtResource("22")
+expand_mode = 1
 
 [node name="Level_List" type="Control" parent="ScrollContainer/VBoxContainer/Background5"]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
-[node name="Level_Node48" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node48" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -159.088
@@ -993,7 +1094,8 @@ offset_top = 1570.99
 offset_right = 79.9123
 offset_bottom = 1703.99
 
-[node name="Level_Node49" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node49" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -285.48
@@ -1001,7 +1103,8 @@ offset_top = 1448.49
 offset_right = -46.4796
 offset_bottom = 1581.49
 
-[node name="Level_Node50" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node50" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -351.243
@@ -1009,7 +1112,8 @@ offset_top = 1297.49
 offset_right = -112.243
 offset_bottom = 1430.49
 
-[node name="Level_Node51" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node51" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -289.275
@@ -1017,7 +1121,8 @@ offset_top = 1151.52
 offset_right = -50.2745
 offset_bottom = 1284.52
 
-[node name="Level_Node52" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node52" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -128.984
@@ -1025,7 +1130,8 @@ offset_top = 1043.6
 offset_right = 110.017
 offset_bottom = 1176.6
 
-[node name="Level_Node53" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node53" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 34.6922
@@ -1033,7 +1139,8 @@ offset_top = 947.17
 offset_right = 273.692
 offset_bottom = 1080.17
 
-[node name="Level_Node54" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node54" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 151.271
@@ -1041,7 +1148,8 @@ offset_top = 828.892
 offset_right = 390.27
 offset_bottom = 961.89
 
-[node name="Level_Node55" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node55" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 161.336
@@ -1049,7 +1157,8 @@ offset_top = 686.958
 offset_right = 400.336
 offset_bottom = 819.958
 
-[node name="Level_Node56" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node56" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 64.9614
@@ -1057,7 +1166,8 @@ offset_top = 565.348
 offset_right = 303.961
 offset_bottom = 698.348
 
-[node name="Level_Node57" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node57" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -85.9933
@@ -1065,7 +1175,8 @@ offset_top = 474.258
 offset_right = 153.007
 offset_bottom = 607.259
 
-[node name="Level_Node58" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node58" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -239.424
@@ -1073,7 +1184,8 @@ offset_top = 392.907
 offset_right = -0.423584
 offset_bottom = 525.907
 
-[node name="Level_Node59" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node59" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -412.27
@@ -1081,7 +1193,8 @@ offset_top = 298.579
 offset_right = -173.27
 offset_bottom = 431.58
 
-[node name="Level_Node60" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node60" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -464.111
@@ -1089,7 +1202,8 @@ offset_top = 161.279
 offset_right = -225.111
 offset_bottom = 294.279
 
-[node name="Level_Node61" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node61" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -467.873
@@ -1098,24 +1212,21 @@ offset_right = -228.873
 offset_bottom = 134.109
 
 [node name="Background4" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
-offset_top = 8410.0
-offset_right = 946.0
-offset_bottom = 10092.0
-custom_minimum_size = Vector2( 946, 1682 )
+custom_minimum_size = Vector2(946, 1682)
+layout_mode = 2
 mouse_filter = 2
-texture = ExtResource( 11 )
-expand = true
+texture = ExtResource("11")
+expand_mode = 1
 stretch_mode = 5
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Level_List" type="Control" parent="ScrollContainer/VBoxContainer/Background4"]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
-[node name="Level_Node38" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node38" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -73.2348
@@ -1123,7 +1234,8 @@ offset_top = 1508.52
 offset_right = 165.765
 offset_bottom = 1641.52
 
-[node name="Level_Node39" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node39" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -102.856
@@ -1131,7 +1243,8 @@ offset_top = 1311.21
 offset_right = 136.144
 offset_bottom = 1444.21
 
-[node name="Level_Node40" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node40" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -93.0277
@@ -1139,7 +1252,8 @@ offset_top = 1158.09
 offset_right = 145.972
 offset_bottom = 1291.09
 
-[node name="Level_Node41" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node41" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -4.70276
@@ -1147,7 +1261,8 @@ offset_top = 985.728
 offset_right = 234.297
 offset_bottom = 1118.73
 
-[node name="Level_Node42" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node42" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 17.8484
@@ -1155,7 +1270,8 @@ offset_top = 813.755
 offset_right = 256.849
 offset_bottom = 946.752
 
-[node name="Level_Node43" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node43" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -49.5699
@@ -1163,7 +1279,8 @@ offset_top = 668.98
 offset_right = 189.431
 offset_bottom = 801.98
 
-[node name="Level_Node44" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node44" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -173.104
@@ -1171,7 +1288,8 @@ offset_top = 520.373
 offset_right = 65.8958
 offset_bottom = 653.373
 
-[node name="Level_Node45" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node45" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -178.9
@@ -1179,7 +1297,8 @@ offset_top = 377.418
 offset_right = 60.0991
 offset_bottom = 510.418
 
-[node name="Level_Node46" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node46" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -111.906
@@ -1187,7 +1306,8 @@ offset_top = 205.904
 offset_right = 127.094
 offset_bottom = 338.904
 
-[node name="Level_Node47" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node47" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -79.9937
@@ -1196,45 +1316,45 @@ offset_right = 159.006
 offset_bottom = 163.79
 
 [node name="Icon_List" type="Control" parent="ScrollContainer/VBoxContainer/Background4"]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Background4/Icon_List"]
+layout_mode = 0
 offset_left = 463.059
 offset_top = 1371.9
 offset_right = 574.059
 offset_bottom = 1516.9
-texture = ExtResource( 7 )
-expand = true
+texture = ExtResource("7")
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Background4/Icon_List/TextureRect"]
+layout_mode = 0
 offset_left = 7.84186
 offset_top = 5.61737
 offset_right = 102.842
 offset_bottom = 100.617
-texture = ExtResource( 52 )
-expand = true
+texture = ExtResource("52")
+expand_mode = 1
 
 [node name="Background3" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
-offset_top = 10092.0
-offset_right = 946.0
-offset_bottom = 11774.0
-custom_minimum_size = Vector2( 946, 1682 )
+custom_minimum_size = Vector2(946, 1682)
+layout_mode = 2
 mouse_filter = 2
-texture = ExtResource( 9 )
-expand = true
+texture = ExtResource("9")
+expand_mode = 1
 stretch_mode = 5
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Level_List" type="Control" parent="ScrollContainer/VBoxContainer/Background3"]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
-[node name="Level_Node26" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node26" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -117.459
@@ -1242,7 +1362,8 @@ offset_top = 1486.55
 offset_right = 121.541
 offset_bottom = 1619.55
 
-[node name="Level_Node27" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node27" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -122.587
@@ -1250,7 +1371,8 @@ offset_top = 1336.66
 offset_right = 116.413
 offset_bottom = 1469.66
 
-[node name="Level_Node28" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node28" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -120.268
@@ -1258,7 +1380,8 @@ offset_top = 1195.18
 offset_right = 118.732
 offset_bottom = 1328.18
 
-[node name="Level_Node29" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node29" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 109.464
@@ -1266,7 +1389,8 @@ offset_top = 869.767
 offset_right = 348.465
 offset_bottom = 1002.77
 
-[node name="Level_Node30" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node30" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 204.812
@@ -1274,7 +1398,8 @@ offset_top = 731.066
 offset_right = 443.812
 offset_bottom = 864.066
 
-[node name="Level_Node31" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node31" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 225.761
@@ -1282,7 +1407,8 @@ offset_top = 560.774
 offset_right = 464.761
 offset_bottom = 693.775
 
-[node name="Level_Node32" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node32" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 116.099
@@ -1290,7 +1416,8 @@ offset_top = 420.611
 offset_right = 355.098
 offset_bottom = 553.611
 
-[node name="Level_Node33" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node33" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -83.5269
@@ -1298,7 +1425,8 @@ offset_top = 347.6
 offset_right = 155.473
 offset_bottom = 480.6
 
-[node name="Level_Node34" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node34" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -311.769
@@ -1306,7 +1434,8 @@ offset_top = 328.743
 offset_right = -72.769
 offset_bottom = 461.743
 
-[node name="Level_Node35" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node35" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -422.386
@@ -1314,7 +1443,8 @@ offset_top = 200.206
 offset_right = -183.386
 offset_bottom = 333.206
 
-[node name="Level_Node36" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node36" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -342.922
@@ -1322,7 +1452,8 @@ offset_top = 66.9972
 offset_right = -103.922
 offset_bottom = 199.997
 
-[node name="Level_Node37" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node37" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -128.972
@@ -1331,45 +1462,45 @@ offset_right = 110.028
 offset_bottom = 119.695
 
 [node name="Background2" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
-offset_top = 11774.0
-offset_right = 946.0
-offset_bottom = 13456.0
-custom_minimum_size = Vector2( 946, 1682 )
+custom_minimum_size = Vector2(946, 1682)
+layout_mode = 2
 mouse_filter = 2
-texture = ExtResource( 10 )
-expand = true
+texture = ExtResource("10")
+expand_mode = 1
 stretch_mode = 5
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Icon_List" type="Control" parent="ScrollContainer/VBoxContainer/Background2"]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Background2/Icon_List"]
+layout_mode = 0
 offset_left = 232.487
 offset_top = 699.674
 offset_right = 343.487
 offset_bottom = 844.674
-texture = ExtResource( 7 )
-expand = true
+texture = ExtResource("7")
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Background2/Icon_List/TextureRect"]
+layout_mode = 0
 offset_left = 7.84186
 offset_top = 5.61737
 offset_right = 102.842
 offset_bottom = 100.617
-texture = ExtResource( 36 )
-expand = true
+texture = ExtResource("36")
+expand_mode = 1
 
 [node name="Level_List" type="Control" parent="ScrollContainer/VBoxContainer/Background2"]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
-[node name="Level_Node12" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node12" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -209.803
@@ -1377,7 +1508,8 @@ offset_top = 1548.42
 offset_right = 29.1971
 offset_bottom = 1681.42
 
-[node name="Level_Node13" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node13" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -10.0399
@@ -1385,7 +1517,8 @@ offset_top = 1467.07
 offset_right = 228.96
 offset_bottom = 1600.07
 
-[node name="Level_Node14" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node14" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 78.7209
@@ -1393,7 +1526,8 @@ offset_top = 1333.01
 offset_right = 317.721
 offset_bottom = 1466.01
 
-[node name="Level_Node15" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node15" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -26.4668
@@ -1401,7 +1535,8 @@ offset_top = 1200.06
 offset_right = 212.533
 offset_bottom = 1333.06
 
-[node name="Level_Node16" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node16" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -194.055
@@ -1409,7 +1544,8 @@ offset_top = 1104.92
 offset_right = 44.9453
 offset_bottom = 1237.92
 
-[node name="Level_Node17" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node17" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -320.016
@@ -1417,7 +1553,8 @@ offset_top = 986.245
 offset_right = -81.0162
 offset_bottom = 1119.24
 
-[node name="Level_Node18" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node18" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -304.971
@@ -1425,7 +1562,8 @@ offset_top = 840.013
 offset_right = -65.9711
 offset_bottom = 973.016
 
-[node name="Level_Node19" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node19" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -119.229
@@ -1433,7 +1571,8 @@ offset_top = 730.467
 offset_right = 119.771
 offset_bottom = 863.467
 
-[node name="Level_Node20" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node20" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 83.4215
@@ -1441,7 +1580,8 @@ offset_top = 665.763
 offset_right = 322.422
 offset_bottom = 798.763
 
-[node name="Level_Node21" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node21" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 112.827
@@ -1449,7 +1589,8 @@ offset_top = 520.438
 offset_right = 351.827
 offset_bottom = 653.438
 
-[node name="Level_Node22" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node22" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 38.2616
@@ -1457,7 +1598,8 @@ offset_top = 382.999
 offset_right = 277.261
 offset_bottom = 515.999
 
-[node name="Level_Node23" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node23" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -50.5236
@@ -1465,7 +1607,8 @@ offset_top = 249.132
 offset_right = 188.476
 offset_bottom = 382.132
 
-[node name="Level_Node24" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node24" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -110.585
@@ -1473,7 +1616,8 @@ offset_top = 101.869
 offset_right = 128.415
 offset_bottom = 234.869
 
-[node name="Level_Node25" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node25" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -120.474
@@ -1482,58 +1626,63 @@ offset_right = 118.526
 offset_bottom = 89.9585
 
 [node name="Background1" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
-offset_top = 13456.0
-offset_right = 946.0
-offset_bottom = 15138.0
-custom_minimum_size = Vector2( 946, 1682 )
+custom_minimum_size = Vector2(946, 1682)
+layout_mode = 2
 mouse_filter = 2
-texture = ExtResource( 1 )
-expand = true
+texture = ExtResource("1")
+expand_mode = 1
 stretch_mode = 5
 
 [node name="Icon_List" type="Control" parent="ScrollContainer/VBoxContainer/Background1"]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Background1/Icon_List"]
+layout_mode = 0
 offset_left = 510.149
 offset_top = 591.841
 offset_right = 621.149
 offset_bottom = 736.841
-texture = ExtResource( 7 )
-expand = true
+texture = ExtResource("7")
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Background1/Icon_List/TextureRect"]
+layout_mode = 0
 offset_left = 7.84186
 offset_top = 5.61737
 offset_right = 102.842
 offset_bottom = 100.617
-texture = ExtResource( 12 )
-expand = true
+texture = ExtResource("12")
+expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="ScrollContainer/VBoxContainer/Background1/Icon_List"]
+layout_mode = 0
 offset_left = 491.62
 offset_top = 245.603
 offset_right = 602.62
 offset_bottom = 390.603
-texture = ExtResource( 7 )
-expand = true
+texture = ExtResource("7")
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer/Background1/Icon_List/TextureRect2"]
+layout_mode = 0
 offset_left = 7.84186
 offset_top = 5.61737
 offset_right = 102.842
 offset_bottom = 100.617
-texture = ExtResource( 5 )
-expand = true
+texture = ExtResource("5")
+expand_mode = 1
 
 [node name="Level_List" type="Control" parent="ScrollContainer/VBoxContainer/Background1"]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
-[node name="Level_Node1" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node1" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -45.264
@@ -1541,7 +1690,8 @@ offset_top = 1358.25
 offset_right = 193.736
 offset_bottom = 1491.25
 
-[node name="Level_Node2" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node2" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -276.538
@@ -1549,7 +1699,8 @@ offset_top = 1303.53
 offset_right = -37.5381
 offset_bottom = 1436.53
 
-[node name="Level_Node3" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node3" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -437.572
@@ -1557,7 +1708,8 @@ offset_top = 1161.83
 offset_right = -198.572
 offset_bottom = 1294.83
 
-[node name="Level_Node4" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node4" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -431.807
@@ -1565,7 +1717,8 @@ offset_top = 952.914
 offset_right = -192.807
 offset_bottom = 1085.91
 
-[node name="Level_Node5" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node5" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -227.73
@@ -1573,7 +1726,8 @@ offset_top = 842.842
 offset_right = 11.2706
 offset_bottom = 975.843
 
-[node name="Level_Node6" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node6" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -25.7762
@@ -1581,7 +1735,8 @@ offset_top = 730.759
 offset_right = 213.224
 offset_bottom = 863.76
 
-[node name="Level_Node7" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node7" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 94.0939
@@ -1589,7 +1744,8 @@ offset_top = 530.288
 offset_right = 333.094
 offset_bottom = 663.288
 
-[node name="Level_Node8" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node8" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -43.763
@@ -1597,7 +1753,8 @@ offset_top = 384.501
 offset_right = 195.237
 offset_bottom = 517.501
 
-[node name="Level_Node9" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node9" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -246.512
@@ -1605,7 +1762,8 @@ offset_top = 288.492
 offset_right = -7.51199
 offset_bottom = 421.492
 
-[node name="Level_Node10" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node10" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -374.194
@@ -1613,7 +1771,8 @@ offset_top = 150.689
 offset_right = -135.194
 offset_bottom = 283.689
 
-[node name="Level_Node11" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource( 8 )]
+[node name="Level_Node11" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource("8")]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -348.708
@@ -1622,171 +1781,187 @@ offset_right = -109.708
 offset_bottom = 117.739
 
 [node name="Cloud_List" type="Control" parent="ScrollContainer"]
+layout_mode = 2
 
 [node name="Cloud_Overlay0" type="TextureRect" parent="ScrollContainer/Cloud_List"]
 visible = false
+custom_minimum_size = Vector2(946, 1682)
+layout_mode = 0
 offset_top = 12200.0
 offset_right = 946.0
 offset_bottom = 13882.0
-custom_minimum_size = Vector2( 946, 1682 )
-texture = ExtResource( 14 )
-expand = true
+texture = ExtResource("14")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Cloud_Overlay1" type="TextureRect" parent="ScrollContainer/Cloud_List"]
 visible = false
+custom_minimum_size = Vector2(946, 1682)
+layout_mode = 0
 offset_top = 11189.0
 offset_right = 946.0
 offset_bottom = 12871.0
-custom_minimum_size = Vector2( 946, 1682 )
-texture = ExtResource( 14 )
-expand = true
+texture = ExtResource("14")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Cloud_Overlay2" type="TextureRect" parent="ScrollContainer/Cloud_List"]
 visible = false
+custom_minimum_size = Vector2(946, 1682)
+layout_mode = 0
 offset_top = 9741.6
 offset_right = 946.0
 offset_bottom = 11423.6
-custom_minimum_size = Vector2( 946, 1682 )
-texture = ExtResource( 14 )
-expand = true
+texture = ExtResource("14")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Cloud_Overlay3" type="TextureRect" parent="ScrollContainer/Cloud_List"]
 visible = false
+custom_minimum_size = Vector2(946, 1682)
+layout_mode = 0
 offset_top = 8283.63
 offset_right = 946.0
 offset_bottom = 9965.63
-custom_minimum_size = Vector2( 946, 1682 )
-texture = ExtResource( 14 )
-expand = true
+texture = ExtResource("14")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Cloud_Overlay4" type="TextureRect" parent="ScrollContainer/Cloud_List"]
 visible = false
+custom_minimum_size = Vector2(946, 1682)
+layout_mode = 0
 offset_top = 6649.04
 offset_right = 946.0
 offset_bottom = 8331.04
-custom_minimum_size = Vector2( 946, 1682 )
-texture = ExtResource( 14 )
-expand = true
+texture = ExtResource("14")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Cloud_Overlay5" type="TextureRect" parent="ScrollContainer/Cloud_List"]
 visible = false
+custom_minimum_size = Vector2(946, 1682)
+layout_mode = 0
 offset_top = 5538.32
 offset_right = 946.0
 offset_bottom = 7220.32
-custom_minimum_size = Vector2( 946, 1682 )
-texture = ExtResource( 14 )
-expand = true
+texture = ExtResource("14")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Cloud_Overlay6" type="TextureRect" parent="ScrollContainer/Cloud_List"]
 visible = false
+custom_minimum_size = Vector2(946, 1682)
+layout_mode = 0
 offset_top = 4427.6
 offset_right = 946.0
 offset_bottom = 6109.6
-custom_minimum_size = Vector2( 946, 1682 )
-texture = ExtResource( 14 )
-expand = true
+texture = ExtResource("14")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Cloud_Overlay7" type="TextureRect" parent="ScrollContainer/Cloud_List"]
 visible = false
+custom_minimum_size = Vector2(946, 1682)
+layout_mode = 0
 offset_top = 3124.23
 offset_right = 946.0
 offset_bottom = 4806.23
-custom_minimum_size = Vector2( 946, 1682 )
-texture = ExtResource( 14 )
-expand = true
+texture = ExtResource("14")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Cloud_Overlay8" type="TextureRect" parent="ScrollContainer/Cloud_List"]
 visible = false
+custom_minimum_size = Vector2(946, 1682)
+layout_mode = 0
 offset_top = 1956.43
 offset_right = 946.0
 offset_bottom = 3638.43
-custom_minimum_size = Vector2( 946, 1682 )
-texture = ExtResource( 14 )
-expand = true
+texture = ExtResource("14")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Cloud_Overlay9" type="TextureRect" parent="ScrollContainer/Cloud_List"]
 visible = false
+custom_minimum_size = Vector2(946, 1682)
+layout_mode = 0
 offset_top = 560.295
 offset_right = 946.0
 offset_bottom = 2242.3
-custom_minimum_size = Vector2( 946, 1682 )
-texture = ExtResource( 14 )
-expand = true
+texture = ExtResource("14")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Cloud_Overlay10" type="TextureRect" parent="ScrollContainer/Cloud_List"]
 visible = false
+custom_minimum_size = Vector2(946, 1682)
+layout_mode = 0
 offset_top = -783.51
 offset_right = 946.0
 offset_bottom = 898.49
-custom_minimum_size = Vector2( 946, 1682 )
-texture = ExtResource( 14 )
-expand = true
+texture = ExtResource("14")
+expand_mode = 1
 stretch_mode = 6
 
-[node name="Shop_Page" parent="." instance=ExtResource( 32 )]
+[node name="Shop_Page" parent="." instance=ExtResource("32")]
 visible = false
+anchors_preset = 0
 
-[node name="Achievement_Page" parent="." instance=ExtResource( 45 )]
+[node name="Achievement_Page" parent="." instance=ExtResource("45")]
 visible = false
+anchors_preset = 0
 
-[node name="Profile_Page" parent="." instance=ExtResource( 46 )]
+[node name="Profile_Page" parent="." instance=ExtResource("46")]
 visible = false
+anchors_preset = 0
 
-[node name="Inventory_Page" parent="." instance=ExtResource( 13 )]
+[node name="Inventory_Page" parent="." instance=ExtResource("13")]
+anchors_preset = 0
 
-[node name="Custom_Game_Page" parent="." instance=ExtResource( 25 )]
+[node name="Custom_Game_Page" parent="." instance=ExtResource("25")]
+anchors_preset = 0
 
 [node name="Header_UI" type="CanvasLayer" parent="."]
 
 [node name="New_Header" type="Control" parent="Header_UI"]
 visible = false
+layout_mode = 3
+anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 228.0
+grow_horizontal = 2
 mouse_filter = 2
 
 [node name="Header" type="Control" parent="Header_UI/New_Header"]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Header_UI/New_Header/Header"]
+layout_mode = 0
 anchor_right = 1.0
 offset_bottom = 95.0
-texture = ExtResource( 2 )
-region_rect = Rect2( 5.66685, 5.1978, 142.305, 107.512 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource("2")
+region_rect = Rect2(5.66685, 5.1978, 142.305, 107.512)
 
 [node name="Avatar" type="Control" parent="Header_UI/New_Header/Header"]
+anchors_preset = 0
 offset_left = 405.0
 offset_top = 2.0
 offset_right = 544.0
 offset_bottom = 149.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Background" type="TextureRect" parent="Header_UI/New_Header/Header/Avatar"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 42 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource("42")
+expand_mode = 1
 
 [node name="Character" type="TextureRect" parent="Header_UI/New_Header/Header/Avatar"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -1795,33 +1970,33 @@ offset_left = -55.0
 offset_top = -64.5
 offset_right = 55.0
 offset_bottom = 36.5
-texture = ExtResource( 39 )
-expand = true
+texture = ExtResource("39")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="Header_UI/New_Header/Header/Avatar"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -58.5
 offset_top = 118.0
 offset_right = 58.5
 offset_bottom = 142.0
-theme_override_fonts/font = SubResource( 2 )
-align = 1
-valign = 1
+theme_override_fonts/font = SubResource("2")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Button" type="Button" parent="Header_UI/New_Header/Header/Avatar"]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 7.0
 offset_top = 1.0
 offset_right = -7.0
 offset_bottom = -29.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Coin" type="Control" parent="Header_UI/New_Header/Header"]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -321.0
@@ -1830,89 +2005,76 @@ offset_right = -103.0
 offset_bottom = 71.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Header_UI/New_Header/Header/Coin"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 3 )
+texture = ExtResource("3")
 patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureRect" type="TextureRect" parent="Header_UI/New_Header/Header/Coin"]
+layout_mode = 0
 offset_left = -32.0
 offset_top = -3.0
 offset_right = 36.0
 offset_bottom = 65.0
-texture = ExtResource( 37 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource("37")
+expand_mode = 1
 
 [node name="UserCoin" type="Label" parent="Header_UI/New_Header/Header/Coin"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 3.0
 offset_top = 6.0
-theme_override_fonts/font = SubResource( 3 )
+theme_override_fonts/font = SubResource("3")
 text = "100"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Diamond" type="Control" parent="Header_UI/New_Header/Header"]
+anchors_preset = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 114.0
 offset_top = 10.0
 offset_right = 328.0
 offset_bottom = 71.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Header_UI/New_Header/Header/Diamond"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 3 )
+texture = ExtResource("3")
 patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureRect" type="TextureRect" parent="Header_UI/New_Header/Header/Diamond"]
+layout_mode = 0
 offset_left = -32.0
 offset_top = -3.0
 offset_right = 36.0
 offset_bottom = 65.0
-texture = ExtResource( 38 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource("38")
+expand_mode = 1
 
 [node name="UserDiamond" type="Label" parent="Header_UI/New_Header/Header/Diamond"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 3.0
 offset_top = 6.0
-theme_override_fonts/font = SubResource( 3 )
+theme_override_fonts/font = SubResource("3")
 text = "100"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Location" type="Control" parent="Header_UI/New_Header"]
+anchors_preset = 0
 offset_left = 660.0
 offset_top = 134.0
 offset_right = 965.0
@@ -1920,74 +2082,70 @@ offset_bottom = 224.0
 mouse_filter = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Header_UI/New_Header/Location"]
+layout_mode = 0
 anchor_left = 0.094469
 anchor_top = 0.0902739
 anchor_right = 1.01604
 anchor_bottom = 0.85694
-texture = ExtResource( 43 )
+texture = ExtResource("43")
 patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 5
 patch_margin_bottom = 6
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="Label" type="Label" parent="Header_UI/New_Header/Location/NinePatchRect"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 5.0
 offset_right = -4.0
-theme_override_fonts/font = SubResource( 5 )
+theme_override_fonts/font = SubResource("5")
 text = "ARGUEL TOWN"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Header_UI/New_Header/Location"]
+layout_mode = 0
 offset_left = 9.0
 offset_right = 38.0
 offset_bottom = 91.0
-texture = ExtResource( 41 )
-expand = true
+texture = ExtResource("41")
+expand_mode = 1
 
 [node name="New_Footer" type="Control" parent="Header_UI"]
 visible = false
+layout_mode = 3
+anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -196.0
 offset_bottom = -1.01807
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Header_UI/New_Footer"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme_override_constants/separation = 0
 alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="CustomGame" type="Control" parent="Header_UI/New_Footer/HBoxContainer"]
-offset_top = 58.0
-offset_right = 171.0
-offset_bottom = 194.0
-custom_minimum_size = Vector2( 166, 136 )
+custom_minimum_size = Vector2(166, 136)
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureRect" type="TextureRect" parent="Header_UI/New_Footer/HBoxContainer/CustomGame"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 44 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource("44")
+expand_mode = 1
 
 [node name="Icon" type="TextureRect" parent="Header_UI/New_Footer/HBoxContainer/CustomGame"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -1998,11 +2156,12 @@ offset_right = 54.0
 offset_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource( 47 )
-expand = true
+texture = ExtResource("47")
+expand_mode = 1
 
 [node name="Button" type="Button" parent="Header_UI/New_Footer/HBoxContainer/CustomGame"]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 4.0
@@ -2011,6 +2170,7 @@ offset_right = -5.0
 offset_bottom = -3.0
 
 [node name="Label" type="Label" parent="Header_UI/New_Footer/HBoxContainer/CustomGame"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -2021,49 +2181,44 @@ offset_right = 66.5
 offset_bottom = 43.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = SubResource( 21 )
+theme_override_fonts/font = SubResource("21")
 text = "Custom game"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="Header_UI/New_Footer/HBoxContainer/CustomGame"]
 visible = false
-self_modulate = Color( 1, 1, 1, 0.686275 )
+self_modulate = Color(1, 1, 1, 0.686275)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_styles/panel = SubResource( 12 )
+theme_override_styles/panel = SubResource("12")
 
 [node name="Label" type="Label" parent="Header_UI/New_Footer/HBoxContainer/CustomGame/Panel"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_fonts/font = SubResource( 13 )
+theme_override_fonts/font = SubResource("13")
 text = "coming 
 soon"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Quests" type="Control" parent="Header_UI/New_Footer/HBoxContainer"]
-offset_left = 171.0
-offset_top = 58.0
-offset_right = 343.0
-offset_bottom = 194.0
-custom_minimum_size = Vector2( 166, 136 )
+custom_minimum_size = Vector2(166, 136)
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureRect" type="TextureRect" parent="Header_UI/New_Footer/HBoxContainer/Quests"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 44 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource("44")
+expand_mode = 1
 
 [node name="Icon" type="TextureRect" parent="Header_UI/New_Footer/HBoxContainer/Quests"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -2074,25 +2229,21 @@ offset_right = 54.0
 offset_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource( 51 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource("51")
+expand_mode = 1
 
 [node name="Button" type="Button" parent="Header_UI/New_Footer/HBoxContainer/Quests"]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 5.0
 offset_right = -5.0
 offset_bottom = -3.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Label" type="Label" parent="Header_UI/New_Footer/HBoxContainer/Quests"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -2101,38 +2252,28 @@ offset_left = -66.5
 offset_top = 5.0
 offset_right = 66.5
 offset_bottom = 43.0
-theme_override_fonts/font = SubResource( 6 )
+theme_override_fonts/font = SubResource("6")
 text = "Quest"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Adventure" type="Control" parent="Header_UI/New_Footer/HBoxContainer"]
-modulate = Color( 0.921569, 1, 1, 1 )
-offset_left = 343.0
-offset_top = 4.0
-offset_right = 603.0
-offset_bottom = 194.0
-custom_minimum_size = Vector2( 260, 190 )
+modulate = Color(0.921569, 1, 1, 1)
+custom_minimum_size = Vector2(260, 190)
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureRect" type="TextureRect" parent="Header_UI/New_Footer/HBoxContainer/Adventure"]
-modulate = Color( 0.921569, 0.392157, 1, 1 )
+modulate = Color(0.921569, 0.392157, 1, 1)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 44 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource("44")
+expand_mode = 1
 
 [node name="Icon" type="TextureRect" parent="Header_UI/New_Footer/HBoxContainer/Adventure"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -2143,25 +2284,21 @@ offset_right = 102.0
 offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource( 50 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource("50")
+expand_mode = 1
 
 [node name="Button" type="Button" parent="Header_UI/New_Footer/HBoxContainer/Adventure"]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 5.0
 offset_right = -5.0
 offset_bottom = -3.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Label" type="Label" parent="Header_UI/New_Footer/HBoxContainer/Adventure"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -2170,36 +2307,26 @@ offset_left = -104.5
 offset_top = -55.0
 offset_right = 104.5
 offset_bottom = -17.0
-theme_override_fonts/font = SubResource( 6 )
+theme_override_fonts/font = SubResource("6")
 text = "Adventure"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Inventory" type="Control" parent="Header_UI/New_Footer/HBoxContainer"]
-offset_left = 603.0
-offset_top = 58.0
-offset_right = 774.0
-offset_bottom = 194.0
-custom_minimum_size = Vector2( 166, 136 )
+custom_minimum_size = Vector2(166, 136)
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureRect" type="TextureRect" parent="Header_UI/New_Footer/HBoxContainer/Inventory"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 44 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource("44")
+expand_mode = 1
 
 [node name="Icon" type="TextureRect" parent="Header_UI/New_Footer/HBoxContainer/Inventory"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -2210,14 +2337,12 @@ offset_right = 54.0
 offset_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource( 49 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource("49")
+expand_mode = 1
 
 [node name="Button" type="Button" parent="Header_UI/New_Footer/HBoxContainer/Inventory"]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 4.0
@@ -2226,6 +2351,7 @@ offset_right = -5.0
 offset_bottom = -3.0
 
 [node name="Label" type="Label" parent="Header_UI/New_Footer/HBoxContainer/Inventory"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -2236,36 +2362,26 @@ offset_right = 66.5
 offset_bottom = 43.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = SubResource( 6 )
+theme_override_fonts/font = SubResource("6")
 text = "Inventory"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Shop" type="Control" parent="Header_UI/New_Footer/HBoxContainer"]
-offset_left = 774.0
-offset_top = 58.0
-offset_right = 946.0
-offset_bottom = 194.0
-custom_minimum_size = Vector2( 166, 136 )
+custom_minimum_size = Vector2(166, 136)
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TextureRect" type="TextureRect" parent="Header_UI/New_Footer/HBoxContainer/Shop"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 44 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource("44")
+expand_mode = 1
 
 [node name="Icon" type="TextureRect" parent="Header_UI/New_Footer/HBoxContainer/Shop"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -2276,25 +2392,21 @@ offset_right = 54.0
 offset_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource( 48 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource("48")
+expand_mode = 1
 
 [node name="Button" type="Button" parent="Header_UI/New_Footer/HBoxContainer/Shop"]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 5.0
 offset_right = -5.0
 offset_bottom = -3.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Label" type="Label" parent="Header_UI/New_Footer/HBoxContainer/Shop"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -2303,51 +2415,57 @@ offset_left = -66.5
 offset_top = 5.0
 offset_right = 66.5
 offset_bottom = 43.0
-theme_override_fonts/font = SubResource( 6 )
+theme_override_fonts/font = SubResource("6")
 text = "Shop"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="Header_UI/New_Footer/HBoxContainer/Shop"]
 visible = false
-self_modulate = Color( 1, 1, 1, 0.686275 )
+self_modulate = Color(1, 1, 1, 0.686275)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_styles/panel = SubResource( 12 )
+theme_override_styles/panel = SubResource("12")
 
 [node name="Label" type="Label" parent="Header_UI/New_Footer/HBoxContainer/Shop/Panel"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_fonts/font = SubResource( 13 )
+theme_override_fonts/font = SubResource("13")
 text = "coming 
 soon"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Blocker" type="Panel" parent="Header_UI"]
 visible = false
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_styles/panel = SubResource( 11 )
+theme_override_styles/panel = SubResource("11")
 
 [node name="DailyReward_UI" type="CanvasLayer" parent="."]
 layer = 2
 
 [node name="Daily_Reward" type="Control" parent="DailyReward_UI"]
 visible = false
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Backdrop" type="Panel" parent="DailyReward_UI/Daily_Reward"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_styles/panel = SubResource( 20 )
+theme_override_styles/panel = SubResource("20")
 
 [node name="Panel" type="TextureRect" parent="DailyReward_UI/Daily_Reward"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -2356,51 +2474,55 @@ offset_left = -600.0
 offset_top = -361.0
 offset_right = 600.0
 offset_bottom = 361.0
-texture = ExtResource( 15 )
-expand = true
+texture = ExtResource("15")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Label_Header" type="Label" parent="DailyReward_UI/Daily_Reward/Panel"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -226.0
 offset_top = 7.0
 offset_right = 235.0
 offset_bottom = 114.0
-theme_override_fonts/font = SubResource( 14 )
+theme_override_fonts/font = SubResource("14")
 text = "DAILY REWARD"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label_Title" type="Label" parent="DailyReward_UI/Daily_Reward/Panel"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -303.0
 offset_top = 139.0
 offset_right = 304.0
 offset_bottom = 204.0
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/font = SubResource( 15 )
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("15")
 text = "welcome back!"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label_Desc" type="Label" parent="DailyReward_UI/Daily_Reward/Panel"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -336.0
 offset_top = 217.0
 offset_right = 338.0
 offset_bottom = 328.0
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/font = SubResource( 15 )
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("15")
 text = "here is your daily login
 reward!"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Reward_Box" type="TextureRect" parent="DailyReward_UI/Daily_Reward/Panel"]
-self_modulate = Color( 1, 1, 1, 0.607843 )
+self_modulate = Color(1, 1, 1, 0.607843)
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -2409,9 +2531,10 @@ offset_left = -97.0
 offset_top = -0.5
 offset_right = 97.0
 offset_bottom = 192.5
-texture = ExtResource( 17 )
+texture = ExtResource("17")
 
 [node name="Reward_Image" type="TextureRect" parent="DailyReward_UI/Daily_Reward/Panel/Reward_Box"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -2420,21 +2543,23 @@ offset_left = -135.505
 offset_top = -156.893
 offset_right = 129.495
 offset_bottom = 122.107
-texture = ExtResource( 16 )
-expand = true
+texture = ExtResource("16")
+expand_mode = 1
 
 [node name="Reward_Amount" type="Label" parent="DailyReward_UI/Daily_Reward/Panel/Reward_Box"]
+layout_mode = 0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -46.0
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/font = SubResource( 16 )
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("16")
 text = "x1"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Squab_DR" type="TextureRect" parent="DailyReward_UI/Daily_Reward/Panel"]
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -2443,18 +2568,20 @@ offset_left = -440.952
 offset_top = -447.642
 offset_right = -14.952
 offset_bottom = -35.6425
-texture = ExtResource( 19 )
+texture = ExtResource("19")
 
 [node name="Quabble_DR" type="TextureRect" parent="DailyReward_UI/Daily_Reward/Panel"]
+layout_mode = 0
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 16.2256
 offset_top = -425.193
 offset_right = 442.226
 offset_bottom = -13.1932
-texture = ExtResource( 18 )
+texture = ExtResource("18")
 
 [node name="Btn_ClaimDR" type="Button" parent="DailyReward_UI/Daily_Reward/Panel"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -2463,29 +2590,38 @@ offset_left = -126.0
 offset_top = -119.0
 offset_right = 128.0
 offset_bottom = -36.0
-theme_override_colors/font_color = Color( 1, 1, 1, 1 )
-theme_override_fonts/font = SubResource( 17 )
-theme_override_styles/hover = SubResource( 18 )
-theme_override_styles/pressed = SubResource( 19 )
-theme_override_styles/focus = SubResource( 18 )
-theme_override_styles/disabled = SubResource( 18 )
-theme_override_styles/normal = SubResource( 18 )
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("17")
+theme_override_styles/normal = SubResource("18")
+theme_override_styles/pressed = SubResource("19")
+theme_override_styles/hover = SubResource("18")
+theme_override_styles/disabled = SubResource("18")
+theme_override_styles/focus = SubResource("18")
 text = "CLAIM"
 
 [node name="TweenButton" type="Tween" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Homescreen_Entrance = SubResource( 10 )
+libraries = {
+&"": SubResource("AnimationLibrary_hmpej")
+}
 
 [connection signal="visibility_changed" from="." to="." method="_on_Home_visibility_changed"]
-[connection signal="on_update" from="Shop_Page" to="." method="update_header"]
-[connection signal="on_update" from="Achievement_Page" to="." method="update_header"]
-[connection signal="redirect_page" from="Profile_Page" to="." method="_on_redirect_page"]
 [connection signal="start_custom_game" from="Custom_Game_Page" to="." method="play_custom_game"]
-[connection signal="pressed" from="Header_UI/New_Header/Header/Avatar/Button" to="." method="change_page" binds= [ 1 ]]
-[connection signal="pressed" from="Header_UI/New_Footer/HBoxContainer/CustomGame/Button" to="." method="change_page" binds= [ 2 ]]
-[connection signal="pressed" from="Header_UI/New_Footer/HBoxContainer/Quests/Button" to="." method="change_page" binds= [ 3 ]]
-[connection signal="pressed" from="Header_UI/New_Footer/HBoxContainer/Adventure/Button" to="." method="change_page" binds= [ 0 ]]
-[connection signal="pressed" from="Header_UI/New_Footer/HBoxContainer/Inventory/Button" to="." method="change_page" binds= [ 4 ]]
-[connection signal="pressed" from="Header_UI/New_Footer/HBoxContainer/Shop/Button" to="." method="change_page" binds= [ 5 ]]
+[connection signal="pressed" from="Header_UI/New_Header/Header/Avatar/Button" to="." method="change_page" binds= [1]]
+[connection signal="pressed" from="Header_UI/New_Footer/HBoxContainer/CustomGame/Button" to="." method="change_page" binds= [2]]
+[connection signal="pressed" from="Header_UI/New_Footer/HBoxContainer/Quests/Button" to="." method="change_page" binds= [3]]
+[connection signal="pressed" from="Header_UI/New_Footer/HBoxContainer/Adventure/Button" to="." method="change_page" binds= [0]]
+[connection signal="pressed" from="Header_UI/New_Footer/HBoxContainer/Inventory/Button" to="." method="change_page" binds= [4]]
+[connection signal="pressed" from="Header_UI/New_Footer/HBoxContainer/Shop/Button" to="." method="change_page" binds= [5]]
 [connection signal="pressed" from="DailyReward_UI/Daily_Reward/Panel/Btn_ClaimDR" to="." method="on_daily_reward_claimed"]
