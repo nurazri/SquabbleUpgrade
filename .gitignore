@@ -11,6 +11,8 @@ export/
 export.cfg
 export_presets.cfg      # This was commented out — now active
 export_credentials.cfg
+editor_layout.cfg
+script_editor_cache
 
 # Temporary files
 *.tmp
