@@ -133,7 +133,7 @@ func _set_opponent(level) -> void:
 		if level >= Globals.OpponentList[i]["Min_Level"] \
 		and level <= Globals.OpponentList[i]["Max_Level"]:
 			_REQUIRED_POINT = Globals.OpponentList[i]["Point_Requirement"]
-			$BoardOpponent.set_name(Globals.OpponentList[i]["Name"])
+			#$BoardOpponent.set_name(Globals.OpponentList[i]["Name"]) #no need set name for now, if later have problem need to change
 			$BoardOpponent.set_avatar(
 				Globals.OpponentList[i]["Avatar"],
 				Globals.OpponentList[i]["Avatar_BG"]
@@ -266,7 +266,7 @@ func _start_scoring_animation(points: int, who: int, origin_x: float, origin_y: 
 	var get_anim_idx: int = 0
 	if who == Globals.LetterOwnership.BOARD_ME:
 		$Scoring_Me/Score.text = str(points)
-		get_anim_idx = $AnimationPlayer.get_animation("Scoring").find_track("Scoring_Me/Score:rect_position")
+		get_anim_idx = $AnimationPlayer.get_animation("Scoring").find_track("Scoring_Me/Score:rect_position",Animation.TYPE_VALUE)
 		$AnimationPlayer.get_animation("Scoring").track_set_key_value(get_anim_idx, 0, Vector2(origin_x + 25, origin_y - 150))
 		$AnimationPlayer.get_animation("Scoring").track_set_key_value(get_anim_idx, 1, Vector2(origin_x + 25, origin_y - 150))
 		$AnimationPlayer.get_animation("Scoring").track_set_key_value(get_anim_idx, 2, Vector2(origin_x - 15, origin_y - 247))
@@ -299,8 +299,6 @@ func _on_Spawner_letter_spawned(letter: Letter) -> void:
 	get_tree().call_group("boards", "connect_spawned_letter", letter)
 	letter.letter_picked.connect($BoardMe._on_letter_picked)
 	emit_signal("letter_spawned", letter)
-	print("[Pool] Letters remaining: " + str(WordList.get_spawned_letters_quantity_left()))
-
 
 func _on_Spawner_commands_finished() -> void:
 	_is_spawner_commands_finished = true

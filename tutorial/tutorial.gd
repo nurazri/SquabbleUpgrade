@@ -77,8 +77,8 @@ func start_gameplay_layer(pool: Node2D, commander: Node2D, board_me: Board, boar
 	match tutorial_part:
 		5: 
 			var dialog_manager = pool.get_node("EventManager/DialogLayer/DialogManager")
-			dialog_manager.avatar1.rect_position = Vector2(-1240, 880)
-			dialog_manager.avatar2.rect_position = Vector2(1240, 880)
+			dialog_manager.avatar1.position = Vector2(-1240, 880)
+			dialog_manager.avatar2.position = Vector2(1240, 880)
 		6, 7:
 			board_opponent.show_info()
 			board_opponent._score_target = score_requirement[tutorial_part]

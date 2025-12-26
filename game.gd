@@ -109,7 +109,7 @@ func _on_Pool_pool_started(mode: int, level: int = 0) -> void:
 			$Pool/BoardOpponent
 		)
 	else:
-		$Commander.start_game(mode, level)
+		$Commander.start(mode, level)
 
 
 func _on_Pool_pool_finished() -> void:
@@ -134,6 +134,7 @@ func _on_Pool_result_announced(
 	_longest_word,
 	_best_word
 ) -> void:
+	
 	if not $Pool/BoosterManager.return_event_type($Pool._ai_level) and $Pool._ai_level != 0:
 		$Pool/BoosterManager.check_consumed_booster()
 
@@ -152,7 +153,8 @@ func _on_Pool_result_announced(
 	if current_best_words.size() > 10:
 		current_best_words.resize(10)
 
-	GameLoader.set_save_data("best_word_list", current_best_words)
+	#GameLoader.set_save_data("best_word_list", current_best_words)
+	GameLoader.player_data["best_word_list"] = current_best_words
 
 	$Commander.stop()
 	GameLoader.save_game()

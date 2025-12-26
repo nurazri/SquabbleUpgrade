@@ -1,15 +1,38 @@
+# Build folders (your custom one + common exports)
 builds/
+export/
+
+# Godot 4+ specific ignores (VERY IMPORTANT)
+.godot/
+.nomedia
 
 # Godot-specific ignores
 .import/
-# export.cfg
-# export_presets.cfg
+export.cfg
+export_presets.cfg      # This was commented out — now active
+export_credentials.cfg
+editor_layout.cfg
+script_editor_cache
 
-# Mono-specific ignores
+# Temporary files
+*.tmp
+*.import
+
+# Imported translations (auto-generated)
+*.translation
+
+# Mono/C# specific
 .mono/
 data_*/
+mono_crash.*.json
 
-# Android-specific ignores
-android/build/.gradle/
-android/build/build/
-android/build/assets/
+# Android build artifacts
+android/build/
+android/.gradle/
+
+# OS-specific junk
+.DS_Store
+Thumbs.db
+
+# Optional: Editor/IDE settings (if you don't want to share them)
+.vscode/

@@ -420,7 +420,6 @@ func set_opponent_name(name: StringName) -> void:
 func _on_Snatch_pressed() -> void:
 	if $UI/Snatch.current == "snatch":
 		snatch_and_clear()
-		print("[Board] you pressed the snatch button!")
 
 
 func _on_Booster_Slot_booster_used(booster: int, level: int) -> void:

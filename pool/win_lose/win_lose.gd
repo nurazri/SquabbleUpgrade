@@ -50,8 +50,10 @@ func _save_progression_reward(achieved_stars: int, level: int) -> void:
 				_create_reward(reward_2star, reward_amount_2star, level_data["extra"])
 
 		if level != GameLoader.player_data["current_level"]:
+			print('first condition')
 			GameLoader.set_level_progression_data(level, achieved_stars, false)
 		else:
+			print('second condition')
 			GameLoader.set_level_progression_data(level, achieved_stars)
 
 func _create_reward(type, amount, extra: Dictionary = {}) -> void:
@@ -310,13 +312,25 @@ func _show_ads_if_condition() -> void:
 			_admob_counter %= _SHOW_ADS_EVERY
 			print("[AdMob] Showing ads every " + str(_SHOW_ADS_EVERY) + " time(s)")
 			
+#func _show_ads_now(ad_type: int = Appodeal.AdType.INTERSTITIAL) -> void:
+	#if not Appodeal.is_ad_loaded(ad_type):
+		#Appodeal.load_ad(ad_type)
+		#var wait_for: String = "interstitial_loaded"
+		#match ad_type:
+			#Appodeal.AdType.INTERSTITIAL:
+				#wait_for = "interstitial_loaded"
+			#Appodeal.AdType.REWARDED_VIDEO:
+				#wait_for = "rewarded_ad_loaded"
+		#await Appodeal.wait_for
+		
 func _show_ads_now(ad_type: int = Appodeal.AdType.INTERSTITIAL) -> void:
 	if not Appodeal.is_ad_loaded(ad_type):
 		Appodeal.load_ad(ad_type)
-		var wait_for: String = "interstitial_loaded"
+
 		match ad_type:
 			Appodeal.AdType.INTERSTITIAL:
-				wait_for = "interstitial_loaded"
+				await Appodeal.interstitial_loaded
 			Appodeal.AdType.REWARDED_VIDEO:
-				wait_for = "rewarded_ad_loaded"
-		await Appodeal.wait_for
+				await Appodeal.rewarded_ad_loaded
+
+	Appodeal.show_ad(ad_type)

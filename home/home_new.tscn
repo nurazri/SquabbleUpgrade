@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://w1eoax42jkcv"]
+[gd_scene load_steps=69 format=3 uid="uid://7xbx25i4hpsk"]
 
 [ext_resource type="Texture2D" uid="uid://oppvxqo3p0d7" path="res://home/new_textures/map/map_1.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://vrxbs1e3ocxn" path="res://home/new_textures/UI_header_banner.png" id="2"]
@@ -52,7 +52,7 @@
 [ext_resource type="Texture2D" uid="uid://diua75lakknq4" path="res://home/new_textures/character_indicator/Chrindicator_monkey.png" id="52"]
 
 [sub_resource type="FontFile" id="1"]
-fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4")])
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
@@ -63,7 +63,7 @@ cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 
 [sub_resource type="FontFile" id="2"]
-fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4")])
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
@@ -74,7 +74,7 @@ cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 
 [sub_resource type="FontFile" id="3"]
-fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4")])
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
@@ -85,7 +85,7 @@ cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 
 [sub_resource type="FontFile" id="5"]
-fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4")])
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
@@ -96,7 +96,7 @@ cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 
 [sub_resource type="FontFile" id="21"]
-fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4")])
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
@@ -110,7 +110,7 @@ cache/0/16/0/scale = 1.0
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="FontFile" id="13"]
-fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4")])
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
@@ -121,7 +121,7 @@ cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 
 [sub_resource type="FontFile" id="6"]
-fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4")])
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
@@ -138,7 +138,7 @@ bg_color = Color(0, 0, 0, 1)
 bg_color = Color(0, 0, 0, 0.588235)
 
 [sub_resource type="FontFile" id="14"]
-fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4")])
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
@@ -149,7 +149,7 @@ cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 
 [sub_resource type="FontFile" id="15"]
-fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4")])
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
@@ -160,7 +160,7 @@ cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 
 [sub_resource type="FontFile" id="16"]
-fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4")])
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
@@ -171,7 +171,7 @@ cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 
 [sub_resource type="FontFile" id="17"]
-fallbacks = Array[Font]([ExtResource("4"), ExtResource("4")])
+fallbacks = Array[Font]([ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4"), ExtResource("4")])
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
@@ -285,11 +285,9 @@ _data = {
 [node name="Home" type="Control"]
 custom_minimum_size = Vector2(946, 2048)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 946.0
+offset_bottom = 2048.0
 script = ExtResource("6")
 
 [node name="UI" type="Control" parent="."]

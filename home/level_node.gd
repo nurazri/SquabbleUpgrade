@@ -11,10 +11,16 @@ signal start_level
 @onready var highlight: TextureRect = $Level_Highlight
 @onready var glow: TextureRect = $Level_Glow
 @onready var rating: Control = $Clear_Rating
+@onready var star_fills: Array[Node] = [
+	rating.get_node("1_Star/Fill"),
+	rating.get_node("2_Star/Fill"),
+	rating.get_node("3_Star/Fill")
+]
 
 var this_level: int = 0
 
 func init(level, completion, star):
+	var grandparent = get_parent().get_parent()
 	if completion == 0:
 		base.texture = level_base_uncleared
 	if completion == 1: 
@@ -28,7 +34,12 @@ func init(level, completion, star):
 	rating.show() if completion == 2 else rating.hide()
 	
 	for i in star:
-		rating.get_node(str(i + 1) + "_Star/Fill").show()
+		print("i is: ", i)
+		if i < star:
+			star_fills[i].show()
+		else:
+			star_fills[i].hide()
+		#rating.get_node(str(i + 1) + "_Star/Fill").show()
 	this_level = level
 
 
