@@ -274,7 +274,18 @@ func _start_scoring_animation(points: int, who: int, origin_x: float, origin_y: 
 		$AnimationPlayer.play("Scoring")
 	if who == Globals.LetterOwnership.BOARD_OPPONENT:
 		$Scoring_Opponent/Score.text = str(points)
-		get_anim_idx = $AnimationPlayer2.get_animation("Scoring").find_track("Scoring_Opponent/Score:rect_position")
+		#get_anim_idx = $AnimationPlayer2.get_animation("Scoring").find_track("Scoring_Opponent/Score:rect_position")
+		
+		var anim: Animation = $AnimationPlayer2.get_animation("Scoring")
+		var track_path: NodePath = NodePath("Scoring_Opponent/Score:rect_position")
+
+		var get_anim_idx1: int = -1  # -1 means not found
+
+		for i in anim.get_track_count():
+			if anim.track_get_path(i) == track_path:
+				get_anim_idx1 = i
+				break
+		
 		$AnimationPlayer2.get_animation("Scoring").track_set_key_value(get_anim_idx, 0, Vector2(origin_x + 25, origin_y - 150))
 		$AnimationPlayer2.get_animation("Scoring").track_set_key_value(get_anim_idx, 1, Vector2(origin_x + 25, origin_y - 150))
 		$AnimationPlayer2.get_animation("Scoring").track_set_key_value(get_anim_idx, 2, Vector2(700, 100))
@@ -333,6 +344,7 @@ func _on_letters_snatched(from_who: int, spelled_word: String, longest_word: Str
 	$GameOverTimer.set_best_words(_best_word)
 	print("[Pool] longest word from " + str(from_who) + " is " + longest_word)
 	emit_signal("letters_snatched", from_who, longest_word, picked_letters, steal)
+	
 
 
 
@@ -492,3 +504,5 @@ func _on_Btn_SkipStage_pressed():
 				GameLoader.player_data["unlocked_booster_slot"][2] = 1
 			
 			GameLoader.set_level_progression_data(current_level, 1, true)
+			
+			

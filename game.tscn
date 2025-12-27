@@ -1,31 +1,32 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=7 format=3 uid="uid://c1trw8un0bcp7"]
 
-[ext_resource path="res://game.gd" type="Script" id=2]
-[ext_resource path="res://pool/pool.tscn" type="PackedScene" id=3]
-[ext_resource path="res://commander/commander.tscn" type="PackedScene" id=4]
-[ext_resource path="res://login/login.tscn" type="PackedScene" id=5]
-[ext_resource path="res://tutorial/tutorial.tscn" type="PackedScene" id=6]
-[ext_resource path="res://home/home_new.tscn" type="PackedScene" id=9]
+[ext_resource type="Script" uid="uid://bouqt7nxt0eq5" path="res://game.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://c3digrlm1ojd1" path="res://pool/pool.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://commander/commander.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://login/login.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://bn1rbtavtjybi" path="res://tutorial/tutorial.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://7xbx25i4hpsk" path="res://home/home_new.tscn" id="9"]
 
 [node name="Game" type="Node2D"]
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
+script = ExtResource("2")
 
-[node name="Home_New" parent="." instance=ExtResource( 9 )]
+[node name="Home_New" parent="." instance=ExtResource("9")]
 visible = false
 
-[node name="Pool" parent="." instance=ExtResource( 3 )]
+[node name="Pool" parent="." instance=ExtResource("3")]
 visible = false
 
-[node name="Commander" parent="." instance=ExtResource( 4 )]
+[node name="Commander" parent="." instance=ExtResource("4")]
 visible = false
 
-[node name="Tutorial" parent="." instance=ExtResource( 6 )]
+[node name="Tutorial" parent="." instance=ExtResource("6")]
 
-[node name="Login" parent="." instance=ExtResource( 5 )]
+[node name="Login" parent="." instance=ExtResource("5")]
 visible = false
+layout_mode = 3
+anchors_preset = 15
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="custom_game_started" from="Home_New" to="." method="_on_Home_custom_game_started"]
 [connection signal="game_started" from="Home_New" to="." method="_on_Home_game_started"]

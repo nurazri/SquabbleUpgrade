@@ -56,7 +56,8 @@ func _on_Timer_timeout() -> void:
 		if show_current_command:
 			print("[CommandInterpreter] current command: " + str(current_command))
 		
-		if interpret(current_command):
+		var interpretValue = interpret(current_command);
+		if interpretValue:
 			emit_signal("command_succeeded", current_command)
 		else:
 			emit_signal("command_failed", current_command)
@@ -70,10 +71,8 @@ func _on_Timer_timeout() -> void:
 				timer.wait_time = interval
 				timer.start()
 			else:
-#				print("[CommandInterpreter] commands interrupted!")
 				emit_signal("commands_interrupted")
 		else:
-#			print("[CommandInterpreter] commands finished!")
 			emit_signal("commands_finished")
 
 

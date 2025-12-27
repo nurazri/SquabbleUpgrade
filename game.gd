@@ -187,7 +187,6 @@ func _on_Login_login_checked(is_logged_in: bool = true) -> void:
 		$Tutorial.hide()
 		
 func _on_Pool_letters_snatched(from_who: int, longest_word: String, picked_letters: Array, steal: Array) -> void:
-	print("from game.gd tutorial.letters_snatched")
 	$Tutorial.letters_snatched(from_who, longest_word, picked_letters)
 	$Commander.letters_snatched(from_who, longest_word, picked_letters)
 	if from_who == 1:

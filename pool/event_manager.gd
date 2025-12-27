@@ -440,8 +440,12 @@ func initiate_event(level, step, init = false) -> void:
 					has_ended = true
 					_dialog_manager.enable_dialog_text(false)
 					emit_signal("start_stage")
-					_BoardOpponent.get_node("Tween").interpolate_property(_BoardOpponent.get_node("Background/Freeze_Effect"), "modulate", Color(1,1,1,1), Color(1,1,1,0), 0.5, Tween.TRANS_LINEAR)
-					_BoardOpponent.get_node("Tween").start()
+					var freeze_effect: Node = _BoardOpponent.get_node("Background/Freeze_Effect")  # or Sprite2D, ColorRect, etc.
+
+					freeze_effect.modulate = Color(1, 1, 1, 1)
+					var tween: Tween = _BoardOpponent.create_tween()
+					tween.tween_property(freeze_effect, "modulate", Color(1, 1, 1, 0), 0.5) \
+						.set_trans(Tween.TRANS_LINEAR)
 		14: #Third Encounter with Wallice, nothing special here except pre-init tiles
 			if init:
 				Audio.play_music(Audio.Music.MUSIC_HOME)
@@ -1251,8 +1255,10 @@ func reset_fake_boosters() -> void:
 
 func fake_booster_callback(_booster_set: int, _booster_level: int) -> void:
 	if this_level == 10:
-		_BoardOpponent.get_node("Tween").interpolate_property(_BoardOpponent.get_node("Background/Freeze_Effect"), "modulate", Color(1,1,1,0), Color(1,1,1,1), 0.15, Tween.TRANS_LINEAR)
-		_BoardOpponent.get_node("Tween").start()
+		var freeze_effect: TextureRect = _BoardOpponent.get_node("Background/Freeze_Effect")  # Adjust type if known (e.g., Sprite2D)
+		freeze_effect.modulate = Color(1, 1, 1, 0)
+		var tween: Tween = _BoardOpponent.create_tween()
+		tween.tween_property(freeze_effect, "modulate", Color(1, 1, 1, 1), 0.15).set_trans(Tween.TRANS_LINEAR)
 	
 	_progress_event()
 

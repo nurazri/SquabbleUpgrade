@@ -333,7 +333,9 @@ uppercase = true
 
 [node name="Snatch" parent="UI" instance=ExtResource("9")]
 layout_mode = 0
+anchor_left = 0.0
 anchor_top = 0.5
+anchor_right = 0.0
 anchor_bottom = 0.5
 offset_left = 275.0
 offset_top = 689.0
@@ -398,21 +400,31 @@ offset_bottom = 40.0
 
 [node name="Booster_Slot1" parent="UI/Booster" instance=ExtResource("22")]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 120.0
+offset_bottom = 120.0
 
 [node name="Booster_Slot2" parent="UI/Booster" instance=ExtResource("22")]
 layout_mode = 0
 offset_left = 155.0
+offset_top = 0.0
 offset_right = 275.0
+offset_bottom = 120.0
 
 [node name="Booster_Slot3" parent="UI/Booster" instance=ExtResource("22")]
 layout_mode = 0
 offset_left = 675.0
+offset_top = 0.0
 offset_right = 795.0
+offset_bottom = 120.0
 
 [node name="Booster_Slot4" parent="UI/Booster" instance=ExtResource("22")]
 layout_mode = 0
 offset_left = 810.0
+offset_top = 0.0
 offset_right = 930.0
+offset_bottom = 120.0
 
 [node name="Avatar" parent="." instance=ExtResource("5")]
 anchors_preset = 8

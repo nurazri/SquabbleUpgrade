@@ -61,7 +61,6 @@ func _spawn() -> void:
 		
 		var pool: Dictionary = WordList.get_spawned_letters_owned_by(Globals.LetterOwnership.POOL)
 		if  pool.size() < MAX_LETTERS_SPAWNED:
-			print("[Commander] Spawned letter!")
 			emit_signal("spawn_command", _spawn_command())
 		else:
 			emit_signal("spawn_command", false)

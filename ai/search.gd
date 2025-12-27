@@ -46,7 +46,6 @@ func search_words_to_respell(length: int, respell_array: Array, _respell_temp: D
 					_respell_next[n].clear()
 	
 	for letters in respell_array:
-		print("letters in err is: ",letters)
 		if WordList.spawned_letters[letters]["node"]._boost_protected:
 			respell_array.clear()
 			break

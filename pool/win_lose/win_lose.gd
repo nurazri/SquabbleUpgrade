@@ -334,3 +334,7 @@ func _show_ads_now(ad_type: int = Appodeal.AdType.INTERSTITIAL) -> void:
 				await Appodeal.rewarded_ad_loaded
 
 	Appodeal.show_ad(ad_type)
+	
+func _on_Btn_ReplayLevel_pressed() -> void:
+	_btn_is_pressed()
+	Analytics.log_event(Globals.Analytics.ALL, Analytics.EVENT_LEVEL_RETRIED, Analytics.level_params(get_tree().root.get_node("Game/Pool")._ai_level))
