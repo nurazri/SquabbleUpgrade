@@ -363,6 +363,8 @@ var _initial_global_position_y: float = 0.0
 
 var _boost_protected: bool = false
 
+var _move_tween: Tween
+
 # No persistent tween variables needed anymore
 # We create tweens on-demand in each function
 
@@ -431,101 +433,130 @@ func update_letter_positional_data() -> void:
 	WordList.spawned_letters[id]["rotation_degrees"] = global_rotation_degrees
 
 
-func move_to(target_position: Vector2, target_rotation: float, moved_to_whom: int, cell_index: int, holding_bar_condition: bool = false, skip_interpolate: bool = false, in_holding_bar: bool = false) -> void:
+func move_to(
+	target_position: Vector2,
+	target_rotation: float,
+	moved_to_whom: int,
+	cell_index: int,
+	holding_bar_condition: bool = false,
+	skip_interpolate: bool = false,
+	in_holding_bar: bool = false
+) -> void:
+
+	# Stop previous tween if running
+	if _is_moving and _move_tween and _move_tween.is_running():
+		_move_tween.kill()
+
+	# Update states
 	_in_holding_bar = in_holding_bar
 	_is_moving = true
-	$Tap.disabled = holding_bar_condition
-	get_parent().call_deferred("move_child", self, get_parent().get_child_count() - 1)
+	$Tap.button_pressed = holding_bar_condition
+	$Tap.disabled = true
+
+	# Bring to front
+	get_parent().call_deferred(
+		"move_child",
+		self,
+		get_parent().get_child_count() - 1
+	)
+
 	$PushInTimer.stop()
-		
+
+	# Play scoring animation if ownership changes
 	if WordList.spawned_letters[id]["owned_by"] != moved_to_whom:
 		$AnimParticle.play("Scoring")
 
-	# Save previous state
-	_prev_freeze_enabled = freeze
-	_prev_freeze_mode = freeze_mode
-
-	# Freeze the letter like MODE_STATIC
-	freeze_mode = RigidBody2D.FREEZE_MODE_STATIC
-	set_freeze_enabled(true)
-
-	if !holding_bar_condition:
-		_prev_freeze_enabled = freeze
-		_prev_freeze_mode = freeze_mode
-	
-	$Col.disabled = true
-	
+	# Update ownership info
 	WordList.spawned_letters[id]["owned_by"] = moved_to_whom
 	WordList.spawned_letters[id]["cell_index"] = cell_index
-	if WordList.spawned_letters[id]["owned_by"] == Globals.LetterOwnership.BOARD_OPPONENT:
+
+	if moved_to_whom == Globals.LetterOwnership.BOARD_OPPONENT:
 		_is_expiring = false
-	
+
+	# Set target
 	_target_position = target_position
-	
-	if not is_inside_tree():
-		await ready
 
-	var move_tween = create_tween()
-	move_tween.set_parallel(true) 
+	# Optional drop animation: start slightly above
+	var start_position = position
+	if not skip_interpolate:
+		start_position -= Vector2(0, 150)
+		position = start_position
 
-	var start_pos = global_position if (_skip_interpolate or skip_interpolate) else (global_position - Vector2.DOWN * 150)
+	# Create tween
+	_move_tween = create_tween()
+	_move_tween.set_parallel(true)
 
-	var pos_tweener = move_tween.tween_property(self, "global_position", start_pos, 0.2)
-	pos_tweener.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT)
+	# Tween position to target
+	_move_tween.tween_property(
+		self,
+		"position",
+		_target_position,
+		0.2
+	).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
-	var rot_tweener = move_tween.tween_property(self, "global_rotation_degrees", target_rotation, 1.0)
-	rot_tweener.set_trans(Tween.TRANS_BACK)
+	# Tween rotation
+	_move_tween.tween_property(
+		self,
+		"rotation_degrees",
+		target_rotation,
+		1.0
+	).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
-	move_tween.tween_callback(func():
-		var final_tween = create_tween()
-		final_tween.tween_property(self, "global_position", _target_position, 1.0) \
-			.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN_OUT)
-		final_tween.finished.connect(func():
-			$LetterSprite.position = Vector2(-2, 8)
-			emit_signal("letter_tweened")
-			_is_moving = false
-			update_letter_positional_data()
-			if not _forced_disable:
-				$Tap.disabled = false
-		)
-	)
+	# Connect finished signal
+	_move_tween.finished.connect(_on_move_finished)
 
-	$Tap.disabled = true
+
+func _on_move_finished() -> void:
+	# Snap exactly
+	position = _target_position
+	rotation_degrees = 0.0
+
+	_is_moving = false
+	$Tap.disabled = false
+
+
+
+func _physics_process(_delta):
+	if !_is_moving:
+		global_rotation = lerp_angle(global_rotation, 0.0, 0.25)
+
+
 
 
 func select(is_picked: bool = true, is_auto: bool = true) -> void:
-	# Freeze/unfreeze instead of changing mode
+	# Physics handling (GD3 MODE_STATIC replacement)
 	if is_picked:
-		# Save previous state
-		_prev_freeze_enabled = freeze
-		_prev_freeze_mode = freeze_mode
-		
-		freeze_mode = RigidBody2D.FREEZE_MODE_STATIC
-		set_freeze_enabled(true)
+		freeze = true
+		freeze_mode = RigidBody2D.FREEZE_MODE_KINEMATIC
 	else:
-		# Restore previous state
-		freeze_mode = _prev_freeze_mode
-		set_freeze_enabled(_prev_freeze_enabled)
+		freeze = false
 
-	# Emit appropriate signal
-	emit_signal("letter_autopicked" if is_auto else "letter_picked", id, is_picked)
+	# Emit correct signal
+	if is_auto:
+		emit_signal("letter_autopicked", id, is_picked)
+	else:
+		emit_signal("letter_picked", id, is_picked)
 
-	# Animation and held state
+	# Picked state
 	if is_picked:
 		$AnimTap.play("tap")
 		_is_held = true
+
+		# Cancel expiration while held
 		if _is_expiring:
 			_is_expiring = false
 
-		# Move letter to top of parent
+		# Bring to front
 		get_parent().call_deferred(
 			"move_child",
 			self,
 			get_parent().get_child_count() - 1
 		)
 	else:
+		# Released state
 		$AnimTap.play_backwards("tap")
 		_is_held = false
+
 
 
 func deselect(is_auto: bool=true) -> void:

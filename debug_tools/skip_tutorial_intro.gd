@@ -22,4 +22,3 @@ func _on_Timer_timeout() -> void:
 			visible = pool._mode == Globals.GameMode.TUTORIAL && not win_lose.visible 
 			if not Globals.GameMode.TUTORIAL:
 				visible = false
-

@@ -103,4 +103,3 @@ func _on_get_tree_resized() -> void:
 			load_rewarded()
 		if get_is_rewarded_interstitial_loaded():
 			load_rewarded_interstitial()
-
