@@ -9,6 +9,7 @@ func add_letter(this_letter) -> void:
 
 
 func remove_letter(this_letter_index: int) -> void:
+	print("remove letter")
 	var direction = [-1, 1] 
 	var get_direction = direction[randi() % direction.size()]
 	
