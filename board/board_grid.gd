@@ -213,7 +213,6 @@ func _tile_size() -> Vector2:
 	
 func _grid_to_world(cell_position: Vector2) -> Vector2:
 	var tile_size := _tile_size()
-	print("cell_position is: ",cell_position)
 	var local_pos := Vector2(
 		cell_position.x * tile_size.x + tile_size.x / 2,
 		cell_position.y * tile_size.y + tile_size.y / 2

@@ -185,15 +185,12 @@ func _on_GameLoader_game_saved() -> void:
 	var avatar: int = GameLoader.get_save_data("avatar") if GameLoader.has_method("get_save_data") else 0
 	set_avatar(avatar)
 	on_currency_changed()
-	print("on stage updated will be called")
 	on_stage_updated()
 	if has_node("Profile_Page"): $Profile_Page.on_Load()
 	if has_node("Inventory_Page"): $Inventory_Page.on_Load()
 
 func _on_GameLoader_achievement_saved() -> void:
-	print("signal received achievement")
 	if has_node("Achievement_Page"): 
-		print("achievement page reloading")
 		$Achievement_Page.reload()
 	if has_node("Profile_Page"): $Profile_Page.on_Load()
 	if has_node("Inventory_Page"): $Inventory_Page.on_Load()

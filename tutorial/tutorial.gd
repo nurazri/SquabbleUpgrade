@@ -96,7 +96,6 @@ func stop() -> void:
 
 
 func letters_snatched(from_who: int, longest_word: String, picked_letters: Array) -> void:
-	print("letter_snatched called?")
 	if visible:
 		if current[tutorial_part] != "tutorial":
 			await get_tree().create_timer(1.0).timeout

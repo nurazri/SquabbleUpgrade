@@ -50,10 +50,8 @@ func _save_progression_reward(achieved_stars: int, level: int) -> void:
 				_create_reward(reward_2star, reward_amount_2star, level_data["extra"])
 
 		if level != GameLoader.player_data["current_level"]:
-			print('first condition')
 			GameLoader.set_level_progression_data(level, achieved_stars, false)
 		else:
-			print('second condition')
 			GameLoader.set_level_progression_data(level, achieved_stars)
 
 func _create_reward(type, amount, extra: Dictionary = {}) -> void:

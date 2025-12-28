@@ -14,7 +14,6 @@ func reload() -> void:
 
 
 func spawn_data() -> void:
-	print("spawn data is called")
 	var vbox = achievement_container.get_node("VBoxContainer")
 	for a in GameLoader.achievement_data:
 		var achievement_object = _ScnAchievement.instantiate()
