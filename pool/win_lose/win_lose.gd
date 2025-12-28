@@ -81,7 +81,21 @@ func _create_reward(type, amount, extra: Dictionary = {}) -> void:
 					$Result_Win/RewardsBg/Holder/RewardContainer.add_child(reward_object)
 			else:
 				reward_object = _ScnResultReward.instantiate()
-				GameLoader.player_data["booster_owned"][str(extra["type"])][str(extra["tier"])] += 1
+				#GameLoader.player_data["booster_owned"][str(extra["type"])][str(extra["tier"])] += 1
+				
+				var type_key = str(extra["type"])
+				var tier_key = str(int(extra["tier"]))  # This turns 1 or 1.0 into "1"
+
+				# Safe increment with initialization
+				var booster_owned = GameLoader.player_data["booster_owned"]
+
+				# Ensure the type exists
+				if not booster_owned.has(type_key):
+					booster_owned[type_key] = {"1": 0, "2": 0, "3": 0}
+
+				# Increment safely
+				booster_owned[type_key][tier_key] = booster_owned[type_key].get(tier_key, 0) + 1
+
 				reward_object.init(amount, 1, extra)
 				$Result_Win/RewardsBg/Holder/RewardContainer.add_child(reward_object)
 

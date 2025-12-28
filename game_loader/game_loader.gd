@@ -73,8 +73,30 @@ func update_achievement_reward_status(key1: String, key2: String, key3: String, 
 func overwrite_achievement_value() -> void:
 	save_achievement()
 
+#func check_achievement_parity(data: Dictionary = achievement_data) -> void:
+	## Ensure all keys exist as in default
+	#for k in default_achievement_data.keys():
+		#if not data.has(k):
+			#data[k] = default_achievement_data[k].duplicate(true)
+		#else:
+			#for sub in default_achievement_data[k].keys():
+				#if not data[k].has(sub):
+					#data[k][sub] = default_achievement_data[k][sub]
+	## Remove extra keys
+	#for k in data.keys():
+		#if not default_achievement_data.has(k):
+			#data.erase(k)
+	#achievement_data = data
+	##save_achievement()
+	
+var _checking_parity: bool = false
+
 func check_achievement_parity(data: Dictionary = achievement_data) -> void:
-	# Ensure all keys exist as in default
+	if _checking_parity:
+		return  # Prevent re-entry
+	_checking_parity = true
+
+	# ... your existing fixing logic ...
 	for k in default_achievement_data.keys():
 		if not data.has(k):
 			data[k] = default_achievement_data[k].duplicate(true)
@@ -82,12 +104,15 @@ func check_achievement_parity(data: Dictionary = achievement_data) -> void:
 			for sub in default_achievement_data[k].keys():
 				if not data[k].has(sub):
 					data[k][sub] = default_achievement_data[k][sub]
-	# Remove extra keys
+
 	for k in data.keys():
 		if not default_achievement_data.has(k):
 			data.erase(k)
+
 	achievement_data = data
 	save_achievement()
+
+	_checking_parity = false
 
 func clear_achievement() -> void:
 	achievement_data = default_achievement_data.duplicate(true)
@@ -213,3 +238,6 @@ func get_save_data(key: String):
 	if player_data.has(key):
 		return player_data[key]
 	return null
+
+func set_save_data(key: String, value) -> void:
+	player_data[key] = value

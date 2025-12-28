@@ -1,12 +1,10 @@
-extends Control
+extends Page
 
 signal ResetSelectedAvatar
 signal UpdateAllBooster
 
 @export var _ScnAvatarSelect: PackedScene
 @export var _ScnBoosterInfo: PackedScene
-
-var extra_params: String = ""
 
 func on_Load() -> void:
 	_load_inventory_info()

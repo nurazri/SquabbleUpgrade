@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b2l0uou17pf7h" path="res://home/new_textures/character_indicator/Chrindicator_wombat.png" id="5"]
 [ext_resource type="Script" uid="uid://wqbpuccs6gqv" path="res://home/home_new.gd" id="6"]
 [ext_resource type="Texture2D" uid="uid://xkbgyhbmo2rr" path="res://home/new_textures/UI_Chrindicator.png" id="7"]
-[ext_resource type="PackedScene" path="res://home/level_node.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://vjjlybwc1kx7" path="res://home/level_node.tscn" id="8"]
 [ext_resource type="Texture2D" uid="uid://k0not2ce01fc" path="res://home/new_textures/map/map_3.png" id="9"]
 [ext_resource type="Texture2D" uid="uid://ym8xmqrpl1q1" path="res://home/new_textures/map/map_2.png" id="10"]
 [ext_resource type="Texture2D" uid="uid://dul2spu4fq7gx" path="res://home/new_textures/map/map_4.png" id="11"]
@@ -42,7 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://clgsrxcdlh2ob" path="res://home/new_textures/UI_header_profile.png" id="42"]
 [ext_resource type="Texture2D" uid="uid://db0lfd7iktiup" path="res://home/new_textures/UI_townbanner.png" id="43"]
 [ext_resource type="Texture2D" uid="uid://bpylh46on46xc" path="res://home/new_textures/UI_footer_nonselected.png" id="44"]
-[ext_resource type="PackedScene" path="res://achievement/achievement_page.tscn" id="45"]
+[ext_resource type="PackedScene" uid="uid://bk8klrdlu5a4v" path="res://achievement/achievement_page.tscn" id="45"]
 [ext_resource type="PackedScene" path="res://profile/profile_page.tscn" id="46"]
 [ext_resource type="Texture2D" uid="uid://cf818obmfsrgt" path="res://home/new_textures/UI_footer_singlematch.png" id="47"]
 [ext_resource type="Texture2D" uid="uid://bqlm83wad3rrj" path="res://home/new_textures/UI_footer_shop.png" id="48"]
@@ -375,148 +375,180 @@ anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="Level_Node103" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -17.2795
 offset_top = 1560.2
 offset_right = 221.72
 offset_bottom = 1693.2
+grow_horizontal = 2
 
 [node name="Level_Node104" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -80.6602
 offset_top = 1412.04
 offset_right = 158.34
 offset_bottom = 1545.03
+grow_horizontal = 2
 
 [node name="Level_Node105" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -120.586
 offset_top = 1262.45
 offset_right = 118.414
 offset_bottom = 1395.45
+grow_horizontal = 2
 
 [node name="Level_Node106" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -131.987
 offset_top = 1108.94
 offset_right = 107.013
 offset_bottom = 1241.94
+grow_horizontal = 2
 
 [node name="Level_Node107" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -127.798
 offset_top = 960.995
 offset_right = 111.201
 offset_bottom = 1093.99
+grow_horizontal = 2
 
 [node name="Level_Node108" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -118.242
 offset_top = 824.951
 offset_right = 120.758
 offset_bottom = 957.948
+grow_horizontal = 2
 
 [node name="Level_Node109" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 100.118
 offset_top = 784.473
 offset_right = 339.118
 offset_bottom = 917.476
+grow_horizontal = 2
 
 [node name="Level_Node110" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 258.059
 offset_top = 675.714
 offset_right = 497.059
 offset_bottom = 808.715
+grow_horizontal = 2
 
 [node name="Level_Node111" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 276.985
 offset_top = 533.152
 offset_right = 515.985
 offset_bottom = 666.153
+grow_horizontal = 2
 
 [node name="Level_Node112" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 230.987
 offset_top = 407.859
 offset_right = 469.987
 offset_bottom = 540.859
+grow_horizontal = 2
 
 [node name="Level_Node113" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 120.989
 offset_top = 297.264
 offset_right = 359.989
 offset_bottom = 430.264
+grow_horizontal = 2
 
 [node name="Level_Node114" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -68.658
 offset_top = 246.179
 offset_right = 170.342
 offset_bottom = 379.179
+grow_horizontal = 2
 
 [node name="Level_Node115" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -295.556
 offset_top = 233.672
 offset_right = -56.5567
 offset_bottom = 366.672
+grow_horizontal = 2
 
 [node name="Level_Node116" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -439.855
 offset_top = 365.206
 offset_right = -200.855
 offset_bottom = 498.207
+grow_horizontal = 2
 
 [node name="Level_Node117" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -498.004
 offset_top = 519.476
 offset_right = -259.004
 offset_bottom = 652.477
+grow_horizontal = 2
 
 [node name="Level_Node118" parent="ScrollContainer/VBoxContainer/Background9/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -463.323
 offset_top = 674.295
 offset_right = -224.323
 offset_bottom = 807.295
+grow_horizontal = 2
 
 [node name="Background8" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(946, 1682)
@@ -533,130 +565,158 @@ anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="Level_Node89" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -355.086
 offset_top = 1569.3
 offset_right = -116.086
 offset_bottom = 1702.3
+grow_horizontal = 2
 
 [node name="Level_Node90" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -330.603
 offset_top = 1429.75
 offset_right = -91.604
 offset_bottom = 1562.75
+grow_horizontal = 2
 
 [node name="Level_Node91" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -172.062
 offset_top = 1321.89
 offset_right = 66.9382
 offset_bottom = 1454.89
+grow_horizontal = 2
 
 [node name="Level_Node92" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 4.73123
 offset_top = 1225.43
 offset_right = 243.732
 offset_bottom = 1358.43
+grow_horizontal = 2
 
 [node name="Level_Node93" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 52.3604
 offset_top = 1081.82
 offset_right = 291.361
 offset_bottom = 1214.82
+grow_horizontal = 2
 
 [node name="Level_Node94" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -44.9519
 offset_top = 955.609
 offset_right = 194.047
 offset_bottom = 1088.61
+grow_horizontal = 2
 
 [node name="Level_Node95" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -207.498
 offset_top = 828.68
 offset_right = 31.5022
 offset_bottom = 961.678
+grow_horizontal = 2
 
 [node name="Level_Node96" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -219.567
 offset_top = 693.201
 offset_right = 19.4331
 offset_bottom = 826.202
+grow_horizontal = 2
 
 [node name="Level_Node97" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -81.7921
 offset_top = 569.419
 offset_right = 157.208
 offset_bottom = 702.42
+grow_horizontal = 2
 
 [node name="Level_Node98" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 62.4824
 offset_top = 453.895
 offset_right = 301.482
 offset_bottom = 586.896
+grow_horizontal = 2
 
 [node name="Level_Node99" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -22.6519
 offset_top = 311.128
 offset_right = 216.348
 offset_bottom = 444.128
+grow_horizontal = 2
 
 [node name="Level_Node100" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -213.199
 offset_top = 247.106
 offset_right = 25.8016
 offset_bottom = 380.107
+grow_horizontal = 2
 
 [node name="Level_Node101" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -264.384
 offset_top = 107.059
 offset_right = -25.384
 offset_bottom = 240.059
+grow_horizontal = 2
 
 [node name="Level_Node102" parent="ScrollContainer/VBoxContainer/Background8/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -121.411
 offset_top = -3.69393
 offset_right = 117.589
 offset_bottom = 129.306
+grow_horizontal = 2
 
 [node name="Icon_List" type="Control" parent="ScrollContainer/VBoxContainer/Background8"]
 anchors_preset = 0
@@ -699,112 +759,136 @@ anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="Level_Node77" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -109.017
 offset_top = 1547.73
 offset_right = 129.983
 offset_bottom = 1680.73
+grow_horizontal = 2
 
 [node name="Level_Node78" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -79.7855
 offset_top = 1402.42
 offset_right = 159.215
 offset_bottom = 1535.41
+grow_horizontal = 2
 
 [node name="Level_Node79" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -83.4758
 offset_top = 1200.78
 offset_right = 155.525
 offset_bottom = 1333.78
+grow_horizontal = 2
 
 [node name="Level_Node80" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -144.546
 offset_top = 1070.38
 offset_right = 94.4536
 offset_bottom = 1203.38
+grow_horizontal = 2
 
 [node name="Level_Node81" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -314.425
 offset_top = 973.713
 offset_right = -75.4257
 offset_bottom = 1106.71
+grow_horizontal = 2
 
 [node name="Level_Node82" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -458.608
 offset_top = 852.031
 offset_right = -219.608
 offset_bottom = 985.029
+grow_horizontal = 2
 
 [node name="Level_Node83" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -397.062
 offset_top = 703.039
 offset_right = -158.062
 offset_bottom = 836.039
+grow_horizontal = 2
 
 [node name="Level_Node84" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -225.833
 offset_top = 608.056
 offset_right = 13.1665
 offset_bottom = 741.056
+grow_horizontal = 2
 
 [node name="Level_Node85" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -95.3256
 offset_top = 493.289
 offset_right = 143.674
 offset_bottom = 626.289
+grow_horizontal = 2
 
 [node name="Level_Node86" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -124.176
 offset_top = 346.236
 offset_right = 114.824
 offset_bottom = 479.237
+grow_horizontal = 2
 
 [node name="Level_Node87" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -202.264
 offset_top = 204.856
 offset_right = 36.736
 offset_bottom = 337.856
+grow_horizontal = 2
 
 [node name="Level_Node88" parent="ScrollContainer/VBoxContainer/Background7/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -281.157
 offset_top = 60.3178
 offset_right = -42.157
 offset_bottom = 193.318
+grow_horizontal = 2
 
 [node name="Icon_List" type="Control" parent="ScrollContainer/VBoxContainer/Background7"]
 anchors_preset = 0
@@ -867,139 +951,169 @@ anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="Level_Node62" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -450.07
 offset_top = 1527.84
 offset_right = -211.07
 offset_bottom = 1660.84
+grow_horizontal = 2
 
 [node name="Level_Node63" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -380.029
 offset_top = 1381.42
 offset_right = -141.03
 offset_bottom = 1514.42
+grow_horizontal = 2
 
 [node name="Level_Node64" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -216.208
 offset_top = 1277.37
 offset_right = 22.7922
 offset_bottom = 1410.37
+grow_horizontal = 2
 
 [node name="Level_Node65" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -3.61945
 offset_top = 1251.06
 offset_right = 235.381
 offset_bottom = 1384.06
+grow_horizontal = 2
 
 [node name="Level_Node66" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 168.65
 offset_top = 1150.4
 offset_right = 407.65
 offset_bottom = 1283.4
+grow_horizontal = 2
 
 [node name="Level_Node67" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 212.83
 offset_top = 1008.3
 offset_right = 451.829
 offset_bottom = 1141.3
+grow_horizontal = 2
 
 [node name="Level_Node68" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 210.736
 offset_top = 876.157
 offset_right = 449.736
 offset_bottom = 1009.16
+grow_horizontal = 2
 
 [node name="Level_Node69" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 197.077
 offset_top = 666.116
 offset_right = 436.078
 offset_bottom = 799.116
+grow_horizontal = 2
 
 [node name="Level_Node70" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 106.62
 offset_top = 540.365
 offset_right = 345.62
 offset_bottom = 673.365
+grow_horizontal = 2
 
 [node name="Level_Node71" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -89.4602
 offset_top = 495.372
 offset_right = 149.54
 offset_bottom = 628.372
+grow_horizontal = 2
 
 [node name="Level_Node72" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -318.807
 offset_top = 485.314
 offset_right = -79.8071
 offset_bottom = 618.314
+grow_horizontal = 2
 
 [node name="Level_Node73" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -433.059
 offset_top = 375.596
 offset_right = -194.059
 offset_bottom = 508.596
+grow_horizontal = 2
 
 [node name="Level_Node74" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -446.833
 offset_top = 226.321
 offset_right = -207.832
 offset_bottom = 359.321
+grow_horizontal = 2
 
 [node name="Level_Node75" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -421.185
 offset_top = 74.9588
 offset_right = -182.185
 offset_bottom = 207.96
+grow_horizontal = 2
 
 [node name="Level_Node76" parent="ScrollContainer/VBoxContainer/Background6/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -292.623
 offset_top = -36.1448
 offset_right = -53.6232
 offset_bottom = 96.8557
+grow_horizontal = 2
 
 [node name="Icon_List" type="Control" parent="ScrollContainer/VBoxContainer/Background6"]
 anchors_preset = 0
@@ -1084,130 +1198,158 @@ anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="Level_Node48" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -159.088
 offset_top = 1570.99
 offset_right = 79.9123
 offset_bottom = 1703.99
+grow_horizontal = 2
 
 [node name="Level_Node49" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -285.48
 offset_top = 1448.49
 offset_right = -46.4796
 offset_bottom = 1581.49
+grow_horizontal = 2
 
 [node name="Level_Node50" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -351.243
 offset_top = 1297.49
 offset_right = -112.243
 offset_bottom = 1430.49
+grow_horizontal = 2
 
 [node name="Level_Node51" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -289.275
 offset_top = 1151.52
 offset_right = -50.2745
 offset_bottom = 1284.52
+grow_horizontal = 2
 
 [node name="Level_Node52" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -128.984
 offset_top = 1043.6
 offset_right = 110.017
 offset_bottom = 1176.6
+grow_horizontal = 2
 
 [node name="Level_Node53" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 34.6922
 offset_top = 947.17
 offset_right = 273.692
 offset_bottom = 1080.17
+grow_horizontal = 2
 
 [node name="Level_Node54" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 151.271
 offset_top = 828.892
 offset_right = 390.27
 offset_bottom = 961.89
+grow_horizontal = 2
 
 [node name="Level_Node55" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 161.336
 offset_top = 686.958
 offset_right = 400.336
 offset_bottom = 819.958
+grow_horizontal = 2
 
 [node name="Level_Node56" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 64.9614
 offset_top = 565.348
 offset_right = 303.961
 offset_bottom = 698.348
+grow_horizontal = 2
 
 [node name="Level_Node57" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -85.9933
 offset_top = 474.258
 offset_right = 153.007
 offset_bottom = 607.259
+grow_horizontal = 2
 
 [node name="Level_Node58" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -239.424
 offset_top = 392.907
 offset_right = -0.423584
 offset_bottom = 525.907
+grow_horizontal = 2
 
 [node name="Level_Node59" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -412.27
 offset_top = 298.579
 offset_right = -173.27
 offset_bottom = 431.58
+grow_horizontal = 2
 
 [node name="Level_Node60" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -464.111
 offset_top = 161.279
 offset_right = -225.111
 offset_bottom = 294.279
+grow_horizontal = 2
 
 [node name="Level_Node61" parent="ScrollContainer/VBoxContainer/Background5/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -467.873
 offset_top = 1.10873
 offset_right = -228.873
 offset_bottom = 134.109
+grow_horizontal = 2
 
 [node name="Background4" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(946, 1682)
@@ -1224,94 +1366,114 @@ anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="Level_Node38" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -73.2348
 offset_top = 1508.52
 offset_right = 165.765
 offset_bottom = 1641.52
+grow_horizontal = 2
 
 [node name="Level_Node39" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -102.856
 offset_top = 1311.21
 offset_right = 136.144
 offset_bottom = 1444.21
+grow_horizontal = 2
 
 [node name="Level_Node40" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -93.0277
 offset_top = 1158.09
 offset_right = 145.972
 offset_bottom = 1291.09
+grow_horizontal = 2
 
 [node name="Level_Node41" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -4.70276
 offset_top = 985.728
 offset_right = 234.297
 offset_bottom = 1118.73
+grow_horizontal = 2
 
 [node name="Level_Node42" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 17.8484
 offset_top = 813.755
 offset_right = 256.849
 offset_bottom = 946.752
+grow_horizontal = 2
 
 [node name="Level_Node43" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -49.5699
 offset_top = 668.98
 offset_right = 189.431
 offset_bottom = 801.98
+grow_horizontal = 2
 
 [node name="Level_Node44" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -173.104
 offset_top = 520.373
 offset_right = 65.8958
 offset_bottom = 653.373
+grow_horizontal = 2
 
 [node name="Level_Node45" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -178.9
 offset_top = 377.418
 offset_right = 60.0991
 offset_bottom = 510.418
+grow_horizontal = 2
 
 [node name="Level_Node46" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -111.906
 offset_top = 205.904
 offset_right = 127.094
 offset_bottom = 338.904
+grow_horizontal = 2
 
 [node name="Level_Node47" parent="ScrollContainer/VBoxContainer/Background4/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -79.9937
 offset_top = 30.7899
 offset_right = 159.006
 offset_bottom = 163.79
+grow_horizontal = 2
 
 [node name="Icon_List" type="Control" parent="ScrollContainer/VBoxContainer/Background4"]
 anchors_preset = 0
@@ -1352,112 +1514,136 @@ anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="Level_Node26" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -117.459
 offset_top = 1486.55
 offset_right = 121.541
 offset_bottom = 1619.55
+grow_horizontal = 2
 
 [node name="Level_Node27" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -122.587
 offset_top = 1336.66
 offset_right = 116.413
 offset_bottom = 1469.66
+grow_horizontal = 2
 
 [node name="Level_Node28" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -120.268
 offset_top = 1195.18
 offset_right = 118.732
 offset_bottom = 1328.18
+grow_horizontal = 2
 
 [node name="Level_Node29" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 109.464
 offset_top = 869.767
 offset_right = 348.465
 offset_bottom = 1002.77
+grow_horizontal = 2
 
 [node name="Level_Node30" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 204.812
 offset_top = 731.066
 offset_right = 443.812
 offset_bottom = 864.066
+grow_horizontal = 2
 
 [node name="Level_Node31" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 225.761
 offset_top = 560.774
 offset_right = 464.761
 offset_bottom = 693.775
+grow_horizontal = 2
 
 [node name="Level_Node32" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 116.099
 offset_top = 420.611
 offset_right = 355.098
 offset_bottom = 553.611
+grow_horizontal = 2
 
 [node name="Level_Node33" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -83.5269
 offset_top = 347.6
 offset_right = 155.473
 offset_bottom = 480.6
+grow_horizontal = 2
 
 [node name="Level_Node34" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -311.769
 offset_top = 328.743
 offset_right = -72.769
 offset_bottom = 461.743
+grow_horizontal = 2
 
 [node name="Level_Node35" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -422.386
 offset_top = 200.206
 offset_right = -183.386
 offset_bottom = 333.206
+grow_horizontal = 2
 
 [node name="Level_Node36" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -342.922
 offset_top = 66.9972
 offset_right = -103.922
 offset_bottom = 199.997
+grow_horizontal = 2
 
 [node name="Level_Node37" parent="ScrollContainer/VBoxContainer/Background3/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -128.972
 offset_top = -13.3046
 offset_right = 110.028
 offset_bottom = 119.695
+grow_horizontal = 2
 
 [node name="Background2" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(946, 1682)
@@ -1498,130 +1684,158 @@ anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="Level_Node12" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -209.803
 offset_top = 1548.42
 offset_right = 29.1971
 offset_bottom = 1681.42
+grow_horizontal = 2
 
 [node name="Level_Node13" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -10.0399
 offset_top = 1467.07
 offset_right = 228.96
 offset_bottom = 1600.07
+grow_horizontal = 2
 
 [node name="Level_Node14" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 78.7209
 offset_top = 1333.01
 offset_right = 317.721
 offset_bottom = 1466.01
+grow_horizontal = 2
 
 [node name="Level_Node15" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -26.4668
 offset_top = 1200.06
 offset_right = 212.533
 offset_bottom = 1333.06
+grow_horizontal = 2
 
 [node name="Level_Node16" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -194.055
 offset_top = 1104.92
 offset_right = 44.9453
 offset_bottom = 1237.92
+grow_horizontal = 2
 
 [node name="Level_Node17" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -320.016
 offset_top = 986.245
 offset_right = -81.0162
 offset_bottom = 1119.24
+grow_horizontal = 2
 
 [node name="Level_Node18" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -304.971
 offset_top = 840.013
 offset_right = -65.9711
 offset_bottom = 973.016
+grow_horizontal = 2
 
 [node name="Level_Node19" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -119.229
 offset_top = 730.467
 offset_right = 119.771
 offset_bottom = 863.467
+grow_horizontal = 2
 
 [node name="Level_Node20" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 83.4215
 offset_top = 665.763
 offset_right = 322.422
 offset_bottom = 798.763
+grow_horizontal = 2
 
 [node name="Level_Node21" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 112.827
 offset_top = 520.438
 offset_right = 351.827
 offset_bottom = 653.438
+grow_horizontal = 2
 
 [node name="Level_Node22" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 38.2616
 offset_top = 382.999
 offset_right = 277.261
 offset_bottom = 515.999
+grow_horizontal = 2
 
 [node name="Level_Node23" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -50.5236
 offset_top = 249.132
 offset_right = 188.476
 offset_bottom = 382.132
+grow_horizontal = 2
 
 [node name="Level_Node24" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -110.585
 offset_top = 101.869
 offset_right = 128.415
 offset_bottom = 234.869
+grow_horizontal = 2
 
 [node name="Level_Node25" parent="ScrollContainer/VBoxContainer/Background2/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -120.474
 offset_top = -43.0415
 offset_right = 118.526
 offset_bottom = 89.9585
+grow_horizontal = 2
 
 [node name="Background1" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(946, 1682)
@@ -1680,103 +1894,125 @@ anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="Level_Node1" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -45.264
 offset_top = 1358.25
 offset_right = 193.736
 offset_bottom = 1491.25
+grow_horizontal = 2
 
 [node name="Level_Node2" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -276.538
 offset_top = 1303.53
 offset_right = -37.5381
 offset_bottom = 1436.53
+grow_horizontal = 2
 
 [node name="Level_Node3" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -437.572
 offset_top = 1161.83
 offset_right = -198.572
 offset_bottom = 1294.83
+grow_horizontal = 2
 
 [node name="Level_Node4" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -431.807
 offset_top = 952.914
 offset_right = -192.807
 offset_bottom = 1085.91
+grow_horizontal = 2
 
 [node name="Level_Node5" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -227.73
 offset_top = 842.842
 offset_right = 11.2706
 offset_bottom = 975.843
+grow_horizontal = 2
 
 [node name="Level_Node6" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -25.7762
 offset_top = 730.759
 offset_right = 213.224
 offset_bottom = 863.76
+grow_horizontal = 2
 
 [node name="Level_Node7" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 94.0939
 offset_top = 530.288
 offset_right = 333.094
 offset_bottom = 663.288
+grow_horizontal = 2
 
 [node name="Level_Node8" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -43.763
 offset_top = 384.501
 offset_right = 195.237
 offset_bottom = 517.501
+grow_horizontal = 2
 
 [node name="Level_Node9" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -246.512
 offset_top = 288.492
 offset_right = -7.51199
 offset_bottom = 421.492
+grow_horizontal = 2
 
 [node name="Level_Node10" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -374.194
 offset_top = 150.689
 offset_right = -135.194
 offset_bottom = 283.689
+grow_horizontal = 2
 
 [node name="Level_Node11" parent="ScrollContainer/VBoxContainer/Background1/Level_List" instance=ExtResource("8")]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -348.708
 offset_top = -15.2601
 offset_right = -109.708
 offset_bottom = 117.739
+grow_horizontal = 2
 
 [node name="Cloud_List" type="Control" parent="ScrollContainer"]
 layout_mode = 2
@@ -1908,7 +2144,12 @@ anchors_preset = 0
 
 [node name="Achievement_Page" parent="." instance=ExtResource("45")]
 visible = false
+layout_mode = 0
 anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 946.0
+offset_bottom = 2048.0
 
 [node name="Profile_Page" parent="." instance=ExtResource("46")]
 visible = false

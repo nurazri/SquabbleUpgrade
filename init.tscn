@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://cvnmcauywdd25"]
 
 [ext_resource type="Script" uid="uid://cjc3spql84c2g" path="res://init.gd" id="1"]
-[ext_resource type="PackedScene" path="res://game.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://c1trw8un0bcp7" path="res://game.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://btohijdadwy4b" path="res://gameka_splash_dark.png" id="3"]
 [ext_resource type="FontFile" uid="uid://drreivkewy5io" path="res://fonts/Gretaros-Regular.ttf" id="4"]
 [ext_resource type="PackedScene" path="res://mobile/google_play_version_checker.tscn" id="5"]

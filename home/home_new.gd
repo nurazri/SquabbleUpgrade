@@ -187,13 +187,16 @@ func _on_GameLoader_game_saved() -> void:
 	on_currency_changed()
 	print("on stage updated will be called")
 	on_stage_updated()
-	if has_node("$Profile_Page"): $Profile_Page.on_Load()
-	if has_node("$Inventory_Page"): $Inventory_Page.on_Load()
+	if has_node("Profile_Page"): $Profile_Page.on_Load()
+	if has_node("Inventory_Page"): $Inventory_Page.on_Load()
 
 func _on_GameLoader_achievement_saved() -> void:
-	if has_node("$Achievement_Page"): $Achievement_Page.reload()
-	if has_node("$Profile_Page"): $Profile_Page.on_Load()
-	if has_node("$Inventory_Page"): $Inventory_Page.on_Load()
+	print("signal received achievement")
+	if has_node("Achievement_Page"): 
+		print("achievement page reloading")
+		$Achievement_Page.reload()
+	if has_node("Profile_Page"): $Profile_Page.on_Load()
+	if has_node("Inventory_Page"): $Inventory_Page.on_Load()
 
 # --------------------------------------------------
 # CURRENCY
@@ -222,7 +225,6 @@ func on_stage_updated() -> void:
 			push_error("Missing node: " + level_list_path)
 			continue
 
-		print("global current level limit is: ",Globals.currentLevelLimit)
 		for level_button in get_node(level_list_path).get_children():
 			if this_level > Globals.currentLevelLimit:
 				level_button.init(this_level, 0, 0)
@@ -233,7 +235,6 @@ func on_stage_updated() -> void:
 					level_button.init(this_level, 0, 0)
 				else:
 					var progress: Dictionary = GameLoader.player_data["level_progression"][str(this_level)]
-					print("progress is: ", progress)
 					level_button.init(
 						this_level,
 						progress["completion"],

@@ -206,13 +206,14 @@ func update_points() -> void:
 func _tile_size() -> Vector2:
 	if tile_set:
 		return tile_set.tile_size
-	return Vector2(64, 64)
+	return Vector2(98, 114)
 
 #func _grid_to_world(cell_position: Vector2) -> Vector2:
 	#return map_to_local(cell_position) + _tile_size() / 2
 	
 func _grid_to_world(cell_position: Vector2) -> Vector2:
 	var tile_size := _tile_size()
+	print("cell_position is: ",cell_position)
 	var local_pos := Vector2(
 		cell_position.x * tile_size.x + tile_size.x / 2,
 		cell_position.y * tile_size.y + tile_size.y / 2
@@ -263,21 +264,27 @@ func _update_cells_empty(who_am_i: int = _who_am_i) -> void:
 			var cell: Dictionary = _cells[idx] as Dictionary
 			cell["empty"] = false
 
-
+	
 func _next_insert_index(letters: Array) -> bool:
 	var length: int = letters.size()
 
 	for c in _cells.keys():
-		var end: int = c + length
-		if end > _cells.size():
+		var is_first_column: bool = int(_cells[c]["cell_position"].x) == 0
+		var check_start: int = c if is_first_column else c - 1
+		var check_end: int = c + length
+
+		if check_start < 0 or check_end > _cells.size():
 			continue
 
-		var row: int = (_cells[c]["cell_position"] as Vector2).y
+		var row: float = _cells[check_start]["cell_position"].y
 		var valid: bool = true
 
-		for i in range(c, end):
-			var cell_row: int = (_cells[i]["cell_position"] as Vector2).y
-			if not (_cells[i]["empty"] as bool) or cell_row != row:
+		for i in range(check_start, check_end):
+			if not _cells[i]["empty"]:
+				valid = false
+				break
+
+			if _cells[i]["cell_position"].y != row:
 				valid = false
 				break
 
@@ -286,7 +293,6 @@ func _next_insert_index(letters: Array) -> bool:
 			return true
 
 	return false
-
 
 func _insert_letters(letters: Array, who_am_i: int = _who_am_i, max_index: int = 50) -> void:
 	var _get_middle_length: int = letters.size() / 2

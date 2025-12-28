@@ -13,11 +13,12 @@ func send_page_update(coin, diamond) -> void:
 	emit_signal("on_update", coin, diamond)
 
 
-func return_page(pass_in_func: FuncRef = null, finalize: bool = true) -> void:
-	if pass_in_func != null:
-		pass_in_func.call_func()
-	if !finalize:
+func return_page(pass_in_func: Callable = Callable(), finalize: bool = true) -> void:
+	if not pass_in_func.is_null():
+		pass_in_func.call()
+
+	if not finalize:
 		return
-	
+
 	hide()
 	emit_signal("on_return")

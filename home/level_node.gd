@@ -34,7 +34,6 @@ func init(level, completion, star):
 	rating.show() if completion == 2 else rating.hide()
 	
 	for i in star:
-		print("i is: ", i)
 		if i < star:
 			star_fills[i].show()
 		else:

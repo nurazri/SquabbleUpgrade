@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dieqd1qxrig7j"]
+[gd_scene load_steps=26 format=3 uid="uid://dieqd1qxrig7j"]
 
 [ext_resource type="Script" uid="uid://wll5wwsj4gtl" path="res://board/board_grid.gd" id="1"]
 [ext_resource type="Script" uid="uid://yvwp0b8y1two" path="res://board/board.gd" id="2"]
@@ -13,7 +13,6 @@
 [ext_resource type="FontFile" uid="uid://drreivkewy5io" path="res://fonts/Gretaros-Regular.ttf" id="11"]
 [ext_resource type="Texture2D" uid="uid://dvmkss6yryrbo" path="res://board/textures/UI_board_red.png" id="12"]
 [ext_resource type="StyleBox" path="res://board/styles/panel_red.tres" id="13"]
-[ext_resource type="Texture2D" uid="uid://bomembm3ej8y3" path="res://icon.png" id="14"]
 [ext_resource type="Script" uid="uid://cj2ehaep5wx0b" path="res://board/holding_bar.gd" id="16"]
 [ext_resource type="Texture2D" uid="uid://dj2whfq4wljls" path="res://board/textures/board_header_panel_player.png" id="19"]
 [ext_resource type="Texture2D" uid="uid://ln7y3kcpj5ax" path="res://board/textures/UI_game_blue_panel_slot.png" id="20"]
@@ -222,12 +221,11 @@ expand_mode = 1
 stretch_mode = 6
 
 [node name="BoardGrid" type="TileMap" parent="." groups=["boardgrids"]]
-position = Vector2(17, 126)
+position = Vector2(-11, 114)
 format = 2
 
 [node name="TileMapLayer" type="TileMapLayer" parent="BoardGrid" groups=["boardgrids"]]
 script = ExtResource("1")
-_EmptyCellIndicatorTexture = ExtResource("14")
 
 [node name="HoldingBar" type="Control" parent="."]
 layout_mode = 3

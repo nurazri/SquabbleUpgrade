@@ -1,10 +1,9 @@
-extends Control
+extends Page
 
-signal on_reset  # For resetting achievements
+#signal on_reset  # For resetting achievements
 
 @export var _ScnAchievement: PackedScene
 @onready var achievement_container: ScrollContainer = $UI/Achievement_Container
-
 
 func reload() -> void:
 	GameLoader.load_achievement()
@@ -15,6 +14,7 @@ func reload() -> void:
 
 
 func spawn_data() -> void:
+	print("spawn data is called")
 	var vbox = achievement_container.get_node("VBoxContainer")
 	for a in GameLoader.achievement_data:
 		var achievement_object = _ScnAchievement.instantiate()
@@ -26,14 +26,10 @@ func spawn_data() -> void:
 
 func _on_Achievement_on_claimed(coin: int, diamond: int) -> void:
 	send_page_update(coin, diamond)
-
-
-# Update UI for coins/diamonds (implement similar to your shop page)
-func send_page_update(coins: int, diamonds: int) -> void:
-	# Replace the paths below with your actual coin/diamond label paths
-	$UI/CoinLabel.text = str(coins)
-	$UI/DiamondLabel.text = str(diamonds)
-
+	
+#func send_page_update(coins: int, diamonds: int) -> void:
+	#$UI/CoinLabel.text = str(coins)
+	#$UI/DiamondLabel.text = str(diamonds)
 
 func close_page() -> void:
 	achievement_container.set_v_scroll(0)
