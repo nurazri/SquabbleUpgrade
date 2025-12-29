@@ -158,6 +158,10 @@ environment_variables/domainUriPrefix=""
 singletons=[]
 singletons_disabled=[]
 
+[gui]
+
+theme/custom="uid://dncgoohb7ar2w"
+
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true

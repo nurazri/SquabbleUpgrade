@@ -60,6 +60,11 @@ cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
 
 [sub_resource type="FontFile" id="9"]
 fallbacks = Array[Font]([ExtResource("4")])
@@ -68,6 +73,11 @@ cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
 
 [node name="Init" type="Control"]
 layout_mode = 3

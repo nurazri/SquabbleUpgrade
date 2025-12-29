@@ -289,19 +289,31 @@ func tween_win_lose_fade(duration: float, delay: float) -> void:
 		.set_delay(delay)
 
 
+#func _on_Tap_pressed() -> void:
+	#var board = get_tree().root.get_node("Game/Pool/BoardMe")
+	#
+	## Check if the board already has 7 picked letters
+	#if board._picked_letters.size() >= 7:
+		#$Tap.release()  # Release the button properly
+		#return
+	#
+	## Play the letter selection sound
+	#Audio.play_sfx(Audio.Sfx.LETTER_SELECTED)
+	#
+	## Call select() on this letter
+	#select(true, false)
+	
 func _on_Tap_pressed() -> void:
 	var board = get_tree().root.get_node("Game/Pool/BoardMe")
-	
-	# Check if the board already has 7 picked letters
-	if board._picked_letters.size() >= 7:
-		$Tap.release()  # Release the button properly
+
+	if board._picked_letters.size() >= 7 && !_is_held:
+		$Tap.button_pressed = false
 		return
-	
-	# Play the letter selection sound
-	Audio.play_sfx(Audio.Sfx.LETTER_SELECTED)
-	
-	# Call select() on this letter
-	select(true, false)
+
+	if !_is_held:
+		Audio.play_sfx(Audio.Sfx.LETTER_SELECTED)
+
+	select(!_is_held, false)
 
 
 func _on_PushInTimer_timeout() -> void:

@@ -254,28 +254,118 @@ func on_stage_updated() -> void:
 # --------------------------------------------------
 # VISIBILITY
 # --------------------------------------------------
+#func _on_Home_visibility_changed() -> void:
+	#if _updating_visibility:
+		#return
+	#_updating_visibility = true
+#
+	#if not is_inside_tree():
+		#_updating_visibility = false
+		#return
+#
+	#await get_tree().process_frame
+#
+	#if header_UI == null or footer_UI == null:
+		#_updating_visibility = false
+		#return
+#
+	#if visible and animation_player != null:
+		#animation_player.play("Homescreen_Entrance")
+#
+	#header_UI.visible = visible
+	#footer_UI.visible = visible
+#
+	#_updating_visibility = false
+	
+#func _on_Home_visibility_changed() -> void:
+	#if visible:
+		#$AnimationPlayer.play("Homescreen_Entrance")
+		#
+	#header_UI.show() if visible else header_UI.hide()
+	#footer_UI.show() if visible else footer_UI.hide()
+	#
+	##1135 for separation
+	#var current_stage: int = get_current_stage()
+	#for clouds in $ScrollContainer/Cloud_List.get_children():
+		#clouds.hide()
+	#
+	#await get_tree().create_timer(0.01)
+	#max_scroll_distance = 13323 - (custom_scroll_dist[current_stage] * current_stage)
+	#$ScrollContainer.set_v_scroll(max_scroll_distance)
+	#get_node("ScrollContainer/Cloud_List/Cloud_Overlay" + str(current_stage)).show()
+	#await get_tree().create_timer(0.25)
+	#if GameLoader.player_data["completed_tutorial"] == true:
+		#_attempt_daily_login_feature()
+		
 func _on_Home_visibility_changed() -> void:
 	if _updating_visibility:
 		return
 	_updating_visibility = true
 
+	# Wait one frame to ensure the node is fully in the tree and layout is ready
 	if not is_inside_tree():
 		_updating_visibility = false
 		return
 
 	await get_tree().process_frame
 
-	if header_UI == null or footer_UI == null:
+	# Safety check - if nodes aren't ready yet, abort
+	if header_UI == null or footer_UI == null or scroll_container == null:
 		_updating_visibility = false
 		return
 
-	if visible and animation_player != null:
-		animation_player.play("Homescreen_Entrance")
-
+	# Show/hide header and footer (using .visible instead of .show()/.hide() for consistency)
 	header_UI.visible = visible
 	footer_UI.visible = visible
 
+	# Only run entrance animation and scroll logic when becoming visible
+	if visible:
+		if animation_player != null:
+			animation_player.play("Homescreen_Entrance")
+		
+		# Update clouds and scroll to current stage
+		var current_stage: int = get_current_stage()
+
+		for cloud in $ScrollContainer/Cloud_List.get_children():
+			cloud.hide()
+		
+		# Small delay to ensure layout has settled before scrolling
+		await get_tree().create_timer(0.01)
+
+		max_scroll_distance = 13323 - (custom_scroll_dist[current_stage] * current_stage)
+		scroll_container.scroll_vertical = max_scroll_distance  # Godot 4 uses .scroll_vertical
+
+		var overlay_path := "ScrollContainer/Cloud_List/Cloud_Overlay" + str(current_stage)
+		if has_node(overlay_path):
+			get_node(overlay_path).show()
+		
+		# Longer delay before checking daily login (matches original 0.25s)
+		await get_tree().create_timer(0.25)
+		
+		if GameLoader.player_data.get("completed_tutorial", false):
+			_attempt_daily_login_feature()
+	
 	_updating_visibility = false
+		
+func _attempt_daily_login_feature() -> void:
+	var get_datetime: Dictionary = Time.get_datetime_dict_from_system()
+	var fetch_datetime: Dictionary = GameLoader.player_data["last_logged_in"]
+	if get_datetime["day"] > fetch_datetime["day"]:
+		var get_day_difference = get_datetime["day"] - fetch_datetime["day"]
+		if get_day_difference > 1:
+			_popup_daily_reward()
+		else:
+			if get_datetime["hour"] > 12:
+				_popup_daily_reward()
+	elif get_datetime["month"] > fetch_datetime["month"]:
+		_popup_daily_reward()
+	elif get_datetime["year"] > fetch_datetime["year"]:
+		_popup_daily_reward()
+	
+	last_check_in = get_datetime
+	
+func _popup_daily_reward() -> void:
+	$DailyReward_UI/Daily_Reward.show()
 
 # --------------------------------------------------
 # STAGE HELPER
@@ -291,3 +381,14 @@ func get_current_stage() -> int:
 		set_stage = i
 
 	return set_stage
+	
+func on_daily_reward_claimed() -> void:
+	GameLoader.player_data["last_logged_in"]["day"] = last_check_in["day"]
+	GameLoader.player_data["last_logged_in"]["month"] = last_check_in["month"]
+	GameLoader.player_data["last_logged_in"]["year"] = last_check_in["year"]
+	GameLoader.player_data["last_logged_in"]["hour"] = last_check_in["hour"]
+	GameLoader.player_data["last_logged_in"]["minute"] = last_check_in["minute"]
+	
+	GameLoader.save_currency("diamonds", 1)
+	GameLoader.save_game()
+	$DailyReward_UI/Daily_Reward.hide()

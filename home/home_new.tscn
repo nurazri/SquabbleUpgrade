@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ym8xmqrpl1q1" path="res://home/new_textures/map/map_2.png" id="10"]
 [ext_resource type="Texture2D" uid="uid://dul2spu4fq7gx" path="res://home/new_textures/map/map_4.png" id="11"]
 [ext_resource type="Texture2D" uid="uid://b3mwlqkyytmjl" path="res://home/new_textures/character_indicator/Chrindicator_cat.png" id="12"]
-[ext_resource type="PackedScene" path="res://profile/inventory_page.tscn" id="13"]
+[ext_resource type="PackedScene" uid="uid://cpfyl8qwt6gtp" path="res://profile/inventory_page.tscn" id="13"]
 [ext_resource type="Texture2D" uid="uid://cs8k3hf7louir" path="res://home/new_textures/map/cloud_overlay.png" id="14"]
 [ext_resource type="Texture2D" uid="uid://b8d7880my1fic" path="res://pool/textures/UI_levelgoal_bg_alt.png" id="15"]
 [ext_resource type="Texture2D" uid="uid://8bau4h1rfhc8" path="res://shop/textures/diamonds/UI_gem_1.png" id="16"]
@@ -2156,7 +2156,12 @@ visible = false
 anchors_preset = 0
 
 [node name="Inventory_Page" parent="." instance=ExtResource("13")]
+layout_mode = 0
 anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 946.0
+offset_bottom = 2048.0
 
 [node name="Custom_Game_Page" parent="." instance=ExtResource("25")]
 anchors_preset = 0

@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://be0fr7yrdgi5i"]
 
-[ext_resource path="res://booster/textures/UI_panel_booster_blast.png" type="Texture2D" id=1]
-[ext_resource path="res://booster/textures/Booster_Blast_T1.png" type="Texture2D" id=2]
-[ext_resource path="res://booster/textures/UI_booster_slot.png" type="Texture2D" id=3]
-[ext_resource path="res://board/booster_slot.gd" type="Script" id=4]
+[ext_resource type="Texture2D" uid="uid://dhvebrsb64u14" path="res://booster/textures/UI_panel_booster_blast.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://d0nj8xim13ec4" path="res://booster/textures/Booster_Blast_T1.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cit3shdp300j3" path="res://booster/textures/UI_booster_slot.png" id="3"]
+[ext_resource type="Script" uid="uid://bv47dcgaj50u7" path="res://board/booster_slot.gd" id="4"]
 
 [node name="Booster_Slot" type="NinePatchRect"]
 visible = false
@@ -11,17 +11,15 @@ offset_left = 20.0
 offset_top = 705.0
 offset_right = 140.0
 offset_bottom = 825.0
-texture = ExtResource( 3 )
+texture = ExtResource("3")
 patch_margin_left = 25
 patch_margin_top = 25
 patch_margin_right = 25
 patch_margin_bottom = 25
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("4")
 
 [node name="Panel" type="TextureRect" parent="."]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -30,13 +28,11 @@ offset_left = -55.0
 offset_top = -55.0
 offset_right = 55.0
 offset_bottom = 55.0
-texture = ExtResource( 1 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource("1")
+expand_mode = 1
 
 [node name="Icon" type="TextureRect" parent="."]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -45,15 +41,13 @@ offset_left = -70.0
 offset_top = -70.0
 offset_right = 70.0
 offset_bottom = 70.0
-texture = ExtResource( 2 )
-expand = true
+texture = ExtResource("2")
+expand_mode = 1
 
 [node name="Booster" type="Button" parent="."]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [connection signal="pressed" from="Booster" to="." method="use_booster"]

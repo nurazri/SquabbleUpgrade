@@ -127,44 +127,98 @@ func _on_Pool_picker_command_succeeded(command: Array) -> void:
 	$Commander.picker_command_succeeded(command)
 
 
-func _on_Pool_result_announced(
-	who_won: int,
-	mode: int,
-	_points: Dictionary,
-	_longest_word,
-	_best_word
-) -> void:
+#func _on_Pool_result_announced(
+	#who_won: int,
+	#mode: int,
+	#_points: Dictionary,
+	#_longest_word,
+	#_best_word
+#) -> void:
+	#
+	#if not $Pool/BoosterManager.return_event_type($Pool._ai_level) and $Pool._ai_level != 0:
+		#$Pool/BoosterManager.check_consumed_booster()
+#
+	#if $Pool._ai_level < GameLoader.load_data("current_level") and $Pool._ai_level != 0:
+		#GameLoader.update_achievement_value("achievement_replay_level", "points", 1)
+#
+	#var current_best_words: Array = GameLoader.load_data("best_word_list")
+	#var record_best_words: Array = $Pool.best_word_list
+#
+	#for words in record_best_words:
+		#if not current_best_words.has([words[0], words[1]]):
+			#current_best_words.append(words)
+#
+	#current_best_words.sort_custom(Callable(CustomSorter, "sort_descending"))
+#
+	#if current_best_words.size() > 10:
+		#current_best_words.resize(10)
+#
+	##GameLoader.set_save_data("best_word_list", current_best_words)
+	#GameLoader.player_data["best_word_list"] = current_best_words
+#
+	#$Commander.stop()
+	#GameLoader.save_game()
+	#GameLoader.overwrite_achievement_value()
+#
+	#Analytics.log_event(
+		#Globals.Analytics.ALL,
+		#Analytics.EVENT_POINTS_ACQUIRED,
+		#Analytics.points_params($Pool._ai_level, _points)
+	#)
 	
-	if not $Pool/BoosterManager.return_event_type($Pool._ai_level) and $Pool._ai_level != 0:
+func _on_Pool_result_announced(who_won: int, mode: int, _points: Dictionary, _longest_word, _best_word) -> void:	
+	var who_lost: int = Globals.LetterOwnership.BOARD_OPPONENT
+	if who_won == Globals.LetterOwnership.BOARD_OPPONENT:
+		who_lost = Globals.LetterOwnership.BOARD_ME
+	
+	if who_won == Globals.LetterOwnership.BOARD_ME:
+		if $Pool._ai_level >= 10:
+			GameLoader.player_data["unlocked_booster_slot"][0] = 1
+			GameLoader.player_data["booster_parameters"][str(Globals.BoosterType.FREEZE)]["Discovered"] = 1
+			GameLoader.player_data["booster_parameters"][str(Globals.BoosterType.FREEZE)]["Discovered_Tier_1"] = 1
+		if $Pool._ai_level >= 14:
+			GameLoader.player_data["booster_parameters"][str(Globals.BoosterType.FREEZE)]["Discovered_Tier_2"] = 1
+			GameLoader.player_data["booster_parameters"][str(Globals.BoosterType.FREEZE)]["Discovered_Tier_3"] = 1
+		if $Pool._ai_level >= 17:
+			GameLoader.player_data["unlocked_booster_slot"][1] = 1
+		if $Pool._ai_level >= 30:
+			GameLoader.player_data["booster_parameters"][str(Globals.BoosterType.BLAST)]["Discovered"] = 1
+			GameLoader.player_data["booster_parameters"][str(Globals.BoosterType.BLAST)]["Discovered_Tier_1"] = 1
+		if $Pool._ai_level >= 34:
+			GameLoader.player_data["booster_parameters"][str(Globals.BoosterType.BLAST)]["Discovered_Tier_2"] = 1
+			GameLoader.player_data["booster_parameters"][str(Globals.BoosterType.BLAST)]["Discovered_Tier_3"] = 1
+		if $Pool._ai_level >= 38:
+			GameLoader.player_data["booster_parameters"][str(Globals.BoosterType.PROTECT)]["Discovered"] = 1
+			GameLoader.player_data["booster_parameters"][str(Globals.BoosterType.PROTECT)]["Discovered_Tier_1"] = 1
+		if $Pool._ai_level >= 42:
+			GameLoader.player_data["booster_parameters"][str(Globals.BoosterType.PROTECT)]["Discovered_Tier_2"] = 1
+			GameLoader.player_data["booster_parameters"][str(Globals.BoosterType.PROTECT)]["Discovered_Tier_3"] = 1
+		if $Pool._ai_level >= 46:
+			GameLoader.player_data["unlocked_booster_slot"][2] = 1
+		
+		if _points[who_lost] == 0:
+			GameLoader.update_achievement_value("achievement_perfect_win", "points", 1)
+	
+	if !$Pool.get_node("BoosterManager").return_event_type($Pool._ai_level) and $Pool._ai_level != 0:
 		$Pool/BoosterManager.check_consumed_booster()
-
-	if $Pool._ai_level < GameLoader.load_data("current_level") and $Pool._ai_level != 0:
+	if $Pool._ai_level < GameLoader.player_data["current_level"] && $Pool._ai_level != 0:
 		GameLoader.update_achievement_value("achievement_replay_level", "points", 1)
-
-	var current_best_words: Array = GameLoader.load_data("best_word_list")
-	var record_best_words: Array = $Pool.best_word_list
-
+	
+	var current_best_words: Array = GameLoader.player_data["best_word_list"]
+	var record_best_words: Array = get_tree().root.get_node("Game/Pool").best_word_list
 	for words in record_best_words:
-		if not current_best_words.has([words[0], words[1]]):
+		if !current_best_words.has([words[0], words[1]]):
 			current_best_words.append(words)
-
-	current_best_words.sort_custom(Callable(CustomSorter, "sort_descending"))
-
+	
+	current_best_words.sort_custom(func(a, b): return a > b)
 	if current_best_words.size() > 10:
 		current_best_words.resize(10)
-
-	#GameLoader.set_save_data("best_word_list", current_best_words)
 	GameLoader.player_data["best_word_list"] = current_best_words
-
+	
 	$Commander.stop()
 	GameLoader.save_game()
 	GameLoader.overwrite_achievement_value()
-
-	Analytics.log_event(
-		Globals.Analytics.ALL,
-		Analytics.EVENT_POINTS_ACQUIRED,
-		Analytics.points_params($Pool._ai_level, _points)
-	)
+	Analytics.log_event(Globals.Analytics.ALL, Analytics.EVENT_POINTS_ACQUIRED, Analytics.points_params(get_tree().root.get_node("Game/Pool")._ai_level, _points))
 
 
 func _on_Commander_command_issued(command: Array) -> void:

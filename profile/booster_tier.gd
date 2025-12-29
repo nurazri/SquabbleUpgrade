@@ -104,11 +104,56 @@ func update_state() -> void:
 		
 
 #check condition
+#func _on_Btn_Toggle_Equip_pressed() -> void:
+	#if !can_interact:
+		#return
+	#can_interact = false
+	#
+	#if currently_equipped != -1:
+		#var get_slot: int = currently_equipped
+		#currently_equipped = -1
+		#
+		#emit_signal("remove_booster", get_slot)
+		#$Control/Btn_Toggle_Equip/Label.text = "disabled"
+		#equip_button.get_node("Texture2D").texture = disabled_toggle
+		#var tween = create_tween()
+		#tween.tween_property(slot_container, "position", Vector2(18, 5), 0.25) \
+			#.from(Vector2(18, 100)) \
+			#.set_trans(Tween.TRANS_LINEAR)
+#
+		#tween.tween_property(slot_header, "position", Vector2(13, 6), 0.5) \
+			#.from(Vector2(13, 56)) \
+			#.set_trans(Tween.TRANS_LINEAR)
+	#
+	#else:
+		#if check_available_slot() == 4:
+			#return
+		#
+		#var current_slot: int = check_available_slot()
+		#currently_equipped = current_slot
+		#emit_signal("equip_booster", current_slot, current_booster["Info"]["Ref_ID"], booster_level)
+		#$Control/Btn_Toggle_Equip/Label.text = "enabled"
+		#equip_button.get_node("Texture2D").texture = enabled_toggle
+		#var tween = create_tween()  # Or get_tree().create_tween() if called from outside a node context
+#
+		#tween.tween_property(slot_container, "position", Vector2(18, 100), 0.75) \
+			#.from(Vector2(18, 5)) \
+			#.set_trans(Tween.TRANS_EXPO) \
+			#.set_ease(Tween.EASE_OUT)  # Common for dropdown "out" feel; adjust if needed
+#
+		#tween.tween_property(slot_header, "position", Vector2(13, 56), 0.5) \
+			#.from(Vector2(13, 6)) \
+			#.set_trans(Tween.TRANS_EXPO) \
+			#.set_ease(Tween.EASE_OUT)
+			
 func _on_Btn_Toggle_Equip_pressed() -> void:
 	if !can_interact:
 		return
+
 	can_interact = false
-	
+
+	var tween = create_tween()
+
 	if currently_equipped != -1:
 		var get_slot: int = currently_equipped
 		currently_equipped = -1
@@ -116,10 +161,9 @@ func _on_Btn_Toggle_Equip_pressed() -> void:
 		emit_signal("remove_booster", get_slot)
 		$Control/Btn_Toggle_Equip/Label.text = "disabled"
 		equip_button.get_node("Texture2D").texture = disabled_toggle
-		$TweenDropDown.interpolate_property(slot_container, "position", Vector2(18, 100), Vector2(18, 5), 0.25, Tween.TRANS_LINEAR)
-		$TweenDropDown.interpolate_property(slot_header, "position", Vector2(13, 56), Vector2(13, 6), 0.5, Tween.TRANS_LINEAR)
-		$TweenDropDown.start()
-	
+		# unequip animation
+		tween.tween_property(slot_container, "position", Vector2(18, 5), 0.25).from(Vector2(18, 100)).set_trans(Tween.TRANS_LINEAR)
+		tween.tween_property(slot_header, "position", Vector2(13, 6), 0.5).from(Vector2(13, 56)).set_trans(Tween.TRANS_LINEAR)
 	else:
 		if check_available_slot() == 4:
 			return
@@ -129,9 +173,12 @@ func _on_Btn_Toggle_Equip_pressed() -> void:
 		emit_signal("equip_booster", current_slot, current_booster["Info"]["Ref_ID"], booster_level)
 		$Control/Btn_Toggle_Equip/Label.text = "enabled"
 		equip_button.get_node("Texture2D").texture = enabled_toggle
-		$TweenDropDown.interpolate_property(slot_container, "position", Vector2(18, 5), Vector2(18, 100), 0.75, Tween.TRANS_EXPO)
-		$TweenDropDown.interpolate_property(slot_header, "position", Vector2(13, 6), Vector2(13,56), 0.5, Tween.TRANS_EXPO)
-		$TweenDropDown.start()
+		# equip animation
+		tween.tween_property(slot_container, "position", Vector2(18, 100), 0.75).from(Vector2(18, 5)).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+		tween.tween_property(slot_header, "position", Vector2(13, 56), 0.5).from(Vector2(13, 6)).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+
+	await tween.finished
+	can_interact = true
 
 
 func check_available_slot() -> int:
