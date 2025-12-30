@@ -1,127 +1,206 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=31 format=3 uid="uid://ckxs4odvdadtb"]
 
-[ext_resource path="res://fonts/Gretaros-Regular.ttf" type="FontFile" id=1]
-[ext_resource path="res://avatar/unlocked_avatar/Chr_wombat.png" type="Texture2D" id=2]
-[ext_resource path="res://avatar/avatar_base_red.png" type="Texture2D" id=3]
-[ext_resource path="res://custom_game/UI_singlematch_easy.png" type="Texture2D" id=4]
-[ext_resource path="res://custom_game/UI_singlematch_medium.png" type="Texture2D" id=5]
-[ext_resource path="res://custom_game/UI_singlematch_unfair.png" type="Texture2D" id=6]
-[ext_resource path="res://custom_game/UI_singlematch_hard.png" type="Texture2D" id=7]
-[ext_resource path="res://login/textures/UI_offliine_profilepanel.png" type="Texture2D" id=8]
-[ext_resource path="res://tutorial/textures/tutorial_chatbox_square.png" type="Texture2D" id=9]
-[ext_resource path="res://pool/textures/background.png" type="Texture2D" id=10]
-[ext_resource path="res://universal_texture/UI_button_green.png" type="Texture2D" id=11]
-[ext_resource path="res://tutorial/textures/arrow.png" type="Texture2D" id=12]
-[ext_resource path="res://custom_game/custom_game.gd" type="Script" id=13]
+[ext_resource type="FontFile" uid="uid://drreivkewy5io" path="res://fonts/Gretaros-Regular.ttf" id="1"]
+[ext_resource type="Texture2D" uid="uid://d4flpjfggspe7" path="res://avatar/unlocked_avatar/Chr_wombat.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bqcq7jcfy34xf" path="res://avatar/avatar_base_red.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://tqasoeehs3gd" path="res://custom_game/UI_singlematch_easy.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://d13w7s4r5xsfu" path="res://custom_game/UI_singlematch_medium.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bu27g05ngn3jh" path="res://custom_game/UI_singlematch_unfair.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://dl430mqm7n8fq" path="res://custom_game/UI_singlematch_hard.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://d4iihbnhqfuey" path="res://login/textures/UI_offliine_profilepanel.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://npcj4bppxpew" path="res://tutorial/textures/tutorial_chatbox_square.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://ca2qtn2dv146r" path="res://pool/textures/background.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://bc6f5g2pi4nke" path="res://universal_texture/UI_button_green.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://w474088ggomu" path="res://tutorial/textures/arrow.png" id="12"]
+[ext_resource type="Script" uid="uid://c5m4hcxunmksr" path="res://custom_game/custom_game.gd" id="13"]
 
-[sub_resource type="StyleBoxTexture" id=36]
-texture = ExtResource( 10 )
-region_rect = Rect2( 0, 0, 553, 512 )
+[sub_resource type="StyleBoxTexture" id="36"]
+texture = ExtResource("10")
+region_rect = Rect2(0, 0, 553, 512)
 
-[sub_resource type="FontFile" id=37]
-size = 72
-outline_size = 6
-outline_color = Color( 0, 0, 0, 1 )
-use_filter = true
-spacing_top = 5
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="37"]
+fallbacks = Array[Font]([ExtResource("1"), ExtResource("1"), ExtResource("1")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=38]
-size = 23
-outline_size = 3
-outline_color = Color( 0, 0, 0, 1 )
-use_filter = true
-spacing_bottom = 15
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="38"]
+fallbacks = Array[Font]([ExtResource("1"), ExtResource("1"), ExtResource("1")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=39]
-size = 23
-outline_size = 3
-outline_color = Color( 0, 0, 0, 1 )
-use_filter = true
-spacing_bottom = 15
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="39"]
+fallbacks = Array[Font]([ExtResource("1"), ExtResource("1"), ExtResource("1")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=23]
-size = 60
-outline_size = 4
-outline_color = Color( 0, 0, 0, 1 )
-use_filter = true
-spacing_top = 5
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="23"]
+fallbacks = Array[Font]([ExtResource("1"), ExtResource("1"), ExtResource("1")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=29]
-size = 46
-use_filter = true
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="29"]
+fallbacks = Array[Font]([ExtResource("1"), ExtResource("1"), ExtResource("1")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="StyleBoxEmpty" id=24]
+[sub_resource type="StyleBoxEmpty" id="28"]
 
-[sub_resource type="StyleBoxEmpty" id=25]
+[sub_resource type="StyleBoxEmpty" id="25"]
 
-[sub_resource type="StyleBoxEmpty" id=26]
+[sub_resource type="StyleBoxEmpty" id="24"]
 
-[sub_resource type="StyleBoxEmpty" id=27]
+[sub_resource type="StyleBoxEmpty" id="27"]
 
-[sub_resource type="StyleBoxEmpty" id=28]
+[sub_resource type="StyleBoxEmpty" id="26"]
 
-[sub_resource type="FontFile" id=30]
-size = 24
-use_filter = true
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="30"]
+fallbacks = Array[Font]([ExtResource("1"), ExtResource("1"), ExtResource("1")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=31]
-size = 40
-use_filter = true
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="31"]
+fallbacks = Array[Font]([ExtResource("1"), ExtResource("1"), ExtResource("1")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=32]
-size = 64
-use_filter = true
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="32"]
+fallbacks = Array[Font]([ExtResource("1"), ExtResource("1"), ExtResource("1")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="StyleBoxTexture" id=33]
-texture = ExtResource( 11 )
-region_rect = Rect2( 0, 0, 128, 128 )
-offset_left = 25.0
-offset_right = 25.0
-offset_top = 25.0
-offset_bottom = 25.0
+[sub_resource type="StyleBoxTexture" id="33"]
+texture = ExtResource("11")
+region_rect = Rect2(0, 0, 128, 128)
 
-[sub_resource type="StyleBoxTexture" id=34]
-texture = ExtResource( 11 )
-region_rect = Rect2( 0, 0, 128, 128 )
-offset_left = 25.0
-offset_right = 25.0
-offset_top = 25.0
-offset_bottom = 25.0
-modulate_color = Color( 0.588235, 0.588235, 0.588235, 1 )
+[sub_resource type="StyleBoxTexture" id="34"]
+texture = ExtResource("11")
+region_rect = Rect2(0, 0, 128, 128)
+modulate_color = Color(0.588235, 0.588235, 0.588235, 1)
 
-[sub_resource type="FontFile" id=35]
-size = 44
-outline_size = 5
-outline_color = Color( 0, 0, 0, 1 )
-use_filter = true
-spacing_top = -5
-spacing_bottom = -5
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="35"]
+fallbacks = Array[Font]([ExtResource("1"), ExtResource("1"), ExtResource("1")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
 [node name="Custom_Game_Page" type="Control"]
-visible = false
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 13 )
+script = ExtResource("13")
 
 [node name="Backdrop" type="Panel" parent="."]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_styles/panel = SubResource( 36 )
+theme_override_styles/panel = SubResource("36")
 
 [node name="Control" type="Control" parent="."]
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 178.0
@@ -129,151 +208,160 @@ offset_bottom = -235.0
 theme_override_constants/separation = 25
 
 [node name="Easy_Custom_Banner" type="TextureRect" parent="Control/VBoxContainer"]
-offset_right = 946.0
-offset_bottom = 390.0
-texture = ExtResource( 4 )
+layout_mode = 2
+texture = ExtResource("4")
 stretch_mode = 6
 
 [node name="Label_Difficulty" type="Label" parent="Control/VBoxContainer/Easy_Custom_Banner"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -343.0
 offset_top = 40.0
 offset_right = 93.0
 offset_bottom = 128.0
-theme_override_fonts/font = SubResource( 37 )
+theme_override_fonts/font = SubResource("37")
 text = "EASY"
-valign = 1
+vertical_alignment = 1
 
 [node name="Label_Description" type="Label" parent="Control/VBoxContainer/Easy_Custom_Banner"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -338.0
 offset_top = 139.0
 offset_right = 97.0
 offset_bottom = 309.0
-theme_override_fonts/font = SubResource( 38 )
+theme_override_fonts/font = SubResource("38")
 text = "Points to win : 35
 Number of Tiles : 72
 Opponent Level : elementary"
-valign = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Btn_Start_Easy" type="Button" parent="Control/VBoxContainer/Easy_Custom_Banner"]
-self_modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 57.0
 offset_right = -57.0
 
 [node name="Medium_Custom_Banner" type="TextureRect" parent="Control/VBoxContainer"]
-offset_top = 415.0
-offset_right = 946.0
-offset_bottom = 805.0
-texture = ExtResource( 5 )
+layout_mode = 2
+texture = ExtResource("5")
 stretch_mode = 6
 
 [node name="Label_Difficulty" type="Label" parent="Control/VBoxContainer/Medium_Custom_Banner"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -343.0
 offset_top = 40.0
 offset_right = 93.0
 offset_bottom = 130.0
-theme_override_fonts/font = SubResource( 37 )
+theme_override_fonts/font = SubResource("37")
 text = "Medium"
-valign = 1
+vertical_alignment = 1
 
 [node name="Label_Description" type="Label" parent="Control/VBoxContainer/Medium_Custom_Banner"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -338.0
 offset_top = 139.0
 offset_right = 97.0
 offset_bottom = 309.0
-theme_override_fonts/font = SubResource( 38 )
+theme_override_fonts/font = SubResource("38")
 text = "Points to win : 55
 Number of Tiles : 77
 Opponent Level : secondary"
-valign = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Btn_Start_Medium" type="Button" parent="Control/VBoxContainer/Medium_Custom_Banner"]
-self_modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 57.0
 offset_right = -57.0
 
 [node name="Hard_Custom_Banner" type="TextureRect" parent="Control/VBoxContainer"]
-offset_top = 830.0
-offset_right = 946.0
-offset_bottom = 1220.0
-texture = ExtResource( 7 )
+layout_mode = 2
+texture = ExtResource("7")
 stretch_mode = 6
 
 [node name="Label_Difficulty" type="Label" parent="Control/VBoxContainer/Hard_Custom_Banner"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -343.0
 offset_top = 40.0
 offset_right = 93.0
 offset_bottom = 130.0
-theme_override_fonts/font = SubResource( 37 )
+theme_override_fonts/font = SubResource("37")
 text = "Hard"
-valign = 1
+vertical_alignment = 1
 
 [node name="Label_Description" type="Label" parent="Control/VBoxContainer/Hard_Custom_Banner"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -338.0
 offset_top = 139.0
 offset_right = 97.0
 offset_bottom = 309.0
-theme_override_fonts/font = SubResource( 38 )
+theme_override_fonts/font = SubResource("38")
 text = "Points to win : 75
 Number of Tiles : 98
 Opponent Level : college"
-valign = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Btn_Start_Hard" type="Button" parent="Control/VBoxContainer/Hard_Custom_Banner"]
-self_modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 57.0
 offset_right = -57.0
 
 [node name="Unfair_Custom_Banner" type="TextureRect" parent="Control/VBoxContainer"]
-offset_top = 1245.0
-offset_right = 946.0
-offset_bottom = 1635.0
-texture = ExtResource( 6 )
+layout_mode = 2
+texture = ExtResource("6")
 stretch_mode = 6
 
 [node name="Label_Difficulty" type="Label" parent="Control/VBoxContainer/Unfair_Custom_Banner"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -343.0
 offset_top = 40.0
 offset_right = 93.0
 offset_bottom = 130.0
-theme_override_fonts/font = SubResource( 37 )
+theme_override_fonts/font = SubResource("37")
 text = "Unfair"
-valign = 1
+vertical_alignment = 1
 
 [node name="Label_Description" type="Label" parent="Control/VBoxContainer/Unfair_Custom_Banner"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -338.0
 offset_top = 139.0
 offset_right = 97.0
 offset_bottom = 309.0
-theme_override_fonts/font = SubResource( 39 )
+theme_override_fonts/font = SubResource("39")
 text = "Points to win : 100
 Number of Tiles : 98
 Opponent Level:Professional"
-valign = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Btn_Start_Unfair" type="Button" parent="Control/VBoxContainer/Unfair_Custom_Banner"]
-self_modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 57.0
@@ -281,6 +369,7 @@ offset_right = -57.0
 
 [node name="Panel" type="NinePatchRect" parent="."]
 visible = false
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -289,25 +378,27 @@ offset_left = -431.0
 offset_top = -711.0
 offset_right = 430.0
 offset_bottom = 626.0
-texture = ExtResource( 8 )
+texture = ExtResource("8")
 patch_margin_left = 75
 patch_margin_top = 150
 patch_margin_right = 75
 patch_margin_bottom = 75
 
 [node name="Header" type="Label" parent="Panel"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -391.5
 offset_top = 4.0
 offset_right = 392.5
 offset_bottom = 88.0
-theme_override_fonts/font = SubResource( 23 )
+theme_override_fonts/font = SubResource("23")
 text = "Custom Game"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Avatar" type="TextureRect" parent="Panel"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -318,29 +409,29 @@ offset_right = 215.0
 offset_bottom = -181.5
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2( 0.8, 0.8 )
-pivot_offset = Vector2( 215, 210 )
-texture = ExtResource( 3 )
-expand = true
+scale = Vector2(0.8, 0.8)
+pivot_offset = Vector2(215, 210)
+texture = ExtResource("3")
+expand_mode = 1
 
 [node name="Picture" type="TextureRect" parent="Panel/Avatar"]
+layout_mode = 0
 anchor_left = 0.090625
 anchor_top = 0.0801284
 anchor_right = 0.909375
 anchor_bottom = 0.88782
-texture = ExtResource( 2 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": true
-}
+texture = ExtResource("2")
+expand_mode = 1
 
 [node name="OpponentSelect" type="Control" parent="Panel"]
+anchors_preset = 0
 offset_left = 30.0
 offset_top = 463.0
 offset_right = 824.0
 offset_bottom = 583.0
 
 [node name="LabelPanel" type="NinePatchRect" parent="Panel/OpponentSelect"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -348,42 +439,45 @@ anchor_bottom = 1.0
 offset_left = -158.0
 offset_top = -84.0
 offset_right = 158.0
-texture = ExtResource( 9 )
+texture = ExtResource("9")
 patch_margin_left = 25
 patch_margin_top = 25
 patch_margin_right = 25
 patch_margin_bottom = 25
 
 [node name="Label" type="Label" parent="Panel/OpponentSelect/LabelPanel"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/font = SubResource( 29 )
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("29")
 text = "???"
-align = 1
-valign = 1
-autowrap = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ButtonLeft" type="TextureRect" parent="Panel/OpponentSelect"]
+layout_mode = 0
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 165.0
 offset_top = -72.315
 offset_right = 215.0
 offset_bottom = -14.315
-texture = ExtResource( 12 )
+texture = ExtResource("12")
 flip_h = true
 
 [node name="Button" type="Button" parent="Panel/OpponentSelect/ButtonLeft"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_styles/hover = SubResource( 24 )
-theme_override_styles/pressed = SubResource( 25 )
-theme_override_styles/focus = SubResource( 26 )
-theme_override_styles/disabled = SubResource( 27 )
-theme_override_styles/normal = SubResource( 28 )
+theme_override_styles/normal = SubResource("28")
+theme_override_styles/pressed = SubResource("25")
+theme_override_styles/hover = SubResource("24")
+theme_override_styles/disabled = SubResource("27")
+theme_override_styles/focus = SubResource("26")
 
 [node name="ButtonRight" type="TextureRect" parent="Panel/OpponentSelect"]
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -392,33 +486,37 @@ offset_left = -222.399
 offset_top = -72.3152
 offset_right = -172.399
 offset_bottom = -14.3152
-texture = ExtResource( 12 )
+texture = ExtResource("12")
 
 [node name="Button" type="Button" parent="Panel/OpponentSelect/ButtonRight"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_styles/hover = SubResource( 24 )
-theme_override_styles/pressed = SubResource( 25 )
-theme_override_styles/focus = SubResource( 26 )
-theme_override_styles/disabled = SubResource( 27 )
-theme_override_styles/normal = SubResource( 28 )
+theme_override_styles/normal = SubResource("28")
+theme_override_styles/pressed = SubResource("25")
+theme_override_styles/hover = SubResource("24")
+theme_override_styles/disabled = SubResource("27")
+theme_override_styles/focus = SubResource("26")
 
 [node name="Label" type="Label" parent="Panel/OpponentSelect"]
+layout_mode = 0
 anchor_right = 1.0
 offset_bottom = 24.0
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/font = SubResource( 30 )
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("30")
 text = "Opponent"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="DifficultyLevel" type="Control" parent="Panel"]
+anchors_preset = 0
 offset_left = 30.0
 offset_top = 599.0
 offset_right = 824.0
 offset_bottom = 719.0
 
 [node name="LabelPanel" type="NinePatchRect" parent="Panel/DifficultyLevel"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -426,42 +524,45 @@ anchor_bottom = 1.0
 offset_left = -158.0
 offset_top = -84.0
 offset_right = 158.0
-texture = ExtResource( 9 )
+texture = ExtResource("9")
 patch_margin_left = 25
 patch_margin_top = 25
 patch_margin_right = 25
 patch_margin_bottom = 25
 
 [node name="Label" type="Label" parent="Panel/DifficultyLevel/LabelPanel"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/font = SubResource( 31 )
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("31")
 text = "???"
-align = 1
-valign = 1
-autowrap = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ButtonLeft" type="TextureRect" parent="Panel/DifficultyLevel"]
+layout_mode = 0
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 165.0
 offset_top = -72.315
 offset_right = 215.0
 offset_bottom = -14.315
-texture = ExtResource( 12 )
+texture = ExtResource("12")
 flip_h = true
 
 [node name="Button" type="Button" parent="Panel/DifficultyLevel/ButtonLeft"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_styles/hover = SubResource( 24 )
-theme_override_styles/pressed = SubResource( 25 )
-theme_override_styles/focus = SubResource( 26 )
-theme_override_styles/disabled = SubResource( 27 )
-theme_override_styles/normal = SubResource( 28 )
+theme_override_styles/normal = SubResource("28")
+theme_override_styles/pressed = SubResource("25")
+theme_override_styles/hover = SubResource("24")
+theme_override_styles/disabled = SubResource("27")
+theme_override_styles/focus = SubResource("26")
 
 [node name="ButtonRight" type="TextureRect" parent="Panel/DifficultyLevel"]
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -470,33 +571,37 @@ offset_left = -222.399
 offset_top = -72.3152
 offset_right = -172.399
 offset_bottom = -14.3152
-texture = ExtResource( 12 )
+texture = ExtResource("12")
 
 [node name="Button" type="Button" parent="Panel/DifficultyLevel/ButtonRight"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_styles/hover = SubResource( 24 )
-theme_override_styles/pressed = SubResource( 25 )
-theme_override_styles/focus = SubResource( 26 )
-theme_override_styles/disabled = SubResource( 27 )
-theme_override_styles/normal = SubResource( 28 )
+theme_override_styles/normal = SubResource("28")
+theme_override_styles/pressed = SubResource("25")
+theme_override_styles/hover = SubResource("24")
+theme_override_styles/disabled = SubResource("27")
+theme_override_styles/focus = SubResource("26")
 
 [node name="Label" type="Label" parent="Panel/DifficultyLevel"]
+layout_mode = 0
 anchor_right = 1.0
 offset_bottom = 24.0
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/font = SubResource( 30 )
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("30")
 text = "Opponent difficulty level"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="DictionaryLevel" type="Control" parent="Panel"]
+anchors_preset = 0
 offset_left = 30.0
 offset_top = 734.0
 offset_right = 824.0
 offset_bottom = 854.0
 
 [node name="LabelPanel" type="NinePatchRect" parent="Panel/DictionaryLevel"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -504,42 +609,45 @@ anchor_bottom = 1.0
 offset_left = -158.0
 offset_top = -84.0
 offset_right = 158.0
-texture = ExtResource( 9 )
+texture = ExtResource("9")
 patch_margin_left = 25
 patch_margin_top = 25
 patch_margin_right = 25
 patch_margin_bottom = 25
 
 [node name="Label" type="Label" parent="Panel/DictionaryLevel/LabelPanel"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/font = SubResource( 31 )
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("31")
 text = "???"
-align = 1
-valign = 1
-autowrap = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ButtonLeft" type="TextureRect" parent="Panel/DictionaryLevel"]
+layout_mode = 0
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 165.0
 offset_top = -72.315
 offset_right = 215.0
 offset_bottom = -14.315
-texture = ExtResource( 12 )
+texture = ExtResource("12")
 flip_h = true
 
 [node name="Button" type="Button" parent="Panel/DictionaryLevel/ButtonLeft"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_styles/hover = SubResource( 24 )
-theme_override_styles/pressed = SubResource( 25 )
-theme_override_styles/focus = SubResource( 26 )
-theme_override_styles/disabled = SubResource( 27 )
-theme_override_styles/normal = SubResource( 28 )
+theme_override_styles/normal = SubResource("28")
+theme_override_styles/pressed = SubResource("25")
+theme_override_styles/hover = SubResource("24")
+theme_override_styles/disabled = SubResource("27")
+theme_override_styles/focus = SubResource("26")
 
 [node name="ButtonRight" type="TextureRect" parent="Panel/DictionaryLevel"]
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -548,33 +656,37 @@ offset_left = -222.399
 offset_top = -72.3152
 offset_right = -172.399
 offset_bottom = -14.3152
-texture = ExtResource( 12 )
+texture = ExtResource("12")
 
 [node name="Button" type="Button" parent="Panel/DictionaryLevel/ButtonRight"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_styles/hover = SubResource( 24 )
-theme_override_styles/pressed = SubResource( 25 )
-theme_override_styles/focus = SubResource( 26 )
-theme_override_styles/disabled = SubResource( 27 )
-theme_override_styles/normal = SubResource( 28 )
+theme_override_styles/normal = SubResource("28")
+theme_override_styles/pressed = SubResource("25")
+theme_override_styles/hover = SubResource("24")
+theme_override_styles/disabled = SubResource("27")
+theme_override_styles/focus = SubResource("26")
 
 [node name="Label" type="Label" parent="Panel/DictionaryLevel"]
+layout_mode = 0
 anchor_right = 1.0
 offset_bottom = 24.0
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/font = SubResource( 30 )
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("30")
 text = "Opponent dictionary level"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="WordMix" type="Control" parent="Panel"]
+anchors_preset = 0
 offset_left = 30.0
 offset_top = 867.0
 offset_right = 824.0
 offset_bottom = 987.0
 
 [node name="LabelPanel" type="NinePatchRect" parent="Panel/WordMix"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -582,42 +694,45 @@ anchor_bottom = 1.0
 offset_left = -158.0
 offset_top = -84.0
 offset_right = 158.0
-texture = ExtResource( 9 )
+texture = ExtResource("9")
 patch_margin_left = 25
 patch_margin_top = 25
 patch_margin_right = 25
 patch_margin_bottom = 25
 
 [node name="Label" type="Label" parent="Panel/WordMix/LabelPanel"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/font = SubResource( 31 )
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("31")
 text = "???"
-align = 1
-valign = 1
-autowrap = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ButtonLeft" type="TextureRect" parent="Panel/WordMix"]
+layout_mode = 0
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 165.0
 offset_top = -72.315
 offset_right = 215.0
 offset_bottom = -14.315
-texture = ExtResource( 12 )
+texture = ExtResource("12")
 flip_h = true
 
 [node name="Button" type="Button" parent="Panel/WordMix/ButtonLeft"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_styles/hover = SubResource( 24 )
-theme_override_styles/pressed = SubResource( 25 )
-theme_override_styles/focus = SubResource( 26 )
-theme_override_styles/disabled = SubResource( 27 )
-theme_override_styles/normal = SubResource( 28 )
+theme_override_styles/normal = SubResource("28")
+theme_override_styles/pressed = SubResource("25")
+theme_override_styles/hover = SubResource("24")
+theme_override_styles/disabled = SubResource("27")
+theme_override_styles/focus = SubResource("26")
 
 [node name="ButtonRight" type="TextureRect" parent="Panel/WordMix"]
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -626,33 +741,37 @@ offset_left = -222.399
 offset_top = -72.3152
 offset_right = -172.399
 offset_bottom = -14.3152
-texture = ExtResource( 12 )
+texture = ExtResource("12")
 
 [node name="Button" type="Button" parent="Panel/WordMix/ButtonRight"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_styles/hover = SubResource( 24 )
-theme_override_styles/pressed = SubResource( 25 )
-theme_override_styles/focus = SubResource( 26 )
-theme_override_styles/disabled = SubResource( 27 )
-theme_override_styles/normal = SubResource( 28 )
+theme_override_styles/normal = SubResource("28")
+theme_override_styles/pressed = SubResource("25")
+theme_override_styles/hover = SubResource("24")
+theme_override_styles/disabled = SubResource("27")
+theme_override_styles/focus = SubResource("26")
 
 [node name="Label" type="Label" parent="Panel/WordMix"]
+layout_mode = 0
 anchor_right = 1.0
 offset_bottom = 24.0
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/font = SubResource( 30 )
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("30")
 text = "Word Mix"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TargetPoints" type="Control" parent="Panel"]
+anchors_preset = 0
 offset_left = 30.0
 offset_top = 1002.0
 offset_right = 824.0
 offset_bottom = 1122.0
 
 [node name="LabelPanel" type="NinePatchRect" parent="Panel/TargetPoints"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -660,42 +779,45 @@ anchor_bottom = 1.0
 offset_left = -158.0
 offset_top = -84.0
 offset_right = 158.0
-texture = ExtResource( 9 )
+texture = ExtResource("9")
 patch_margin_left = 25
 patch_margin_top = 25
 patch_margin_right = 25
 patch_margin_bottom = 25
 
 [node name="Label" type="Label" parent="Panel/TargetPoints/LabelPanel"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/font = SubResource( 32 )
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("32")
 text = "??"
-align = 1
-valign = 1
-autowrap = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ButtonLeft" type="TextureRect" parent="Panel/TargetPoints"]
+layout_mode = 0
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 165.0
 offset_top = -72.315
 offset_right = 215.0
 offset_bottom = -14.315
-texture = ExtResource( 12 )
+texture = ExtResource("12")
 flip_h = true
 
 [node name="Button" type="Button" parent="Panel/TargetPoints/ButtonLeft"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_styles/hover = SubResource( 24 )
-theme_override_styles/pressed = SubResource( 25 )
-theme_override_styles/focus = SubResource( 26 )
-theme_override_styles/disabled = SubResource( 27 )
-theme_override_styles/normal = SubResource( 28 )
+theme_override_styles/normal = SubResource("28")
+theme_override_styles/pressed = SubResource("25")
+theme_override_styles/hover = SubResource("24")
+theme_override_styles/disabled = SubResource("27")
+theme_override_styles/focus = SubResource("26")
 
 [node name="ButtonRight" type="TextureRect" parent="Panel/TargetPoints"]
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -704,27 +826,30 @@ offset_left = -222.399
 offset_top = -72.3152
 offset_right = -172.399
 offset_bottom = -14.3152
-texture = ExtResource( 12 )
+texture = ExtResource("12")
 
 [node name="Button" type="Button" parent="Panel/TargetPoints/ButtonRight"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_styles/hover = SubResource( 24 )
-theme_override_styles/pressed = SubResource( 25 )
-theme_override_styles/focus = SubResource( 26 )
-theme_override_styles/disabled = SubResource( 27 )
-theme_override_styles/normal = SubResource( 28 )
+theme_override_styles/normal = SubResource("28")
+theme_override_styles/pressed = SubResource("25")
+theme_override_styles/hover = SubResource("24")
+theme_override_styles/disabled = SubResource("27")
+theme_override_styles/focus = SubResource("26")
 
 [node name="Label" type="Label" parent="Panel/TargetPoints"]
+layout_mode = 0
 anchor_right = 1.0
 offset_bottom = 24.0
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/font = SubResource( 30 )
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("30")
 text = "Target points"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Btn_StartCustomGame" type="Button" parent="Panel"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -733,37 +858,47 @@ offset_left = -248.5
 offset_top = -183.0
 offset_right = 248.5
 offset_bottom = -54.0
-theme_override_colors/font_color = Color( 1, 1, 1, 1 )
-theme_override_styles/hover = SubResource( 33 )
-theme_override_styles/pressed = SubResource( 34 )
-theme_override_styles/focus = SubResource( 33 )
-theme_override_styles/disabled = SubResource( 33 )
-theme_override_styles/normal = SubResource( 33 )
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("33")
+theme_override_styles/pressed = SubResource("34")
+theme_override_styles/hover = SubResource("33")
+theme_override_styles/disabled = SubResource("33")
+theme_override_styles/focus = SubResource("33")
 
 [node name="Label" type="Label" parent="Panel/Btn_StartCustomGame"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_fonts/font = SubResource( 35 )
+theme_override_fonts/font = SubResource("35")
 text = "START CUSTOM GAME"
-align = 1
-valign = 1
-autowrap = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Tween" type="Tween" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = null
 
 [connection signal="visibility_changed" from="." to="." method="_on_Custom_Game_Page_visibility_changed"]
 [connection signal="pressed" from="Control/VBoxContainer/Easy_Custom_Banner/Btn_Start_Easy" to="." method="_on_Btn_Start_Easy_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Medium_Custom_Banner/Btn_Start_Medium" to="." method="_on_Btn_Start_Medium_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Hard_Custom_Banner/Btn_Start_Hard" to="." method="_on_Btn_Start_Hard_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Unfair_Custom_Banner/Btn_Start_Unfair" to="." method="_on_Btn_Start_Unfair_pressed"]
-[connection signal="pressed" from="Panel/OpponentSelect/ButtonLeft/Button" to="." method="_set_opponent" binds= [ -1 ]]
-[connection signal="pressed" from="Panel/OpponentSelect/ButtonRight/Button" to="." method="_set_opponent" binds= [ 1 ]]
-[connection signal="pressed" from="Panel/DifficultyLevel/ButtonLeft/Button" to="." method="_set_opponent_reaction_level" binds= [ -1 ]]
-[connection signal="pressed" from="Panel/DifficultyLevel/ButtonRight/Button" to="." method="_set_opponent_reaction_level" binds= [ 1 ]]
-[connection signal="pressed" from="Panel/DictionaryLevel/ButtonLeft/Button" to="." method="_set_opponent_dictionary_level" binds= [ -1 ]]
-[connection signal="pressed" from="Panel/DictionaryLevel/ButtonRight/Button" to="." method="_set_opponent_dictionary_level" binds= [ 1 ]]
-[connection signal="pressed" from="Panel/WordMix/ButtonLeft/Button" to="." method="_set_word_mix_level" binds= [ -1 ]]
-[connection signal="pressed" from="Panel/WordMix/ButtonRight/Button" to="." method="_set_word_mix_level" binds= [ 1 ]]
-[connection signal="pressed" from="Panel/TargetPoints/ButtonLeft/Button" to="." method="_set_point_condition" binds= [ -1 ]]
-[connection signal="pressed" from="Panel/TargetPoints/ButtonRight/Button" to="." method="_set_point_condition" binds= [ 1 ]]
+[connection signal="pressed" from="Panel/OpponentSelect/ButtonLeft/Button" to="." method="_set_opponent" binds= [-1]]
+[connection signal="pressed" from="Panel/OpponentSelect/ButtonRight/Button" to="." method="_set_opponent" binds= [1]]
+[connection signal="pressed" from="Panel/DifficultyLevel/ButtonLeft/Button" to="." method="_set_opponent_reaction_level" binds= [-1]]
+[connection signal="pressed" from="Panel/DifficultyLevel/ButtonRight/Button" to="." method="_set_opponent_reaction_level" binds= [1]]
+[connection signal="pressed" from="Panel/DictionaryLevel/ButtonLeft/Button" to="." method="_set_opponent_dictionary_level" binds= [-1]]
+[connection signal="pressed" from="Panel/DictionaryLevel/ButtonRight/Button" to="." method="_set_opponent_dictionary_level" binds= [1]]
+[connection signal="pressed" from="Panel/WordMix/ButtonLeft/Button" to="." method="_set_word_mix_level" binds= [-1]]
+[connection signal="pressed" from="Panel/WordMix/ButtonRight/Button" to="." method="_set_word_mix_level" binds= [1]]
+[connection signal="pressed" from="Panel/TargetPoints/ButtonLeft/Button" to="." method="_set_point_condition" binds= [-1]]
+[connection signal="pressed" from="Panel/TargetPoints/ButtonRight/Button" to="." method="_set_point_condition" binds= [1]]
 [connection signal="pressed" from="Panel/Btn_StartCustomGame" to="." method="_on_Btn_StartCustomGame_pressed"]

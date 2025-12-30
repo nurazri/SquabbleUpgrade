@@ -1,80 +1,127 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=19 format=3 uid="uid://dypltjhdv2dl4"]
 
-[ext_resource path="res://booster/textures/Booster_Blast_T3.png" type="Texture2D" id=1]
-[ext_resource path="res://fonts/Gretaros-Regular.ttf" type="FontFile" id=2]
-[ext_resource path="res://home/textures/UI_icon_coin.png" type="Texture2D" id=3]
-[ext_resource path="res://universal_texture/UI_button_grey.png" type="Texture2D" id=4]
-[ext_resource path="res://home/textures/home_profile_base.png" type="Texture2D" id=5]
-[ext_resource path="res://shop/backpack_icon.png" type="Texture2D" id=6]
-[ext_resource path="res://shop/booster_listing.gd" type="Script" id=7]
-[ext_resource path="res://home/textures/UI_icon_diamond.png" type="Texture2D" id=8]
-[ext_resource path="res://universal_texture/UI_button_green.png" type="Texture2D" id=9]
+[ext_resource type="Texture2D" uid="uid://bickvu6k4nblh" path="res://booster/textures/Booster_Blast_T3.png" id="1"]
+[ext_resource type="FontFile" uid="uid://drreivkewy5io" path="res://fonts/Gretaros-Regular.ttf" id="2"]
+[ext_resource type="Texture2D" uid="uid://bl2x4k46qc5ph" path="res://home/textures/UI_icon_coin.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bqd7oyg26ttg6" path="res://universal_texture/UI_button_grey.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cuc5wujls5p6d" path="res://home/textures/home_profile_base.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bb1ts5ahklyjw" path="res://shop/backpack_icon.png" id="6"]
+[ext_resource type="Script" uid="uid://bgbf1uu6ivcar" path="res://shop/booster_listing.gd" id="7"]
+[ext_resource type="Texture2D" uid="uid://ckanaw5aq8p" path="res://home/textures/UI_icon_diamond.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bc6f5g2pi4nke" path="res://universal_texture/UI_button_green.png" id="9"]
 
-[sub_resource type="FontFile" id=11]
-size = 40
-use_filter = true
-font_data = ExtResource( 2 )
+[sub_resource type="FontFile" id="11"]
+fallbacks = Array[Font]([ExtResource("2"), ExtResource("2")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=12]
-size = 24
-use_filter = true
-font_data = ExtResource( 2 )
+[sub_resource type="FontFile" id="12"]
+fallbacks = Array[Font]([ExtResource("2"), ExtResource("2")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=13]
-size = 30
-use_filter = true
-spacing_top = 5
-font_data = ExtResource( 2 )
+[sub_resource type="FontFile" id="13"]
+fallbacks = Array[Font]([ExtResource("2"), ExtResource("2")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="FontFile" id=5]
-size = 30
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+[sub_resource type="FontFile" id="5"]
+fallbacks = Array[Font]([ExtResource("2"), ExtResource("2")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
-[sub_resource type="StyleBoxEmpty" id=14]
+[sub_resource type="StyleBoxEmpty" id="18"]
 
-[sub_resource type="StyleBoxEmpty" id=15]
+[sub_resource type="StyleBoxEmpty" id="15"]
 
-[sub_resource type="StyleBoxEmpty" id=16]
+[sub_resource type="StyleBoxEmpty" id="14"]
 
-[sub_resource type="StyleBoxEmpty" id=17]
+[sub_resource type="StyleBoxEmpty" id="17"]
 
-[sub_resource type="StyleBoxEmpty" id=18]
+[sub_resource type="StyleBoxEmpty" id="16"]
 
 [node name="Booster_Listing" type="Control"]
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 3
+anchors_preset = 0
 offset_right = 926.0
 offset_bottom = 240.0
-custom_minimum_size = Vector2( 0, 240 )
 size_flags_horizontal = 3
-script = ExtResource( 7 )
-enabled_toggle = ExtResource( 9 )
-disabled_toggle = ExtResource( 4 )
-coin_texture = ExtResource( 3 )
-diamond_texture = ExtResource( 8 )
+script = ExtResource("7")
+enabled_toggle = ExtResource("9")
+disabled_toggle = ExtResource("4")
+coin_texture = ExtResource("3")
+diamond_texture = ExtResource("8")
 
 [node name="Background" type="NinePatchRect" parent="."]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 5 )
-region_rect = Rect2( 0, 0, 360, 330.009 )
+texture = ExtResource("5")
+region_rect = Rect2(0, 0, 360, 330.009)
 patch_margin_left = 45
 patch_margin_top = 45
 patch_margin_right = 45
 patch_margin_bottom = 45
 
 [node name="Booster_Image" type="TextureRect" parent="."]
+layout_mode = 0
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 5.24875
 offset_top = -122.168
 offset_right = 246.249
 offset_bottom = 118.832
-texture = ExtResource( 1 )
-expand = true
+texture = ExtResource("1")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="BoosterType" type="Label" parent="."]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -83,39 +130,42 @@ offset_left = -223.0
 offset_top = -102.0
 offset_right = 223.0
 offset_bottom = -45.0
-theme_override_colors/font_color = Color( 0.580392, 0.184314, 0.552941, 1 )
-theme_override_fonts/font = SubResource( 11 )
+theme_override_colors/font_color = Color(0.580392, 0.184314, 0.552941, 1)
+theme_override_fonts/font = SubResource("11")
 text = "NORMAL ???()"
-valign = 1
+vertical_alignment = 1
 
 [node name="Description" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -223.0
-offset_top = -40.0
-offset_right = 161.0
-offset_bottom = 85.0
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/font = SubResource( 12 )
+offset_left = -235.0
+offset_top = -52.0
+offset_right = 209.0
+offset_bottom = 101.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("12")
 text = "?????????????????????????????????????????????????????????????????????????????????"
-valign = 1
-autowrap = true
-__meta__ = {
-"_editor_description_": ""
-}
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="Icon_Amount" type="TextureRect" parent="."]
+layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -117.001
 offset_top = 14.2952
 offset_right = -75.001
 offset_bottom = 56.2952
-texture = ExtResource( 6 )
+texture = ExtResource("6")
 
 [node name="Label" type="Label" parent="Icon_Amount"]
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -123,36 +173,39 @@ anchor_bottom = 0.5
 offset_top = -21.0
 offset_right = 46.0
 offset_bottom = 21.0
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/font = SubResource( 13 )
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("13")
 text = "0"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Btn_BuyBooster" type="Button" parent="."]
+layout_mode = 0
 offset_left = 694.5
 offset_top = 116.0
 offset_right = 888.5
 offset_bottom = 191.0
-theme_override_colors/font_color = Color( 0, 0, 0, 1 )
-theme_override_fonts/font = SubResource( 5 )
-theme_override_styles/hover = SubResource( 14 )
-theme_override_styles/pressed = SubResource( 15 )
-theme_override_styles/focus = SubResource( 16 )
-theme_override_styles/disabled = SubResource( 17 )
-theme_override_styles/normal = SubResource( 18 )
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("5")
+theme_override_styles/normal = SubResource("18")
+theme_override_styles/pressed = SubResource("15")
+theme_override_styles/hover = SubResource("14")
+theme_override_styles/disabled = SubResource("17")
+theme_override_styles/focus = SubResource("16")
 text = "100"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Btn_BuyBooster"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 4 )
+texture = ExtResource("4")
 patch_margin_left = 15
 patch_margin_top = 25
 patch_margin_right = 15
 patch_margin_bottom = 25
 
 [node name="Label" type="Label" parent="Btn_BuyBooster"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 81.0
@@ -161,17 +214,18 @@ offset_right = -113.0
 offset_bottom = -22.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = SubResource( 5 )
-align = 1
-valign = 1
+theme_override_fonts/font = SubResource("5")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Currency" type="TextureRect" parent="Btn_BuyBooster/Label"]
+layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 50.0
-texture = ExtResource( 3 )
-expand = true
+texture = ExtResource("3")
+expand_mode = 1
 stretch_mode = 6
 
 [connection signal="pressed" from="Btn_BuyBooster" to="." method="_on_Btn_BuyBooster_pressed"]
