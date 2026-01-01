@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bouqt7nxt0eq5" path="res://game.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://c3digrlm1ojd1" path="res://pool/pool.tscn" id="3"]
-[ext_resource type="PackedScene" path="res://commander/commander.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://qqr4pdx6u4rv" path="res://commander/commander.tscn" id="4"]
 [ext_resource type="PackedScene" path="res://login/login.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://bn1rbtavtjybi" path="res://tutorial/tutorial.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://7xbx25i4hpsk" path="res://home/home_new.tscn" id="9"]

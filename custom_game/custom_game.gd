@@ -1,4 +1,4 @@
-extends Control
+extends Page
 
 signal start_custom_game
 
@@ -14,21 +14,10 @@ var ai_reaction_level_description: Array = ["easy", "medium", "hard", "unfair"]
 var ai_dictionary_level: Array = ["elementary", "secondary", "college", "professional"]
 var point_condition: Array = [30,35,40,45,50,55,60,65,70,75,80,85,90,95,100]
 
+func _ready():
+	var home_node = get_node("/root/Game")
+	connect("start_custom_game", Callable(home_node, "_on_Home_custom_game_started"))
 
-func _on_Custom_Game_Page_visibility_changed():
-	pass
-# Uncomment if you want to reset settings on page show
-#	if visible:
-#		this_opponent = 0
-#		this_word_mix_level = 0
-#		this_opponent_reaction_level = 0
-#		this_opponent_dictionary_level = 0
-#		this_point_condition = 0
-#		_set_opponent(0)
-#		_set_word_mix_level(0)
-#		_set_opponent_reaction_level(0)
-#		_set_opponent_dictionary_level(0)
-#		_set_point_condition(0)
 
 
 func _set_opponent(increment: int) -> void:
@@ -36,8 +25,7 @@ func _set_opponent(increment: int) -> void:
 	if this_opponent > (Globals.OpponentList.size() - 1):
 		this_opponent = 0
 	elif this_opponent < 0:
-		this_opponent = Globals.OpponentList.size() - 1
-	
+		this_opponent = (Globals.OpponentList.size() - 1)
 	$Panel/OpponentSelect/LabelPanel/Label.text = Globals.OpponentList[this_opponent]["Name"]
 	$Panel/Avatar/Picture.texture = Globals.OpponentList[this_opponent]["Avatar"]
 
@@ -47,8 +35,7 @@ func _set_word_mix_level(increment: int) -> void:
 	if this_word_mix_level > (word_mix_level.size() - 1):
 		this_word_mix_level = 0
 	elif this_word_mix_level < 0:
-		this_word_mix_level = word_mix_level.size() - 1
-	
+		this_word_mix_level = (word_mix_level.size() - 1)
 	$Panel/WordMix/LabelPanel/Label.text = word_mix_level[this_word_mix_level]
 
 
@@ -57,8 +44,7 @@ func _set_opponent_reaction_level(increment: int) -> void:
 	if this_opponent_reaction_level > (ai_reaction_level.size() - 1):
 		this_opponent_reaction_level = 0
 	elif this_opponent_reaction_level < 0:
-		this_opponent_reaction_level = ai_reaction_level.size() - 1
-	
+		this_opponent_reaction_level = (ai_reaction_level.size() - 1)
 	$Panel/DifficultyLevel/LabelPanel/Label.text = ai_reaction_level_description[this_opponent_reaction_level]
 
 
@@ -67,8 +53,7 @@ func _set_opponent_dictionary_level(increment: int) -> void:
 	if this_opponent_dictionary_level > (ai_dictionary_level.size() - 1):
 		this_opponent_dictionary_level = 0
 	elif this_opponent_dictionary_level < 0:
-		this_opponent_dictionary_level = ai_dictionary_level.size() - 1
-	
+		this_opponent_dictionary_level = (ai_dictionary_level.size() - 1)
 	$Panel/DictionaryLevel/LabelPanel/Label.text = ai_dictionary_level[this_opponent_dictionary_level]
 
 
@@ -77,17 +62,18 @@ func _set_point_condition(increment: int) -> void:
 	if this_point_condition > (point_condition.size() - 1):
 		this_point_condition = 0
 	elif this_point_condition < 0:
-		this_point_condition = point_condition.size() - 1
-	
+		this_point_condition = (point_condition.size() - 1)
 	$Panel/TargetPoints/LabelPanel/Label.text = str(point_condition[this_point_condition])
 
 
+# Button callbacks
 func _on_Btn_Start_Easy_pressed():
 	this_opponent = 1
 	this_word_mix_level = 0
 	this_opponent_reaction_level = 0
 	this_opponent_dictionary_level = 0
 	this_point_condition = 1
+	print("Easy button pressed")
 	_on_Btn_StartCustomGame_pressed()
 
 
@@ -119,5 +105,13 @@ func _on_Btn_Start_Unfair_pressed():
 
 
 func _on_Btn_StartCustomGame_pressed():
-	emit_signal("start_custom_game", this_opponent, word_mix_level[this_word_mix_level], ai_dictionary_level[this_opponent_dictionary_level], ai_reaction_level[this_opponent_reaction_level], point_condition[this_point_condition])
+	emit_signal(
+		"start_custom_game",
+		Globals.PageType.CUSTOM_GAME,
+		this_opponent,
+		word_mix_level[this_word_mix_level],
+		ai_dictionary_level[this_opponent_dictionary_level],
+		ai_reaction_level[this_opponent_reaction_level],
+		point_condition[this_point_condition]
+	)
 	hide()

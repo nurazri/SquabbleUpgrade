@@ -15,8 +15,11 @@ func _ready() -> void:
 	Audio.set_mute_music(GameLoader.load_data("settings")["is_muted_music"])
 	Audio.set_mute_sfx(GameLoader.load_data("settings")["is_muted_sfx"])
 
-	# Connect Godot 4-compatible quit signal
+	# Connect quit signal
 	get_tree().connect("about_to_quit", Callable(self, "_on_quit_request"))
+	
+
+
 
 
 func _on_quit_request() -> void:
@@ -66,6 +69,7 @@ func _on_Home_custom_game_started(
 	ai_reaction_level: int,
 	custom_point_condition: int
 ) -> void:
+	print("HOME RECEIVED custom_game_started")
 	Analytics.log_event(
 		Globals.Analytics.ALL,
 		Analytics.EVENT_CUSTOM_PLAYED,
@@ -82,6 +86,8 @@ func _on_Home_custom_game_started(
 	$Pool.dropdown_UI_reset()
 	$Pool.start_custom(this_opponent, custom_point_condition, ai_reaction_level)
 	$Tutorial.stop()
+	print("Custom game started for opponent %d" % this_opponent)
+
 
 
 # --------------------------------------------------

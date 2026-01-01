@@ -186,6 +186,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("13")
 
 [node name="Backdrop" type="Panel" parent="."]
@@ -886,6 +888,7 @@ auto_translate_mode = 0
 editor_description = ""
 script = null
 
+[connection signal="start_custom_game" from="." to="." method="_on_Home_custom_game_started"]
 [connection signal="visibility_changed" from="." to="." method="_on_Custom_Game_Page_visibility_changed"]
 [connection signal="pressed" from="Control/VBoxContainer/Easy_Custom_Banner/Btn_Start_Easy" to="." method="_on_Btn_Start_Easy_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Medium_Custom_Banner/Btn_Start_Medium" to="." method="_on_Btn_Start_Medium_pressed"]
