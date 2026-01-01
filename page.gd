@@ -6,7 +6,7 @@ signal on_reset
 signal on_update
 signal redirect_page
 
-var extra_params: String = ""
+var extra_params = ""
 
 
 func send_page_update(coin, diamond) -> void:

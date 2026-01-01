@@ -257,9 +257,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 1.777008
+offset_left = 7.777008
 offset_top = -10.919296
-offset_right = 37.777008
+offset_right = 129.4437
 offset_bottom = 25.080704
 grow_horizontal = 0
 grow_vertical = 2
@@ -267,8 +267,8 @@ scale = Vector2(0.6, 0.6)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("5")
 text = "??"
-horizontal_alignment = 1
 vertical_alignment = 1
+clip_text = true
 
 [node name="Checked" type="TextureRect" parent="Panel/ProgressBar/Step_1/Rewardtype/Amount"]
 visible = false
@@ -345,9 +345,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 2.9439697
+offset_left = 7.9439697
 offset_top = -11.158997
-offset_right = 38.94397
+offset_right = 136.27728
 offset_bottom = 24.841003
 grow_horizontal = 0
 grow_vertical = 2
@@ -355,8 +355,8 @@ scale = Vector2(0.6, 0.6)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("5")
 text = "??"
-horizontal_alignment = 1
 vertical_alignment = 1
+clip_text = true
 
 [node name="Checked" type="TextureRect" parent="Panel/ProgressBar/Step_2/Rewardtype/Amount"]
 visible = false

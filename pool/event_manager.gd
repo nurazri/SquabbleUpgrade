@@ -320,12 +320,12 @@ func initiate_event(level, step, init = false) -> void:
 					toggle_highlight(0)
 					attach_snatch_process()
 				10: _dialog_manager.start_dialog_text("What the ^&*%. How dare you! Alright... its on!", 8, "Quabble", "right")
-				11: _dialog_manager.start_dialog_text("Go on newbie and show her whose boss", 7, "Squab", "left")
+				11: _dialog_manager.start_dialog_text("Go on newbie and show her whose boss", 7, "Squab", "left") 
 				12: 
 					_dialog_manager.enable_dialog_text(false)
 					_Commander.start(Globals.GameMode.TUTORIAL, 1)
 					set_snatch_function(true)
-					_BoardMe.enable_reset(false)
+					_BoardMe.enable_reset(true)
 					get_tree().call_group("lettertiles", "disable", false)
 					get_tree().call_group("lettertiles", "force_disable", false)
 				13: manual_transition_result_screen(true)
@@ -638,12 +638,16 @@ func initiate_event(level, step, init = false) -> void:
 					_dialog_manager.enable_dialog_text(false)
 		28:
 			if init:
+				print("init dialog 28")
 				Audio.play_music(Audio.Music.MUSIC_HOME)
-				_dialog_manager.setup_dialog(true, false, "left", "res://avatar/expression/Squab2.png", null)
+				#_dialog_manager.setup_dialog(true, false, "left", "res://avatar/expression/Squab2.png", null)
+				_dialog_manager.setup_dialog(true, true, "right", "res://avatar/expression/Squab2.png", "res://avatar/expression/Quarrel1.png")
 			match step:
-				1: 
-					_dialog_manager.start_dialog_text("NUT so fast!", 5, "Quarrel", "right", false)
-					_dialog_manager.anim_player.play("alt_entrance_2")
+				1: _dialog_manager.start_dialog_text("NUT so fast!", 5, "Quarrel", "right", true, init)
+				#1: 
+					#print("init dialog 28 continuation")
+					#_dialog_manager.start_dialog_text("NUT so fast!", 5, "Quarrel", "right", false)
+					#_dialog_manager.anim_player.play("alt_entrance_2")
 				2: _dialog_manager.start_dialog_text("Uh oh", 8, "Squab", "left", true)
 				3: _dialog_manager.start_dialog_text("Tsk tsk... What do we have here... Good ol’ Squab & Quabble, and this is?", 2, "Quarrel", "right", true)
 				4: _dialog_manager.start_dialog_text("Quarrel Squirrel, meet your new opponent!", 6, "Squab", "left", true)
@@ -817,9 +821,10 @@ func initiate_event(level, step, init = false) -> void:
 				Audio.play_music(Audio.Music.MUSIC_HOME)
 				_dialog_manager.setup_dialog(true, false, "left", "res://avatar/expression/Squab2.png", null)
 			match step:
-				1: 
-					_dialog_manager.start_dialog_text("Oook! Look who’s come to play?!", 5, "Moniac", "right", false)
-					_dialog_manager.anim_player.play("alt_entrance_2")
+				1: _dialog_manager.start_dialog_text("Oook! Look who’s come to play?!", 5, "Moniac", "right", true, init)
+				#1: 
+					#_dialog_manager.start_dialog_text("Oook! Look who’s come to play?!", 5, "Moniac", "right", false)
+					#_dialog_manager.anim_player.play("alt_entrance_2")
 				2: _dialog_manager.start_dialog_text("Oh no, that’s Moniac the Monkey. She’s kind of bananas...", 8, "Squab", "left", true)
 				3: _dialog_manager.start_dialog_text("Ooh! Aaak! What you did back there was elementary at best.", 2, "Moniac", "right", true)
 				4: _dialog_manager.start_dialog_text("This is a whole new level, ehehehe!!", 5, "Moniac", "right", true)

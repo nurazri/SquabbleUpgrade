@@ -13,14 +13,22 @@ func reload() -> void:
 	spawn_data()
 
 
+#func spawn_data() -> void:
+	#var vbox = achievement_container.get_node("VBoxContainer")
+	#for a in GameLoader.achievement_data:
+		#var achievement_object = _ScnAchievement.instantiate()
+		#achievement_object.init(GameLoader.achievement_data[a], str(a))
+		#achievement_object.connect("reward_claimed", Callable(self, "_on_Achievement_on_claimed"))
+		#self.connect("on_reset", Callable(achievement_object, "_on_achievement_page_reset_progress"))
+		#vbox.add_child(achievement_object)
+		
 func spawn_data() -> void:
-	var vbox = achievement_container.get_node("VBoxContainer")
 	for a in GameLoader.achievement_data:
 		var achievement_object = _ScnAchievement.instantiate()
 		achievement_object.init(GameLoader.achievement_data[a], str(a))
 		achievement_object.connect("reward_claimed", Callable(self, "_on_Achievement_on_claimed"))
 		self.connect("on_reset", Callable(achievement_object, "_on_achievement_page_reset_progress"))
-		vbox.add_child(achievement_object)
+		achievement_container.get_node("VBoxContainer").add_child(achievement_object)
 
 
 func _on_Achievement_on_claimed(coin: int, diamond: int) -> void:

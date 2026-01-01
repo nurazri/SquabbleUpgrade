@@ -38,12 +38,16 @@ func init(_achievement_data: Dictionary, id: String) -> void:
 			elif raw_id is String and raw_id.is_valid_int():
 				avatar_id_locked = int(raw_id)
 
-	# Clamp to valid array range to prevent index out of bounds
 	avatar_id_locked = clamp(avatar_id_locked, 0, Globals.AvatarLockedTextures.size() - 1)
 
-	var _avatar_texture_locked: Texture2D = Globals.AvatarLockedTextures[avatar_id_locked]
-	
-	#var _avatar_texture_locked: Texture2D = Globals.AvatarLockedTextures[int(_achievement_data["rewardamount"]["3"])]
+	var reward_index := int(_achievement_data["rewardamount"]["3"])
+
+	var _avatar_texture_locked: Texture2D = \
+		Globals.AvatarLockedTextures.get(
+			reward_index,
+			Globals.AvatarLockedTextures[avatar_id_locked]
+		)
+		
 	var currently_at: int = 0
 	
 	$Panel/Description.text = "[" + str(_achievement_data["trophy_title"]) + "]\n" + str(_achievement_data["trophy_description"]) 

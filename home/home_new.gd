@@ -88,37 +88,178 @@ func set_avatar(which: int) -> void:
 # PAGE CHANGE
 # --------------------------------------------------
 func _on_redirect_page(this_page: int, extra_params: String) -> void:
+	print("extra params is: ",extra_params)
 	change_page(this_page, extra_params)
 
+#func change_page(page: int, extra_parameters: String = "") -> void:
+	#if footer_UI == null:
+		#return
+#
+	#var prev_btn: String = String(Globals.PageButtons[current_page])
+	#var new_btn: String = String(Globals.PageButtons[page])
+#
+	#var tween := create_tween()
+#
+	#if prev_btn != "":
+		#var previous_page: Control = footer_UI.get_node("HBoxContainer/" + prev_btn)
+		#if prev_btn == "Adventure" and header_UI != null:
+			#header_UI.get_node("Location").hide()
+		#tween.tween_property(previous_page, "custom_minimum_size", Vector2(166, 136), 0.15)
+#
+	#if new_btn != "":
+		#var new_page: Control = footer_UI.get_node("HBoxContainer/" + new_btn)
+		#if new_btn == "Adventure" and header_UI != null:
+			#header_UI.get_node("Location").show()
+		#tween.tween_property(new_page, "custom_minimum_size", Vector2(260, 190), 0.15)
+#
+	#if Globals.PageName[current_page] != "":
+		#get_node(Globals.PageName[current_page]).hide()
+#
+	#if Globals.PageName[page] != "":
+		#var page_node: Node = get_node(Globals.PageName[page])
+		#if page_node.has_method("set_extra_params"):
+			#page_node.set_extra_params(extra_parameters)
+		#page_node.show()
+#
+	#current_page = page
+	
+#func change_page(page: int, extra_parameters: String = "") -> void:
+	#if footer_UI == null:
+		#return
+#
+	#var prev_btn: String = Globals.PageButtons[current_page]
+	#var new_btn: String = Globals.PageButtons[page]
+#
+	## Create one tween for all parallel animations
+	#var tween = create_tween()
+	#tween.set_parallel(true)  # This makes all tweens run at the same time
+	#tween.set_trans(Tween.TRANS_LINEAR)  # Matches your Godot 3 TRANS_LINEAR
+#
+	#if prev_btn != "":
+		#var previous_page: Control = footer_UI.get_node("HBoxContainer/" + prev_btn)
+#
+		#if prev_btn == "Adventure" and header_UI != null:
+			#header_UI.get_node("Location").hide()
+		#
+		## Main button size shrink
+		#tween.tween_property(previous_page, "custom_minimum_size", Vector2(166, 136), 0.15)
+#
+		## TextureRect modulate back to normal
+		#tween.tween_property(previous_page.get_node("TextureRect"), "modulate", Color(1, 1, 1, 1), 0.15)
+#
+		## Label moves down
+		#tween.tween_property(previous_page.get_node("Label"), "position:y", 195, 0.15)
+#
+		## Icon moves up and shrinks
+		#tween.tween_property(previous_page.get_node("Icon"), "position", Vector2(34, -31), 0.15)
+		#tween.tween_property(previous_page.get_node("Icon"), "size", Vector2(198, 164), 0.15)
+#
+	#if new_btn != "":
+		#var new_page: Control = footer_UI.get_node("HBoxContainer/" + new_btn)
+#
+		#if new_btn == "Adventure" and header_UI != null:
+			#header_UI.get_node("Location").show()
+		#
+		## Main button size grow
+		#tween.tween_property(new_page, "custom_minimum_size", Vector2(260, 190), 0.15)
+#
+		## TextureRect modulate to highlight (you had a purple-ish color in G3)
+		#tween.tween_property(new_page.get_node("TextureRect"), "modulate", Color(0.92, 0.39, 1, 1), 0.15)
+#
+		## Label moves up
+		#tween.tween_property(new_page.get_node("Label"), "position:y", 135, 0.15)
+#
+		## Icon moves down and grows
+		#tween.tween_property(new_page.get_node("Icon"), "position", Vector2(32, 24), 0.15)
+		#tween.tween_property(new_page.get_node("Icon"), "size", Vector2(108, 88), 0.15)
+#
+	## Page switching (same as before)
+	#if Globals.PageName[current_page] != "":
+		#get_node(Globals.PageName[current_page]).hide()
+#
+	#if Globals.PageName[page] != "":
+		#var page_node: Node = get_node(Globals.PageName[page])
+		#if page_node.has_method("set_extra_params"):
+			#page_node.set_extra_params(extra_parameters)
+		#page_node.show()
+#
+	#current_page = page
+	
 func change_page(page: int, extra_parameters: String = "") -> void:
 	if footer_UI == null:
 		return
 
-	var prev_btn: String = String(Globals.PageButtons[current_page])
-	var new_btn: String = String(Globals.PageButtons[page])
+	var prev_btn: String = Globals.PageButtons[current_page]
+	var new_btn: String = Globals.PageButtons[page]
 
-	var tween := create_tween()
+	var tween = create_tween()
+	tween.set_parallel(true)
+	tween.set_trans(Tween.TRANS_LINEAR)
 
 	if prev_btn != "":
 		var previous_page: Control = footer_UI.get_node("HBoxContainer/" + prev_btn)
+
 		if prev_btn == "Adventure" and header_UI != null:
 			header_UI.get_node("Location").hide()
-		tween.tween_property(previous_page, "custom_minimum_size", Vector2(166, 136), 0.15)
+		
+		# Shrink: from current size → small
+		tween.tween_property(previous_page, "custom_minimum_size", Vector2(166, 136), 0.15) \
+		.from_current()  # This is the key!
+
+		tween.tween_property(previous_page.get_node("TextureRect"), "modulate", Color(1, 1, 1, 1), 0.15) \
+		.from_current()
+
+		tween.tween_property(previous_page.get_node("Label"), "position:y", 195, 0.15) \
+		.from_current()
+
+		tween.tween_property(previous_page.get_node("Icon"), "position", Vector2(32, 24), 0.15) \
+		.from_current()
+
+		tween.tween_property(previous_page.get_node("Icon"), "size", Vector2(108, 88), 0.15) \
+		.from_current()
 
 	if new_btn != "":
 		var new_page: Control = footer_UI.get_node("HBoxContainer/" + new_btn)
+
 		if new_btn == "Adventure" and header_UI != null:
 			header_UI.get_node("Location").show()
-		tween.tween_property(new_page, "custom_minimum_size", Vector2(260, 190), 0.15)
+		
+		# Grow: from current size → big
+		tween.tween_property(new_page, "custom_minimum_size", Vector2(260, 190), 0.15) \
+		.from_current()  # Key fix here too
+		
+		tween.tween_property(new_page.get_node("TextureRect"), "modulate", Color(0.92, 0.39, 1, 1), 0.15) \
+		.from_current()
+		
+		tween.tween_property(new_page.get_node("Label"), "position:y", 135, 0.15) \
+		.from_current()
+		
+		tween.tween_property(new_page.get_node("Icon"), "position", Vector2(34, -31), 0.15) \
+		.from_current()
+		
+		tween.tween_property(new_page.get_node("Icon"), "size", Vector2(198, 164), 0.15) \
+		.from_current()
 
+	print("extra param is: ",extra_parameters)
+	# Page content switching
+	if Globals.PageName[current_page] != "":
+		get_node(Globals.PageName[current_page]).hide(
+)
+	#if Globals.PageName[page] != "":
+		#var page_node: Node = get_node(Globals.PageName[page])
+		#if page_node.has_method("set_extra_params"):
+			#page_node.set_extra_params(extra_parameters)
+		#page_node.show()
+		
 	if Globals.PageName[current_page] != "":
 		get_node(Globals.PageName[current_page]).hide()
-
 	if Globals.PageName[page] != "":
-		var page_node: Node = get_node(Globals.PageName[page])
-		if page_node.has_method("set_extra_params"):
-			page_node.set_extra_params(extra_parameters)
-		page_node.show()
+		var target_node = get_node(Globals.PageName[page])
+		if "extra_params" in target_node:
+			target_node.extra_params = extra_parameters
+		else:
+			print("Warning: Node ", Globals.PageName[page], " doesn't have extra_params property")
+		target_node.show()
 
 	current_page = page
 
