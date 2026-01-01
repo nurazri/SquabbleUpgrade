@@ -294,6 +294,7 @@ func play_custom_game(
 	reaction: int,
 	point_condition: int
 ) -> void:
+	print("PLAY_CUSTOM_GAME CALLED")
 	Audio.play_sfx(Audio.Sfx.BUTTON_TAP)
 	change_page(Globals.PageType.HOME)
 

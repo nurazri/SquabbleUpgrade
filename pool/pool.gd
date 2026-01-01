@@ -165,8 +165,15 @@ func start_alternate(level) -> void:
 
 func start_custom(simulate_opponent: int, simulate_target_points: int, simulate_level: int) -> void:
 	_type = Globals.GameType.SPEEDPLAY
+	
+	print("BoardOpponent test 1 =", $BoardOpponent)
 
-	$BoardOpponent.set_name(Globals.OpponentList[simulate_opponent]["Name"])
+	$BoardOpponent.set_opponent_name(
+	Globals.OpponentList[simulate_opponent]["Name"]
+	)
+
+	print("BoardOpponent test 2 =", $BoardOpponent)
+
 	$BoardOpponent.set_avatar(
 		Globals.OpponentList[simulate_opponent]["Avatar"],
 		Globals.OpponentList[simulate_opponent]["Avatar_BG"]
