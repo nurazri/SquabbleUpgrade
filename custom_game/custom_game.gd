@@ -114,4 +114,5 @@ func _on_Btn_StartCustomGame_pressed():
 		ai_reaction_level[this_opponent_reaction_level],
 		point_condition[this_point_condition]
 	)
+	get_parent().hide()
 	hide()
