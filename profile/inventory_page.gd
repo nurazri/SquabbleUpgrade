@@ -15,17 +15,35 @@ func _load_inventory_info() -> void:
 	for child in avatar_container.get_children():
 		child.queue_free()
 	
+	var owned_avatars_clean: Dictionary = {}
+	for key in GameLoader.player_data["owned_avatars"].keys():
+		owned_avatars_clean[str(int(float(key)))] = GameLoader.player_data["owned_avatars"][key]
+
 	for a in Globals.CurrentUnlockableAvatar:
 		var isEquipped: bool = a == GameLoader.player_data["avatar"]
 		var avatar_object = _ScnAvatarSelect.instantiate()
-		if GameLoader.player_data["owned_avatars"].has(str(a)):
+
+		# Use the cleaned dictionary here
+		if owned_avatars_clean.has(str(a)):
 			avatar_object.init(a, isEquipped, false)
 		else:
 			avatar_object.init(a, isEquipped, true)
-		
+
 		avatar_object.connect("OnSelectAvatar", Callable(self, "_on_Avatar_selection_set"))
 		self.connect("ResetSelectedAvatar", Callable(avatar_object, "_unselect_avatar"))
 		avatar_container.add_child(avatar_object)
+	
+	#for a in Globals.CurrentUnlockableAvatar:
+		#var isEquipped: bool = a == GameLoader.player_data["avatar"]
+		#var avatar_object = _ScnAvatarSelect.instantiate()
+		#if GameLoader.player_data["owned_avatars"].has(str(a)):
+			#avatar_object.init(a, isEquipped, false)
+		#else:
+			#avatar_object.init(a, isEquipped, true)
+		#
+		#avatar_object.connect("OnSelectAvatar", Callable(self, "_on_Avatar_selection_set"))
+		#self.connect("ResetSelectedAvatar", Callable(avatar_object, "_unselect_avatar"))
+		#avatar_container.add_child(avatar_object)
 		
 	# For Boosters
 	var booster_container = get_node("GameInfo/ScrollContainerBooster/VBoxContainer")
@@ -41,7 +59,7 @@ func _load_inventory_info() -> void:
 			booster_object.init(Globals.BoosterAttributes[b])
 			booster_object.connect("call_booster_update_signal", Callable(self, "_forward_booster_signal"))
 			self.connect("UpdateAllBooster", Callable(booster_object, "update_all_boosters"))
-
+	
 
 func _on_Avatar_selection_set() -> void:
 	emit_signal("ResetSelectedAvatar")

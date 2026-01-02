@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://cfxmh8t4ydsan" path="res://home/new_textures/character_indicator/Chrindicator_fox.png" id="29"]
 [ext_resource type="Texture2D" uid="uid://cytubdp1em5gx" path="res://home/new_textures/character_indicator/Chrindicator_cheetah.png" id="30"]
 [ext_resource type="Texture2D" uid="uid://bx5fwkc4um7kl" path="res://home/new_textures/map/map_9.png" id="31"]
-[ext_resource type="PackedScene" path="res://shop/shop.tscn" id="32"]
+[ext_resource type="PackedScene" uid="uid://dfmuaggiyuxuv" path="res://shop/shop.tscn" id="32"]
 [ext_resource type="Texture2D" uid="uid://bcag613oufw1t" path="res://home/new_textures/character_indicator/Chrindicator_lioness.png" id="33"]
 [ext_resource type="Texture2D" uid="uid://cdwqokpvqwjf6" path="res://home/new_textures/map/map_8.png" id="34"]
 [ext_resource type="Texture2D" uid="uid://cfghsjyeirbe4" path="res://home/new_textures/character_indicator/Chrindicator_tortiese.png" id="35"]
@@ -43,7 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://db0lfd7iktiup" path="res://home/new_textures/UI_townbanner.png" id="43"]
 [ext_resource type="Texture2D" uid="uid://bpylh46on46xc" path="res://home/new_textures/UI_footer_nonselected.png" id="44"]
 [ext_resource type="PackedScene" uid="uid://bk8klrdlu5a4v" path="res://achievement/achievement_page.tscn" id="45"]
-[ext_resource type="PackedScene" path="res://profile/profile_page.tscn" id="46"]
+[ext_resource type="PackedScene" uid="uid://buikjn8xopraw" path="res://profile/profile_page.tscn" id="46"]
 [ext_resource type="Texture2D" uid="uid://cf818obmfsrgt" path="res://home/new_textures/UI_footer_singlematch.png" id="47"]
 [ext_resource type="Texture2D" uid="uid://bqlm83wad3rrj" path="res://home/new_textures/UI_footer_shop.png" id="48"]
 [ext_resource type="Texture2D" uid="uid://dva52xo2g1wu7" path="res://home/new_textures/UI_footer_inventory.png" id="49"]
@@ -2195,7 +2195,12 @@ stretch_mode = 6
 
 [node name="Shop_Page" parent="." instance=ExtResource("32")]
 visible = false
+layout_mode = 0
 anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 946.0
+offset_bottom = 2048.0
 
 [node name="Achievement_Page" parent="." instance=ExtResource("45")]
 visible = false
@@ -2208,7 +2213,9 @@ offset_bottom = 2048.0
 
 [node name="Profile_Page" parent="." instance=ExtResource("46")]
 visible = false
-anchors_preset = 0
+layout_mode = 1
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Inventory_Page" parent="." instance=ExtResource("13")]
 visible = false
@@ -2923,6 +2930,7 @@ libraries = {
 }
 
 [connection signal="visibility_changed" from="." to="." method="_on_Home_visibility_changed"]
+[connection signal="redirect_page" from="Profile_Page" to="." method="_on_redirect_page"]
 [connection signal="pressed" from="Header_UI/New_Header/Header/Avatar/Button" to="." method="change_page" binds= [1]]
 [connection signal="pressed" from="Header_UI/New_Footer/HBoxContainer/CustomGame/Button" to="." method="change_page" binds= [2]]
 [connection signal="pressed" from="Header_UI/New_Footer/HBoxContainer/Quests/Button" to="." method="change_page" binds= [3]]
