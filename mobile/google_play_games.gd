@@ -28,11 +28,19 @@ func _ready() -> void:
 func sign_in() -> void:
 	if _play_games_services:
 		_play_games_services.signIn()
-		
 
 func sign_out() -> void:
-	if _play_games_services:
+	if _play_games_services and is_signed_in:
 		_play_games_services.signOut()
+	else:
+		print("GPGS: signOut skipped (not signed in)")
+		
+func _on_play_games_sign_in_success():
+	is_signed_in = true
+
+func _on_play_games_sign_out_success():
+	is_signed_in = false
+
 
 
 func save_game(snapshot_name: String = "SquabbleSave", data: Dictionary = GameLoader.player_data, description: String = "Squabble save.") -> void:

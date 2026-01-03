@@ -14,9 +14,16 @@ func _ready() -> void:
 		sdkKey = ProjectSettings.get_setting('ByteBrew/SdkKey')
 	if Engine.has_singleton("ByteBrew"):
 		bytebrew = Engine.get_singleton("ByteBrew")
-		var versionForByteBrew = "Dev" # Don't change this line, or automated builds will not have the correct version!
-		bytebrew.InitializeByteBrew(gameId, sdkKey, Engine.get_version_info(), versionForByteBrew)
-		# bytebrew.StartPushNotifications()
+
+		var versionForByteBrew: String = "Dev"
+		var engineVersion: String = Engine.get_version_info().get("string", "unknown")
+
+		bytebrew.InitializeByteBrew(
+			gameId,
+			sdkKey,
+			engineVersion,
+			versionForByteBrew
+		)
 
 
 func new_custom_event(s: String="", n=null) -> void:
