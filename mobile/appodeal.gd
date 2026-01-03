@@ -152,4 +152,3 @@ func _on_Appodeal_rewarded_video_closed(_finished: bool) -> void:
 func _on_Appodeal_rewarded_video_finished(amount: float, currency: String) -> void:
 	print("[Appodeal] Rewarded ad finished")
 	emit_signal("rewarded_ad_finished", amount, currency)
-
