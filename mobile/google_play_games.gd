@@ -22,7 +22,7 @@ func _ready() -> void:
 	if OS.get_name() == "Android":
 		_connect_signals()
 		_init()
-		print("[GooglePlayGames] isGooglePlayServicesAvailable: " + str(_play_games_services.isGooglePlayServicesAvailable()))
+		#print("[GooglePlayGames] isGooglePlayServicesAvailable: " + str(_play_games_services.isGooglePlayServicesAvailable()))
 
 
 func sign_in() -> void:
